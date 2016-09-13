@@ -58,7 +58,7 @@ $(document)
     });
     $('.overlay').visibility({
       type: 'fixed',
-      offset: 80,
+
       silent: true
     });
 
@@ -77,10 +77,22 @@ $(document)
     $('.openSidebar').click(function() {
       var direction = $(this).data('direction');
       $('.ui.'+direction+'.sidebar')
-        .sidebar('setting', 'dimPage', false)
-        .sidebar('setting', 'transition', 'overlay')
+        .sidebar({
+          dimPage: false,
+          exclusive: true,
+          scrollLock: true,
+          transition: 'overlay',
+          mobileTransition: 'overlay',
+          onVisible: function() {
+            $('.ui.'+direction+'.sidebar').scrollLock();
+          },
+          onHidden: function() {
+            $('.ui.'+direction+'.sidebar').scrollLock();
+          }
+        })
         .sidebar('toggle')
       ;
+
     });
     $('.closeSidebar').click(function() {
       $(this).parent('.ui.sidebar')

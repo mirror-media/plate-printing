@@ -1,3 +1,11 @@
+  html.ios {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  html.ios,
+  html.ios body {
+    height: initial !important;
+  }
   body {
       background-color: #F5F5F5;
       font-family: Noto Sans TC, Noto Sans, PingFang TC, Apple LiGothic Medium, Roboto, Microsoft JhengHei, Lucida Grande, Lucida Sans Unicode, sans-serif;
