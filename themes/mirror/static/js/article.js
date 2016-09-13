@@ -58,15 +58,17 @@ $(document)
 
     // bind menu button
     $('.openSidebar').click(function() {
-      $('.ui.sidebar')
+      var direction = $(this).data('direction');
+      $('.ui.'+direction+'.sidebar')
         .sidebar('setting', 'dimPage', false)
         .sidebar('setting', 'transition', 'overlay')
         .sidebar('toggle')
       ;
     });
     $('.closeSidebar').click(function() {
-      $('.ui.sidebar')
+      $(this).parent('.ui.sidebar')
         .sidebar('toggle')
       ;
     });
+
   });
