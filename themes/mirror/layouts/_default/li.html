@@ -1,0 +1,25 @@
+<div class="ui centered card" style="width:620px !important;">
+  <div class="content ">
+
+    <a class="header" href="{{ .Permalink }}">{{ .Title }}</a>
+    <div class="meta">
+      <span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+      <span class="right floated">{{ .Slug }}</span>
+    </div>
+  </div>
+  <div class="extra content">
+
+      <div class="blog__subtitle">
+        {{if .Params.categories }}
+          {{ .Params.categories.name }}
+        {{ end }}
+<!--         {{if .Params.tags }}
+          {{ range $index , $tags := .Params.tags }}
+            #{{ $tags }}
+          {{ end }}
+        {{end}} -->
+      </div>
+    </a>
+
+  </div>
+</div>
