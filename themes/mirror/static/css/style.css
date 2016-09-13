@@ -73,7 +73,6 @@
       background: -webkit-linear-gradient(left, rgba(8, 207, 188, 0.9) 0%, rgba(0, 78, 162, 0.9) 100%) !important;
       background: linear-gradient(to right, rgba(8, 207, 188, 0.9) 0%, rgba(0, 78, 162, 0.9) 100%) !important;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-
       filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#08cfbc', endColorstr='#004ea2', GradientType=1) !important;
   }
   .gradient-transparent-vertical {
