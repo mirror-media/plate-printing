@@ -53,11 +53,13 @@ $(document)
 
     // fix main menu to page on passing
     $('.main.menu').visibility({
-      type: 'fixed'
+      type: 'fixed',
+      silent: true
     });
     $('.overlay').visibility({
       type: 'fixed',
-      offset: 80
+      offset: 80,
+      silent: true
     });
 
     // lazy load images
