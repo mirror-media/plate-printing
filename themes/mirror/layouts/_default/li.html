@@ -11,13 +11,8 @@
 
       <div class="blog__subtitle">
         {{if .Params.categories }}
-          {{ .Params.categories.name }}
+          {{ .Params.categories }}
         {{ end }}
-<!--         {{if .Params.tags }}
-          {{ range $index , $tags := .Params.tags }}
-            #{{ $tags }}
-          {{ end }}
-        {{end}} -->
       </div>
     </a>
 
