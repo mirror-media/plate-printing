@@ -65,9 +65,9 @@
 	    	{{ range $index , $writer := .Params.writers }}
 		    <div class="centered author" style="max-width:620px;margin:20px auto;">
 		    	<hr/>
-		    	<h2 style="font-size: 20px;font-weight: bold;line-height: 1;letter-spacing: 1.5px;">{{ $writer.name }}<p style="float:right;	font-size: 17px;line-height: 1;letter-spacing: 1px;color: #004ea2;">{{ $writer.email }}</p></h2>
+		    	<h2 class="author-name">{{ $writer.name }}<p class="author-mail">{{if $writer.email }}{{ $writer.email }}{{ end }}</p></h2>
 
-		    	<p style="font-size: 17px;line-height: 1.6;letter-spacing: 1px;">出生於彰化。 半路逃跑的醫生，牛津大學醫學史博士，除了寫只能放在圖書館的論文之外，平時喜歡寫文章、寫歌、四處遊蕩。 目前任教於香港大學醫學倫理及人文學部。</p>
+		    	<p class="author-bio">{{if $writer.bio }}{{ $writer.bio }}{{ end }}</p>
 		    	<hr/>
 		    </div>
 		    {{ end }}   
