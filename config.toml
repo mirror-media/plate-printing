@@ -3,3 +3,7 @@ languageCode = "zh-tw"
 title = "MirroMedia"
 theme = "mirror"
 googleAnalytics = "UA-83609754-1"
+
+[taxonomies]
+tag = "HugoTags"
+category = "HugoCategories"
