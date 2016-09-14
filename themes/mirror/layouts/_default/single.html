@@ -4,8 +4,14 @@
 	  <!-- Article (Single) -->
 	  <div class="ui text container" style="max-width: 780px!important;padding-top:2em;">
 	  	<div class="article-header">
-	  		<h2 class="article-category">{{ .Params.categories.name}}</h2>
-	  		<p class="article-date">{{ dateFormat "2006.01.02" .Params.publisheddate }}</p>
+	  		<h2 class="article-category">
+			    {{ if .Params.categories }}
+			      {{ range $index , $category := .Params.categories }}
+			        <a href="{{ $baseurl }}categories/{{ . | urlize }}">{{ $category }}</a>
+			      {{ end }}
+			    {{ end }}
+	  		</h2>
+	  		<p class="article-date">{{if .Date }}{{ .Date.Format "2006.01.02" }}{{ end }}</p>
 	  	</div>
 		  <div class="ui clearing divider"></div>
 		  <h1 class="article-title">{{ .Title }}</h1>
@@ -14,13 +20,13 @@
 			    {{if .Params.writers }}
 			    文 | 
 			      {{ range $index , $writer := .Params.writers }}
-			        <a href="#">{{ $writer.name }}</a>
+			        {{ $writer.name }}
 			      {{ end }}
-			    {{ end }}
+			    {{ end }}&nbsp;&nbsp;
 			    {{if .Params.photographers }}
 			    攝影 | 
 			      {{ range $index , $photographer := .Params.photographers }}
-			        <a href="#">{{ $photographer.name }}</a>
+			        {{ $photographer.name }}
 			      {{ end }}
 			    {{ end }}   
 	  		</p>
@@ -37,37 +43,38 @@
 
 		
 			
-			<div class="ui text container article" style="max-width: 780px!important;">
-				<article>
+		<div class="ui text container article" style="max-width: 780px!important;">
+			<article>
 
-			    {{ .Params.content.html | safeHTML }}
+				{{if .Params.content }}
+					{{if .Params.content.html }}
+		    		{{ .Params.content.html | safeHTML }}
+		    	{{ end }}
+        {{ end }}
 
-	        {{ if isset .Params "tags" }}
-	            {{ $tagsLen := len .Params.tags }}
-	            {{ if gt $tagsLen 0 }}
-	            <div class="article-tag">
-	                <i class="tags icon"></i>
-	                {{ range $k, $v := .Params.tags }}
-	                <a class="article-category-link" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
-	                {{ if lt $k (sub $tagsLen 1) }}、{{ end }}
-	                {{ end }}
-	            </div>
-	            {{ end }}
-	        {{ end }}
+		    {{if .Params.tags }}
+		      {{ range $index , $tag := .Params.tags }}
+		        <a href="{{ $baseurl }}tags/{{ . | urlize }}">#{{ $tag }}</a>
+		      {{ end }}
+		    {{ end }}     
 
-			    <div style="width:10px;height:10px;"></div>
-		    </article>
+		    <div style="width:10px;height:10px;"></div>
+	    </article>
 
+	    {{if .Params.writers }}
+	    	{{ range $index , $writer := .Params.writers }}
 		    <div class="centered author" style="max-width:620px;margin:20px auto;">
 		    	<hr/>
-		    	<h2>陳鴻磊<p style="float:right;">contact@gmail.com</p></h2>
+		    	<h2>{{ $writer.name }}<p style="float:right;">{{ $writer.email }}</p></h2>
 
 		    	<p>出生於彰化。 半路逃跑的醫生，牛津大學醫學史博士，除了寫只能放在圖書館的論文之外，平時喜歡寫文章、寫歌、四處遊蕩。 目前任教於香港大學醫學倫理及人文學部。</p>
 		    	<hr/>
 		    </div>
+		    {{ end }}   
+	    {{ end }}    
 
-		    {{ partial "related.html" . }}
-	  	</div>
+	    {{ partial "related.html" . }}
+  	</div>
 	  
 {{ partial "choice.html" . }}
 {{ partial "footer.html" . }}
