@@ -5,9 +5,9 @@
 	  <div class="ui text container" style="max-width: 780px!important;padding-top:2em;">
 	  	<div class="article-header">
 	  		<h2 class="article-category" >
-			    {{ if .Params.categories }}
-			      {{ range $index , $category := .Params.categories }}
-			        <a href="{{ $baseurl }}categories/{{ . | urlize }}">{{ $category }}</a>
+			    {{ if .Params.hugocategories }}
+			      {{ range $index , $category := .Params.hugocategories }}
+			        <a href="{{ $baseurl }}HugoCategories/{{ . | urlize }}">{{ $category }}</a>
 			      {{ end }}
 			    {{ end }}
 	  		</h2>
@@ -52,8 +52,8 @@
 		    	{{ end }}
         {{ end }}
 
-		    {{if .Params.tags }}
-		      {{ range $index , $tag := .Params.tags }}
+		    {{if .Params.hugotags }}
+		      {{ range $index , $tag := .Params.hugotags }}
 		        <a href="{{ $baseurl }}tags/{{ . | urlize }}">#{{ $tag }}</a>
 		      {{ end }}
 		    {{ end }}     

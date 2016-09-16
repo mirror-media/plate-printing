@@ -264,3 +264,78 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+
+  .first-menu {
+    border: none; 
+    box-shadow: none; 
+    margin:0; 
+    display:block !important; 
+    height:70px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff !important;
+  }
+
+  .second-menu {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff;
+  }
+
+  .second-menu .line {
+    display: block;
+    width: 720px;
+    height: 2px;
+    border: solid 1px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+  }
+
+  .second-menu hr {
+    max-width: 620px;
+    border: 0;
+    height: 1px;
+    background: rgba(34,36,38,.15);
+  } 
+
+
+  .active.indicator{
+    display: block !important;
+  }
+
+  .tablet .logo.centered {
+    pointer-events: none;
+    position:fixed; 
+    top:22px; 
+    width:100%; 
+    text-align:center;
+  }
+
+
+
+  .tablet .header.item {
+    font-family: SourceHanSansTWHK-Normal;
+    font-size: 17px;
+    letter-spacing: 1.6px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .tablet .main.menu {
+    margin-top:0px;
+  }
+
+  .tablet .main.menu .item {
+    cursor: pointer; cursor: hand;
+    padding: 0 15px 0 15px !important;
+  }
+
+  .tablet .searchbar {
+    font-family: SourceHanSansTWHK;
+    font-size: 75px;
+    font-weight: 500;
+    letter-spacing: 11.2px;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.1);
+  }

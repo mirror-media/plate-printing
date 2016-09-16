@@ -49,7 +49,21 @@ $(document)
       });
     }
     updateProgress();
-    $(window).scroll(updateProgress);
+
+    $(window).scroll(function(){
+      updateProgress();
+
+      // toggle logo when scroll
+      if($(document).scrollTop() > 140){
+        $('.logo.centered').css('display','none');
+        $('.logo.item').css('display','flex');
+        $('.sharing.item').css('display','flex');
+      }else{
+        $('.logo.centered').css('display','block');
+        $('.logo.item').css('display','none');
+        $('.sharing.item').css('display','none');
+      }
+    });
 
     // fix main menu to page on passing
     $('.main.menu').visibility({
@@ -98,6 +112,14 @@ $(document)
       $(this).parent('.ui.sidebar')
         .sidebar('toggle')
       ;
+    });
+
+    $('.openSearchbar').click(function() {
+      $('.second-menu').css('display','block');
+
+    });
+    $('.closeSearchbar').click(function() {
+      $('.second-menu').css('display','none');
     });
 
     // silent debug messages

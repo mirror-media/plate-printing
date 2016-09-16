@@ -4,7 +4,7 @@
   <!-- Standard Meta -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <!-- Site Properties -->
 	{{ if eq .URL "/" }}
 	<title>{{ .Title }}</title>
@@ -110,19 +110,19 @@
 	        </div>
 	      </div>
 	    </div>
- 		</div>
- 		<div class="ui center aligned page grid" style="margin-bottom:0.2em;">
- 			<div class="sixteen wide column" style="width:40%;">
- 				<p style="color:rgba(0, 0, 0, 0.5);line-height:13px;font-size: 17px;margin-bottom:0;letter-spacing: 1.1px;">訂閱鏡週刊</p>
- 				<div class="line"></div>
+			</div>
+			<div class="ui center aligned page grid" style="margin-bottom:0.2em;">
+				<div class="sixteen wide column" style="width:40%;">
+					<p style="color:rgba(0, 0, 0, 0.5);line-height:13px;font-size: 17px;margin-bottom:0;letter-spacing: 1.1px;">訂閱鏡週刊</p>
+					<div class="line"></div>
 	 			<div class="ui">
 	 			 	<a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="weibo icon"></i></a>
 			    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="facebook f icon"></i></a>
 			    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="wechat icon"></i></a>
 			    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="instagram icon"></i></a>
 	 			</div>
- 			</div>
- 		</div>
+				</div>
+			</div>
 	</div>
   <div class="ui gradient-transparent-vertical backdrop left sidebar vertical menu" style="">
     <a class="item">
@@ -193,31 +193,52 @@
 			</div>
 
 			<!-- Tablet -->
-		  <div class="tablet only sixteen wide column">
-		    <div class="ui borderless main menu" style="border: none; box-shadow: none; margin:0; display:block !important;">
-			    <div class="ui text container" style="max-width: 1024px!important;">
-			      <div href="#" class="header item">
-			        <img class="logo small" src="/img/logo.png" style=" width:117px; ">
+		  <div class="tablet only sixteen wide column" >
+		    <div class="ui borderless main menu first-menu" style="box-shadow:none;">
+			    <div class="ui text container" style="max-width: 1024px!important; height:70px; margin-left:0px !important; margin-right:0px !important; width:100%;">
+			      <div class="header item openSidebar" data-direction="left" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important;">
+			        <img src="/img/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>
-			      <a href="#" class="item" style="color:#B6B6B6;">鐘錶</a>
-			      <a href="#" class="item" style="color:#B6B6B6;">娛樂</a>
-			      <a href="#" class="item" style="color:#B6B6B6;">美食旅遊</a>
-			      <a href="#" class="item" style="color:#B6B6B6;">互動數據</a>
-			      <a href="#" class="item" style="color:#B6B6B6;">動漫</a>
+			      <div class="item" style="padding-left:0px !important;">
+			      	<div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:70px; line-height:70px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">人物與新聞</div>
+			      </div>
 			      <div class="right menu">
-					    <div class="item">
-					      <div class="ui transparent icon input">
-								  <input type="text">
-								  <i class="search icon"></i>
-								</div>
+					    <div class="item logo" style="display:none;">
+					      <img src="/img/icon/logo.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    </div>
+					    <div class="item openSearchbar">
+					      <img src="/img/icon/search.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    </div>
+					    <div class="item closeSearchbar" style="display:none;">
+					      <img src="/img/icon/blue.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    </div>
+					    <div class="item fontsize">
+					      <img src="/img/icon/fontsize-double.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    </div>
+					    <div class="item sharing" style="display:none;">
+					      <img src="/img/icon/sharing-v-2.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
 					    </div>
 				    </div>
 			    </div>
+
+			    <div class="logo centered">
+			    	<img src="/img/icon/v-2.png" style="width:96px; height:30px;"/>
+			    </div>
+
+				  <div id="second" class="second-menu" style="display:none; height:230px; line-height:230px;">
+				  	<div class="transparent line"></div>
+
+			      <div class="ui transparent input searchbar" style="max-width:100%;padding:60px;">
+						  <input type="text" style="text-align:right;" placeholder="搜尋">
+						</div>
+				  </div>
+
 					<div class="ui container bottom attached blue progress indicator" style="width:100%;">
 				    <div class="bar"></div>
 				  </div>
+
 			  </div>
-			  <div class="ui segment"><a href="#" class="openSidebar" data-direction="left">tablet</a></div>
+
 		  </div>
 
 		  <!-- Mobile -->
