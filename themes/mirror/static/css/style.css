@@ -1010,7 +1010,7 @@ div.colorBlock.choice {
   color: rgba(0, 0, 0, 0.1);
 }
 
-/* icon */
+/* icon & Sharing */
 
 .nav .item img {
    width:24px !important; 
@@ -1018,11 +1018,20 @@ div.colorBlock.choice {
    vertical-align: bottom;
 }
 
+.article-sharing .sharing-item {
+  display: inline-block;
+  margin-right: 55px;
+}
+
+
 /* Mobile */
 
 @media only screen and (max-width: 767px) {
     .mobile-hide{
         display: none !important;
+    }
+    div.ui.text.container.article-header {
+      padding-top: 10px;
     }
     .category-button {
       margin:0 auto;
@@ -1124,6 +1133,9 @@ div.colorBlock.choice {
       height: auto;
       padding-bottom: 10px;
     }
+    .article-sharing .sharing-item {
+      margin-right: 35px;
+    }
 }
 
 /* Tablet */
@@ -1212,7 +1224,7 @@ div.colorBlock.choice {
 /* Computer */
 
 @media only screen and (min-width: 992px) {
-    .small-hide{
+    .computer-hide{
       display: none !important;
     }
     .article-header {
