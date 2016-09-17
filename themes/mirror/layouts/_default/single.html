@@ -5,8 +5,8 @@
 	  <div class="ui text container article-header">
 	  	<div class="article-meta">
 	  		<h2 class="article-category" >
-			    {{ if .Params.categories.name }}
-			        <a href="{{ $baseurl }}HugoCategories/{{ .Params.categories.name }}">{{ .Params.categories.name }}</a>
+			    {{ if .Params.categories }}
+			        <a href="/category/{{ .Params.categories.name }}">{{ .Params.categories.title }}</a>
 			    {{ end }}
 	  		</h2>
 	  		<p class="article-date">{{if .Date }}{{ .Date.Format "2006.01.02" }}{{ end }}</p>

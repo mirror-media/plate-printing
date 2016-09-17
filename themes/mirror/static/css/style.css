@@ -19,6 +19,14 @@ body {
     background-color: #F5F5F5;
     font-family: Noto Sans TC, Noto Sans, PingFang TC, Apple LiGothic Medium, Roboto, Microsoft JhengHei, Lucida Grande, Lucida Sans Unicode, sans-serif;
 }
+
+body.pushable {
+  background-color: #F5F5F5 !important;
+}
+
+body.pushable .pusher {
+  background-color: #F5F5F5 !important;
+}
 .main.container {
     margin-top: 2em;
 }
@@ -387,8 +395,7 @@ li:before {
   font-size: 15px;
   line-height: 1.3;
   letter-spacing: 1px;
-  color: rgba(0, 0, 0, 0.7);
-}
+  color: rgba(0, 0, 0, 0.7);}
 
 .choice-meta .date {
   display: inline-block;
@@ -432,12 +439,15 @@ li:before {
   box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
-.choice-content p {
+.choice-content .brief {
   font-family: SourceHanSansTWHK-Normal;
   font-size: 15px;
   line-height: 1.4;
   letter-spacing: 0.9px;
   color: rgba(0, 0, 0, 0.7);
+  height: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .column-choice-img {
@@ -467,7 +477,7 @@ li:before {
   margin-bottom: 0px;
 }
 
-.column-choice-content p {
+.column-choice-content .brief {
   font-family: SourceHanSansTWHK-Normal;
   font-size: 15px;
   line-height: 1.4;
@@ -620,6 +630,10 @@ article img {
   padding-right: 10px;
 }
 
+.ui.menu a.item:hover{
+  background: transparent !important;
+}
+
 .item h2 {
   display:inline-block; 
   letter-spacing: 1.9px;
@@ -749,6 +763,7 @@ div.colorBlock.choice {
 /* Categories Style */
 
 .category-button {
+  display: block;
   width: 140px;
   height: 40px;
   background-color: #ffffff;
@@ -933,10 +948,20 @@ div.colorBlock.choice {
     .mobile-hide{
         display: none !important;
     }
+    .category-button {
+      margin:0 auto;
+    }
+    .choice-block {
+      margin: 0 auto;
+      width: 300px;
+    }
+    .column-choice-content {
+      height: auto;
+      padding-bottom: 10px;
+    }
 }
 
 /* Tablet */
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .tablet-hide{
       display: none !important;
@@ -975,6 +1000,30 @@ div.colorBlock.choice {
     }
     .ui.text.container.footer {
       max-width: 700px!important;
+    }
+
+    .ui.three.column.stackable.grid .column {
+      margin: 0 auto;
+      width: 700px;
+    }
+    .choice-block {
+      margin: 0 auto;
+      width: 700px;
+      padding-bottom: 2px;
+      padding-right: 2px;
+      overflow: hidden;
+    }
+    .column-choice-img {
+      position: absolute;
+      background-size: cover;
+      left: 0;
+      top: 0;
+      height: 180px;
+    }
+    .column-choice-content {
+      float: right;
+      height: 180px;
+      width: 380px;
     }
 }
 
