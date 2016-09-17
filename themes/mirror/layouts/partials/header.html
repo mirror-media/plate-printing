@@ -1,27 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <!-- Site Properties -->
+	<!-- Standard Meta -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- Site Properties -->
 	{{ if eq .URL "/" }}
 	<title>{{ .Title }}</title>
 	<meta property='og:title' content="{{ .Title }}">
 	<meta property="og:type" content="website">
 	{{ else }}
 	<title>{{ .Title }} - {{ .Site.Title }}</title>
-	<meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}">
-	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="鏡週刊" />
+	<meta property="og:locale" content="zh_TW" />    
+	<meta property="og:type" content="article" />
+	<meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}" />
+	<meta property="og:description" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content=""/>
+  
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@[TWITTER_ACCOUNT]" />
+	<meta name="twitter:title" content="{{ .Title }}">
+	<meta name="twitter:description" content="">
+	<meta name="twitter:image" content="">
+	<script type="application/ld+json">
+		{
+		  "@context": "http://schema.org",
+		  "@type": "NewsArticle",
+		  "headline": "{{ .Title }}",
+		  "url": "http://www.mm.mg/news/{{ .Slug }}",
+		  "thumbnailUrl": "",
+		  "dateCreated": "{{ .Params.publishedDate }}",
+		  "articleSection": "{{if .Params.sections }}{{ range $section := first 1 .Params.sections }}{{ $section.title }}{{ end }}{{ end }}",
+		  "creator": "",
+		  "keywords": [""]
+		}
+	</script>   
 	{{ end }}
 
-	<link rel="stylesheet" type="text/css" href="/css/semantic.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ .Site.Params.cssBaseUrl }}/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ .Site.Params.cssBaseUrl }}/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="/js/semantic.min.js"></script>
-	<script src="/js/article.js"></script>
-	<script src="/js/jquery-scrollLock.min.js"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/semantic.min.js"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/article.js"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/jquery-scrollLock.min.js"></script>
 
 	{{ template "_internal/google_analytics.html" . }}
 
@@ -75,8 +99,8 @@
 		</div>
   	<div class="ui borderless vertical menu" style="margin-left:40px; margin-top:70px;background: transparent;border: none;box-shadow: none;">
     {{ range $section := $.Site.Data.sections._items }}
-		      {{ if $.Params.section }}
-			      {{ range first 1 $.Params.section }}
+		      {{ if $.Params.sections }}
+			      {{ range first 1 $.Params.sections }}
 			      	{{ if eq $section._id ._id }}
 			      		<a href="/section/{{ $section.name | urlize }}" class="item" style="color:#FFF;margin-bottom:30px; font-weight:bold !important;">
 				      		{{ $section.title }}
@@ -96,13 +120,13 @@
   		<div style="font-family: SourceHanSansTWHK-Normal;font-size: 17px;letter-spacing: 1.1px;color: rgba(0, 0, 0, 0.5);">訂閱鏡週刊</div>
   		<div style="width: 195px;height: 2px;border: solid 1px rgba(0, 0, 0, 0.5); margin: 10px 0;"></div>
  			<div class="ui" style="line-height:40px;">
- 			 	<a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="/img/icon/line.png" style="width:56px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="/img/icon/weibo.png" style="width:29px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="/img/icon/facebook.png" style="width:25px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="/img/icon/wechat.png" style="width:29px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="/img/icon/instagram.png" style="width:25px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="/img/icon/feed.png" style="width:25px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="/img/icon/mail.png" style="width:26px;height:25px;"/></a>
+ 			 	<a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px;height:25px;"/></a>
+		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px;height:25px;"/></a>
+		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px;height:25px;"/></a>
+		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px;height:25px;"/></a>
+		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram.png" style="width:25px;height:25px;"/></a>
+		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed.png" style="width:25px;height:25px;"/></a>
+		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail.png" style="width:26px;height:25px;"/></a>
 
  			</div>
   	</div>
@@ -120,7 +144,7 @@
 				<div class="ui borderless menu" style="border: none; box-shadow: none; margin:0;">
 			    <div class="ui text container" style="max-width: 1024px!important;">
 			      <a href="/" class="header item">
-			        <img class="logo small" src="/img/logo.png" style=" width:117px; ">
+			        <img class="logo small" src="{{ .Site.Params.imgBaseUrl }}/logo.png" style=" width:117px; ">
 			      </a>
 			    {{ range $section := $.Site.Data.sections._items }}
 	        	<a href="/section/{{ $section.name }}" class="item" style="color:#B6B6B6;">{{ $section.title }}</a>
@@ -140,8 +164,8 @@
 					<!-- Normal Menu  -->
 			    <div class="ui text container " style="max-width: 1024px!important;height:40px;">
 			    	
-			      {{if .Params.section }}
-				      {{ range $section := first 1 .Params.section }}
+			      {{if .Params.sections }}
+				      {{ range $section := first 1 .Params.sections }}
 					      <a href="/section/{{.name | urlize}}" class="header item openSidebar" style="color:#fff; font-size:1.2em;" data-direction="top">
 					      	{{ $section.title }}
 					      	<div class="oval" style="margin-right:-10px;"></div>
@@ -166,32 +190,59 @@
 		    <div class="ui borderless main menu sticky-menu first-menu" style="max-width: 100% !important;display:block !important; ">
 			    <div class="ui text container" style="max-width: 100%!important; height:60px; width:100%;">
 			      <div class="header item openSidebar" data-direction="top" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important;">
-			        <img src="/img/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
+			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>
 			      <div class="item" style="padding-left:0px !important;">
 			      	<div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:60px; line-height:60px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
-				      {{if .Params.section }}
-					      {{ range first 1 .Params.section }}
+				      {{if .Params.sections }}
+					      {{ range first 1 .Params.sections }}
 						      {{ .title }}
 					      {{ end }}
 				      {{ end }}
 			      	</div>
 			      </div>
-			      <div class="right menu">
+			      <div class="right menu nav">
 					    <div class="item logo" style="display:none;">
-					      <a href="/"><img src="/img/icon/logo.png" style=" width:24px; height:24px; vertical-align: bottom;"/></a>
+					      <a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/logo.png"/></a>
 					    </div>
 					    <div class="item openSearchbar">
-					      <img src="/img/icon/search.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/search.png"/>
 					    </div>
 					    <div class="item closeSearchbar" style="display:none;">
-					      <img src="/img/icon/blue.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
 					    </div>
-					    <div class="item fontsize">
-					      <img src="/img/icon/fontsize-double.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    <div class="item chooseFontsize" style="display:none;">
+					    	<div class="ui three column grid" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px;">
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-larger.png" style="width:35px!important;height:35px;"/>
+					    		</div>
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-active.png" style="width:28px!important;height:28px;"/>
+					    		</div>
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin.png" style="width:20px!important;height:20px;"/>
+					    		</div>
+					    	</div>
 					    </div>
-					    <div class="item sharing" style="display:none;">
-					      <img src="/img/icon/sharing-v-2.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    <div class="item openFontsize">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/fontsize-double.png"/>
+					    </div>
+					    <div class="item closeFontsize" style="display:none;">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
+					    </div>
+					    <div class="item openSharing">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/sharing-v-2.png"/>
+					    </div>
+					    <div class="item closeSharing" style="display:none;">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
+					    </div>
+					    <div class="item chooseSharing" style="display:none;">
+					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
+					    		<a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
+					    	</div>
 					    </div>
 				    </div>
 			    </div>
@@ -199,7 +250,7 @@
 				  <div id="second" class="second-menu" style="display:none; height:230px; line-height:230px;">
 				  	<div class="transparent line"></div>
 
-			      <div class="ui transparent input searchbar" style="max-width:100%;padding:60px;">
+			      <div class="ui transparent input searchbar" style="max-width:100%;padding:60px;width: 100%;">
 						  <input type="text" style="text-align:right;" placeholder="搜尋">
 						</div>
 				  </div>
@@ -215,38 +266,65 @@
 		    <div class="ui borderless main menu first-menu" style="box-shadow:none;">
 			    <div class="ui text container" style="max-width: 1024px!important; height:70px; margin-left:0px !important; margin-right:0px !important; width:100%;">
 			      <div class="header item openSidebar" data-direction="left" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important;">
-			        <img src="/img/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
+			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>
 			      <div class="item" style="padding-left:0px !important;">
 			      	<div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:70px; line-height:70px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
-					      {{if .Params.section }}
-						      {{ range first 1 .Params.section }}
+					      {{if .Params.sections }}
+						      {{ range first 1 .Params.sections }}
 							      {{ .title }}
 						      {{ end }}
 					      {{ end }}
 			      	</div>
 			      </div>
-			      <div class="right menu">
+			      <div class="right menu nav">
 					    <div class="item logo" style="display:none;">
-					      <a href="/"><img src="/img/icon/logo.png" style=" width:24px; height:24px; vertical-align: bottom;"/></a>
+					      <a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/logo.png"/></a>
 					    </div>
 					    <div class="item openSearchbar">
-					      <img src="/img/icon/search.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/search.png"/>
 					    </div>
 					    <div class="item closeSearchbar" style="display:none;">
-					      <img src="/img/icon/blue.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
 					    </div>
-					    <div class="item fontsize">
-					      <img src="/img/icon/fontsize-double.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    <div class="item chooseFontsize" style="display:none;">
+					    	<div class="ui three column grid" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px;">
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-larger.png" style="width:35px!important;height:35px;"/>
+					    		</div>
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-active.png" style="width:28px!important;height:28px;"/>
+					    		</div>
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin.png" style="width:20px!important;height:20px;"/>
+					    		</div>
+					    	</div>
 					    </div>
-					    <div class="item sharing" style="display:none;">
-					      <img src="/img/icon/sharing-v-2.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					    <div class="item openFontsize">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/fontsize-double.png"/>
+					    </div>
+					    <div class="item closeFontsize" style="display:none;">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
+					    </div>
+					    <div class="item openSharing">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/sharing-v-2.png"/>
+					    </div>
+					    <div class="item closeSharing" style="display:none;">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
+					    </div>
+					    <div class="item chooseSharing" style="display:none;">
+					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
+					    		<a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
+					    	</div>
 					    </div>
 				    </div>
 			    </div>
 
 			    <div class="logo centered">
-			    	<img src="/img/icon/v-2.png" style="width:96px; height:30px;"/>
+			    	<img src="{{ .Site.Params.imgBaseUrl }}/icon/v-2.png" style="width:96px; height:30px;"/>
 			    </div>
 
 				  <div id="second" class="second-menu" style="display:none; height:230px; line-height:230px;">
@@ -269,29 +347,29 @@
 		    <div class="ui borderless main menu first-menu" style="box-shadow:none;">
 			    <div class="ui text container" style="max-width: 1024px!important; height:60px; margin-left:0px !important; margin-right:0px !important; width:100%;">
 			      <div class="header item openSidebar" data-direction="left" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important;">
-			        <img src="/img/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">
+			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">
 			      </div>
-			      <div class="right menu">
+			      <div class="right menu nav">
 					    <div class="item logo" style="display:none;">
-					      <img src="/img/icon/logo.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/logo.png"/>
 					    </div>
 					    <div class="item openSearchbar">
-					      <img src="/img/icon/search.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/search.png"/>
 					    </div>
 					    <div class="item closeSearchbar" style="display:none;">
-					      <img src="/img/icon/blue.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
 					    </div>
 					    <div class="item fontsize">
-					      <img src="/img/icon/fontsize-double.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/fontsize-double.png"/>
 					    </div>
 					    <div class="item sharing" style="display:none;">
-					      <img src="/img/icon/sharing-v-2.png" style=" width:24px; height:24px; vertical-align: bottom;"/>
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/sharing-v-2.png"/>
 					    </div>
 				    </div>
 			    </div>
 
 			    <div class="logo centered">
-			    	<img src="/img/icon/v-2.png" style="width:96px; height:30px;"/>
+			    	<img src="{{ .Site.Params.imgBaseUrl }}/icon/v-2.png" style="width:96px; height:30px;"/>
 			    </div>
 
 				  <div id="second" class="second-menu" style="display:none; height:230px; line-height:230px;">

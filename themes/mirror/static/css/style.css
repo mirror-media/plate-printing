@@ -761,6 +761,32 @@ div.colorBlock.choice {
   padding-right: 0 !important;
 }
 
+/* Menu */
+
+.chooseFontsize {
+  width:200px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-left:solid 1px rgba(0, 0, 0, 0.15);
+  border-right:solid 1px rgba(0, 0, 0, 0.15);
+}
+
+.computer .main.menu .chooseSharing.item,
+.tablet .main.menu .chooseSharing.item {
+  width:265px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-left:solid 1px rgba(0, 0, 0, 0.15);
+  border-right:solid 1px rgba(0, 0, 0, 0.15);
+  padding: 0 !important;
+}
+
+/* Related Style */
+
+.related {
+  max-width:620px;
+  margin:2em auto;
+  position:relative;
+}
+
 /* Categories Style */
 
 .category-button {
@@ -922,6 +948,29 @@ div.colorBlock.choice {
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff !important;
 }
 
+.mobile .first-menu .second-menu {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff;
+}
+
+.mobile .first-menu .second-menu .line {
+  display: block;
+  width: 720px;
+  height: 2px;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  margin: 0 auto;
+}
+
+.mobile .second-menu hr {
+  max-width: 620px;
+  border: 0;
+  height: 1px;
+  background: rgba(34,36,38,.15);
+} 
+
+
 .mobile .main.menu .item {
   cursor: pointer; cursor: hand;
   padding: 0 10px 0 10px !important;
@@ -941,6 +990,23 @@ div.colorBlock.choice {
   top:15px; 
   width:100%; 
   text-align:center;
+}
+
+.mobile .searchbar {
+  font-family: SourceHanSansTWHK;
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+/* icon */
+
+.nav .item img {
+   width:24px !important; 
+   height:24px; 
+   vertical-align: bottom;
 }
 
 /* Mobile */
@@ -977,7 +1043,6 @@ div.colorBlock.choice {
     }
 
     .related-img {
-      background: url('/img/related-image.jpg') no-repeat center center;
       height: 60px;
       background-size: cover;
       width: 60px;

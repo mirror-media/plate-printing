@@ -121,12 +121,40 @@ $(document)
       ;
     });
 
+    /* Search */
     $('.openSearchbar').click(function() {
       $('.second-menu').css('display','block');
-
+      $('.openSearchbar').css('display','none');
+      $('.closeSearchbar').css('display','flex');
     });
     $('.closeSearchbar').click(function() {
       $('.second-menu').css('display','none');
+      $('.openSearchbar').css('display','flex');
+      $('.closeSearchbar').css('display','none');
+    });
+
+    /* Font Size */
+    $('.openFontsize').click(function() {
+      $('.openFontsize').css('display','none');
+      $('.closeFontsize').css('display','flex');
+      $('.chooseFontsize').css('display','flex');
+    });
+    $('.closeFontsize').click(function() {
+      $('.openFontsize').css('display','flex');
+      $('.closeFontsize').css('display','none');
+      $('.chooseFontsize').css('display','none');
+    });
+
+    /* Sharing */
+    $('.openSharing').click(function() {
+      $('.openSharing').css('display','none');
+      $('.closeSharing').css('display','flex');
+      $('.chooseSharing').css('display','flex');
+    });
+    $('.closeSharing').click(function() {
+      $('.openSharing').css('display','flex');
+      $('.closeSharing').css('display','none');
+      $('.chooseSharing').css('display','none');
     });
 
     // silent debug messages

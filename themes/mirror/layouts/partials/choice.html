@@ -25,8 +25,8 @@
 	  	<div style="margin: 16px; line-height:45px; vertical-align:middle; padding-left: 1em !important;">
 				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>編輯精選</h2>
 	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
-		      {{if .Params.section }}
-			      {{ range first 1 .Params.section }}
+		      {{if .Params.sections }}
+			      {{ range first 1 .Params.sections }}
 				      {{ .title }}
 			      {{ end }}
 		      {{ end }}
@@ -45,9 +45,9 @@
 					<!-- First 3 -->
 					{{ if lt $idx 3 }}
 						<div class="choice-block">
-							<div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }} ') no-repeat center center; background-size:cover;" {{ end }}></div>
+							<a href="/news/{{$choice.slug}}"><div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }} ') no-repeat center center; background-size:cover;" {{ end }}></div></a>
 							<div class="choice-cat {{ if mod $idx 2 }}  {{ else }} right {{ end }}">
-								{{ range first 1 .section }}
+								{{ range first 1 $choice.sections }}
 									{{ $id := ._id }}
 							    {{ range $section := $.Site.Data.sections._items }}
 							    	{{ if eq $section._id $id }}
@@ -58,7 +58,7 @@
 							</div>
 
 							<div class="choice-content {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
-								<h2>{{ $choice.title }}</h2>
+								<a href="/news/{{$choice.slug}}"><h2>{{ $choice.title }}</h2></a>
 								<div class="line"></div>
 								<div class="brief">
 									{{ if $choice.brief.html }}	
@@ -105,9 +105,9 @@
 					{{ if ge $idx 3}}
 						<div class="column">
 							<div class="choice-block">
-								<div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
+								<a href="/news/{{$choice.slug}}"><div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
 									<div class="choice-cat">
-										{{ range first 1 .section }}
+										{{ range first 1 $choice.sections }}
 											{{ $id := ._id }}
 									    {{ range $section := $.Site.Data.sections._items }}
 									    	{{ if eq $section._id $id }}
@@ -116,9 +116,9 @@
 									    {{ end }}
 									  {{ end }}
 									</div>
-								</div>
+								</div></a>
 								<div class="column-choice-content">
-									<h2 style="text-align:center;">{{ $choice.title }}</h2>
+									<a href="/news/{{$choice.slug}}"><h2 style="text-align:center;">{{ $choice.title }}</h2></a>
 									<div class="line mobile-hide"></div>
 									<div class="brief mobile-hide">
 										{{ if $choice.brief.html }}	
@@ -162,8 +162,8 @@
 	      </div>
 	      <div class="ui eight column doubling grid">
 
-		      {{if .Params.section }}
-			      {{ range $section := first 1 .Params.section }}
+		      {{if .Params.sections }}
+			      {{ range $section := first 1 .Params.sections }}
 
 					    {{ range $.Site.Data.sections._items }}
 					    	{{ if eq $section._id ._id }}
