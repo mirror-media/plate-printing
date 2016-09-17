@@ -27,7 +27,7 @@
 	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 		      {{if .Params.section }}
 			      {{ range first 1 .Params.section }}
-				      {{ .name }}
+				      {{ .title }}
 			      {{ end }}
 		      {{ end }}
 	      </div>
@@ -45,7 +45,7 @@
 					<!-- First 3 -->
 					{{ if lt $idx 3 }}
 						<div class="choice-block">
-							<div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;"></div>
+							<div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }} ') no-repeat center center; background-size:cover;" {{ end }}></div>
 							<div class="choice-cat {{ if mod $idx 2 }}  {{ else }} right {{ end }}">
 								{{ range first 1 .section }}
 									{{ $id := ._id }}
@@ -56,11 +56,7 @@
 							    {{ end }}
 							  {{ end }}
 							</div>
-							<div class="choice-meta {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
-								<div class="author">文｜何榮幸、賴千尋（特約）  攝影｜吳逸驊</div>
-								<div class="separator"></div>
-								<div class="date">2016.08.19</div>
-							</div>
+
 							<div class="choice-content {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
 								<h2>{{ $choice.title }}</h2>
 								<div class="line"></div>
@@ -70,6 +66,29 @@
 									{{ end }}
 								</div>
 							</div>
+
+							<div class="choice-meta {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
+								<div class="author">
+							    {{if $choice.writers }}
+							    	{{ if ge (len $choice.writers) 1 }}
+								  		文｜	
+							    	{{ end }}
+							    	{{ range $index , $writer := $choice.writers }}
+							    		{{ $writer.name }}
+							    	{{ end }}
+							    {{ end }}
+							    {{if $choice.photographers }}
+							    	{{ if ge (len $choice.photographers) 1 }}
+								  		攝影｜	
+							    	{{ end }}
+							    	{{ range $index , $photographer := $choice.photographers }}
+							    		{{ $photographer.name }}
+							    	{{ end }}
+							    {{ end }}
+							   </div>
+								<div class="separator"></div>
+								<div class="date">{{ dateFormat "2006.01.02" $choice.publishedDate }}</div>
+							</div>
 						</div>
 					{{ end }}
 
@@ -78,70 +97,56 @@
 		{{ end }}
 
 		<div class="ui three column stackable grid">
-				<div class="column">
-					<div class="choice-block">
-						<div class="column-choice-img" style="background-image:url('/img/choice-image.jpg');">
-							<div class="choice-cat">小說連載</div>
-						</div>
-						<div class="column-choice-content">
-							<h2 style="text-align:center;">美智庫學者看兩岸關係台灣人準備好了嗎？</h2>
-							<div class="line mobile-hide"></div>
-							<div class="brief mobile-hide">
-								<p>
-									689 萬支持者引頸期盼下，新任總統蔡英文 5 月 20 日正式上任，她的就職演說將從中華民國領導人的高度，開啟國人對於台灣未來的共同想像，當中也包括全球關注的兩岸關係前景。...
-								</p>
+
+		{{ if $.Site.Data.choices }}
+			{{ range $.Site.Data.choices._items }}
+				{{ range $idx, $choice := .choices }}
+
+					{{ if ge $idx 3}}
+						<div class="column">
+							<div class="choice-block">
+								<div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
+									<div class="choice-cat">
+										{{ range first 1 .section }}
+											{{ $id := ._id }}
+									    {{ range $section := $.Site.Data.sections._items }}
+									    	{{ if eq $section._id $id }}
+									    		{{ $section.title }}
+									    	{{ end }}
+									    {{ end }}
+									  {{ end }}
+									</div>
+								</div>
+								<div class="column-choice-content">
+									<h2 style="text-align:center;">{{ $choice.title }}</h2>
+									<div class="line mobile-hide"></div>
+									<div class="brief mobile-hide">
+										{{ if $choice.brief.html }}	
+											{{ $choice.brief.html | safeHTML }}
+										{{ end }}
+									</div>
+								</div>
+								<div class="column-choice-meta">
+									<div class="author">
+										{{if $choice.writers }}
+								    	{{ if ge (len $choice.writers) 1 }}
+									  		文｜	
+								    	{{ end }}
+								    	{{ range $index , $writer := $choice.writers }}
+								    		{{ $writer.name }}
+								    	{{ end }}
+								    {{ end }}
+									</div>
+									<div class="separator"></div>
+									<div class="date">{{ dateFormat "2006.01.02" $choice.publishedDate }}</div>
+								</div>
 							</div>
 						</div>
-						<div class="column-choice-meta mobile-hide tablet-hide">
-							<div class="author">文｜楊芬瑩</div>
-							<div class="separator"></div>
-							<div class="date">2016.05.20</div>
-						</div>
-					</div>
-				</div>
-				<div class="column">
-					<div class="choice-block">
-						<div class="column-choice-img" style="background-image:url('/img/choice-image.jpg');">
-							<div class="choice-cat">小說連載</div>
-						</div>
-						<div class="column-choice-content">
-							<h2 style="text-align:center;">美智庫學者看兩岸關係台灣人準備好了嗎？</h2>
-							<div class="line mobile-hide"></div>
-							<div class="brief mobile-hide">
-								<p>
-									689 萬支持者引頸期盼下，新任總統蔡英文 5 月 20 日正式上任，她的就職演說將從中華民國領導人的高度，開啟國人對於台灣未來的共同想像，當中也包括全球關注的兩岸關係前景。...
-								</p>
-							</div>
-						</div>
-						<div class="column-choice-meta mobile-hide tablet-hide">
-							<div class="author">文｜楊芬瑩</div>
-							<div class="separator"></div>
-							<div class="date">2016.05.20</div>
-						</div>
-					</div>
-				</div>
-				<div class="column">
-					<div class="choice-block">
-						<div class="column-choice-img" style="background-image:url('/img/choice-image.jpg');">
-							<div class="choice-cat">小說連載</div>
-						</div>
-						<div class="column-choice-content">
-							<h2 style="text-align:center;">美智庫學者看兩岸關係台灣人準備好了嗎？</h2>
-							<div class="line mobile-hide"></div>
-							<div class="brief mobile-hide">
-								<p>
-									689 萬支持者引頸期盼下，新任總統蔡英文 5 月 20 日正式上任，她的就職演說將從中華民國領導人的高度，開啟國人對於台灣未來的共同想像，當中也包括全球關注的兩岸關係前景。...
-								</p>
-							</div>
-						</div>
-						<div class="column-choice-meta mobile-hide tablet-hide">
-							<div class="author">文｜楊芬瑩</div>
-							<div class="separator"></div>
-							<div class="date">2016.05.20</div>
-						</div>
-					</div>
-				</div>
-			</div>
+					{{ end }}
+					
+				{{ end }}
+			{{ end }}
+		{{ end }}
 		</div>
 
 	</div>

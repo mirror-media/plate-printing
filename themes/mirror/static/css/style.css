@@ -454,6 +454,7 @@ li:before {
   width: 300px;
   height: 180px;
   margin-bottom: 10px;
+  background-color: #FFF;
 }
 
 .column-choice-content {
@@ -951,9 +952,99 @@ div.colorBlock.choice {
     .category-button {
       margin:0 auto;
     }
+    .article-title {
+      font-size: 36px;
+      font-weight: bold;
+      line-height: 1.3;
+      letter-spacing: 1.5px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+
+    article p {
+      font-size: 17px;
+      line-height: 2;
+    }
+
+    img.heroimg {
+      background-color: transparent;
+      width: 100%;
+      max-width: 100% !important;
+    }
+    .related-block {
+      margin: 0 auto;
+      margin-bottom:10px;
+      width: 300px;
+    }
+
+    .related-img {
+      background: url('/img/related-image.jpg') no-repeat center center;
+      height: 60px;
+      background-size: cover;
+      width: 60px;
+      margin-top: 15px;
+    }
+
+    .related-content {
+      padding-left: 80px;
+      height: auto;
+      width: 300px;
+    }
+
+    .related-content h2 {
+      font-size:20px;
+      letter-spacing: 1px;
+      margin-bottom: 17px;
+    }
+
+    .related-content .line, .related-content .brief, .related-date {
+      display: none;
+    }
+
+    .related-content div.author {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .related-cat {
+      margin-right:17px;
+    }
+
     .choice-block {
       margin: 0 auto;
       width: 300px;
+      position: relative;
+      margin-bottom: 35px;
+    }
+    .choice-img {
+      width: 300px;
+      height: 180px;
+      position: initial;
+    }
+    .choice-cat.right {
+      right: auto;
+      left: 20px;
+      top: 20px;
+    }
+    .choice-meta, .choice-meta.left {
+      float: none;
+      top: auto;
+      position: static;
+      width: 300px;
+      text-align: center;
+    }
+    .choice-content, .choice-content.left{
+      float: none;
+      height: auto;
+      width: 300px;
+      margin-top: 5px;
+      position: initial;
+      padding: 15px;
+      margin-bottom: 5px;
+    }
+    .choice-content h2 {
+      font-size: 20px;
+    }
+    .choice-content .brief, .choice-content .line {
+      display: none;
     }
     .column-choice-content {
       height: auto;
@@ -1024,6 +1115,23 @@ div.colorBlock.choice {
       float: right;
       height: 180px;
       width: 380px;
+    }
+    .column-choice-content .line {
+      width: 380px;
+    }
+    .column-choice-content .brief {
+      -webkit-line-clamp: 3;
+      height: calc(15px*3*1.7);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .column-choice-meta {
+      float: right;
+      width: 700px;
+      text-align: right;
+      margin-top: 5px;
     }
 }
 
