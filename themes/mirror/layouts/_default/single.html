@@ -2,13 +2,11 @@
 {{ partial "header.html" . }}
 
 	  <!-- Article (Single) -->
-	  <div class="ui text container" style="max-width: 780px!important;padding-top:2em;">
-	  	<div class="article-header">
+	  <div class="ui text container article-header">
+	  	<div class="article-meta">
 	  		<h2 class="article-category" >
-			    {{ if .Params.hugocategories }}
-			      {{ range $index , $category := .Params.hugocategories }}
-			        <a href="{{ $baseurl }}HugoCategories/{{ . | urlize }}">{{ $category }}</a>
-			      {{ end }}
+			    {{ if .Params.categories.name }}
+			        <a href="{{ $baseurl }}HugoCategories/{{ .Params.categories.name }}">{{ .Params.categories.name }}</a>
 			    {{ end }}
 	  		</h2>
 	  		<p class="article-date">{{if .Date }}{{ .Date.Format "2006.01.02" }}{{ end }}</p>
@@ -41,39 +39,135 @@
 		  <div class="ui clearing divider"></div>
 		</div>
 
-		
-			
-		<div class="ui text container article" style="max-width: 780px!important;">
-			<article>
+		<div class="ui text container article-container">
 
-				{{if .Params.content }}
-					{{if .Params.content.html }}
-		    		{{ .Params.content.html | safeHTML }}
-		    	{{ end }}
-        {{ end }}
+			{{if .Params.heroimage.image }}
+				<img class="heroimg" src="{{ .Params.heroimage.image.url }}"/>
+			{{ end }}
 
-		    {{if .Params.hugotags }}
-		      {{ range $index , $tag := .Params.hugotags }}
-		        <a href="{{ $baseurl }}tags/{{ . | urlize }}">#{{ $tag }}</a>
-		      {{ end }}
-		    {{ end }}     
+			<div class="article-main">
+				
+				<article>
+					<!-- Brief -->
+					{{if .Params.brief }}
+						<div class="brief">
+							{{if .Params.brief.html }}
+				    		{{ .Params.brief.html | safeHTML }}
+				    	{{ end }}
+			    	</div>
+			    	<hr/>
+	        {{ end }}
+					
+					<!-- Content -->
+					{{if .Params.content }}
+						{{if .Params.content.html }}
+			    		{{ .Params.content.html | safeHTML }}
+			    	{{ end }}
+	        {{ end }}
+        </article>
+
+        <div class="tags">
+	        <img src="/img/icon/tag.png" style="width:30px; height:30px; vertical-align:middle;"/>
+			    {{if .Params.tags }}
+			    	{{ $len := len .Params.tags }}
+			    	{{ $len := sub $len 1 }}
+			      {{ range $index , $tag := .Params.tags }}<a href="{{ $baseurl }}tags/{{ $tag.name }}">{{ $tag.name }}</a>{{ if not (eq $index $len) }}、{{ end }}{{ end }}
+			    {{ end }}
+			  </div>
 
 		    <div style="width:10px;height:10px;"></div>
-	    </article>
 
-	    {{if .Params.writers }}
-	    	{{ range $index , $writer := .Params.writers }}
-		    <div class="centered author" style="max-width:620px;margin:20px auto;">
-		    	<hr/>
-		    	<h2 class="author-name">{{ $writer.name }}<p class="author-mail">{{if $writer.email }}{{ $writer.email }}{{ end }}</p></h2>
+		    {{if .Params.writers }}
+		    	{{ range $index , $writer := .Params.writers }}
+			    <div class="centered author" style="max-width:620px;margin:20px auto;">
+			    	<hr/>
+			    	<h2 class="author-name">{{ $writer.name }}<p class="author-mail">{{if $writer.email }}{{ $writer.email }}{{ end }}</p></h2>
 
-		    	<p class="author-bio">{{if $writer.bio }}{{ $writer.bio }}{{ end }}</p>
-		    	<hr/>
-		    </div>
-		    {{ end }}   
-	    {{ end }}    
+			    	<p class="author-bio">{{if $writer.bio }}{{ $writer.bio }}{{ end }}</p>
+			    	<hr/>
+			    </div>
+			    {{ end }}   
+		    {{ end }}    
 
-	    {{ partial "related.html" . }}
+		    {{ partial "related.html" . }}
+
+	    </div> <!-- article-main -->
+
+	    <div class="sidebar tablet-hide mobile-hide">
+
+	    	<div class="ad" style="width:300px;height:300px; background-color: #d8d8d8; text-align:center; line-height:300px;">Advertisement</div>
+
+	    	<!-- Choice and Latest -->
+	    	<div style="margin-top:35px;">
+	    		<div style="text-align:right;">
+	    			<h2 class="hot-topic">本週主打<div class="colorBlock hot"></div></h2>
+	    		</div>
+	    		<div class="blue-line" style="margin-bottom:20px;"></div>
+
+	    		<div class="block">
+	    			<div class="block-header" style="background-image:url('/img/block-image.jpg');">
+	    				<div class="block-cat">人物</div>
+	    				<div class="block-rank">1</div>
+	    			</div>
+	    			<div class="block-body" style="">
+	    				<p>林雨蒼／全民司改運動<br/>慢慢來比較快</p>
+	    			</div>
+	    		</div>
+
+	    		<div class="block">
+	    			<div class="block-header" style="background-image:url('/img/block-image.jpg');">
+	    				<div class="block-cat">文化</div>
+	    				<div class="block-rank">2</div>
+	    			</div>
+	    			<div class="block-body" >
+	    				<p>涂建豐／我就像盛開的櫻花，等待朝陽升起！—記登山者楊南郡離去的優美身影</p>
+	    			</div>
+	    		</div>
+
+	    		<div class="block">
+	    			<div class="block-header" style="background-image:url('/img/block-image.jpg');">
+	    				<div class="block-cat">影視活動</div>
+	    				<div class="block-rank">3</div>
+	    			</div>
+	    			<div class="block-body">
+	    				<p>後達賴喇嘛時代 / 籠罩在「西藏民主」上空的巨靈（上）</p>
+	    			</div>
+	    		</div>
+
+	    		<div class="block">
+	    			<div class="block-header" style="background-image:url('/img/block-image.jpg');">
+	    				<div class="block-cat">劇本創作</div>
+	    				<div class="block-rank">4</div>
+	    			</div>
+	    			<div class="block-body">
+	    				<p>羅冠聰／旺角衝突後，進步民主派的集體失語</p>
+	    			</div>
+	    		</div>
+
+	    		<div class="block">
+	    			<div class="block-header" style="background-image:url('/img/block-image.jpg');">
+	    				<div class="block-cat">說書人</div>
+	    				<div class="block-rank">5</div>
+	    			</div>
+	    			<div class="block-body">
+	    				<p>劉細良／黃之鋒組黨，香港要翻轉老人政治</p>
+	    			</div>
+	    		</div>
+	    	</div>
+
+	    	<div style="width: 300px;	background-color: #ffffff; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); padding:20px; margin-bottom:2px;">
+	    		<ul>
+	    			<li>毒品成癮是一種慢性病（下）人的意志力不會永遠滿檔<div class="cat-label"><div class="separator"></div><span >文化</span></div></li>
+	    			<li>開放政府，玩真的嗎？<div class="cat-label"><div class="separator"></div><span >文化</span></div></li>
+	    			<li>郭力昕／台灣紀錄影像的新高點─回顧2016「台北電影獎」的入圍作品<div class="cat-label"><div class="separator"></div><span >說書人</span></div></li>
+	    			<li>黃厚銘／Pokémon GO的遊戲機制與文化──一個思考新興科技風險的起點<div class="cat-label"><div class="separator"></div><span >直播</span></div></li>
+	    			<li>野島剛／天皇談話給日本人帶來的罪惡感<div class="cat-label"><div class="separator"></div><span >文化</span></div></li>
+	    		</ul>
+	    	</div>
+
+	    </div>
+
+
   	</div>
 	  
 {{ partial "choice.html" . }}

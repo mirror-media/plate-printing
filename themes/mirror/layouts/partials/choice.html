@@ -4,93 +4,202 @@
 
 		<!-- Computer -->
 	  <div class="computer only sixteen wide column">
-			<div class="gradient ui borderless menu" style="margin:1em auto; display:block !important; ">
-		    <div class="ui text container" style="max-width: 1024px!important;height:100px;">
-		      <div href="#" class="header item" style="padding-right:102px;">
-		      	<h2 class="colorTitle" style="color:#fff;"><div class="colorBlock" style="background:#fff;"></div>鏡精選</h2>
-		      </div>
-		      <a href="#" class="header item" style="color:#fff; font-size:20px; vertical-align: middle;">
-						<h2>人物與新聞</h2><div class="oval"></div>
-				  </a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">新聞</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">人物</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">財經</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">直播</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">文化</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">說書人</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">小說連載</h2></a>
-		    </div>
-		  </div>
+	  	<div class="ui text container article-container" style="margin-bottom:35px;">
+	  		<div class="article-main" style="text-align:center;">
+					<h2 class="hot-topic"><div class="colorBlock choice"></div>編輯精選<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+				</div>
+			</div>
 	  </div>
 
 	  <!-- Tablet -->
 	  <div class="tablet only sixteen wide column">
-			<div class="gradient ui borderless menu" style="margin:1em auto; display:block !important; ">
-		    <div class="ui text container" style="max-width: 1024px!important;height:100px;">
-		      <div href="#" class="header item" style="padding-right:102px;">
-		      	<h2 class="colorTitle" style="color:#fff;"><div class="colorBlock" style="background:#fff;"></div>鏡精選</h2>
-		      </div>
-		      <div class="right menu">
-			      <a href="#" class="header item" style="color:#fff; font-size:20px; vertical-align: middle;">
-							<h2>人物與新聞</h2><div class="oval"></div>
-					  </a>
-				  </div>
-		    </div>
-		  </div>	  	
+	  	<div class="ui text container article-container" style="margin-bottom:35px;">
+	  		<div class="article-main" style="text-align:center;">
+					<h2 class="hot-topic"><div class="colorBlock choice"></div>編輯精選<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+				</div>
+			</div>	
 	  </div>
 
 	  <!-- Mobile -->
 	  <div class="mobile only sixteen wide column">
 	  	<div style="margin: 16px; line-height:45px; vertical-align:middle;">
-				<h2 class="colorTitle" style="margin:0;"><div class="colorBlock"></div>鏡精選</h2>
-	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">人物與新聞</div>
+				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>編輯精選</h2>
+	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
+		      {{if .Params.section }}
+			      {{ range first 1 .Params.section }}
+				      {{ .name }}
+			      {{ end }}
+		      {{ end }}
+	      </div>
       </div>
 	  </div>
 
 	</div>
 
+	<div class="choice-main" style="margin:2em auto; position:relative;">
 
-	
-	<div class="ui text container article" style="max-width: 960px!important;">
-		<div class="ui card">
-		  <div class="content">
-		    <a class="header">Article</a>
-		    <div class="ui divider"></div>
-		    <div class="description">
-		      Kristy is an art director living in New York.
-		    </div>
-		  </div>
+		<div class="choice-block">
+			<div class="choice-img" style="background-image:url('/img/choice-image.jpg');"></div>
+			<div class="choice-cat">小說連載</div>
+			<div class="choice-meta">
+				<div class="author">文｜何榮幸、賴千尋（特約）  攝影｜吳逸驊</div>
+				<div class="separator"></div>
+				<div class="date">2016.08.19</div>
+			</div>
+			<div class="choice-content">
+				<h2>蔡英文新南向政策行不行？印度執政黨秘書長分析台商優勢</h2>
+				<div class="line"></div>
+				<p>
+					6月15日下午，攝氏40度以上高溫，我們走進全世界最大政黨──印度人民黨（Bharatiya Janata Party, BJP）秘書長馬達哈夫的辦公室。這場專訪準時進行，一點都不像外傳會遲到一小時...
+				</p>
+			</div>
 		</div>
 
-		<div class="ui card">
-		  <div class="content">
-		    <a class="header">Article</a>
-		    <div class="ui divider"></div>
-		    <div class="description">
-		      Kristy is an art director living in New York.
-		    </div>
-		  </div>
+		<div class="choice-block">
+			<div class="choice-img right" style="background-image:url('/img/choice-image.jpg');"></div>
+			<div class="choice-cat right">說書人</div>
+			<div class="choice-meta left">
+				<div class="author">文｜何榮幸、賴千尋（特約）  攝影｜吳逸驊</div>
+				<div class="separator"></div>
+				<div class="date">2016.08.19</div>
+			</div>
+			<div class="choice-content left">
+				<h2>林雨蒼／全民司改運動　慢慢來比較快</h2>
+				<div class="line"></div>
+				<p>
+					8月初，名嘴朱學恒於媒體專欄寫下《這樣的修法哪叫向毒品宣戰？》一文。朱認為，立委顧立雄有意推動的「施用毒品罪醫療前置化」其實是「毒品除罪化」，抨擊顧立雄妄想透過減輕刑度解決毒品犯罪問題。...
+				</p>
+			</div>
 		</div>
 
-		<div class="ui card">
-		  <div class="content">
-		    <a class="header">Article</a>
-		    <div class="ui divider"></div>
-		    <div class="description">
-		      Kristy is an art director living in New York.
-		    </div>
-		  </div>
+		<div class="choice-block">
+			<div class="choice-img" style="background-image:url('/img/choice-image.jpg');"></div>
+			<div class="choice-cat">人物</div>
+			<div class="choice-meta">
+				<div class="author">文｜何榮幸、賴千尋（特約）  攝影｜吳逸驊</div>
+				<div class="separator"></div>
+				<div class="date">2016.08.19</div>
+			</div>
+			<div class="choice-content">
+				<h2>星星上的小燈泡，照向通往理解的漫長歧路</h2>
+				<div class="line"></div>
+				<p>
+					8月初，名嘴朱學恒於媒體專欄寫下《這樣的修法哪叫向毒品宣戰？》一文。朱認為，立委顧立雄有意推動的「施用毒品罪醫療前置化」其實是「毒品除罪化」，抨擊顧立雄妄想透過減輕刑度解決毒品犯罪問題。...
+				</p>
+			</div>
 		</div>
+
+		<div class="ui grid">
+			<div class="computer only three column row">
+				<div class="column">
+					<div class="column-choice-img" style="background-image:url('/img/choice-image.jpg');">
+						<div class="choice-cat">小說連載</div>
+					</div>
+					<div class="column-choice-content">
+						<h2 style="text-align:center;">美智庫學者看兩岸關係台灣人準備好了嗎？</h2>
+						<div class="line"></div>
+						<p>
+							689 萬支持者引頸期盼下，新任總統蔡英文 5 月 20 日正式上任，她的就職演說將從中華民國領導人的高度，開啟國人對於台灣未來的共同想像，當中也包括全球關注的兩岸關係前景。...
+						</p>
+					</div>
+					<div class="column-choice-meta">
+						<div class="author">文｜楊芬瑩</div>
+						<div class="separator"></div>
+						<div class="date">2016.05.20</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="column-choice-img" style="background-image:url('/img/choice-image.jpg');">
+						<div class="choice-cat">人物</div>
+					</div>
+					<div class="column-choice-content">
+						<h2 style="text-align:center;">李根政／許厝分校該不該遷校？</h2>
+						<div class="line"></div>
+						<p>
+							台大公衛學院教授詹長權在行政院長林全前重砲抨擊民進黨，從中央到地方無能處理雲林橋頭國小許厝分校70多名學童遷校，以降低曝露石化汙染的問題，幾天之後，行政院火速作成遷校決策。
+						</p>
+					</div>
+					<div class="column-choice-meta">
+						<div class="author">文｜李根政</div>
+						<div class="separator"></div>
+						<div class="date">2016.08.28</div>
+					</div>
+				</div>
+				<div class="column">
+					<div class="column-choice-img" style="background-image:url('/img/choice-image.jpg');">
+						<div class="choice-cat">文化</div>
+					</div>
+					<div class="column-choice-content">
+						<h2 style="text-align:center;">創造對話空間唐鳳的奇幻之旅</h2>
+						<div class="line"></div>
+						<p>
+							35歲的唐鳳，即將成為行政院最年輕政務委員。她的網路奇才、自學歷程、變性改名⋯⋯在在成為外界矚目焦點。但她一路走來「創造對話空間」的努力，可能才是新政府最迫切需要的特質...
+						</p>
+					</div>
+					<div class="column-choice-meta">
+						<div class="author">文｜李雪莉</div>
+						<div class="separator"></div>
+						<div class="date">2016.08.25</div>
+					</div>
+				</div>
+			</div>
+			<div class="tablet mobile only sixteen wide column row">
+
+				<div class="column">
+					<div class="column-choice-img" style="background-image:url('/img/choice-image.jpg');">
+						<div class="choice-cat">小說連載</div>
+					</div>
+					<div class="column-choice-content">
+						<h2 style="text-align:center;">美智庫學者看兩岸關係台灣人準備好了嗎？</h2>
+						<div class="line"></div>
+						<p>
+							689 萬支持者引頸期盼下，新任總統蔡英文 5 月 20 日正式上任，她的就職演說將從中華民國領導人的高度，開啟國人對於台灣未來的共同想像，當中也包括全球關注的兩岸關係前景。...
+						</p>
+					</div>
+					<div class="column-choice-meta">
+						<div class="author">文｜楊芬瑩</div>
+						<div class="separator"></div>
+						<div class="date">2016.05.20</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
 	</div>
 
 	<div class="ui grid">
 
 	  <!-- Tablet -->
 	  <div class="tablet only mobile only sixteen wide column">
-	  	<div style="margin: 16px; line-height:45px; vertical-align:middle;">
-				<h2 class="colorTitle" style="margin:0;"><div class="colorBlock"></div>文章分類</h2>
-      </div>
+	  	<div class="ui divider" style="width:700px; margin:0 auto;"></div>
+	  	<div class="ui text container">
+	  		<div style="margin-top:35px;margin-bottom:20px; line-height:45px; vertical-align:middle; text-align:left;">
+					<h2 class="colorTitle"><div class="colorBlock"></div>文章分類</h2>
+	      </div>
+	      <div class="ui grid">
+	      	<div class="four column row">
+	      		<div class="column">
+	      			<div class="category-button">新聞</div>
+	      		</div>
+	      		<div class="column">
+	      			<div class="category-button">新聞</div>
+	      		</div>
+	      		<div class="column">
+	      			<div class="category-button">新聞</div>
+	      		</div>
+	      		<div class="column">
+	      			<div class="category-button">新聞</div>
+	      		</div>
+	      		<div class="column">
+	      			<div class="category-button">新聞</div>
+	      		</div>
+	      	</div>
+	      </div>
+			</div>
+	  	
 	  </div>
 
 	</div>
+
 </div>

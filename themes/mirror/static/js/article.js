@@ -50,6 +50,17 @@ $(document)
     }
     updateProgress();
 
+    // toggle logo when scroll
+    if($(document).scrollTop() > 140){
+      $('.logo.centered').css('display','none');
+      $('.logo.item').css('display','flex');
+      $('.sharing.item').css('display','flex');
+    }else{
+      $('.logo.centered').css('display','block');
+      $('.logo.item').css('display','none');
+      $('.sharing.item').css('display','none');
+    }
+
     $(window).scroll(function(){
       updateProgress();
 
@@ -77,14 +88,10 @@ $(document)
     });
 
     // lazy load images
-    $('article img').visibility({
+    $('.image').visibility({
       type: 'image',
-      // transition: 'vertical flip in',
-      // duration: 500
-      onTopPassed: function(calculations) {
-        max = getMax();
-        setWidth();
-      }
+      transition: 'vertical flip in',
+      duration: 500
     });
 
     // bind menu button
