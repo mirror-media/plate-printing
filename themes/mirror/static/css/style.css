@@ -1001,6 +1001,15 @@ div.colorBlock.choice {
   color: rgba(0, 0, 0, 0.1);
 }
 
+.mobile .fontsize {
+  font-family: SourceHanSansTWHK;
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.1);
+}
+
 /* icon */
 
 .nav .item img {

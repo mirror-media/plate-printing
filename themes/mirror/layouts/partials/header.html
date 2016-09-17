@@ -359,11 +359,17 @@
 					    <div class="item closeSearchbar" style="display:none;">
 					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
 					    </div>
-					    <div class="item fontsize">
+					    <div class="item openFontsize-mobile">
 					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/fontsize-double.png"/>
 					    </div>
-					    <div class="item sharing" style="display:none;">
+					    <div class="item closeFontsize-mobile" style="display:none;">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
+					    </div>
+					    <div class="item openSharing-mobile">
 					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/sharing-v-2.png"/>
+					    </div>
+					    <div class="item closeSharing-mobile" style="display:none;">
+					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/blue.png"/>
 					    </div>
 				    </div>
 			    </div>
@@ -375,8 +381,41 @@
 				  <div id="second" class="second-menu" style="display:none; height:230px; line-height:230px;">
 				  	<div class="transparent line"></div>
 
-			      <div class="ui transparent input searchbar" style="max-width:100%;padding:60px;">
+			      <div class="ui transparent input searchbar" style="max-width:100%;display:none;">
 						  <input type="text" style="text-align:right;" placeholder="搜尋">
+						</div>
+
+			      <div class="ui transparent input fontsize" style="max-width:100%;padding:60px;display:none;">
+					  	<div class="ui three column grid" style="width: 100%;margin: 0 auto; text-align: center; line-height:60px; text-align:center;">
+				    		<div class="row" style="padding-bottom:0px; height:60px;">
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size@2x.png" style="width:60px!important;height:60px;    vertical-align: text-bottom;"/>
+					    		</div>
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-active@2x.png" style="width:48px!important;height:48px;    vertical-align: text-bottom;"/>
+					    			<br/>
+					    		</div>
+					    		<div class="column">
+					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size@2x.png" style="width:35px!important;height:35px;    vertical-align: text-bottom;"/>
+					    		</div>
+					    	</div>
+					    	<div class="row" style="height:10px;padding:0px;">
+					    		<div class="column"></div>
+					    		<div class="column">
+					    			<div class="oval" style="background-color:#004ea2;margin-left: 0;"></div>
+					    		</div>
+					    		<div class="column"></div>
+					    	</div>
+				    	</div>
+						</div>
+
+			      <div class="ui transparent input sharing" style="max-width:100%;padding:60px;display:none;">
+					  	<div class="ui four column grid" style="width: 100%;margin: 0 auto; text-align: center; line-height:60px; text-align:center;">
+				    		<div class="column"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></div>
+				    		<div class="column"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></div>
+				    		<div class="column"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></div>
+				    		<div class="column"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></div>
+				    	</div>
 						</div>
 				  </div>
 

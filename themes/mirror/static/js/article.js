@@ -121,14 +121,27 @@ $(document)
       ;
     });
 
+    // Header Menu 
+
+    var current = null;
+
     /* Search */
     $('.openSearchbar').click(function() {
+      if(current !== null) {
+        current[0].css('display','none');
+        current[1].css('display','flex');
+        current[2].css('display','none');
+      }
       $('.second-menu').css('display','block');
+      $('.second-menu .searchbar').css('display','block');
+      current = [$('.second-menu .searchbar'), $('.openSearchbar'), $('.closeSearchbar')];
       $('.openSearchbar').css('display','none');
       $('.closeSearchbar').css('display','flex');
     });
     $('.closeSearchbar').click(function() {
       $('.second-menu').css('display','none');
+      $('.second-menu .searchbar').css('display','none');
+      current = null;
       $('.openSearchbar').css('display','flex');
       $('.closeSearchbar').css('display','none');
     });
@@ -145,6 +158,28 @@ $(document)
       $('.chooseFontsize').css('display','none');
     });
 
+    /* Font Size Mobile*/
+    $('.openFontsize-mobile').click(function() {
+      if(current !== null) {
+        current[0].css('display','none');
+        current[1].css('display','flex');
+        current[2].css('display','none');
+      }
+      $('.second-menu').css('display','block');
+      $('.second-menu .fontsize').css('display','flex');
+      current = [$('.second-menu .fontsize'), $('.openFontsize-mobile'), $('.closeFontsize-mobile')];
+      $('.openFontsize-mobile').css('display','none');
+      $('.closeFontsize-mobile').css('display','flex');
+      
+    });
+    $('.closeFontsize-mobile').click(function() {
+      $('.second-menu').css('display','none');
+      $('.second-menu .fontsize').css('display','none');
+      current = null;
+      $('.openFontsize-mobile').css('display','flex');
+      $('.closeFontsize-mobile').css('display','none');
+    });
+
     /* Sharing */
     $('.openSharing').click(function() {
       $('.openSharing').css('display','none');
@@ -155,6 +190,28 @@ $(document)
       $('.openSharing').css('display','flex');
       $('.closeSharing').css('display','none');
       $('.chooseSharing').css('display','none');
+    });
+
+    /* Sharing Mobile*/
+    $('.openSharing-mobile').click(function() {
+      if(current !== null) {
+        current[0].css('display','none');
+        current[1].css('display','flex');
+        current[2].css('display','none');
+      }
+      $('.second-menu').css('display','block');
+      $('.second-menu .sharing').css('display','flex');
+      current = [$('.second-menu .sharing'), $('.openSharing-mobile'), $('.closeSharing-mobile')];
+      $('.openSharing-mobile').css('display','none');
+      $('.closeSharing-mobile').css('display','flex');
+      
+    });
+    $('.closeSharing-mobile').click(function() {
+      $('.second-menu').css('display','none');
+      $('.second-menu .sharing').css('display','none');
+      current = null;
+      $('.openSharing-mobile').css('display','flex');
+      $('.closeSharing-mobile').css('display','none');
     });
 
     // silent debug messages
