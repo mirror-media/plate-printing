@@ -129,8 +129,8 @@ body.pushable .pusher {
   width:300px;
   height:100px; 
   margin-bottom: 5px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-color: #FFF;
+  background-size: cover;
 }
 
 .block-body {
@@ -467,7 +467,13 @@ li:before {
 
 .column-choice-content h2 {
   padding: 10px 10px 2px 10px;
-  margin-bottom: 0px;
+  margin-bottom:0;
+  font-family: SourceHanSansTWHK;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .column-choice-content .line {

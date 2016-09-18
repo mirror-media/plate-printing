@@ -1,59 +1,51 @@
 <div class="related">
 	<h2 class="colorTitle"><div class="colorBlock"></div>相關文章</h2>
 
-	<div class="related-block">
-		<div class="related-img" style="background: url('{{ .Site.Params.imgBaseUrl }}/related-image.jpg') no-repeat center center;"></div>
-		<div class="related-date">2016.08.19</div>
+	{{ if .Params.relateds }}
+		{{ range $related := .Params.relateds }}
+	<div class="related-block" style="">
+		<a href="/news/{{$related.slug}}"><div class="related-img" {{ if $related.heroImage.image.resizedTargets }} style="background:url('{{ $related.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }}></div></a>
+		<div class="related-date">{{ dateFormat "2006.01.02" $related.publishedDate }}</div>
 		<div class="related-content">
-			<h2>毒品成癮是一種慢性病（下）人的意志力不會永遠滿檔</h2>
+			<a href="/news/{{$related.slug}}"><h2>{{ $related.title }}</h2></a>
 			<div class="line"></div>
 			<div class="brief">
-				8月初，名嘴朱學恒於媒體專欄寫下《這樣的修法哪叫向毒品宣戰？》一文。朱認為，立委顧立雄有意推動的「施用毒品罪醫療前置化」其實是「毒品除罪化」，抨擊顧立雄妄想透過減輕刑度解決毒品犯罪問題。...
+				{{ if $related.brief }}
+					{{ substr ( plainify $related.brief.html ) 0 50 }}
+				{{else}}
+					{{ if $related.content.html }}
+						{{ substr ( plainify $related.content.html ) 0 50 }}
+						{{ if gt ( len ( plainify $related.content.html ) ) 50 }}...{{ end }}
+					{{ end }}
+				{{ end }}
 			</div>
 			<div class="author">
-				文｜王立柔、葉瑜娟、林韋萱、李雪莉<br/>
-				攝影｜余志偉、吳逸驊
+			    {{if $related.writers }}
+			    	{{ if ge (len $related.writers) 1 }}
+				  		文｜	
+			    	{{ end }}
+			    	{{ range $index , $writer := $related.writers }}
+			    		{{ $writer.name }}
+			    	{{ end }}
+			    {{ end }}
+			    {{if $related.photographers }}
+			    	<br/>
+			    	{{ if ge (len $related.photographers) 1 }}
+				  		攝影｜	
+			    	{{ end }}
+			    	{{ range $index , $photographer := $related.photographers }}
+			    		{{ $photographer.name }}
+			    	{{ end }}
+			    {{ end }}
 			</div>
 			<div class="related-cat">
-				文化
+				{{ range first 1 $related.sections }}
+					{{ .title }}
+			  {{ end }}
 			</div>
 		</div>
 	</div>
-
-	<div class="related-block">
-		<div class="related-img right" style="background: url('{{ .Site.Params.imgBaseUrl }}/related-image.jpg') no-repeat center center;"></div>
-		<div class="related-date left">2016.08.19</div>
-		<div class="related-content left">
-			<h2>開放政府，玩真的嗎？</h2>
-			<div class="line"></div>
-			<div class="brief">
-				8月初，名嘴朱學恒於媒體專欄寫下《這樣的修法哪叫向毒品宣戰？》一文。朱認為，立委顧立雄有意推動的「施用毒品罪醫療前置化」其實是「毒品除罪化」，抨擊顧立雄妄想透過減輕刑度解決毒品犯罪問題。...
-			</div>
-			<div class="author">
-				文｜陳貞樺
-			</div>
-			<div class="related-cat">
-				小說連載
-			</div>
-		</div>
-	</div>
-
-	<div class="related-block">
-		<div class="related-img" style="background: url('{{ .Site.Params.imgBaseUrl }}/related-image.jpg') no-repeat center center;"></div>
-		<div class="related-date">2016.08.19</div>
-		<div class="related-content">
-			<h2>毒品成癮是一種慢性病（下）人的意志力不會永遠滿檔</h2>
-			<div class="line"></div>
-			<div class="brief">
-				8月初，名嘴朱學恒於媒體專欄寫下《這樣的修法哪叫向毒品宣戰？》一文。朱認為，立委顧立雄有意推動的「施用毒品罪醫療前置化」其實是「毒品除罪化」，抨擊顧立雄妄想透過減輕刑度解決毒品犯罪問題。...
-			</div>
-			<div class="author">
-				文｜王立柔、葉瑜娟<br/>攝影｜余志偉
-			</div>
-			<div class="related-cat">
-				說書人
-			</div>
-		</div>
-	</div>
+		{{ end }}
+	{{ end }}
 
 </div>

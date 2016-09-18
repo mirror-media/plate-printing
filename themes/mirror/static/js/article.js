@@ -2,41 +2,7 @@ var progressBar, max, value, width;
 $(document)
   .ready(function() {
 
-    // var getMax = function() {
-    //   return $(document).height() - $(window).height();
-    // }
-
-    // var getValue = function() {
-    //   return $(window).scrollTop();
-    // }
-
-    // progressBar = $('.progress'),
-    //   max = getMax(),
-    //   value, width;
-
-    // var getWidth = function() {
-    //   // Calculate width in percentage
-    //   value = getValue();
-    //   width = (value / max) * 100;
-    //   width = width;
-    //   return width;
-    // }
-
-    // var setWidth = function() {
-    //   console.log(width);
-    //   progressBar.progress({
-    //     percent: getWidth()
-    //   });
-    // }
-
-    // $(document).on('scroll', setWidth);
-    // $(window).on('resize', function() {
-    //   // Need to reset the Max attr
-    //   max = getMax();
-    //   setWidth();
-    // });
-
-    // Reading Progress Indicator
+    /* Reading Progress Indicator */
     var updateProgress = function () {
       // calculate values
       var scroll = $(window).scrollTop();
@@ -50,7 +16,7 @@ $(document)
     }
     updateProgress();
 
-    // toggle logo when scroll
+    /* toggle logo when scroll */
     if($(document).scrollTop() > 140){
       $('.logo.centered').css('display','none');
       $('.logo.item').css('display','flex');
@@ -76,7 +42,7 @@ $(document)
       }
     });
 
-    // fix main menu to page on passing
+    /* fix main menu to page on passing */
     $('.main.menu').visibility({
       type: 'fixed',
       silent: true
@@ -87,14 +53,14 @@ $(document)
       silent: true
     });
 
-    // lazy load images
+    /* lazy load images */
     $('.image').visibility({
       type: 'image',
       transition: 'vertical flip in',
       duration: 500
     });
 
-    // bind menu button
+    /* bind menu button */
     $('.openSidebar').click(function() {
       var direction = $(this).data('direction');
       $('.ui.'+direction+'.sidebar')
@@ -121,7 +87,7 @@ $(document)
       ;
     });
 
-    // Header Menu 
+    /* Header Menu */
 
     var current = null;
 
@@ -214,6 +180,29 @@ $(document)
       $('.closeSharing-mobile').css('display','none');
     });
 
-    // silent debug messages
+    /* Load Latest */
+    var latestTopTemplate = $.templates("#latest-top-tempalte");
+    var latestBottomTemplate = $.templates("#latest-bottom-tempalte");
+
+
+    $.getJSON( "https://crossorigin.me/https://storage.googleapis.com/dev-site/json/latest-posts.json", function( data ) {
+      for (var i = 0; i < data._items.length; i++) {
+        data._items[i].idx = i+1;
+        console.log(typeof data._items[i].heroImage);
+        if (typeof data._items[i].heroImage != "undefined" )
+          data._items[i].preview = "background:url('" + data._items[i].heroImage.image.resizedTargets.mobile.url + "') no-repeat center center; background-size:cover;";
+        else
+          data._items[i].preview = "";
+        if ( i < 5) {
+          var htmlOutput = latestTopTemplate.render(data._items[i]);
+          $(".latest-top").append(htmlOutput)
+        } else {
+          var htmlOutput = latestBottomTemplate.render(data._items[i]);
+          $(".latest-bottom ul").append(htmlOutput)
+        }
+      }
+    });
+
+    /* silent debug messages */
     $.site('change setting', 'silent', true);
   });

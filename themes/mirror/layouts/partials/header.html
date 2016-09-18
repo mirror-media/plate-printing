@@ -46,9 +46,25 @@
 	<script src="{{ .Site.Params.jsBaseUrl }}/semantic.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/article.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jquery-scrollLock.min.js"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/jsrender.min.js"></script>
 
 	{{ template "_internal/google_analytics.html" . }}
 
+	<script id="latest-top-tempalte" type="text/x-jsrender">
+		<div class="block">
+			<div class="block-header" style="{^{:preview}}')">
+				<div class="block-cat">{^{:categories[0].title}}</div>
+				<div class="block-rank">{^{:idx}}</div>
+			</div>
+			<div class="block-body" style="">
+				<p>{^{:title}}</p>
+			</div>
+		</div>
+	</script>
+
+	<script id="latest-bottom-tempalte" type="text/x-jsrender">
+		<li>{^{:title}}<div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
+	</script>
 
 </head>
 <body>
