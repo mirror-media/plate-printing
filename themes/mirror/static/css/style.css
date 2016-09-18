@@ -185,33 +185,41 @@ body.pushable .pusher {
   color: #ffffff;
 }
 
-ul {
+ul.latest {
   list-style: none;
   padding:0;
   margin:0;
   margin-left: 19px;
 }
 
-li {  
+ul.latest li {  
   text-indent: 0;
   padding-left: 16px;
   text-indent: -35px;
   font-family: SourceHanSansTWHK;
   font-size: 17px;
-  font-weight: bold;
+  font-weight: 500;
   line-height: 1.4;
   letter-spacing: 0.9px;
   color: rgba(0, 0, 0, 0.8);
   margin-bottom: 35px;
 }
 
-li:before {
+ul.latest li:before {
   content: "• ";
   color: #004ea2;
   font-size:24px;
   padding-right: 19px;
   top: 3px;
   position: relative;
+}
+
+ul.latest li a { 
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.9px;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .separator {

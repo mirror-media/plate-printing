@@ -52,18 +52,18 @@
 
 	<script id="latest-top-tempalte" type="text/x-jsrender">
 		<div class="block">
-			<div class="block-header" style="{^{:preview}}')">
+			<a href="/news/{^{:slug}}"><div class="block-header" style="{^{:preview}}')">
 				<div class="block-cat">{^{:categories[0].title}}</div>
 				<div class="block-rank">{^{:idx}}</div>
-			</div>
+			</div></a>
 			<div class="block-body" style="">
-				<p>{^{:title}}</p>
+				<a href="/news/{^{:slug}}"><p>{^{:title}}</p></a>
 			</div>
 		</div>
 	</script>
 
 	<script id="latest-bottom-tempalte" type="text/x-jsrender">
-		<li>{^{:title}}<div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
+		<li><a href="/news/{^{:slug}}">{^{:title}}</a><div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
 	</script>
 
 </head>
