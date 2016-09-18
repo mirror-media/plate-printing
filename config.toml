@@ -1,5 +1,14 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://www.mm.mg/"
 languageCode = "zh-tw"
 title = "MirroMedia"
 theme = "mirror"
 googleAnalytics = "UA-83609754-1"
+
+[params]
+imgBaseUrl = "../img"
+cssBaseUrl = "../css"
+jsBaseUrl = "../js"
+
+[taxonomies]
+tag = "HugoTags"
+category = "HugoCategories"

@@ -4,93 +4,197 @@
 
 		<!-- Computer -->
 	  <div class="computer only sixteen wide column">
-			<div class="gradient ui borderless menu" style="margin:1em auto; display:block !important; ">
-		    <div class="ui text container" style="max-width: 1024px!important;height:100px;">
-		      <div href="#" class="header item" style="padding-right:102px;">
-		      	<h2 class="colorTitle" style="color:#fff;"><div class="colorBlock" style="background:#fff;"></div>鏡精選</h2>
-		      </div>
-		      <a href="#" class="header item" style="color:#fff; font-size:20px; vertical-align: middle;">
-						<h2>人物與新聞</h2><div class="oval"></div>
-				  </a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">新聞</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">人物</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">財經</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">直播</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">文化</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">說書人</h2></a>
-		      <a href="#" class="item"><h2 style="color:#fff;font-family: serif;font-size:17px;">小說連載</h2></a>
-		    </div>
-		  </div>
+	  	<div class="ui text container article-container" style="margin-bottom:35px;">
+	  		<div class="article-main" style="text-align:center;">
+					<h2 class="hot-topic"><div class="colorBlock choice"></div>編輯精選<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+				</div>
+			</div>
 	  </div>
 
 	  <!-- Tablet -->
 	  <div class="tablet only sixteen wide column">
-			<div class="gradient ui borderless menu" style="margin:1em auto; display:block !important; ">
-		    <div class="ui text container" style="max-width: 1024px!important;height:100px;">
-		      <div href="#" class="header item" style="padding-right:102px;">
-		      	<h2 class="colorTitle" style="color:#fff;"><div class="colorBlock" style="background:#fff;"></div>鏡精選</h2>
-		      </div>
-		      <div class="right menu">
-			      <a href="#" class="header item" style="color:#fff; font-size:20px; vertical-align: middle;">
-							<h2>人物與新聞</h2><div class="oval"></div>
-					  </a>
-				  </div>
-		    </div>
-		  </div>	  	
+	  	<div class="ui text container article-container" style="margin-bottom:35px; padding-left: 1em !important;">
+	  		<div class="article-main" style="text-align:center;">
+					<h2 class="hot-topic"><div class="colorBlock choice"></div>編輯精選<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+				</div>
+			</div>	
 	  </div>
 
 	  <!-- Mobile -->
 	  <div class="mobile only sixteen wide column">
-	  	<div style="margin: 16px; line-height:45px; vertical-align:middle;">
-				<h2 class="colorTitle" style="margin:0;"><div class="colorBlock"></div>鏡精選</h2>
-	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">人物與新聞</div>
+	  	<div style="margin: 16px; line-height:45px; vertical-align:middle; padding-left: 1em !important;">
+				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>編輯精選</h2>
+	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
+		      {{if .Params.sections }}
+			      {{ range first 1 .Params.sections }}
+				      {{ .title }}
+			      {{ end }}
+		      {{ end }}
+	      </div>
       </div>
 	  </div>
 
 	</div>
 
+	<div class="choice-main" style="margin:2em auto; position:relative;">
 
-	
-	<div class="ui text container article" style="max-width: 960px!important;">
-		<div class="ui card">
-		  <div class="content">
-		    <a class="header">Article</a>
-		    <div class="ui divider"></div>
-		    <div class="description">
-		      Kristy is an art director living in New York.
-		    </div>
-		  </div>
+		{{ if $.Site.Data.choices }}
+			{{ range $.Site.Data.choices._items }}
+				{{ range $idx, $choice := .choices }}
+
+					<!-- First 3 -->
+					{{ if lt $idx 3 }}
+						<div class="choice-block">
+							<a href="/news/{{$choice.slug}}"><div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }} ') no-repeat center center; background-size:cover;" {{ end }}></div></a>
+							<div class="choice-cat {{ if mod $idx 2 }}  {{ else }} right {{ end }}">
+								{{ range first 1 $choice.sections }}
+									{{ $id := ._id }}
+							    {{ range $section := $.Site.Data.sections._items }}
+							    	{{ if eq $section._id $id }}
+							    		{{ $section.title }}
+							    	{{ end }}
+							    {{ end }}
+							  {{ end }}
+							</div>
+
+							<div class="choice-content {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
+								<a href="/news/{{$choice.slug}}"><h2>{{ $choice.title }}</h2></a>
+								<div class="line"></div>
+								<div class="brief">
+									{{ if $choice.brief.html }}	
+										{{ substr (plainify $choice.brief.html) 0 200 }}
+										{{ if gt ( len ( plainify $choice.brief.html ) ) 200 }}...{{ end }}
+									{{ else }}
+										{{ if $choice.content.html }}
+											{{ substr (plainify $choice.content.html) 0 200 }}
+											{{ if gt ( len ( plainify $choice.content.html ) ) 200 }}...{{ end }}
+										{{ end }}
+									{{ end }}
+								</div>
+							</div>
+
+							<div class="choice-meta {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
+								<div class="author">
+							    {{if $choice.writers }}
+							    	{{ if ge (len $choice.writers) 1 }}
+								  		文｜	
+							    	{{ end }}
+							    	{{ range $index , $writer := $choice.writers }}
+							    		{{ $writer.name }}
+							    	{{ end }}
+							    {{ end }}
+							    {{if $choice.photographers }}
+							    	{{ if ge (len $choice.photographers) 1 }}
+								  		攝影｜	
+							    	{{ end }}
+							    	{{ range $index , $photographer := $choice.photographers }}
+							    		{{ $photographer.name }}
+							    	{{ end }}
+							    {{ end }}
+							   </div>
+								<div class="separator"></div>
+								<div class="date">{{ dateFormat "2006.01.02" $choice.publishedDate }}</div>
+							</div>
+						</div>
+					{{ end }}
+
+				{{ end }}
+			{{ end }}
+		{{ end }}
+
+		<div class="ui three column stackable grid">
+
+		{{ if $.Site.Data.choices }}
+			{{ range $.Site.Data.choices._items }}
+				{{ range $idx, $choice := .choices }}
+
+					{{ if ge $idx 3}}
+						<div class="column">
+							<div class="choice-block">
+								<a href="/news/{{$choice.slug}}"><div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
+									<div class="choice-cat">
+										{{ range first 1 $choice.sections }}
+											{{ $id := ._id }}
+									    {{ range $section := $.Site.Data.sections._items }}
+									    	{{ if eq $section._id $id }}
+									    		{{ $section.title }}
+									    	{{ end }}
+									    {{ end }}
+									  {{ end }}
+									</div>
+								</div></a>
+								<div class="column-choice-content">
+									<a href="/news/{{$choice.slug}}"><h2 style="text-align:center;">{{ $choice.title }}</h2></a>
+									<div class="line mobile-hide"></div>
+									<div class="brief mobile-hide">
+										{{ if $choice.brief.html }}	
+											{{ substr (plainify $choice.brief.html) 0 200 }}
+											{{ if gt ( len ( plainify $choice.brief.html ) ) 200 }}...{{ end }}
+										{{ else }}
+											{{ if $choice.content.html }}
+												{{ substr (plainify $choice.content.html) 0 200 }}
+												{{ if gt ( len ( plainify $choice.content.html ) ) 200 }}...{{ end }}
+											{{ end }}
+										{{ end }}
+									</div>
+								</div>
+								<div class="column-choice-meta">
+									<div class="author">
+										{{if $choice.writers }}
+								    	{{ if ge (len $choice.writers) 1 }}
+									  		文｜	
+								    	{{ end }}
+								    	{{ range $index , $writer := $choice.writers }}
+								    		{{ $writer.name }}
+								    	{{ end }}
+								    {{ end }}
+									</div>
+									<div class="separator"></div>
+									<div class="date">{{ dateFormat "2006.01.02" $choice.publishedDate }}</div>
+								</div>
+							</div>
+						</div>
+					{{ end }}
+					
+				{{ end }}
+			{{ end }}
+		{{ end }}
 		</div>
 
-		<div class="ui card">
-		  <div class="content">
-		    <a class="header">Article</a>
-		    <div class="ui divider"></div>
-		    <div class="description">
-		      Kristy is an art director living in New York.
-		    </div>
-		  </div>
-		</div>
-
-		<div class="ui card">
-		  <div class="content">
-		    <a class="header">Article</a>
-		    <div class="ui divider"></div>
-		    <div class="description">
-		      Kristy is an art director living in New York.
-		    </div>
-		  </div>
-		</div>
 	</div>
 
 	<div class="ui grid">
 
 	  <!-- Tablet -->
-	  <div class="tablet only mobile only sixteen wide column">
-	  	<div style="margin: 16px; line-height:45px; vertical-align:middle;">
-				<h2 class="colorTitle" style="margin:0;"><div class="colorBlock"></div>文章分類</h2>
-      </div>
+	  <div class="tablet only mobile only sixteen wide column" style="padding-left: 1em !important;">
+	  	<div class="ui divider" style="width:700px; margin:0 auto;"></div>
+	  	<div class="ui text container">
+	  		<div style="margin-top:35px;margin-bottom:20px; line-height:45px; vertical-align:middle; text-align:left;">
+					<h2 class="colorTitle"><div class="colorBlock"></div>文章分類</h2>
+	      </div>
+	      <div class="ui eight column doubling grid">
+
+		      {{if .Params.sections }}
+			      {{ range $section := first 1 .Params.sections }}
+
+					    {{ range $.Site.Data.sections._items }}
+					    	{{ if eq $section._id ._id }}
+					    		{{ range $categories := .categories }}
+					    			<div class="column">
+					      			<a href="/category/{{.name | urlize}}" class="category-button">{{ .title }}</a>
+					      		</div>
+					    		{{ end }}
+					    	{{ end }}
+					    {{ end }}
+
+			      {{ end }}
+		      {{ end }}
+
+	      </div>
+			</div>
+	  	
 	  </div>
 
 	</div>
+
 </div>

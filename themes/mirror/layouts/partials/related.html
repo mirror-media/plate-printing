@@ -1,34 +1,51 @@
-<div class="centered author" style="max-width:620px;margin:2em auto;">
+<div class="related">
 	<h2 class="colorTitle"><div class="colorBlock"></div>相關文章</h2>
 
-	<div class="ui card">
-	  <div class="content">
-	    <a class="header">毒品成癮是一種慢性病（下）人的意志力不會永遠滿檔</a>
-	    <div class="ui divider"></div>
-	    <div class="description">
-	      Kristy is an art director living in New York.
-	    </div>
-	  </div>
+	{{ if .Params.relateds }}
+		{{ range $related := .Params.relateds }}
+	<div class="related-block" style="">
+		<a href="/news/{{$related.slug}}"><div class="related-img" {{ if $related.heroImage.image.resizedTargets }} style="background:url('{{ $related.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }}></div></a>
+		<div class="related-date">{{ dateFormat "2006.01.02" $related.publishedDate }}</div>
+		<div class="related-content">
+			<a href="/news/{{$related.slug}}"><h2>{{ $related.title }}</h2></a>
+			<div class="line"></div>
+			<div class="brief">
+				{{ if $related.brief }}
+					{{ substr ( plainify $related.brief.html ) 0 50 }}
+				{{else}}
+					{{ if $related.content.html }}
+						{{ substr ( plainify $related.content.html ) 0 50 }}
+						{{ if gt ( len ( plainify $related.content.html ) ) 50 }}...{{ end }}
+					{{ end }}
+				{{ end }}
+			</div>
+			<div class="author">
+			    {{if $related.writers }}
+			    	{{ if ge (len $related.writers) 1 }}
+				  		文｜	
+			    	{{ end }}
+			    	{{ range $index , $writer := $related.writers }}
+			    		{{ $writer.name }}
+			    	{{ end }}
+			    {{ end }}
+			    {{if $related.photographers }}
+			    	<br/>
+			    	{{ if ge (len $related.photographers) 1 }}
+				  		攝影｜	
+			    	{{ end }}
+			    	{{ range $index , $photographer := $related.photographers }}
+			    		{{ $photographer.name }}
+			    	{{ end }}
+			    {{ end }}
+			</div>
+			<div class="related-cat">
+				{{ range first 1 $related.sections }}
+					{{ .title }}
+			  {{ end }}
+			</div>
+		</div>
 	</div>
-
-	<div class="ui card">
-	  <div class="content">
-	    <a class="header">開放政府，玩真的嗎？</a>
-	    <div class="ui divider"></div>
-	    <div class="description">
-	      Kristy is an art director living in New York.
-	    </div>
-	  </div>
-	</div>
-
-	<div class="ui card">
-	  <div class="content">
-	    <a class="header">正義為何變魔人</a>
-	    <div class="ui divider"></div>
-	    <div class="description">
-	      Kristy is an art director living in New York.
-	    </div>
-	  </div>
-	</div>
+		{{ end }}
+	{{ end }}
 
 </div>
