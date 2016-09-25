@@ -185,7 +185,7 @@ $(document)
     var latestBottomTemplate = $.templates("#latest-bottom-tempalte");
 
 
-    $.getJSON( "https://crossorigin.me/https://storage.googleapis.com/dev-site/json/latest-posts.json", function( data ) {
+    $.getJSON( "http://stage.mirrormedia.mg/news/json/latest-posts.json", function( data ) {
       for (var i = 0; i < data._items.length; i++) {
         data._items[i].idx = i+1;
         console.log(typeof data._items[i].heroImage);
