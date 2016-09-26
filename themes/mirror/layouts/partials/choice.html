@@ -78,18 +78,37 @@
 							    {{if $choice.writers }}
 							    	{{ if ge (len $choice.writers) 1 }}
 								  		文｜	
-							    	{{ end }}
-							    	{{ range $index , $writer := $choice.writers }}
-							    		{{ $writer.name }}
+								    	{{ range $index , $writer := $choice.writers }}
+								    		{{ $writer.name }}
+								    	{{ end }}&nbsp;&nbsp;
 							    	{{ end }}
 							    {{ end }}
 							    {{if $choice.photographers }}
 							    	{{ if ge (len $choice.photographers) 1 }}
 								  		攝影｜	
+								    	{{ range $index , $photographer := $choice.photographers }}
+								    		{{ $photographer.name }}
+								    	{{ end }}&nbsp;&nbsp;
 							    	{{ end }}
-							    	{{ range $index , $photographer := $choice.photographers }}
-							    		{{ $photographer.name }}
+							    {{ end }}
+							    {{if $choice.designers }}
+							    	{{ if ge (len $choice.designers) 1 }}
+								  		設計｜	
+								    	{{ range $index , $designer := $choice.designers }}
+								    		{{ $designer.name }}
+								    	{{ end }}&nbsp;&nbsp;
 							    	{{ end }}
+							    {{ end }}
+							    {{if $choice.engineers }}
+							    	{{ if ge (len $choice.engineers) 1 }}
+								  		工程｜	
+								    	{{ range $index , $engineer := $choice.engineers }}
+								    		{{ $engineer.name }}
+								    	{{ end }}&nbsp;&nbsp;
+							    	{{ end }}
+							    {{ end }}
+							    {{if $choice.extend_byline }}
+							    	{{ $choice.extend_byline }}
 							    {{ end }}
 							   </div>
 								<div class="separator"></div>

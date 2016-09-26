@@ -28,17 +28,38 @@
 	  	<div style="">
 	  		<p class="article-author article-credit">
 			    {{if .Params.writers }}
-			    文 | 
-			      {{ range $index , $writer := .Params.writers }}
-			        {{ $writer.name }}
-			      {{ end }}
-			    {{ end }}&nbsp;&nbsp;
+			    	{{if gt (len .Params.writers) 0 }}
+				    文 | 
+				      {{ range $index , $writer := .Params.writers }}
+				        {{ $writer.name }}
+				      {{ end }}&nbsp;&nbsp;
+				    {{ end }}
+			    {{ end }}
 			    {{if .Params.photographers }}
-			    攝影 | 
-			      {{ range $index , $photographer := .Params.photographers }}
-			        {{ $photographer.name }}
-			      {{ end }}
-			    {{ end }}   
+			    	{{if gt (len .Params.photographers) 0 }}
+				    攝影 | 
+				      {{ range $index , $photographer := .Params.photographers }}
+				        {{ $photographer.name }}
+				      {{ end }}&nbsp;&nbsp;
+				    {{ end }}
+			    {{ end }}
+			    {{if .Params.designers }}
+			    	{{if gt (len .Params.designers) 0 }}
+				    設計 | 
+				      {{ range $index , $designer := .Params.designers }}
+				        {{ $designer.name }}
+				      {{ end }}&nbsp;&nbsp;
+				    {{ end }}
+			    {{ end }}
+			    {{if .Params.engineers }}
+			    	{{if gt (len .Params.engineers) 0 }}
+				    工程 | 
+				      {{ range $index , $engineer := .Params.engineers }}
+				        {{ $engineer.name }}
+				      {{ end }}&nbsp;&nbsp;
+				    {{ end }}
+			    {{ end }}
+			    {{if .Params.extend_byline }}{{ .Params.extend_byline }}{{ end }}
 	  		</p>
 	  		<p class="article-sharing mobile-hide tablet-hide" style="float: right; color: rgba(0,0,0,0.4);">
 	  			分享這篇文章：
@@ -109,7 +130,47 @@
 			    	<hr/>
 			    </div>
 			    {{ end }}   
-		    {{ end }}    
+		    {{ end }}
+		    {{if .Params.photographers }}
+		    	{{ range $index , $photographer := .Params.photographers }}
+			    <div class="centered author" style="max-width:620px;margin:20px auto;">
+			    	<hr/>
+			    	<h2 class="author-name">{{ $photographer.name }}<p class="author-mail">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p></h2>
+
+			    	<p class="author-bio">{{if $photographer.bio }}{{ $photographer.bio }}{{ end }}</p>
+			    	<hr/>
+			    </div>
+			    {{ end }}   
+		    {{ end }}
+		    {{if .Params.designers }}
+		    	{{ range $index , $designer := .Params.designers }}
+			    <div class="centered author" style="max-width:620px;margin:20px auto;">
+			    	<hr/>
+			    	<h2 class="author-name">{{ $designer.name }}<p class="author-mail">{{if $designer.email }}{{ $designer.email }}{{ end }}</p></h2>
+
+			    	<p class="author-bio">{{if $designer.bio }}{{ $designer.bio }}{{ end }}</p>
+			    	<hr/>
+			    </div>
+			    {{ end }}   
+		    {{ end }}
+		    {{if .Params.engineers }}
+		    	{{ range $index , $engineer := .Params.engineers }}
+			    <div class="centered author" style="max-width:620px;margin:20px auto;">
+			    	<hr/>
+			    	<h2 class="author-name">{{ $engineer.name }}<p class="author-mail">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p></h2>
+
+			    	<p class="author-bio">{{if $engineer.bio }}{{ $engineer.bio }}{{ end }}</p>
+			    	<hr/>
+			    </div>
+			    {{ end }}   
+		    {{ end }}
+		    {{if .Params.extend_byline }}
+			    <div class="centered author" style="max-width:620px;margin:20px auto;">
+			    	<hr/>
+			    	<h2 class="author-name">{{ .Params.extend_byline }}</h2>
+			    	<hr/>
+			    </div>
+		    {{ end }}
 
 		    {{ partial "related.html" . }}
 
