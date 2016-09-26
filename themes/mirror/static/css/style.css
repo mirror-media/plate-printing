@@ -106,6 +106,18 @@ body.pushable .pusher {
     padding: 5em 0em;
 }
 
+/* Footer */
+
+.footer {
+  margin-bottom: 70px;
+}
+
+.footer .ui a.item {
+  color:rgba(0,0,0,0.3);
+  font-size:1.5em;
+  padding-right:0.6em;
+}
+
 /* Sidebar Backdrop */
 .backdrop {
   -webkit-backdrop-filter: blur(8px);
@@ -1610,6 +1622,10 @@ div.colorBlock.choice {
       width: 700px;
       text-align: right;
       margin-top: 5px;
+    }
+
+    .ui.grid>[class*="three column"].doubling.row.row>.column, .ui.grid>[class*="four column"].doubling.row.row>.column, .ui[class*="three column"].doubling.grid>.column:not(.row), .ui[class*="three column"].doubling.grid>.row>.column, .ui[class*="four column"].doubling.grid>.column:not(.row), .ui[class*="four column"].doubling.grid>.row>.column {
+      width: 25% !important;
     }
 }
 

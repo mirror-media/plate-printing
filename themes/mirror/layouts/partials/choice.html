@@ -164,15 +164,13 @@
 	</div>
 
 	<div class="ui grid">
-
-	  <!-- Tablet -->
-	  <div class="tablet only mobile only sixteen wide column" style="padding-left: 1em !important;">
-	  	<div class="ui divider" style="width:700px; margin:0 auto;"></div>
+	  <div class="sixteen wide column" style="padding-left: 1em !important;">
+	  	<div class="ui divider" style="max-width:940px; margin:0 auto;"></div>
 	  	<div class="ui text container">
 	  		<div style="margin-top:35px;margin-bottom:20px; line-height:45px; vertical-align:middle; text-align:left;">
-					<h2 class="colorTitle"><div class="colorBlock"></div>文章分類</h2>
-	      </div>
-	      <div class="ui eight column doubling grid">
+				<h2 class="colorTitle"><div class="colorBlock"></div>文章分類</h2>
+	      	</div>
+	      	<div class="ui four column doubling grid">
 
 		      {{if .Params.sections }}
 			      {{ range $section := first 1 .Params.sections }}
@@ -190,11 +188,9 @@
 			      {{ end }}
 		      {{ end }}
 
-	      </div>
-			</div>
-	  	
+	      	</div>
+		</div>
 	  </div>
-
 	</div>
 
 </div>
