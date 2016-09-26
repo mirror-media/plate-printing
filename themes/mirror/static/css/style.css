@@ -159,7 +159,7 @@ body.pushable .pusher {
 }
 
 .block-body p {
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 20px;
   font-weight: bold;
   line-height: 1.5;
@@ -176,7 +176,7 @@ body.pushable .pusher {
   background-color: #004ea2;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   height: 30px;
-  font-family: STSongti-TC, serif;
+  font-family: 'Songti TC', serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 30px;
@@ -194,7 +194,7 @@ body.pushable .pusher {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   width: 45px;
   height: 45px;
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 20px;
   font-weight: bold;
   line-height: 45px;
@@ -214,7 +214,7 @@ ul.latest li {
   text-indent: 0;
   padding-left: 16px;
   text-indent: -35px;
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 17px;
   font-weight: 500;
   line-height: 1.4;
@@ -254,7 +254,7 @@ ul.latest li a {
   text-indent:0;
 }
 .cat-label span {
-  font-family: STSongti-TC, serif;
+  font-family: 'Songti TC', serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 1;
@@ -304,7 +304,7 @@ ul.latest li a {
 
 .related-content h2 {
   margin-bottom:0;
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 24px;
   font-weight: bold;
   line-height: 1.5;
@@ -340,7 +340,7 @@ ul.latest li a {
   padding: 0 2px;
   padding-bottom: 15px;
   border-bottom: 3px #145CA9 solid;
-  font-family: STSongti-TC, serif;
+  font-family: 'Songti TC', serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 1;
@@ -380,7 +380,7 @@ ul.latest li a {
   background-color: #004ea2;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   height: 30px;
-  font-family: STSongti-TC, serif;
+  font-family: 'Songti TC', serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 30px;
@@ -449,7 +449,7 @@ ul.latest li a {
 
 .choice-content h2 {
   margin-bottom:0;
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 24px;
   font-weight: bold;
   line-height: 1.5;
@@ -496,7 +496,7 @@ ul.latest li a {
 .column-choice-content h2 {
   padding: 10px 10px 2px 10px;
   margin-bottom:0;
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 24px;
   font-weight: bold;
   line-height: 1.5;
@@ -576,28 +576,130 @@ ul.latest li a {
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* Article Style */
-
 
 div.ui.text.container.article-header {
   max-width: 780px !important;
   padding-top:2em;
 }
 
+/*
+   Article Style Components
+*/
+
+/* Brief Style */
+article .brief p{
+  font-family: 'Noto Sans TC';
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  color: rgba(0, 0, 0, 0.7);
+}
+/* Paragrah Style */
 article p {
-  font-family: 'Noto Sans TC', sans-serif
-  font-size: 20px;
-  line-height: 1.9;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.3px;
   color: rgba(0, 0, 0, 0.9);
 }
 
-article .brief p{
-  font-family: SourceHanSansTWHK-Normal;
-  font-size: 17px;
-  line-height: 2;
+/* Unordered List Style */
+article ul {
+  list-style: none;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  line-height: 2.2;
+  letter-spacing: 0.3px;
   color: rgba(0, 0, 0, 0.7);
 }
+article ul li:before {
+  content: "• ";
+  color: #004ea2;
+  font-size:30px;
+  line-height: 1;
+  top: 6px;
+  position: relative;
+}
 
+article h1, h2 {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Ordered List Style */
+article ol {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  line-height: 2.2;
+  letter-spacing: 0.3px;
+  color: rgba(0, 0, 0, 0.7);
+  counter-reset: item;
+}
+article ol li { display: block; }
+article ol li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: #004ea2;
+  padding-left:10px;
+  padding-right:10px;
+  line-height: 1;
+}
+
+article div.img {
+
+  margin-bottom: 45px;
+}
+article div.img.left {
+  width: 300px;
+  float: left;
+  margin-right: 20px;
+}
+article div.img.right {
+  width: 300px;
+  float: right;
+  margin-left: 20px;
+}
+article div.img .caption {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  color: rgba(0, 0, 0, 0.5);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 5px #004ea2;
+}
+
+article blockquote {
+  font-family: 'Songti TC', serif;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  color: rgba(0, 0, 0, 0.6);
+  padding-left: 20px;
+  border-left: solid 5px #004ea2;
+}
+
+article blockquote div:first-child {
+  font-family: 'Songti TC', serif;
+  font-size: 24px;
+  line-height: 1.8;
+  color: rgba(0, 0, 0, 0.7);
+}
+article blockquote div:first-child+div {
+  font-family: 'Songti TC', serif;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  color: #004ea2;
+}
+
+/*
+   Article Style 
+*/
 .article-title {
   font-size: 45px;
   font-weight: bold;
@@ -635,7 +737,7 @@ article .brief p{
 }
 
 .article-credit {
-  font-family: STSongti-TC, serif;
+  font-family: 'Songti TC', serif;
   font-size: 17px;
   line-height: 1.6;
   letter-spacing: 1px;
@@ -677,6 +779,16 @@ article img {
   text-align: center;
   vertical-align: middle;
   margin:0;
+}
+
+.heroimg-caption {
+  font-family: 'Noto Sans TC';
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.3px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  margin-bottom: 35px;
 }
 
 div.author hr {
@@ -776,7 +888,7 @@ div.colorBlock.choice {
 }
 
 .hot-topic {
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 32px;
   font-weight: 500;
   letter-spacing: 4px;
@@ -784,7 +896,7 @@ div.colorBlock.choice {
 }
 
 .choice-topic {
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 32px;
   font-weight: 500;
   letter-spacing: 4px;
@@ -832,7 +944,7 @@ div.colorBlock.choice {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   text-align: center;
   line-height: 40px;
-  font-family: STSongti-TC, serif;
+  font-family: 'Songti TC', serif;
   font-size: 20px;
   letter-spacing: 1.3px;
   color: #004ea2;
@@ -892,7 +1004,7 @@ div.colorBlock.choice {
 } 
 
 .computer .searchbar {
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 75px;
   font-weight: 500;
   letter-spacing: 11.2px;
@@ -974,7 +1086,7 @@ div.colorBlock.choice {
 }
 
 .tablet .searchbar {
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 75px;
   font-weight: 500;
   letter-spacing: 11.2px;
@@ -1052,7 +1164,7 @@ div.colorBlock.choice {
 }
 
 .mobile .searchbar {
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 50px;
   font-weight: 500;
   letter-spacing: 5px;
@@ -1061,7 +1173,7 @@ div.colorBlock.choice {
 }
 
 .mobile .fontsize {
-  font-family: 'Noto Sans TC', sans-serif
+  font-family: 'Noto Sans TC', sans-serif;
   font-size: 50px;
   font-weight: 500;
   letter-spacing: 5px;
@@ -1116,6 +1228,7 @@ div.colorBlock.choice {
       width: 100%;
       max-width: 100% !important;
     }
+
     .related-block {
       margin: 0 auto;
       margin-bottom:10px;
@@ -1317,7 +1430,6 @@ div.colorBlock.choice {
       background-color: transparent;
       width: 100%;
       max-width: 940px !important;
-      margin-bottom: 23px;
     }
     .ui.text.container.footer {
       max-width: 940px!important;
