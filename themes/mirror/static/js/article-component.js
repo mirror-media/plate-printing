@@ -49,7 +49,7 @@ $(document)
   		var audioObj = $(audiobox).children('audio')[0];
 
   		parent.addClass('audio-box');
-  		parent.append('<div class=\'audio-cover\'><div class=\'audio-btn pause\'></div></div>')
+  		parent.prepend('<div class=\'audio-cover\'><div class=\'audio-btn pause\'></div></div>')
 
   		var audioBtn = parent.find('.audio-btn')[0];
 

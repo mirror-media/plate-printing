@@ -715,6 +715,7 @@ article .info-box-container {
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   padding: 25px 30px;
+  margin-bottom: 45px;
 }
 article .info-box-container .info-box-title {
   text-align: center;
@@ -824,6 +825,7 @@ article .audio-container .audio-desc p {
 }
 article .audio-box .audio-cover {
   position: relative;
+  float: left;
   width: 140px;
   height: 140px;
   background-color: #004ea2;
@@ -1488,6 +1490,36 @@ div.colorBlock.choice {
     }
     .article-sharing .sharing-item {
       margin-right: 35px;
+    }
+
+    article ol, article ul {
+      padding-left: 0;
+    }
+    article div.img.left, article div.img.right {
+      width: 100%;
+    }
+    article .annotation-box {
+      width: 100%;
+    }
+    article blockquote.blockquote {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    article blockquote .quote-body {
+      padding: 20px 30px;
+    }
+    article blockquote.quote {
+      margin: 0 0 45px 0;
+    }
+    article .audio-box {
+      width: 100%;
+    }
+    article .audio-container {
+      width: 100%;
+    }
+    article .audio-box .audio-cover {
+      width: 100%;
+      margin-bottom: 5px;
     }
 }
 
