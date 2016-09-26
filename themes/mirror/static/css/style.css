@@ -64,6 +64,9 @@ body.pushable .pusher {
 .main.menu.fixed .progress {
     visibility: visible !important;
 }
+.ui.progress.success .bar {
+  background-color: #004ea2 !important
+}
 .right.menu .item {
     padding: 0 !important;
 }
