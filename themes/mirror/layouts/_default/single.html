@@ -64,6 +64,7 @@
 
 			{{if .Params.heroimage.image }}
 				<img class="heroimg" src="{{ .Params.heroimage.image.url }}"/>
+				<div class="heroimg-caption">{{ .Params.heroimage.description }}</div>
 			{{ end }}
 
 			<div class="article-main">
@@ -88,11 +89,11 @@
         </article>
 
         <div class="tags">
-	        <img src="{{ .Site.Params.imgBaseUrl }}/icon/tag.png" style="width:30px; height:30px; vertical-align:middle;"/>
-			    {{if .Params.tags }}
+        	{{if .Params.tags }}
+	        	<img src="{{ .Site.Params.imgBaseUrl }}/icon/tag.png" style="width:30px; height:30px; vertical-align:middle;"/>
 			    	{{ $len := len .Params.tags }}
 			    	{{ $len := sub $len 1 }}
-			      {{ range $index , $tag := .Params.tags }}<a href="{{ $baseurl }}tags/{{ $tag.name }}">{{ $tag.name }}</a>{{ if not (eq $index $len) }}、{{ end }}{{ end }}
+			      {{ range $index , $tag := .Params.tags }}<a href="{{ $baseurl }}tag/{{ $tag._id }}">{{ $tag.name }}</a>{{ if not (eq $index $len) }}、{{ end }}{{ end }}
 			    {{ end }}
 			  </div>
 
