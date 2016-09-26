@@ -692,7 +692,7 @@ article blockquote .quote-body {
   font-size: 24px;
   line-height: 1.8;
   color: rgba(0, 0, 0, 0.7);
-  background-image: url('../img/icon/blockquote-start.png'), url('../img/icon/blockquote-end.png');
+  background-image: url('/img/icon/blockquote-start.png'), url('/img/icon/blockquote-end.png');
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
   padding: 10px 60px;
@@ -761,12 +761,12 @@ article .annotation-btn {
   margin-right: -8px;
   width: 30px;
   height: 30px;
-  background: url('../img/icon/annotation@2x.png') no-repeat;
+  background: url('/img/icon/annotation@2x.png') no-repeat;
   background-size: contain;
 }
 
 article .annotation-btn:hover {
-  background: url('../img/icon/opened@2x.png') no-repeat;
+  background: url('/img/icon/opened@2x.png') no-repeat;
   background-size: contain;
 }
 
@@ -827,7 +827,7 @@ article .audio-box .audio-cover {
   width: 140px;
   height: 140px;
   background-color: #004ea2;
-  background-image: url('../img/icon/audio@2x.png');
+  background-image: url('/img/icon/audio@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100px 50px;
@@ -837,16 +837,17 @@ article .audio-box .audio-cover .audio-btn {
   position: absolute;
   width: 60px;
   height: 60px;
+  cursor: pointer; cursor: hand;
   top:0; bottom:0; left:0; right:0; margin:auto;
 }
 article .audio-box .audio-cover .audio-btn.play {
-  background-image: url('../img/icon/pause-btn@2x.png');
+  background-image: url('/img/icon/pause-btn@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 article .audio-box .audio-cover .audio-btn.pause {
-  background-image: url('../img/icon/play-btn@2x.png');
+  background-image: url('/img/icon/play-btn@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;

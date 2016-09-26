@@ -69,20 +69,18 @@ $(document)
   		$(audioObj).bind("loadeddata", function() {
 	  		$(audiobox).prepend('<div class=\'audio-progress\'><div class=\'bar\'></div></div>')
 			$(audiobox).prepend('<div class=\'audio-time\'><span class=\'left\'>00:00</span> / '+toMMSS(audioObj.duration)+'</div>');
-
-	  		$(audioObj).bind("timeupdate", function() {
-	  			var left = $(audiobox).find('.left')[0];
-	  			var progressBar = $(audiobox).find('.audio-progress .bar')[0];
-	  			if (left) {
-	  				var rem = parseInt(audioObj.duration - audioObj.currentTime, 10),
-	  				pos = (audioObj.currentTime / audioObj.duration) * 100;
-
-	  				$(left).html(toMMSS(audioObj.currentTime));
-	  				$(progressBar).width(pos+'%');
-	  			}
-			});
 		});
+  		$(audioObj).bind("timeupdate", function() {
+  			var left = $(audiobox).find('.left')[0];
+  			var progressBar = $(audiobox).find('.audio-progress .bar')[0];
+  			if (left) {
+  				var rem = parseInt(audioObj.duration - audioObj.currentTime, 10),
+  				pos = (audioObj.currentTime / audioObj.duration) * 100;
 
+  				$(left).html(toMMSS(audioObj.currentTime));
+  				$(progressBar).width(pos+'%');
+  			}
+		});
   	});
 
   });
