@@ -36,6 +36,11 @@ $(document)
   		$(abbr).after('<div class=\'annotation-btn\'></div>')
   	});
 
+  	$('iframe').each(function(i, iframe){
+  		var parent = $(iframe).parent();
+  		parent.addClass('aspect-ratio');
+  	});
+
   	function toMMSS(seconds) {
   		seconds = parseInt(seconds, 10);
 		var minutes = parseInt( seconds / 60 ) % 60;
