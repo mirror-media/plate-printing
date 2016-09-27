@@ -5,10 +5,19 @@ theme = "mirror"
 googleAnalytics = "UA-83609754-1"
 
 [params]
-imgBaseUrl = "../img"
-cssBaseUrl = "../css"
-jsBaseUrl = "../js"
+	imgBaseUrl = "../img"
+	cssBaseUrl = "../css"
+	jsBaseUrl = "../js"
+
+[social]
+	line		= "#line"
+	weibo		= "#weibo"
+	facebook	= "#facebook"
+	wechat		= "#wechat"
+	instagram	= "#instagram"
+	feed		= "#feed"
+	mail		= "#mail"
 
 [taxonomies]
-tag = "HugoTags"
-category = "HugoCategories"
+	tag = "HugoTags"
+	category = "HugoCategories"

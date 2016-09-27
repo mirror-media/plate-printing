@@ -54,6 +54,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/semantic.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/article.js"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/article-component.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jquery-scrollLock.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jsrender.min.js"></script>
 
@@ -108,10 +109,13 @@
 				<p style="color:rgba(0, 0, 0, 0.5);line-height:13px;font-size: 17px;margin-bottom:0;letter-spacing: 1.1px;">訂閱鏡週刊</p>
 				<div class="line"></div>
 	 			<div class="ui">
-	 			 	<a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="weibo icon"></i></a>
-			    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="facebook f icon"></i></a>
-			    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="wechat icon"></i></a>
-			    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><i class="instagram icon"></i></a>
+					<a class="item" href="{{ .Site.Social.line }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width: 56px!important; height: 25px;"/></a>
+					<a class="item" href="{{ .Site.Social.weibo }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width: 29px!important; height: 25px;"/></a>
+					<a class="item" href="{{ .Site.Social.facebook }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width: 25px!important; height: 25px;"/></a>
+					<a class="item" href="{{ .Site.Social.wechat }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width: 29px!important; height: 25px;"/></a>
+					<a class="item" href="{{ .Site.Social.instagram }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram@2x.png" style="width: 25px!important; height: 25px;"/></a>
+					<a class="item" href="{{ .Site.Social.feed }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed@2x.png" style="width: 25px!important; height: 25px;"/></a>
+					<a class="item" href="{{ .Site.Social.mail }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail@2x.png" style="width: 26px!important; height: 25px;"/></a>
 	 			</div>
 			</div>
 		</div>
@@ -145,13 +149,13 @@
   		<div style="font-family: SourceHanSansTWHK-Normal;font-size: 17px;letter-spacing: 1.1px;color: rgba(0, 0, 0, 0.5);">訂閱鏡週刊</div>
   		<div style="width: 195px;height: 2px;border: solid 1px rgba(0, 0, 0, 0.5); margin: 10px 0;"></div>
  			<div class="ui" style="line-height:40px;">
- 			 	<a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram.png" style="width:25px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed.png" style="width:25px;height:25px;"/></a>
-		    <a class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail.png" style="width:26px;height:25px;"/></a>
+ 			 	<a href="{{ .Site.Social.line }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px;height:25px;"/></a>
+		    <a href="{{ .Site.Social.weibo }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px;height:25px;"/></a>
+		    <a href="{{ .Site.Social.facebook }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px;height:25px;"/></a>
+		    <a href="{{ .Site.Social.wechat }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px;height:25px;"/></a>
+		    <a href="{{ .Site.Social.instagram }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram.png" style="width:25px;height:25px;"/></a>
+		    <a href="{{ .Site.Social.feed }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed.png" style="width:25px;height:25px;"/></a>
+		    <a href="{{ .Site.Social.mail }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail.png" style="width:26px;height:25px;"/></a>
 
  			</div>
   	</div>
@@ -161,7 +165,7 @@
   <div class="pusher">
 
   	<!-- Header Menu -->
-		<div class="ui grid">
+		<div class="ui grid headerMenu">
 
 			<!-- Computer -->
 		  <div class="computer only sixteen wide column">
@@ -172,7 +176,7 @@
 			        <img class="logo small" src="{{ .Site.Params.imgBaseUrl }}/logo.png" style=" width:117px; ">
 			      </a>
 			    {{ range $section := $.Site.Data.sections._items }}
-	        	<a href="/section/{{ $section.name }}" class="item" style="color:#B6B6B6;">{{ $section.title }}</a>
+	        	<a href="/section/{{ $section.name }}" class="item" style="font-size: 17px; letter-spacing: 1.7px; color: rgba(0, 0, 0, 0.5);">{{ $section.title }}</a>
 			    {{ end }}
 			      <div class="right menu">
 					    <div class="item">
@@ -191,7 +195,7 @@
 			    	
 			      {{if .Params.sections }}
 				      {{ range $section := first 1 .Params.sections }}
-					      <a href="/section/{{.name | urlize}}" class="header item openSidebar" style="color:#fff; font-size:1.2em;" data-direction="top">
+					      <a href="/section/{{.name | urlize}}" class="header item openSidebar" style="color:#fff;" data-direction="top">
 					      	{{ $section.title }}
 					      	<div class="oval" style="margin-right:-10px;"></div>
 					      </a>
@@ -199,7 +203,7 @@
 						    {{ range $.Site.Data.sections._items }}
 						    	{{ if eq $section._id ._id }}
 						    		{{ range $categories := .categories }}
-						    			<a href="/category/{{.name | urlize}}" class="item" style="color:#fff;font-family: serif;">{{ .title }}</a>
+						    			<a href="/category/{{.name | urlize}}" class="item" style="color:#fff; font-family: 'Songti TC', serif;">{{ .title }}</a>
 						    		{{ end }}
 						    	{{ end }}
 						    {{ end }}
@@ -214,7 +218,7 @@
 
 		    <div class="ui borderless main menu sticky-menu first-menu" style="max-width: 100% !important;display:block !important; ">
 			    <div class="ui text container" style="max-width: 100%!important; height:60px; width:100%;">
-			      <div class="header item openSidebar" data-direction="top" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important;">
+			      <div class="header item openSidebar" data-direction="top" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important; font-size: 17px; letter-spacing: 1.6px; color: rgba(0, 0, 0, 0.3);">
 			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>
 			      <div class="item" style="padding-left:0px !important;">
@@ -238,13 +242,13 @@
 					    </div>
 					    <div class="item chooseFontsize" style="display:none;">
 					    	<div class="ui three column grid" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px;">
-					    		<div class="column">
+					    		<div class="column font-larger">
 					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-larger.png" style="width:35px!important;height:35px;"/>
 					    		</div>
-					    		<div class="column">
+					    		<div class="column font-medium">
 					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-active.png" style="width:28px!important;height:28px;"/>
 					    		</div>
-					    		<div class="column">
+					    		<div class="column font-small">
 					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin.png" style="width:20px!important;height:20px;"/>
 					    		</div>
 					    	</div>
@@ -263,10 +267,10 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
-					    		<a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
-							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
-							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
-							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
+					    		<a href="#" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a href="#" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a href="#" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+							    <a href="#" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
 					    	</div>
 					    </div>
 				    </div>

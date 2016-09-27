@@ -188,7 +188,6 @@ $(document)
     $.getJSON( "http://stage.mirrormedia.mg/news/json/latest-posts.json", function( data ) {
       for (var i = 0; i < data._items.length; i++) {
         data._items[i].idx = i+1;
-        console.log(typeof data._items[i].heroImage);
         if (typeof data._items[i].heroImage != "undefined" )
           data._items[i].preview = "background:url('" + data._items[i].heroImage.image.resizedTargets.mobile.url + "') no-repeat center center; background-size:cover;";
         else
