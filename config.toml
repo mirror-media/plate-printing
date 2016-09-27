@@ -5,9 +5,9 @@ theme = "mirror"
 googleAnalytics = "UA-83609754-1"
 
 [params]
-	imgBaseUrl = "/assets/img"
-	cssBaseUrl = "/assets/css"
-	jsBaseUrl = "/assets/js"
+	imgBaseUrl = "/news/img"
+	cssBaseUrl = "/news/css"
+	jsBaseUrl = "/news/js"
 
 [social]
 	line		= "#line"
