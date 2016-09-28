@@ -16,26 +16,35 @@
 	{{ else }}
 	<title>{{ .Title }} - {{ .Site.Title }}</title>
 	<meta name="keywords" content="鏡傳媒,mirror media,新聞,人物,調查報導,娛樂,美食,旅遊,精品,動漫,網路趨勢,趨勢,國際,兩岸,政治,明星,文學,劇本,新詩,散文,小說"/>
-	<meta name="description" content="鏡傳媒以台灣為基地，是一跨平台綜合媒體，包含《鏡週刊》以及下設五大分眾內容的《鏡傳媒》網站，刊載時事、財經、人物、國際、文化、娛樂、美食旅遊、精品鐘錶等深入報導及影音內容。我們以「鏡」為名，務求反映事實、時代與人性。" />
+	<meta name="description" content="傳媒以台灣為基地，是一跨平台綜合媒體，包含《鏡週刊》以及下設五大分眾內容的《鏡傳媒》網站，刊載時事、財經、人物、國際、文化、娛樂、美食旅遊、精品鐘錶等深入報導及影音內容。我們以「鏡」為名，務求反映事實、時代與人性。" />
 	<meta property="og:site_name" content="鏡傳媒 Mirror Media" />
 	<meta property="og:locale" content="zh_TW" />    
 	<meta property="og:type" content="article" />
 	<meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}" />
-	<meta property="og:description" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:image" content=""/>
+	<meta property="og:description" content="{{ substr (plainify .Params.brief.html) 0 200 }}" />
+	<meta property="og:url" content="{{ $baseurl | safeURL }}news/{{ .Slug }}" />
+	{{if .Params.heroimage.image }}
+	<meta property="og:image" content="{{ .Params.heroimage.image.url }}"/>
+	{{ else }}
+	<meta property="og:image" content="{{ $baseurl }}asset/logo.png"/>
+	{{ end }}
+	
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
-	<meta name="twitter:description" content="">
-	<meta name="twitter:image" content="">
+	<meta name="twitter:description" content="{{ substr (plainify .Params.brief.html) 0 200 }}">
+	{{if .Params.heroimage.image }}
+	<meta property="twitter:image" content="{{ .Params.heroimage.image.url }}"/>
+	{{ else }}
+	<meta property="twitter:image" content="{{ $baseurl }}asset/logo.png"/>
+	{{ end }}
 	<script type="application/ld+json">
 		{
 		  "@context": "http://schema.org",
 		  "@type": "NewsArticle",
 		  "headline": "{{ .Title }}",
 		  "url": "http://www.mirrormedia.mg/news/{{ .Slug }}",
-		  "thumbnailUrl": "",
+		  "thumbnailUrl": "{{if .Params.heroimage.image }}{{ .Params.heroimage.image.url | safeURL }}{{ else }}{{ $baseurl }}asset/logo.png{{ end }}",
 		  "dateCreated": "{{ .Params.publishedDate }}",
 		  "articleSection": "{{if .Params.sections }}{{ range $section := first 1 .Params.sections }}{{ $section.title }}{{ end }}{{ end }}",
 		  "creator": "",
@@ -150,7 +159,7 @@
     {{ end }}
   	</div>
   	<div class="" style="margin-left:40px;margin-top:90px;">
-  		<div style="font-family: SourceHanSansTWHK-Normal;font-size: 17px;letter-spacing: 1.1px;color: rgba(0, 0, 0, 0.5);">訂閱鏡週刊</div>
+  		<div style="font-family: 'Noto Sans TC';font-size: 17px;letter-spacing: 1.1px;color: rgba(0, 0, 0, 0.5);">訂閱鏡週刊</div>
   		<div style="width: 195px;height: 2px;border: solid 1px rgba(0, 0, 0, 0.5); margin: 10px 0;"></div>
  			<div class="ui" style="line-height:40px;">
  			 	<a href="{{ .Site.Social.line }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px;height:25px;"/></a>
@@ -271,9 +280,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeHTML }}%0D%0A{{ $baseurl | safeHTML }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
-							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeHTML }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
 							    <a href="#" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
 					    	</div>
 					    </div>
@@ -347,9 +356,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title }}%0D%0A{{ $baseurl | safeHTML }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
-							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeHTML }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
 							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
 					    	</div>
 					    </div>
@@ -436,9 +445,9 @@
 
 			      <div class="ui transparent input sharing" style="max-width:100%;padding:60px;display:none;">
 					  	<div class="ui four column grid" style="width: 100%;margin: 0 auto; text-align: center; line-height:60px; text-align:center;">
-				    		<div class="column"><a href="http://line.me/R/msg/text/?{{ .Title }}%0D%0A{{ $baseurl | safeHTML }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a></div>
-				    		<div class="column"><a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a></div>
-				    		<div class="column"><a href="http://www.facebook.com/share.php?u={{ $baseurl | safeHTML }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a></div>
+				    		<div class="column"><a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a></div>
+				    		<div class="column"><a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a></div>
+				    		<div class="column"><a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a></div>
 				    		<div class="column"><a href=""><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a></div>
 				    	</div>
 						</div>
