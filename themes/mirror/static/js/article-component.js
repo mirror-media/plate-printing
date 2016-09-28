@@ -1,6 +1,19 @@
 $(document)
   .ready(function() {
   
+  	$('div.font-larger').click(function(){
+  		$('article').removeClass('small');
+  		$('article').addClass('large');
+  	});
+  	$('div.font-medium').click(function(){
+  		$('article').removeClass('large');
+  		$('article').removeClass('small');
+  	});
+  	$('div.font-small').click(function(){
+  		$('article').removeClass('large');
+  		$('article').addClass('small');
+  	});
+
   	$('article div > img').each(function(i, img){
   		var alt = img.alt;
   		var classes = $(img).attr('class');
@@ -10,7 +23,7 @@ $(document)
   		parent.append('<div class=\'caption\'>'+alt+'</div>')
   	});
 
-  	$('blockquote').each(function(i, blockquote){
+  	$('article blockquote').each(function(i, blockquote){
   		var divCnt = $(blockquote).children('div').length;
 
   		if( divCnt == 2) {
@@ -24,19 +37,19 @@ $(document)
   		}
   	});
 
-  	$('.info-box-container').each(function(i, infobox){
+  	$('article .info-box-container').each(function(i, infobox){
   		var parent = $(infobox).parent();
   		$(infobox).append('<div class=\'info-box\'></div>')
   	});
 
-  	$('abbr').each(function(i, abbr){
+  	$('article abbr').each(function(i, abbr){
   		var title = abbr.title;
   		var parent = $(abbr).parent();
   		$(abbr).after('<div class=\'annotation-box\'>'+title+'</div>');
   		$(abbr).after('<div class=\'annotation-btn\'></div>')
   	});
 
-  	$('iframe').each(function(i, iframe){
+  	$('article iframe').each(function(i, iframe){
   		var parent = $(iframe).parent();
   		parent.addClass('aspect-ratio');
   	});
@@ -49,7 +62,7 @@ $(document)
 		return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
   	}
 
-  	$('.audio-container').each(function(i, audiobox){
+  	$('article .audio-container').each(function(i, audiobox){
   		var parent = $(audiobox).parent();
   		var audioObj = $(audiobox).children('audio')[0];
 
@@ -88,7 +101,7 @@ $(document)
 		});
   	});
 
-  	$('.slideshow-container').each(function(i, slideshow) {
+  	$('article .slideshow-container').each(function(i, slideshow) {
   		var parent = $(slideshow).parent();
   		parent.addClass('slideshow-box');
 

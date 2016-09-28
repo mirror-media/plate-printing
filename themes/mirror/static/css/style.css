@@ -1030,6 +1030,58 @@ article .slideshow-box .slideshow-indicator {
 }
 
 /*
+  Article Large
+*/
+
+article.large .brief p {
+  font-size: 18px;
+}
+article.large p {
+  font-size: 20px;
+}
+article.large ul, article.large ol {
+  font-size: 18px;
+}
+article.large h1, h2 {
+  font-size: 32px;
+}
+article.large div.img .caption {
+  font-size: 17px;
+}
+article.large blockquote.quote {
+  font-size: 20px;
+}
+article.large .slideshow-box .slideshow-caption {
+  font-size: 17px;
+}
+
+/*
+  Article Small
+*/
+
+article.small .brief p {
+  font-size: 14px;
+}
+article.small p {
+  font-size: 16px;
+}
+article.small ul, article.small ol {
+  font-size: 14px;
+}
+article.small h1, h2 {
+  font-size: 28px;
+}
+article.small div.img .caption {
+  font-size: 13px;
+}
+article.small blockquote.quote {
+  font-size: 16px;
+}
+article.small .slideshow-box .slideshow-caption {
+  font-size: 13px;
+}
+
+/*
    Article Style 
 */
 .article-title {
