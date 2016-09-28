@@ -932,7 +932,7 @@ article .aspect-ratio iframe {
 
 article {
   max-width: 620px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 article .slideshow-box {
   position: relative;
