@@ -144,12 +144,12 @@
 		      {{ if $.Params.sections }}
 			      {{ range first 1 $.Params.sections }}
 			      	{{ if eq $section._id ._id }}
-			      		<a href="/section/{{ $section.name | urlize }}" class="item" style="color:#FFF;margin-bottom:30px; font-weight:bold !important;">
+			      		<a href="/section/{{ $section.name }}" class="item" style="color:#FFF;margin-bottom:30px; font-weight:bold !important;">
 				      		{{ $section.title }}
 				      		<div class="oval" style="margin-right:-10px;margin-bottom:4px;"></div>
 				      	</a>
 			      	{{ else }}
-			      		<a href="/section/{{ $section.name | urlize }}" class="item" style="color:#FFF;margin-bottom:30px; font-weight:normal !important;">
+			      		<a href="/section/{{ $section.name }}" class="item" style="color:#FFF;margin-bottom:30px; font-weight:normal !important;">
 				      		{{ $section.title }}
 				      	</a>
 			      	{{ end }}
@@ -208,7 +208,7 @@
 			    	
 			      {{if .Params.sections }}
 				      {{ range $section := first 1 .Params.sections }}
-					      <a href="/section/{{.name | urlize}}" class="header item openSidebar" style="color:#fff;" data-direction="top">
+					      <a href="/section/{{$section.name}}" class="header item openSidebar" style="color:#fff;" data-direction="top">
 					      	{{ $section.title }}
 					      	<div class="oval" style="margin-right:-10px;"></div>
 					      </a>
@@ -216,7 +216,7 @@
 						    {{ range $.Site.Data.sections._items }}
 						    	{{ if eq $section._id ._id }}
 						    		{{ range $categories := .categories }}
-						    			<a href="/category/{{.name | urlize}}" class="item" style="color:#fff; font-family: 'Songti TC', serif;">{{ .title }}</a>
+						    			<a href="/category/{{.name}}" class="item" style="color:#fff; font-family: 'Songti TC', serif;">{{ .title }}</a>
 						    		{{ end }}
 						    	{{ end }}
 						    {{ end }}
