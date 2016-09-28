@@ -1,6 +1,6 @@
-baseurl = "http://www.mm.mg/"
+baseurl = "http://www.mirrormedia.mg/"
 languageCode = "zh-tw"
-title = "MirroMedia"
+title = "鏡傳媒 Mirror Media"
 theme = "mirror"
 googleAnalytics = "UA-83609754-1"
 

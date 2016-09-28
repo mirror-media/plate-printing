@@ -26,17 +26,33 @@
 			    	{{ end }}
 			    	{{ range $index , $writer := $related.writers }}
 			    		{{ $writer.name }}
-			    	{{ end }}
+			    	{{ end }}&nbsp;&nbsp;
 			    {{ end }}
 			    {{if $related.photographers }}
-			    	<br/>
 			    	{{ if ge (len $related.photographers) 1 }}
 				  		攝影｜	
 			    	{{ end }}
 			    	{{ range $index , $photographer := $related.photographers }}
 			    		{{ $photographer.name }}
-			    	{{ end }}
+			    	{{ end }}&nbsp;&nbsp;
 			    {{ end }}
+			    {{if $related.designers }}
+			    	{{ if ge (len $related.designers) 1 }}
+				  		設計｜	
+			    	{{ end }}
+			    	{{ range $index , $designer := $related.designers }}
+			    		{{ $designer.name }}
+			    	{{ end }}&nbsp;&nbsp;
+			    {{ end }}
+			    {{if $related.engineers }}
+			    	{{ if ge (len $related.engineers) 1 }}
+				  		工程｜	
+			    	{{ end }}
+			    	{{ range $index , $engineer := $related.engineers }}
+			    		{{ $engineer.name }}
+			    	{{ end }}&nbsp;&nbsp;
+			    {{ end }}
+			    {{if .Params.extend_byline }}{{ .Params.extend_byline }}{{ end }}
 			</div>
 			<div class="related-cat">
 				{{ range first 1 $related.sections }}
