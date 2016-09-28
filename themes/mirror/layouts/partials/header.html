@@ -185,7 +185,7 @@
 			      <div class="right menu">
 					    <div class="item">
 					      <div class="ui transparent icon input">
-								  <input type="text">
+								  <input class="search" type="text">
 								  <i class="search icon"></i>
 								</div>
 					    </div>
@@ -246,14 +246,14 @@
 					    </div>
 					    <div class="item chooseFontsize" style="display:none;">
 					    	<div class="ui three column grid" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px;">
-					    		<div class="column font-larger">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-larger.png" style="width:35px!important;height:35px;"/>
+					    		<div class="column">
+					    			<div class="font-larger"></div>
 					    		</div>
-					    		<div class="column font-medium">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-active.png" style="width:28px!important;height:28px;"/>
+					    		<div class="column">
+					    			<div class="font-medium active"></div>
 					    		</div>
-					    		<div class="column font-small">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin.png" style="width:20px!important;height:20px;"/>
+					    		<div class="column">
+					    			<div class="font-small"></div>
 					    		</div>
 					    	</div>
 					    </div>
@@ -284,7 +284,7 @@
 				  	<div class="transparent line"></div>
 
 			      <div class="ui transparent input searchbar" style="max-width:100%;padding-right:60px;width: 100%;">
-						  <input type="text" style="text-align:right;" placeholder="搜尋">
+						  <input class="search" type="text" style="text-align:right;" placeholder="搜尋">
 						</div>
 				  </div>
 					<div class="ui container bottom attached blue progress indicator" style="width:100%;">
@@ -323,13 +323,13 @@
 					    <div class="item chooseFontsize" style="display:none;">
 					    	<div class="ui three column grid" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px;">
 					    		<div class="column">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-larger.png" style="width:35px!important;height:35px;"/>
+					    			<div class="font-larger"></div>
 					    		</div>
 					    		<div class="column">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin-active.png" style="width:28px!important;height:28px;"/>
+					    			<div class="font-medium active"></div>
 					    		</div>
 					    		<div class="column">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-tc-thin.png" style="width:20px!important;height:20px;"/>
+					    			<div class="font-small"></div>
 					    		</div>
 					    	</div>
 					    </div>
@@ -357,14 +357,14 @@
 			    </div>
 
 			    <div class="logo centered">
-			    	<img src="{{ .Site.Params.imgBaseUrl }}/icon/v-2.png" style="width:96px; height:30px;"/>
+			    	<a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/v-2.png" style="width:96px; height:30px;"/></a>
 			    </div>
 
 				  <div id="second" class="second-menu" style="display:none; height:230px; line-height:230px;">
 				  	<div class="transparent line"></div>
 
 			      <div class="ui transparent input searchbar" style="max-width:100%;padding-right:60px;">
-						  <input type="text" style="text-align:right;" placeholder="搜尋">
+						  <input class="search" type="text" style="text-align:right;" placeholder="搜尋">
 						</div>
 				  </div>
 
@@ -408,36 +408,28 @@
 			    </div>
 
 			    <div class="logo centered">
-			    	<img src="{{ .Site.Params.imgBaseUrl }}/icon/v-2.png" style="width:96px; height:30px;"/>
+			    	<a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/v-2.png" style="width:96px; height:30px;"/></a>
 			    </div>
 
 				  <div id="second" class="second-menu" style="display:none; height:230px; line-height:230px;">
 				  	<div class="transparent line"></div>
 
 			      <div class="ui transparent input searchbar" style="max-width:100%;padding-right:20px;display:none;">
-						  <input type="text" style="text-align:right;" placeholder="搜尋">
+						  <input class="search" type="text" style="text-align:right;" placeholder="搜尋">
 						</div>
 
-			      <div class="ui transparent input fontsize" style="max-width:100%;padding:60px;display:none;">
+			      <div class="ui transparent input fontsize" style="max-width:100%;padding:60px 30px;display:none;">
 					  	<div class="ui three column grid" style="width: 100%;margin: 0 auto; text-align: center; line-height:60px; text-align:center;">
-				    		<div class="row" style="padding-bottom:0px; height:60px;">
+				    		<div class="row" style="padding-bottom:0px; height:60px; line-height: 20px;">
 					    		<div class="column">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size@2x.png" style="width:60px!important;height:60px;    vertical-align: text-bottom;"/>
+					    			<div class="font-larger mobile"></div>
 					    		</div>
 					    		<div class="column">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size-active@2x.png" style="width:48px!important;height:48px;    vertical-align: text-bottom;"/>
-					    			<br/>
+					    			<div class="font-medium mobile active"></div>
 					    		</div>
 					    		<div class="column">
-					    			<img src="{{ .Site.Params.imgBaseUrl }}/icon/font-size@2x.png" style="width:35px!important;height:35px;    vertical-align: text-bottom;"/>
+					    			<div class="font-small mobile"></div>
 					    		</div>
-					    	</div>
-					    	<div class="row" style="height:10px;padding:0px;">
-					    		<div class="column"></div>
-					    		<div class="column">
-					    			<div class="oval" style="background-color:#004ea2;margin-left: 0;"></div>
-					    		</div>
-					    		<div class="column"></div>
 					    	</div>
 				    	</div>
 						</div>

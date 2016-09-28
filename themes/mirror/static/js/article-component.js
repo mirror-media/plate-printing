@@ -1,19 +1,40 @@
 $(document)
   .ready(function() {
-  
-  	$('div.font-larger').click(function(){
-  		$('article').removeClass('small');
-  		$('article').addClass('large');
-  	});
-  	$('div.font-medium').click(function(){
-  		$('article').removeClass('large');
-  		$('article').removeClass('small');
-  	});
-  	$('div.font-small').click(function(){
-  		$('article').removeClass('large');
-  		$('article').addClass('small');
+  	/* Search */
+  	$('input.search').each(function(i,search){
+  		$(search).wrap('<form class="search-form"></form>');
+  	  	var parent = $(search).parent();
+  	  	parent.submit(function( event ) {
+		  console.log( "Handler for .submit() called." );
+		  $(location ).attr("href", '/search/'+$(search).val());
+		  event.preventDefault();
+		});
   	});
 
+  	/* Font */
+  	$('div.font-larger').click(function(){
+  		var parent = $(this).parent().parent();
+  		$(parent).find('div.active').removeClass('active');
+  		$('article').removeClass('small');
+  		$('article').addClass('large');
+  		$(this).addClass('active');
+  	});
+  	$('div.font-medium').click(function(){
+  		var parent = $(this).parent().parent();
+		$(parent).find('div.active').removeClass('active');
+  		$('article').removeClass('large');
+  		$('article').removeClass('small');
+  		$(this).addClass('active');
+  	});
+  	$('div.font-small').click(function(){
+  		var parent = $(this).parent().parent();
+		$(parent).find('div.active').removeClass('active');
+  		$('article').removeClass('large');
+  		$('article').addClass('small');
+  		$(this).addClass('active');
+  	});
+
+  	/* Components */
   	$('article div > img').each(function(i, img){
   		var alt = img.alt;
   		var classes = $(img).attr('class');

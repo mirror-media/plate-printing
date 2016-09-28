@@ -1090,6 +1090,61 @@ article.small .slideshow-box .slideshow-caption {
   font-size: 13px;
 }
 
+/* 
+  Font Sizer
+*/
+
+.chooseFontsize .ui.grid {
+  align-items: flex-end !important;
+}
+
+.chooseFontsize .column {
+  padding: 0 !important;
+}
+
+.font-larger {
+  cursor: hand;
+  cursor: pointer;
+  display: inline-block;
+  background: url('/news/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
+  background-size: contain;
+  width:35px !important;
+  height:35px;
+}
+.font-medium {
+  cursor: hand;
+  cursor: pointer;
+  display: inline-block;
+  background: url('/news/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
+  background-size: contain;
+  width:28px !important;
+  height:28px;
+}
+.font-small {
+  cursor: hand;
+  cursor: pointer;
+  display: inline-block;
+  background: url('/news/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
+  background-size: contain;
+  width:20px !important;
+  height:20px;
+}
+.font-larger.active, .font-medium.active, .font-small.active {
+  background: url('/news/img/icon/font-size-tc-thin-active@2x.png') no-repeat center center;
+  background-size: contain;
+}
+.font-larger.mobile {
+  width:60px !important;
+  height:60px;
+}
+.font-medium.mobile {
+  width:48px !important;
+  height:48px;
+}
+.font-small.mobile {
+  width:35px !important;
+  height:35px;
+}
 /*
    Article Style 
 */
@@ -1462,10 +1517,11 @@ div.colorBlock.choice {
 } 
 
 .tablet .logo.centered {
-  pointer-events: none;
+  /*pointer-events: none;*/
   position:fixed; 
   top:22px; 
-  width:100%; 
+  /*width:100%;*/
+  left: calc(50% - 48px);
   text-align:center;
 }
 
@@ -1557,10 +1613,11 @@ div.colorBlock.choice {
 }
 
 .mobile .logo.centered {
-  pointer-events: none;
+  /*pointer-events: none;*/
   position:fixed; 
   top:15px; 
-  width:100%; 
+  /*width:100%; */
+  left: calc(50% - 48px);
   text-align:center;
 }
 
@@ -1782,6 +1839,29 @@ div.colorBlock.choice {
     }
     article .slideshow-box .slideshow-caption {
       margin-top: 0 !important;
+    }
+
+    .fontsize .ui.grid>.row {
+      align-items: flex-end;
+    }
+
+    .fontsize .font-larger.active:after {
+      position: relative;
+      top: 65px;
+      content: '\00b7';
+      color: #004ea2;
+    }
+    .fontsize .font-medium.active:after {
+      position: relative;
+      top: 53px;
+      content: '\00b7';
+      color: #004ea2;
+    }
+    .fontsize .font-small.active:after {
+      position: relative;
+      top: 40px;
+      content: '\00b7';
+      color: #004ea2;
     }
 }
 
