@@ -185,7 +185,7 @@ $(document)
     var latestBottomTemplate = $.templates("#latest-bottom-tempalte");
 
 
-    $.getJSON( "http://stage.mirrormedia.mg/news/json/latest-posts.json", function( data ) {
+    $.getJSON( "/story/json/latest-posts.json", function( data ) {
       for (var i = 0; i < data._items.length; i++) {
         data._items[i].idx = i+1;
         if (typeof data._items[i].heroImage != "undefined" )

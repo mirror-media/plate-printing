@@ -22,7 +22,7 @@
 	<meta property="og:type" content="article" />
 	<meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}" />
 	<meta property="og:description" content="{{ substr (plainify .Params.brief.html) 0 200 }}" />
-	<meta property="og:url" content="{{ $baseurl | safeURL }}news/{{ .Slug }}" />
+	<meta property="og:url" content="{{ $baseurl | safeURL }}story/{{ .Slug }}" />
 	{{if .Params.heroimage.image }}
 	<meta property="og:image" content="{{ .Params.heroimage.image.url }}"/>
 	{{ else }}
@@ -43,7 +43,7 @@
 		  "@context": "http://schema.org",
 		  "@type": "NewsArticle",
 		  "headline": "{{ .Title }}",
-		  "url": "http://www.mirrormedia.mg/news/{{ .Slug }}",
+		  "url": "http://www.mirrormedia.mg/story/{{ .Slug }}",
 		  "thumbnailUrl": "{{if .Params.heroimage.image }}{{ .Params.heroimage.image.url | safeURL }}{{ else }}{{ $baseurl }}asset/logo.png{{ end }}",
 		  "dateCreated": "{{ .Params.publishedDate }}",
 		  "articleSection": "{{if .Params.sections }}{{ range $section := first 1 .Params.sections }}{{ $section.title }}{{ end }}{{ end }}",
@@ -75,18 +75,18 @@
 
 	<script id="latest-top-tempalte" type="text/x-jsrender">
 		<div class="block">
-			<a href="/news/{^{:slug}}"><div class="block-header" style="{^{:preview}}')">
+			<a href="/story/{^{:slug}}"><div class="block-header" style="{^{:preview}}')">
 				<div class="block-cat">{^{:categories[0].title}}</div>
 				<div class="block-rank">{^{:idx}}</div>
 			</div></a>
 			<div class="block-body" style="">
-				<a href="/news/{^{:slug}}"><p>{^{:title}}</p></a>
+				<a href="/story/{^{:slug}}"><p>{^{:title}}</p></a>
 			</div>
 		</div>
 	</script>
 
 	<script id="latest-bottom-tempalte" type="text/x-jsrender">
-		<li><a href="/news/{^{:slug}}">{^{:title}}</a><div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
+		<li><a href="/story/{^{:slug}}">{^{:title}}</a><div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
 	</script>
 
 </head>
@@ -280,9 +280,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
-							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
 							    <a href="#" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
 					    	</div>
 					    </div>
@@ -356,9 +356,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
-							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}news/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
 							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
 					    	</div>
 					    </div>
@@ -445,9 +445,9 @@
 
 			      <div class="ui transparent input sharing" style="max-width:100%;padding:60px;display:none;">
 					  	<div class="ui four column grid" style="width: 100%;margin: 0 auto; text-align: center; line-height:60px; text-align:center;">
-				    		<div class="column"><a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a></div>
-				    		<div class="column"><a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a></div>
-				    		<div class="column"><a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}news/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a></div>
+				    		<div class="column"><a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a></div>
+				    		<div class="column"><a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a></div>
+				    		<div class="column"><a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a></div>
 				    		<div class="column"><a href=""><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a></div>
 				    	</div>
 						</div>
