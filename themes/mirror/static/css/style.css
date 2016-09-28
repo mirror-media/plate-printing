@@ -1693,12 +1693,10 @@ div.colorBlock.choice {
         text-align: center;
         -webkit-tap-highlight-color: transparent;
     }
-
     article .owl-dots .owl-dot {
         display: inline-block;
         zoom: 1;
     }
-
     article .owl-dots .owl-dot span {
         width: 8px;
         height: 8px;
@@ -1715,12 +1713,13 @@ div.colorBlock.choice {
         -moz-border-radius: 30px;
         border-radius: 30px;
     }
-
     article .owl-dots .owl-dot.active span, .owl-dots .owl-dot:hover span {
         background: #004ea2;
     }
-
-    article .slideshow-caption {
+    article .slideshow-box .slideshow-indicator {
+      display: none !important;
+    }
+    article .slideshow-box .slideshow-caption {
       margin-top: 0 !important;
     }
 }
