@@ -738,7 +738,7 @@ article blockquote .quote-body {
   font-size: 24px;
   line-height: 1.8;
   color: rgba(0, 0, 0, 0.7);
-  background-image: url('/news/img/icon/blockquote-start.png'), url('/news/img/icon/blockquote-end.png');
+  background-image: url('/story/img/icon/blockquote-start.png'), url('/story/img/icon/blockquote-end.png');
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
   padding: 10px 60px;
@@ -808,12 +808,12 @@ article .annotation-btn {
   margin-right: -8px;
   width: 30px;
   height: 30px;
-  background: url('/news/img/icon/annotation@2x.png') no-repeat;
+  background: url('/story/img/icon/annotation@2x.png') no-repeat;
   background-size: contain;
 }
 
 article .annotation-btn:hover {
-  background: url('/news/img/icon/opened@2x.png') no-repeat;
+  background: url('/story/img/icon/opened@2x.png') no-repeat;
   background-size: contain;
 }
 
@@ -875,7 +875,7 @@ article .audio-box .audio-cover {
   width: 140px;
   height: 140px;
   background-color: #004ea2;
-  background-image: url('/news/img/icon/audio@2x.png');
+  background-image: url('/story/img/icon/audio@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100px 50px;
@@ -889,13 +889,13 @@ article .audio-box .audio-cover .audio-btn {
   top:0; bottom:0; left:0; right:0; margin:auto;
 }
 article .audio-box .audio-cover .audio-btn.play {
-  background-image: url('/news/img/icon/pause-btn@2x.png');
+  background-image: url('/story/img/icon/pause-btn@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 article .audio-box .audio-cover .audio-btn.pause {
-  background-image: url('/news/img/icon/play-btn@2x.png');
+  background-image: url('/story/img/icon/play-btn@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -993,7 +993,7 @@ article .slideshow-box .slideshow-thumbs .displaying {
 }
 article .slideshow-box .slideshow-thumbs .owl-controls .owl-prev {
   background: #FFF;
-  background: url('/news/img/icon/left@2x.png') no-repeat center center !important;
+  background: url('/story/img/icon/left@2x.png') no-repeat center center !important;
   background-size: contain !important;
   width: 30px;
   height: 30px;
@@ -1003,7 +1003,7 @@ article .slideshow-box .slideshow-thumbs .owl-controls .owl-prev {
 }
 article .slideshow-box .slideshow-thumbs .owl-controls .owl-next {
   background: #FFF;
-  background: url('/news/img/icon/right@2x.png') no-repeat center center !important;
+  background: url('/story/img/icon/right@2x.png') no-repeat center center !important;
   background-size: contain !important;
   width: 30px;
   height: 30px;
@@ -1106,7 +1106,7 @@ article.small .slideshow-box .slideshow-caption {
   cursor: hand;
   cursor: pointer;
   display: inline-block;
-  background: url('/news/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
+  background: url('/story/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
   background-size: contain;
   width:35px !important;
   height:35px;
@@ -1115,7 +1115,7 @@ article.small .slideshow-box .slideshow-caption {
   cursor: hand;
   cursor: pointer;
   display: inline-block;
-  background: url('/news/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
+  background: url('/story/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
   background-size: contain;
   width:28px !important;
   height:28px;
@@ -1124,13 +1124,13 @@ article.small .slideshow-box .slideshow-caption {
   cursor: hand;
   cursor: pointer;
   display: inline-block;
-  background: url('/news/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
+  background: url('/story/img/icon/font-size-tc-thin-larger@2x.png') no-repeat center center;
   background-size: contain;
   width:20px !important;
   height:20px;
 }
 .font-larger.active, .font-medium.active, .font-small.active {
-  background: url('/news/img/icon/font-size-tc-thin-active@2x.png') no-repeat center center;
+  background: url('/story/img/icon/font-size-tc-thin-active@2x.png') no-repeat center center;
   background-size: contain;
 }
 .font-larger.mobile {

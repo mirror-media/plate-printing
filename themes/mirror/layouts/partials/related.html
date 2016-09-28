@@ -4,10 +4,10 @@
 	{{ if .Params.relateds }}
 		{{ range $related := .Params.relateds }}
 	<div class="related-block" style="">
-		<a href="/news/{{$related.slug}}"><div class="related-img" {{ if $related.heroImage.image.resizedTargets }} style="background:url('{{ $related.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }}></div></a>
+		<a href="/story/{{$related.slug}}"><div class="related-img" {{ if $related.heroImage.image.resizedTargets }} style="background:url('{{ $related.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }}></div></a>
 		<div class="related-date">{{ dateFormat "2006.01.02" $related.publishedDate }}</div>
 		<div class="related-content">
-			<a href="/news/{{$related.slug}}"><h2>{{ $related.title }}</h2></a>
+			<a href="/story/{{$related.slug}}"><h2>{{ $related.title }}</h2></a>
 			<div class="line"></div>
 			<div class="brief">
 				{{ if $related.brief }}

@@ -45,7 +45,7 @@
 					<!-- First 3 -->
 					{{ if lt $idx 3 }}
 						<div class="choice-block">
-							<a href="/news/{{$choice.slug}}"><div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }} ') no-repeat center center; background-size:cover;" {{ end }}></div></a>
+							<a href="/story/{{$choice.slug}}"><div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }} ') no-repeat center center; background-size:cover;" {{ end }}></div></a>
 							<div class="choice-cat {{ if mod $idx 2 }}  {{ else }} right {{ end }}">
 								{{ range first 1 $choice.sections }}
 									{{ $id := ._id }}
@@ -58,7 +58,7 @@
 							</div>
 
 							<div class="choice-content {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
-								<a href="/news/{{$choice.slug}}"><h2>{{ $choice.title }}</h2></a>
+								<a href="/story/{{$choice.slug}}"><h2>{{ $choice.title }}</h2></a>
 								<div class="line"></div>
 								<div class="brief">
 									{{ if $choice.brief.html }}	
@@ -130,7 +130,7 @@
 					{{ if ge $idx 3}}
 						<div class="column">
 							<div class="choice-block">
-								<a href="/news/{{$choice.slug}}"><div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
+								<a href="/story/{{$choice.slug}}"><div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
 									<div class="choice-cat">
 										{{ range first 1 $choice.sections }}
 											{{ $id := ._id }}
@@ -143,7 +143,7 @@
 									</div>
 								</div></a>
 								<div class="column-choice-content">
-									<a href="/news/{{$choice.slug}}"><h2 style="text-align:center;">{{ $choice.title }}</h2></a>
+									<a href="/story/{{$choice.slug}}"><h2 style="text-align:center;">{{ $choice.title }}</h2></a>
 									<div class="line mobile-hide"></div>
 									<div class="brief mobile-hide">
 										{{ if $choice.brief.html }}	
