@@ -63,9 +63,9 @@
 	  		</p>
 	  		<p class="article-sharing mobile-hide tablet-hide" style="float: right; color: rgba(0,0,0,0.4);">
 	  			分享這篇文章：
-	  			<a class="item" href="#" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a>
-	  			<a class="item" href="#" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a>
-	  			<a class="item" href="#" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a>
+	  			<a class="item" href="http://line.me/R/msg/text/?{{ .Title }}%0D%0A{{ $baseurl | safeHTML }}news/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a>
+	  			<a class="item" href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}news/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a>
+	  			<a class="item" href="http://www.facebook.com/share.php?u={{ $baseurl | safeHTML }}news/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a>
 	  			<a class="item" href="#" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a>
 	  		</p>
 	  	</div>
@@ -164,13 +164,6 @@
 			    </div>
 			    {{ end }}   
 		    {{ end }}
-		    {{if .Params.extend_byline }}
-			    <div class="centered author" style="max-width:620px;margin:20px auto;">
-			    	<hr/>
-			    	<h2 class="author-name">{{ .Params.extend_byline }}</h2>
-			    	<hr/>
-			    </div>
-		    {{ end }}
 
 		    {{ partial "related.html" . }}
 
@@ -178,10 +171,10 @@
 
 	    <div class="sidebar tablet-hide mobile-hide">
 
-	    	<div class="ad" style="width:300px;height:300px; background-color: #d8d8d8; text-align:center; line-height:300px;">Advertisement</div>
+	    	<div class="ad" style="width:300px;height:300px; background-color: #d8d8d8; text-align:center; line-height:300px; margin-bottom: 35px; display: none;">Advertisement</div>
 
 	    	<!-- Choice and Latest -->
-	    	<div class="latest-top" style="margin-top:35px;">
+	    	<div class="latest-top">
 	    		<div style="text-align:right;">
 	    			<h2 class="hot-topic">本週主打<div class="colorBlock hot"></div></h2>
 	    		</div>
