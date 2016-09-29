@@ -20,23 +20,31 @@
 	<meta property="og:site_name" content="鏡傳媒 Mirror Media" />
 	<meta property="og:locale" content="zh_TW" />    
 	<meta property="og:type" content="article" />
-	<meta property='og:title' content="{{ .Title }} - {{ .Site.Title }}" />
-	<meta property="og:description" content="{{ substr (plainify .Params.brief.html) 0 200 }}" />
+	<meta property="og:title" content="{{if .Params.og_title }}{{ .Params.og_title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}" />
+	<meta property="og:description" content="{{if .Params.og_title }}{{ .Params.og_description }}{{ else }}{{ substr (plainify .Params.brief.html) 0 200 }}{{ end }}" />
 	<meta property="og:url" content="{{ $baseurl | safeURL }}story/{{ .Slug }}" />
+	{{if .Params.og_image }}
+	<meta property="og:image" content="{{ .Params.og_image }}"/>
+	{{ else }}
 	{{if .Params.heroimage.image }}
 	<meta property="og:image" content="{{ .Params.heroimage.image.url }}"/>
 	{{ else }}
 	<meta property="og:image" content="{{ $baseurl }}asset/logo.png"/>
 	{{ end }}
+	{{ end }}
 	
 
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}">
-	<meta name="twitter:description" content="{{ substr (plainify .Params.brief.html) 0 200 }}">
-	{{if .Params.heroimage.image }}
-	<meta property="twitter:image" content="{{ .Params.heroimage.image.url }}"/>
+	<meta name="twitter:title" content="{{if .Params.og_title }}{{ .Params.og_title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}" />
+	<meta name="twitter:description" content="{{if .Params.og_title }}{{ .Params.og_description }}{{ else }}{{ substr (plainify .Params.brief.html) 0 200 }}{{ end }}" />
+	{{if .Params.og_image }}
+	<meta name="twitter:image" content="{{ .Params.og_image }}"/>
 	{{ else }}
-	<meta property="twitter:image" content="{{ $baseurl }}asset/logo.png"/>
+	{{if .Params.heroimage.image }}
+	<meta name="twitter:image" content="{{ .Params.heroimage.image.url }}"/>
+	{{ else }}
+	<meta name="twitter:image" content="{{ $baseurl }}asset/logo.png"/>
+	{{ end }}
 	{{ end }}
 	<script type="application/ld+json">
 		{
