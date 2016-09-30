@@ -923,9 +923,11 @@ article .audio-container .audio-time {
 
 article .aspect-ratio {
   position: relative;
+  display: table;
   width: 100%;
   height: 0;
   padding-bottom: 56%;
+  margin-bottom: 35px;
 }
 article .aspect-ratio iframe {
   position: absolute;
