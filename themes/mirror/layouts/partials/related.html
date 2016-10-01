@@ -1,7 +1,6 @@
-<div class="related">
+{{ if .Params.relateds }}
+  <div class="related">
 	<h2 class="colorTitle"><div class="colorBlock"></div>相關文章</h2>
-
-	{{ if .Params.relateds }}
 		{{ range $related := .Params.relateds }}
 	<div class="related-block" style="">
 		<a href="/story/{{$related.slug}}"><div class="related-img" {{ if $related.heroImage.image.resizedTargets }} style="background:url('{{ $related.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }}></div></a>
@@ -62,6 +61,5 @@
 		</div>
 	</div>
 		{{ end }}
-	{{ end }}
-
-</div>
+  </div>
+{{ end }}
