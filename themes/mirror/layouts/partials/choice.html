@@ -1,3 +1,6 @@
+{{ if $.Site.Data.choices }}
+{{ if gt (len $.Site.Data.choices._items) 0 }}
+
 <div class="choice" style="margin: 2em auto;">
 
 	<div class="ui grid">
@@ -38,7 +41,6 @@
 
 	<div class="choice-main" style="margin:2em auto; position:relative;">
 
-		{{ if $.Site.Data.choices }}
 			{{ range $.Site.Data.choices._items }}
 				{{ range $idx, $choice := .choices }}
 
@@ -119,11 +121,9 @@
 
 				{{ end }}
 			{{ end }}
-		{{ end }}
 
 		<div class="ui three column stackable grid" style="margin:0 auto;">
 
-		{{ if $.Site.Data.choices }}
 			{{ range $.Site.Data.choices._items }}
 				{{ range $idx, $choice := .choices }}
 
@@ -177,10 +177,12 @@
 					
 				{{ end }}
 			{{ end }}
-		{{ end }}
 		</div>
 
 	</div>
+</div>
+{{ end }}
+{{ end }}
 
 	<div class="ui grid">
 	  <div class="sixteen wide column" style="padding-left: 1em !important;">
@@ -212,4 +214,3 @@
 	  </div>
 	</div>
 
-</div>
