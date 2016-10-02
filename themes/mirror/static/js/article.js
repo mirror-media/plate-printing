@@ -186,6 +186,11 @@ $(document)
 
 
     $.getJSON( "/story/json/latest-posts.json", function( data ) {
+
+      if( data._items.length > 5 ){
+        $(".sidebar.article-sidebar").append("<div class=\"latest-bottom\" style=\"width: 300px;  background-color: #ffffff; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); padding:20px; margin-bottom:2px;\"><ul class=\"latest\"></ul></div>");
+      }
+      
       for (var i = 0; i < data._items.length; i++) {
         data._items[i].idx = i+1;
         if (typeof data._items[i].heroImage != "undefined" )
