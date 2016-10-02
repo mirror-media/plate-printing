@@ -17,7 +17,7 @@ googleAnalytics = "UA-83609754-1"
 	wechat		= "#wechat"
 	instagram	= "https://www.instagram.com/mirror_media/"
 	feed		= "/story/index.xml"
-	mail		= "#mail"
+	mail		= "mailto:mirror885@mirrormedia.mg"
 
 [taxonomies]
 	tag = "HugoTags"
