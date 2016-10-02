@@ -332,15 +332,19 @@
 			      <div class="header item openSidebar" data-direction="left" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important;">
 			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>
-			      <div class="item" style="padding-left:0px !important;">
-			      	<div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:70px; line-height:70px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
-					      {{if .Params.sections }}
-						      {{ range first 1 .Params.sections }}
+
+			      {{if .Params.sections }}
+				      {{ range first 1 .Params.sections }}
+				      	<a href="/section/{{ .name }}">
+					      <div class="item" style="padding-left:0px !important;">
+					      	<div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:70px; line-height:70px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 							      {{ .title }}
-						      {{ end }}
-					      {{ end }}
-			      	</div>
-			      </div>
+					      	</div>
+					      </div>
+					      </a>
+				      {{ end }}
+			      {{ end }}
+
 			      <div class="right menu nav">
 					    <div class="item logo" style="display:none;">
 					      <a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/logo.png"/></a>
