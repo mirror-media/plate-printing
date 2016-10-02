@@ -66,6 +66,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ .Site.Params.cssBaseUrl }}/semantic.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ .Site.Params.cssBaseUrl }}/style.css">
 	<link rel="stylesheet" href="{{ .Site.Params.cssBaseUrl }}/owl.carousel.css">
+	<link rel="stylesheet" href="{{ .Site.Params.cssBaseUrl }}/share.css">
 
 	<link rel="apple-touch-icon" sizes="72x72" href="{{ .Site.Params.imgBaseUrl }}/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="{{ .Site.Params.imgBaseUrl }}/favicon-32x32.png" sizes="32x32">
@@ -80,14 +81,23 @@
 	<script src="{{ .Site.Params.jsBaseUrl }}/jquery-scrollLock.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jsrender.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/owl.carousel.min.js"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/share.min.js"></script>
 
-	{{ template "_internal/google_analytics.html" . }}
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', '{{ $.Site.GoogleAnalytics }}', 'auto');
+	ga('set', 'contentGroup1', '{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ .title }}{{ end }}{{ end }}');
+	ga('send', 'pageview');
+	</script>
 
 	<script id="latest-top-tempalte" type="text/x-jsrender">
 		<div class="block">
 			<a href="/story/{^{:slug}}"><div class="block-header" style="{^{:preview}}')">
-				<div class="block-cat">{^{:categories[0].title}}</div>
-				<div class="block-rank">{^{:idx}}</div>
+				<div class="block-cat right">{^{:categories[0].title}}</div>
 			</div></a>
 			<div class="block-body" style="">
 				<a href="/story/{^{:slug}}"><p>{^{:title}}</p></a>
@@ -114,10 +124,10 @@
 	    {{ range $section := .Site.Data.sections._items }}
 	      <div class="column">
 	        <div class="ui list">
-	        	<a href="/section/{{ $section.name }}" class="item section" style="color:#FFF;font-size:1.2em;">{{ $section.title }}</a>
+	        	<a href="/section/{{ $section.name }}" class="item section" style="color:#FFF;font-size:1.2em; font-family: 'Noto Sans TC', sans-serif; font-weight: bold !important;">{{ $section.title }}</a>
 
 	        	{{ range $category := $section.categories }}
-	        		<a href="/category/{{ $category.name }}"  class="item" style="color:#FFF;" >{{ $category.title }}</a>
+	        		<a href="/category/{{ $category.name }}"  class="item" style="color:#FFF; font-family: 'Noto Sans TC', sans-serif; font-weight: 400 !important;" >{{ $category.title }}</a>
 	        	{{ end }}
 	        </div>
 	      </div>
@@ -226,7 +236,7 @@
 						    {{ range $.Site.Data.sections._items }}
 						    	{{ if eq $section._id ._id }}
 						    		{{ range $categories := .categories }}
-						    			<a href="/category/{{.name}}" class="item" style="color:#fff; font-family: 'Songti TC', serif;">{{ .title }}</a>
+						    			<a href="/category/{{.name}}" class="item" style="color:#fff; font-family: 'Noto Sans TC', sans-serif;">{{ .title }}</a>
 						    		{{ end }}
 						    	{{ end }}
 						    {{ end }}
@@ -241,11 +251,11 @@
 
 		    <div class="ui borderless main menu sticky-menu first-menu" style="max-width: 100% !important;display:block !important; ">
 			    <div class="ui text container" style="max-width: 100%!important; height:60px; width:100%;">
-			      <div class="header item openSidebar" data-direction="top" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important; font-size: 17px; letter-spacing: 1.6px; color: rgba(0, 0, 0, 0.3);">
+			      <div class="header item openSidebar" data-direction="top" style="width:114px; font-family: 'Noto Sans TC', sans-serif; font-weight: 400 !important; text-align:center; padding-left:22px !important; padding-right:5px !important; font-size: 17px; letter-spacing: 1.6px; color: rgba(0, 0, 0, 0.3);">
 			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>
 			      <div class="item" style="padding-left:0px !important;">
-			      	<div class="gradient" style="float: right; color: rgba(0,0,0,0.4); width:160px; height:60px; line-height:60px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
+			      	<div class="gradient" style="float: right; font-family: 'Noto Sans TC', sans-serif; font-weight: bold !important; color: rgba(0,0,0,0.4); width:160px; height:60px; line-height:60px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 				      {{if .Params.sections }}
 					      {{ range first 1 .Params.sections }}
 						      {{ .title }}
@@ -293,7 +303,9 @@
 					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
 							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
 							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
-							    <a href="#" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
+							    <span class="social-share" data-initialized="true">
+				    				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px; margin-bottom: -4px;"/></a>
+				  				</span>
 					    	</div>
 					    </div>
 				    </div>
