@@ -228,7 +228,7 @@
 			    	
 			      {{if .Params.sections }}
 				      {{ range $section := first 1 .Params.sections }}
-					      <a href="/section/{{$section.name}}" class="header item openSidebar" style="color:#fff;" data-direction="top">
+					      <a href="/section/{{$section.name}}" class="header item" style="color:#fff;" data-direction="top">
 					      	{{ $section.title }}
 					      	<div class="oval" style="margin-right:-10px;"></div>
 					      </a>
