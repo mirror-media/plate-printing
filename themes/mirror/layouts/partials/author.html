@@ -1,0 +1,107 @@
+		    {{if .Params.writers }}
+		    	{{ range $index , $writer := .Params.writers }}
+			    <div class="centered author" style="max-width:620px;margin:20px auto;">
+			    	<hr/>
+			    	<h2 class="author-name">{{ $writer.name }}<p class="author-mail">{{if $writer.email }}{{ $writer.email }}{{ end }}</p></h2>
+
+			    	<p class="author-bio">{{if $writer.bio }}{{ $writer.bio.html | safeHTML }}{{ end }}</p>
+			    	<hr/>
+			    </div>
+			    {{ end }}   
+		    {{ end }}
+
+		    {{if .Params.photographers }}
+		    	{{ range $index , $photographer := .Params.photographers }}
+			    	{{ $.Scratch.Set "flag" true }}
+
+				    {{if $.Params.writers }}
+				    	{{ range $index , $writer := $.Params.writers }}
+				    		{{ if eq $photographer.name $writer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{ if $.Scratch.Get "flag" }}
+				    <div class="centered author" style="max-width:620px;margin:20px auto;">
+				    	<hr/>
+				    	<h2 class="author-name">{{ $photographer.name }}<p class="author-mail">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p></h2>
+
+				    	<p class="author-bio">{{if $photographer.bio }}{{ $photographer.bio.html | safeHTML }}{{ end }}</p>
+				    	<hr/>
+				    </div>
+				    {{ end }}
+			    {{ end }}   
+		    {{ end }}
+
+		    {{if .Params.designers }}
+		    	{{ range $index , $designer := .Params.designers }}
+			    	{{ $.Scratch.Set "flag" true }}
+
+				    {{if $.Params.writers }}
+				    	{{ range $index , $writer := $.Params.writers }}
+				    		{{ if eq $designer.name $writer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{if $.Params.photographers }}
+				    	{{ range $index , $photographer := $.Params.photographers }}
+				    		{{ if eq $designer.name $photographer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{ if $.Scratch.Get "flag" }}
+					    <div class="centered author" style="max-width:620px;margin:20px auto;">
+					    	<hr/>
+					    	<h2 class="author-name">{{ $designer.name }}<p class="author-mail">{{if $designer.email }}{{ $designer.email }}{{ end }}</p></h2>
+
+					    	<p class="author-bio">{{if $designer.bio }}{{ $designer.bio.html | safeHTML }}{{ end }}</p>
+					    	<hr/>
+					    </div>
+				    {{ end }}
+			    {{ end }}   
+		    {{ end }}
+
+		    {{if .Params.engineers }}
+		    	{{ range $index , $engineer := .Params.engineers }}
+			    	{{ $.Scratch.Set "flag" true }}
+
+				    {{if $.Params.writers }}
+				    	{{ range $index , $writer := $.Params.writers }}
+				    		{{ if eq $engineer.name $writer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{if $.Params.photographers }}
+				    	{{ range $index , $photographer := $.Params.photographers }}
+				    		{{ if eq $engineer.name $photographer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{if $.Params.designers }}
+				    	{{ range $index , $designer := $.Params.designers }}
+				    		{{ if eq $engineer.name $designer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{ if $.Scratch.Get "flag" }}
+					    <div class="centered author" style="max-width:620px;margin:20px auto;">
+					    	<hr/>
+					    	<h2 class="author-name">{{ $engineer.name }}<p class="author-mail">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p></h2>
+
+					    	<p class="author-bio">{{if $engineer.bio }}{{ $engineer.bio.html | safeHTML }}{{ end }}</p>
+					    	<hr/>
+					    </div>
+			    	{{ end }}
+			    {{ end }}   
+		    {{ end }}

@@ -66,7 +66,9 @@
 	  			<a class="item" href="http://line.me/R/msg/text/?{{ .Title }}%0D%0A{{ $baseurl | safeHTML }}story/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a>
 	  			<a class="item" href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}story/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a>
 	  			<a class="item" href="http://www.facebook.com/share.php?u={{ $baseurl | safeHTML }}story/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a>
-	  			<a class="item" href="#" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a>
+	  			<span class="social-share" data-initialized="true">
+    				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a>
+  				</span>
 	  		</p>
 	  	</div>
 	  	<div class="article-sharing computer-hide">
@@ -120,50 +122,7 @@
 
 		    <div style="width:10px;height:10px;"></div>
 
-		    {{if .Params.writers }}
-		    	{{ range $index , $writer := .Params.writers }}
-			    <div class="centered author" style="max-width:620px;margin:20px auto;">
-			    	<hr/>
-			    	<h2 class="author-name">{{ $writer.name }}<p class="author-mail">{{if $writer.email }}{{ $writer.email }}{{ end }}</p></h2>
-
-			    	<p class="author-bio">{{if $writer.bio }}{{ $writer.bio }}{{ end }}</p>
-			    	<hr/>
-			    </div>
-			    {{ end }}   
-		    {{ end }}
-		    {{if .Params.photographers }}
-		    	{{ range $index , $photographer := .Params.photographers }}
-			    <div class="centered author" style="max-width:620px;margin:20px auto;">
-			    	<hr/>
-			    	<h2 class="author-name">{{ $photographer.name }}<p class="author-mail">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p></h2>
-
-			    	<p class="author-bio">{{if $photographer.bio }}{{ $photographer.bio }}{{ end }}</p>
-			    	<hr/>
-			    </div>
-			    {{ end }}   
-		    {{ end }}
-		    {{if .Params.designers }}
-		    	{{ range $index , $designer := .Params.designers }}
-			    <div class="centered author" style="max-width:620px;margin:20px auto;">
-			    	<hr/>
-			    	<h2 class="author-name">{{ $designer.name }}<p class="author-mail">{{if $designer.email }}{{ $designer.email }}{{ end }}</p></h2>
-
-			    	<p class="author-bio">{{if $designer.bio }}{{ $designer.bio }}{{ end }}</p>
-			    	<hr/>
-			    </div>
-			    {{ end }}   
-		    {{ end }}
-		    {{if .Params.engineers }}
-		    	{{ range $index , $engineer := .Params.engineers }}
-			    <div class="centered author" style="max-width:620px;margin:20px auto;">
-			    	<hr/>
-			    	<h2 class="author-name">{{ $engineer.name }}<p class="author-mail">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p></h2>
-
-			    	<p class="author-bio">{{if $engineer.bio }}{{ $engineer.bio }}{{ end }}</p>
-			    	<hr/>
-			    </div>
-			    {{ end }}   
-		    {{ end }}
+		    {{ partial "author.html" . }}
 
 		    {{ partial "related.html" . }}
 

@@ -1,0 +1,112 @@
+.social-share a {
+    position: relative;
+    text-decoration: none;
+    margin: 4px;
+    display: inline-block;
+    outline: none
+}
+
+.social-share .icon-wechat {
+    position: relative;
+}
+.social-share .icon-wechat .wechat-qrcode {
+    display: none;
+    border: 1px solid #eee;
+    position: absolute;
+    z-index: 9;
+    top: -205px;
+    left: -84px;
+    width: 200px;
+    height: 192px;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 10px #aaa;
+    transition: all 200ms;
+    -webkit-tansition: all 350ms;
+    -moz-transition: all 350ms
+}
+.social-share .icon-wechat .wechat-qrcode.bottom {
+    top: 40px;
+    left: -84px
+}
+.social-share .icon-wechat .wechat-qrcode.bottom:after {
+    display: none
+}
+.social-share .icon-wechat .wechat-qrcode h4 {
+    font-weight: normal;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    color: #777
+}
+.social-share .icon-wechat .wechat-qrcode .qrcode {
+    width: 105px;
+    margin: 10px auto
+}
+.social-share .icon-wechat .wechat-qrcode .qrcode table {
+    margin: 0 !important
+}
+.social-share .icon-wechat .wechat-qrcode .help p {
+    font-weight: normal;
+    line-height: 16px;
+    padding: 0;
+    margin: 0
+}
+.social-share .icon-wechat .wechat-qrcode:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    bottom: -13px;
+    width: 0;
+    height: 0;
+    border-width: 8px 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent
+}
+
+.chooseSharing .social-share .icon-wechat .wechat-qrcode {
+    display: none;
+    border: 1px solid #eee;
+    position: absolute;
+    z-index: 9;
+    top: 60px;
+    left: -160px;
+    width: 200px;
+    height: 192px;
+    color: #666;
+    font-size: 12px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 10px #aaa;
+    transition: all 200ms;
+    -webkit-tansition: all 350ms;
+    -moz-transition: all 350ms
+}
+.chooseSharing .social-share .icon-wechat .wechat-qrcode:after {
+    content: '';
+    position: absolute;
+    left: 87%;
+    margin-left: -6px;
+    /*bottom: -13px;*/
+    top: -15px;
+    width: 0;
+    height: 0;
+    border-width: 6px 6px 8px 6px;
+    border-style: solid;
+    border-color: transparent transparent #f3f3f3 transparent
+}
+
+.chooseSharing .social-share .icon-wechat .wechat-qrcode img {
+    width: 100px !important;
+    height: 100px !important;
+}
+
+.social-share .icon-wechat:hover .wechat-qrcode {
+    display: block
+}
