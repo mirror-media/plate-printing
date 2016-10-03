@@ -70,7 +70,8 @@
     border-color: #fff transparent transparent transparent
 }
 
-.chooseSharing .social-share .icon-wechat .wechat-qrcode {
+.chooseSharing .social-share .icon-wechat .wechat-qrcode,
+.column .social-share .icon-wechat .wechat-qrcode {
     display: none;
     border: 1px solid #eee;
     position: absolute;
@@ -88,7 +89,8 @@
     -webkit-tansition: all 350ms;
     -moz-transition: all 350ms
 }
-.chooseSharing .social-share .icon-wechat .wechat-qrcode:after {
+.chooseSharing .social-share .icon-wechat .wechat-qrcode:after,
+.column .social-share .icon-wechat .wechat-qrcode:after {
     content: '';
     position: absolute;
     left: 87%;

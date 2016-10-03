@@ -165,7 +165,6 @@
 					<a class="item" href="{{ .Site.Social.line }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width: 56px!important; height: 25px;"/></a>
 					<a class="item" href="{{ .Site.Social.weibo }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width: 29px!important; height: 25px;"/></a>
 					<a class="item" href="{{ .Site.Social.facebook }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width: 25px!important; height: 25px;"/></a>
-					<a class="item" href="{{ .Site.Social.wechat }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width: 29px!important; height: 25px;"/></a>
 					<a class="item" href="{{ .Site.Social.instagram }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram@2x.png" style="width: 25px!important; height: 25px;"/></a>
 					<a class="item" href="{{ .Site.Social.feed }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed@2x.png" style="width: 25px!important; height: 25px;"/></a>
 					<a class="item" href="{{ .Site.Social.mail }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail@2x.png" style="width: 26px!important; height: 25px;"/></a>
@@ -205,7 +204,6 @@
  			 	<a href="{{ .Site.Social.line }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px;height:25px;"/></a>
 		    <a href="{{ .Site.Social.weibo }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px;height:25px;"/></a>
 		    <a href="{{ .Site.Social.facebook }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px;height:25px;"/></a>
-		    <a href="{{ .Site.Social.wechat }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px;height:25px;"/></a>
 		    <a href="{{ .Site.Social.instagram }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram.png" style="width:25px;height:25px;"/></a>
 		    <a href="{{ .Site.Social.feed }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed.png" style="width:25px;height:25px;"/></a>
 		    <a href="{{ .Site.Social.mail }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail.png" style="width:26px;height:25px;"/></a>
@@ -405,7 +403,9 @@
 					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
 							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
 							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
-							    <a class="" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat.png" style="width:29px!important;height:25px;"/></a>
+							    <span class="social-share" data-initialized="true">
+				    				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px; margin-bottom: -4px;"/></a>
+				  				</span>
 					    	</div>
 					    </div>
 				    </div>
@@ -494,7 +494,9 @@
 				    		<div class="column"><a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a></div>
 				    		<div class="column"><a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a></div>
 				    		<div class="column"><a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a></div>
-				    		<div class="column"><a href=""><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a></div>
+				    		<div class="column"><span class="social-share" data-initialized="true">
+				    				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px; margin-bottom: -4px;"/></a>
+				  				</span></div>
 				    	</div>
 						</div>
 				  </div>
