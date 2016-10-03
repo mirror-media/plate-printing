@@ -17,7 +17,7 @@
 	  		<h2 class="article-category" >
 			    {{ if .Params.categories }}
 			    	{{ range first 1 .Params.categories }} 
-			        <a href="/category/{{ .Params.categories.name }}">{{ .title }}</a>
+			        <a href="/category/{{ .name }}">{{ .title }}</a>
 		        {{ end }}
 			    {{ end }}
 	  		</h2>
