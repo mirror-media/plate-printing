@@ -25,6 +25,7 @@
 	  	</div>
 		  <div class="ui clearing divider"></div>
 		  <h1 class="article-title">{{ .Title }}</h1>
+		  {{ if gt (len .Params.subtitle) 0 }}<h2 class="article-subtitle">{{ .Params.subtitle }}</h2>{{ end }}
 	  	<div style="">
 	  		<p class="article-author article-credit">
 			    {{if .Params.writers }}
