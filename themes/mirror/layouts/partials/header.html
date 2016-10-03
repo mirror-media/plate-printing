@@ -109,6 +109,27 @@
 		<li><a href="/story/{^{:slug}}">{^{:title}}</a><div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
 	</script>
 
+	{{ $.Scratch.Set "lock" false }}
+    {{ if .Params.categories }}
+    	{{ range $index , $cat := .Params.categories }} 
+    		{{ if eq $cat.name "culture" }}
+    			culture
+    			{{ $.Scratch.Set "lock" true }}
+    		{{ end }}
+    		{{ if eq $cat.name "serialnovel" }}
+    			serialnovel
+    			{{ $.Scratch.Set "lock" true }}
+    		{{ end }}
+    	{{ end }}
+    {{ end }}
+    {{ if $.Scratch.Get "lock" }}
+	<script>
+		document.oncontextmenu=function(){ return false; }
+		document.onkeydown=function(event){ if(event.keyCode==67){ console.log('false'); return false; } }
+		document.ondragstart=function(){ return false; }
+		document.onselectstart=function(){ return false; }
+	</script>
+	{{ end }}
 </head>
 <body>
 
