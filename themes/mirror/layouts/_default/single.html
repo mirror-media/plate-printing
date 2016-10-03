@@ -1,15 +1,15 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ partial "header.html" . }}
 
-		<div class="computer-hide tablet-hide" style="text-align:center; margin-top:10px;">
-			<div class="gradient" style="display:inline-block; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
-		    {{if .Params.sections }}
-		      {{ range first 1 .Params.sections }}
+    {{if .Params.sections }}
+      {{ range first 1 .Params.sections }}
+				<div class="computer-hide tablet-hide" style="text-align:center; margin-top:10px;">
+					<a href="/section/{{.name}}"><div class="gradient" style="display:inline-block; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 			      {{ .title }}
-		      {{ end }}
-		    {{ end }}
-		  </div>
-		</div>
+				  </div></a>
+				</div>
+      {{ end }}
+    {{ end }}
 
 	  <!-- Article (Single) -->
 	  <div class="ui text container article-header">
