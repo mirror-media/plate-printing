@@ -113,7 +113,6 @@
     {{ if .Params.categories }}
     	{{ range $index , $cat := .Params.categories }} 
     		{{ if eq $cat.name "culture" }}
-    			culture
     			{{ $.Scratch.Set "lock" true }}
     		{{ end }}
     		{{ if eq $cat.name "serialnovel" }}
