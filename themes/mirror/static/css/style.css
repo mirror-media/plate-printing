@@ -407,7 +407,7 @@ ul.latest li a {
 
 .choice-block {
   display:block;
-  overflow:auto;
+  overflow:overlay;
   position:relative;
   margin-bottom: 25px;
 }

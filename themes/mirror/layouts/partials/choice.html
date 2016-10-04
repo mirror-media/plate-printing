@@ -147,12 +147,12 @@
 									<div class="line mobile-hide"></div>
 									<div class="brief mobile-hide">
 										{{ if $choice.brief.html }}	
-											{{ substr (plainify $choice.brief.html) 0 200 }}
-											{{ if gt ( len ( plainify $choice.brief.html ) ) 200 }}...{{ end }}
+											{{ substr (plainify $choice.brief.html) 0 70 }}
+											{{ if gt ( len ( plainify $choice.brief.html ) ) 70 }}...{{ end }}
 										{{ else }}
 											{{ if $choice.content.html }}
-												{{ substr (plainify $choice.content.html) 0 200 }}
-												{{ if gt ( len ( plainify $choice.content.html ) ) 200 }}...{{ end }}
+												{{ substr (plainify $choice.content.html) 0 70 }}
+												{{ if gt ( len ( plainify $choice.content.html ) ) 70 }}...{{ end }}
 											{{ end }}
 										{{ end }}
 									</div>
