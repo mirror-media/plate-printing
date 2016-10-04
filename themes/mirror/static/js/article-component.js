@@ -71,7 +71,7 @@ $(document)
   		$(abbr).after('<div class=\'annotation-btn\'></div>')
   	});
 
-  	$('article iframe').each(function(i, iframe){
+  	$('article > div > iframe').each(function(i, iframe){
   		var parent = $(iframe).parent();
   		parent.addClass('aspect-ratio');
   	});
