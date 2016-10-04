@@ -310,7 +310,7 @@ ul.latest li a {
 
 .related-block {
   display:block;
-  overflow:auto;
+  overflow:hidden;
   position:relative;
   margin-bottom: 25px;
 }
