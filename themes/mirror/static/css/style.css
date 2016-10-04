@@ -700,6 +700,11 @@ article ol li:before {
   line-height: 1;
 }
 
+article code {
+  display: block;
+  margin-bottom: 5px;
+}
+
 article div.img {
   margin-bottom: 45px;
 }
