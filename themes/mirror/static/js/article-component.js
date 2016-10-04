@@ -51,6 +51,7 @@ $(document)
   			$(blockquote).addClass('blockquote');
   			var quoteBody = $(blockquote).find('div:nth-child(1)');
   			var quoteBy = $(blockquote).find('div:nth-child(2)');
+        quoteBody.html( quoteBody.html().replace(/\n/g, "<br/>") );
   			quoteBody.addClass('quote-body');
   			quoteBy.addClass('quote-by');
   		} else {
@@ -70,7 +71,7 @@ $(document)
   		$(abbr).after('<div class=\'annotation-btn\'></div>')
   	});
 
-  	$('article iframe').each(function(i, iframe){
+  	$('article > div > iframe').each(function(i, iframe){
   		var parent = $(iframe).parent();
   		parent.addClass('aspect-ratio');
   	});
