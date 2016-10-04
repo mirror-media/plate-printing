@@ -25,7 +25,7 @@
 
 	  <!-- Mobile -->
 	  <div class="mobile only sixteen wide column">
-	  	<div style="margin: 16px; line-height:45px; vertical-align:middle; padding-left: 1em !important;">
+	  	<div class="choiceHeader" style="margin: 16px; line-height:45px; vertical-align:middle;">
 				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>編輯精選</h2>
 	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 		      {{if .Params.sections }}
@@ -128,7 +128,7 @@
 				{{ range $idx, $choice := .choices }}
 
 					{{ if ge $idx 3}}
-						<div class="column">
+						<div class="column" style="padding: 0 !important;">
 							<div class="choice-block">
 								<a href="/story/{{$choice.slug}}"><div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
 									<div class="choice-cat">
@@ -184,8 +184,8 @@
 {{ end }}
 {{ end }}
 
-	<div class="ui grid">
-	  <div class="sixteen wide column" style="padding-left: 1em !important;">
+	<div class="ui grid categories">
+	  <div class="sixteen wide column">
 	  	<div class="ui divider" style="max-width:940px; margin:0 auto;"></div>
 	  	<div class="ui text container">
 	  		<div style="margin-top:35px;margin-bottom:20px; line-height:45px; vertical-align:middle; text-align:left;">
