@@ -1693,6 +1693,12 @@ div.colorBlock.choice {
       color: rgba(0, 0, 0, 0.8);
     }
 
+    .article-subtitle {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
     article p {
       font-size: 17px;
       line-height: 2;
@@ -1790,6 +1796,34 @@ div.colorBlock.choice {
       margin-right: 35px;
     }
 
+    .choiceHeader {
+      max-width: 300px;
+      margin: 0 auto !important;
+      padding-left: 10px !important;
+    }
+
+    div.colorBlock.hot,
+    div.colorBlock.choice {
+      margin-right: 10px;
+    }
+
+    .hot-topic {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #004ea2;
+    }
+
+    p.author-mail {
+      margin-top: 15px;
+      float: none !important;
+    }
+
+    .categories {
+      width: 300px;
+      margin: 0 auto !important;
+    }
+
     article ol, article ul {
       padding-left: 0;
     }
@@ -1880,6 +1914,8 @@ div.colorBlock.choice {
       content: '\00b7';
       color: #004ea2;
     }
+
+
 }
 
 /* Tablet */
@@ -1970,6 +2006,16 @@ div.colorBlock.choice {
 
     .ui.grid>[class*="three column"].doubling.row.row>.column, .ui.grid>[class*="four column"].doubling.row.row>.column, .ui[class*="three column"].doubling.grid>.column:not(.row), .ui[class*="three column"].doubling.grid>.row>.column, .ui[class*="four column"].doubling.grid>.column:not(.row), .ui[class*="four column"].doubling.grid>.row>.column {
       width: 25% !important;
+    }
+
+    .categories {
+      width: 700px;
+      margin: 0 auto !important;
+    }
+
+    .categories .doubling.grid {
+      width: 700px;
+      margin: 0 auto;
     }
 }
 
