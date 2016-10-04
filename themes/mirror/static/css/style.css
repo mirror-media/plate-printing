@@ -407,7 +407,7 @@ ul.latest li a {
 
 .choice-block {
   display:block;
-  overflow:overlay;
+  overflow:hidden;
   position:relative;
   margin-bottom: 25px;
 }
@@ -488,7 +488,7 @@ ul.latest li a {
 .choice-content {
   float: right;
   width: 540px;
-  height: 280px;
+  /*height: 280px;*/
   background-color: #FFF;
   padding:15px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
