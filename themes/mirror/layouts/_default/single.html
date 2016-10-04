@@ -75,10 +75,12 @@
 	  	<div class="article-sharing computer-hide">
 	  		<div class="ui clearing divider"></div>
 	  		<div style="width: 100%; text-align:center; height:45px; line-height:45px;">
-	    		<div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></div>
-	    		<div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></div>
-	    		<div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></div>
-	    		<div class="sharing-item" style="margin-right:0;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></div>
+	    		<a class="item" href="http://line.me/R/msg/text/?{{ .Title }}%0D%0A{{ $baseurl | safeHTML }}story/{{ .Slug }}" ><div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></div></a>
+	    		<a class="item" href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}story/{{ .Slug }}" ><div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></div></a>
+	    		<a class="item" href="http://www.facebook.com/share.php?u={{ $baseurl | safeHTML }}story/{{ .Slug }}" ><div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></div></a>
+	    		<div class="sharing-item" style="margin-right:0;"><span class="social-share" data-initialized="true">
+    				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a>
+  				</span></div>
 	    	</div>
 	  	</div>
 		  <div class="ui clearing divider"></div>
