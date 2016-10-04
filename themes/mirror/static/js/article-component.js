@@ -71,9 +71,12 @@ $(document)
   		$(abbr).after('<div class=\'annotation-btn\'></div>')
   	});
 
-  	$('article div > iframe').each(function(i, iframe){
+  	$('article div iframe').each(function(i, iframe){
   		var parent = $(iframe).parent();
-  		parent.addClass('aspect-ratio');
+      console.log($(iframe).attr('src'));
+      if ( $(iframe).attr('src').indexOf('youtube') >= 0 ){
+  		  parent.addClass('aspect-ratio');
+      }
   	});
 
   	function toMMSS(seconds) {
