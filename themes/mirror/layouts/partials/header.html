@@ -117,6 +117,9 @@
     		{{ if eq $cat.name "serialnovel" }}
     			{{ $.Scratch.Set "lock" true }}
     		{{ end }}
+    		{{ if eq $cat.name "screenplay" }}
+    			{{ $.Scratch.Set "lock" true }}
+    		{{ end }}
     	{{ end }}
     {{ end }}
     {{ if $.Scratch.Get "lock" }}
