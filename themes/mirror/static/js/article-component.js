@@ -1,208 +1,213 @@
 $(document)
   .ready(function() {
-  	/* Search */
-  	$('input.search').each(function(i,search){
-  		$(search).wrap('<form class="search-form"></form>');
-  	  	var parent = $(search).parent();
-  	  	parent.submit(function( event ) {
-		  console.log( "Handler for .submit() called." );
-		  $(location ).attr("href", '/search/'+$(search).val());
-		  event.preventDefault();
-		});
-  	});
+    /* Search */
+    $('input.search').each(function(i, search) {
+      $(search).wrap('<form class="search-form"></form>');
+      var parent = $(search).parent();
+      parent.submit(function(event) {
+        console.log("Handler for .submit() called.");
+        $(location).attr("href", '/search/' + $(search).val());
+        event.preventDefault();
+      });
+    });
 
-  	/* Font */
-  	$('div.font-larger').click(function(){
-  		var parent = $(this).parent().parent();
-  		$(parent).find('div.active').removeClass('active');
-  		$('article').removeClass('small');
-  		$('article').addClass('large');
-  		$(this).addClass('active');
-  	});
-  	$('div.font-medium').click(function(){
-  		var parent = $(this).parent().parent();
-		$(parent).find('div.active').removeClass('active');
-  		$('article').removeClass('large');
-  		$('article').removeClass('small');
-  		$(this).addClass('active');
-  	});
-  	$('div.font-small').click(function(){
-  		var parent = $(this).parent().parent();
-		$(parent).find('div.active').removeClass('active');
-  		$('article').removeClass('large');
-  		$('article').addClass('small');
-  		$(this).addClass('active');
-  	});
+    /* Font */
+    $('div.font-larger').click(function() {
+      var parent = $(this).parent().parent();
+      $(parent).find('div.active').removeClass('active');
+      $('article').removeClass('small');
+      $('article').addClass('large');
+      $(this).addClass('active');
+    });
+    $('div.font-medium').click(function() {
+      var parent = $(this).parent().parent();
+      $(parent).find('div.active').removeClass('active');
+      $('article').removeClass('large');
+      $('article').removeClass('small');
+      $(this).addClass('active');
+    });
+    $('div.font-small').click(function() {
+      var parent = $(this).parent().parent();
+      $(parent).find('div.active').removeClass('active');
+      $('article').removeClass('large');
+      $('article').addClass('small');
+      $(this).addClass('active');
+    });
 
-  	/* Components */
-  	$('article div > img').each(function(i, img){
-  		var alt = img.alt;
-  		var classes = $(img).attr('class');
-  		var parent = $(img).parent();
-  		
-  		parent.addClass('img '+classes);
-  		parent.append('<div class=\'caption\'>'+alt+'</div>')
-  	});
+    /* Components */
+    $('article div > img').each(function(i, img) {
+      var alt = img.alt;
+      var classes = $(img).attr('class');
+      var parent = $(img).parent();
 
-  	$('article blockquote').each(function(i, blockquote){
-  		var divCnt = $(blockquote).children('div').length;
+      parent.addClass('img ' + classes);
+      parent.append('<div class=\'caption\'>' + alt + '</div>')
+    });
 
-  		if( divCnt == 2) {
-  			$(blockquote).addClass('blockquote');
-  			var quoteBody = $(blockquote).find('div:nth-child(1)');
-  			var quoteBy = $(blockquote).find('div:nth-child(2)');
-        quoteBody.html( quoteBody.html().replace(/\n/g, "<br/>") );
-  			quoteBody.addClass('quote-body');
-  			quoteBy.addClass('quote-by');
-  		} else {
-  			$(blockquote).addClass('quote');
-  		}
-  	});
+    $('article blockquote').each(function(i, blockquote) {
+      var divCnt = $(blockquote).children('div').length;
 
-  	$('article .info-box-container').each(function(i, infobox){
-  		var parent = $(infobox).parent();
-  		$(infobox).append('<div class=\'info-box\'></div>')
-  	});
-
-  	$('article abbr').each(function(i, abbr){
-  		var title = abbr.title;
-  		var parent = $(abbr).parent();
-  		$(abbr).after('<div class=\'annotation-box\'>'+title+'</div>');
-  		$(abbr).after('<div class=\'annotation-btn\'></div>')
-  	});
-
-  	$('article div iframe').each(function(i, iframe){
-  		var parent = $(iframe).parent();
-      console.log($(iframe).attr('src'));
-      if ( $(iframe).attr('src').indexOf('youtube') >= 0 ){
-  		  parent.addClass('aspect-ratio');
+      if (divCnt == 2) {
+        $(blockquote).addClass('blockquote');
+        var quoteBody = $(blockquote).find('div:nth-child(1)');
+        var quoteBy = $(blockquote).find('div:nth-child(2)');
+        quoteBody.html(quoteBody.html().replace(/\n/g, "<br/>"));
+        quoteBody.addClass('quote-body');
+        quoteBy.addClass('quote-by');
+      } else {
+        $(blockquote).addClass('quote');
       }
-  	});
+    });
 
-  	function toMMSS(seconds) {
-  		seconds = parseInt(seconds, 10);
-		var minutes = parseInt( seconds / 60 ) % 60;
-		var seconds = seconds % 60;
+    $('article .info-box-container').each(function(i, infobox) {
+      var parent = $(infobox).parent();
+      $(infobox).append('<div class=\'info-box\'></div>')
+    });
 
-		return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds  < 10 ? "0" + seconds : seconds);
-  	}
+    $('article abbr').each(function(i, abbr) {
+      var title = abbr.title;
+      var parent = $(abbr).parent();
+      $(abbr).after('<div class=\'annotation-box\'>' + title + '</div>');
+      $(abbr).after('<div class=\'annotation-btn\'></div>')
+    });
 
-  	$('article .audio-container').each(function(i, audiobox){
-  		var parent = $(audiobox).parent();
-  		var audioObj = $(audiobox).children('audio')[0];
+    $('article div iframe').each(function(i, iframe) {
+      var parent = $(iframe).parent();
+      console.log($(iframe).attr('src'));
+      if ($(iframe).attr('src').indexOf('youtube') >= 0) {
+        parent.addClass('aspect-ratio');
+      }
+    });
 
-  		parent.addClass('audio-box');
-  		parent.prepend('<div class=\'audio-cover\'><div class=\'audio-btn pause\'></div></div>')
+    function toMMSS(seconds) {
+      seconds = parseInt(seconds, 10);
+      var minutes = parseInt(seconds / 60) % 60;
+      var seconds = seconds % 60;
 
-  		var audioBtn = parent.find('.audio-btn')[0];
+      return (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+    }
 
-		$(audioObj).bind('play',function() {
-		  $(audioBtn).removeClass('pause');
-		  $(audioBtn).addClass('play');
-		}).bind('pause ended', function() {
-		  $(audioBtn).removeClass('play');
-		  $(audioBtn).addClass('pause');
-		});
+    $('article .audio-container').each(function(i, audiobox) {
+      var parent = $(audiobox).parent();
+      var audioObj = $(audiobox).children('audio')[0];
 
-		parent.find('.audio-cover').click(function() {
-		  if (audioObj.paused) { audioObj.play(); }
-		  else { audioObj.pause(); }
-		});
+      parent.addClass('audio-box');
+      parent.prepend('<div class=\'audio-cover\'><div class=\'audio-btn pause\'></div></div>')
 
-  		$(audioObj).bind("loadeddata", function() {
-	  		$(audiobox).prepend('<div class=\'audio-progress\'><div class=\'bar\'></div></div>')
-			$(audiobox).prepend('<div class=\'audio-time\'><span class=\'left\'>00:00</span> / '+toMMSS(audioObj.duration)+'</div>');
-		});
-  		$(audioObj).bind("timeupdate", function() {
-  			var left = $(audiobox).find('.left')[0];
-  			var progressBar = $(audiobox).find('.audio-progress .bar')[0];
-  			if (left) {
-  				var rem = parseInt(audioObj.duration - audioObj.currentTime, 10),
-  				pos = (audioObj.currentTime / audioObj.duration) * 100;
+      var audioBtn = parent.find('.audio-btn')[0];
 
-  				$(left).html(toMMSS(audioObj.currentTime));
-  				$(progressBar).width(pos+'%');
-  			}
-		});
-  	});
+      $(audioObj).bind('play', function() {
+        $(audioBtn).removeClass('pause');
+        $(audioBtn).addClass('play');
+      }).bind('pause ended', function() {
+        $(audioBtn).removeClass('play');
+        $(audioBtn).addClass('pause');
+      });
 
-  	$('article .slideshow-container').each(function(i, slideshow) {
-  		var parent = $(slideshow).parent();
-  		parent.addClass('slideshow-box');
+      parent.find('.audio-cover').click(function() {
+        if (audioObj.paused) {
+          audioObj.play();
+        } else {
+          audioObj.pause();
+        }
+      });
 
-  		parent.prepend('<div class=\'slideshow-indicator\'><span class=\'cur\'></span>/<span class=\'total\'></span></div>')
-  		$(slideshow).find('li').each(function(i, li) {
-  			$(li).replaceWith( "<div class='slideshow-slide'>" + $( this ).html() + "</div>" );
-  		});
-  		$(slideshow).replaceWith( "<div class='slideshow-container'>" + $( this ).html() + "</div>" );
-  		parent.append('<div class=\'slideshow-thumbs\'></div>');
-  		parent.find('.slideshow-thumbs').replaceWith( "<div class='slideshow-thumbs'>" + $( this ).html() + "</div>" );
-  		parent.append('<div class=\'slideshow-caption\'></div>');
+      $(audioObj).bind("loadeddata", function() {
+        $(audiobox).prepend('<div class=\'audio-progress\'><div class=\'bar\'></div></div>')
+        $(audiobox).prepend('<div class=\'audio-time\'><span class=\'left\'>00:00</span> / ' + toMMSS(audioObj.duration) + '</div>');
+      });
+      $(audioObj).bind("timeupdate", function() {
+        var left = $(audiobox).find('.left')[0];
+        var progressBar = $(audiobox).find('.audio-progress .bar')[0];
+        if (left) {
+          var rem = parseInt(audioObj.duration - audioObj.currentTime, 10),
+            pos = (audioObj.currentTime / audioObj.duration) * 100;
 
+          $(left).html(toMMSS(audioObj.currentTime));
+          $(progressBar).width(pos + '%');
+        }
+      });
+    });
 
-			var $sync1 = parent.children(".slideshow-box .slideshow-container"),
-			$sync2 = parent.children(".slideshow-box .slideshow-thumbs"),
-			flag = false,
-			duration = 300;
+    $('article .slideshow-container').each(function(i, slideshow) {
+      var parent = $(slideshow).parent();
+      parent.addClass('slideshow-box');
 
-		$sync1
-			.on('initialized.owl.carousel', function() {
-                total = $sync1.find('.owl-stage > div');
-				parent.find('.slideshow-indicator span.total').html(total.length);
-				parent.find('.slideshow-indicator span.cur').html('1');
-				target = $sync1.find('.owl-item img').get(0);
-				parent.find('.slideshow-caption').html($(target).attr('alt'));
-            })
-			.owlCarousel({
-				items: 1,
-				margin: 10,
-				nav: false,
-				dots: true
-			})
-			.on('changed.owl.carousel', function (e) {
-				if (!flag) {
-					flag = true;
-					$sync2.trigger('to.owl.carousel', [e.item.index, duration, true]);
-					$sync2.find('.owl-stage .displaying').removeClass('displaying');
-					target = $sync2.find('.owl-stage > div').get(e.item.index);
-					$(target).children('div').addClass('displaying');
-					flag = false;
-				}
-			})
-			.on('translated.owl.carousel', function(e) {
-				target = $sync2.find('.owl-item img').get(e.item.index);
-				parent.find('.slideshow-caption').html($(target).attr('alt'));
-				parent.find('.slideshow-indicator span.cur').html(e.item.index+1);
-			});
+      parent.prepend('<div class=\'slideshow-indicator\'><span class=\'cur\'></span>/<span class=\'total\'></span></div>')
+      $(slideshow).find('li').each(function(i, li) {
+        $(li).replaceWith("<div class='slideshow-slide'>" + $(this).html() + "</div>");
+      });
+      $(slideshow).replaceWith("<div class='slideshow-container'>" + $(this).html() + "</div>");
+      parent.append('<div class=\'slideshow-thumbs\'></div>');
+      parent.find('.slideshow-thumbs').replaceWith("<div class='slideshow-thumbs'>" + $(this).html() + "</div>");
+      parent.append('<div class=\'slideshow-caption\'></div>');
 
-		$sync2
-			.on('initialized.owl.carousel', function() {
-                target = $sync2.find('.owl-stage > div').get(0);
-				$(target).children('div').addClass('displaying');
-            })
-			.owlCarousel({
-				margin: 10,
-				items: 5,
-                center: true,
-				nav: true,
-				dots: false,
-				navText: ['', '']
-			})
-			.on('click', '.owl-item', function () {
-				$sync1.trigger('to.owl.carousel', [$(this).index(), duration, true]);
-				$sync2.find('.owl-stage .displaying').removeClass('displaying');
-				target = $sync2.find('.owl-stage > div').get($(this).index());
-				$(target).children('div').addClass('displaying');
-			})
-			.on('changed.owl.carousel', function (e) {
-				if (!flag) {
-					flag = true;		
-					$sync1.trigger('to.owl.carousel', [e.item.index, duration, true]);
-					$sync2.find('.owl-stage .displaying').removeClass('displaying');
-					target = $sync2.find('.owl-stage > div').get(e.item.index);
-					$(target).children('div').addClass('displaying');
-					flag = false;
-				}
-			});
-  	});
+      var $sync1 = parent.children(".slideshow-box .slideshow-container"),
+        $sync2 = parent.children(".slideshow-box .slideshow-thumbs"),
+        flag = false,
+        duration = 300;
+
+      $(window).load(function(){
+        $sync1
+          .on('initialized.owl.carousel', function() {
+            total = $sync1.find('.owl-stage > div');
+            parent.find('.slideshow-indicator span.total').html(total.length);
+            parent.find('.slideshow-indicator span.cur').html('1');
+            target = $sync1.find('.owl-item img').get(0);
+            parent.find('.slideshow-caption').html($(target).attr('alt'));
+          })
+          .owlCarousel({
+            items: 1,
+            margin: 10,
+            nav: false,
+            dots: true,
+            autoHeight: true
+          })
+          .on('changed.owl.carousel', function(e) {
+            if (!flag) {
+              flag = true;
+              $sync2.trigger('to.owl.carousel', [e.item.index, duration, true]);
+              $sync2.find('.owl-stage .displaying').removeClass('displaying');
+              target = $sync2.find('.owl-stage > div').get(e.item.index);
+              $(target).children('div').addClass('displaying');
+              flag = false;
+            }
+          })
+          .on('translated.owl.carousel', function(e) {
+            target = $sync2.find('.owl-item img').get(e.item.index);
+            parent.find('.slideshow-caption').html($(target).attr('alt'));
+            parent.find('.slideshow-indicator span.cur').html(e.item.index + 1);
+          });
+
+        $sync2
+          .on('initialized.owl.carousel', function() {
+            target = $sync2.find('.owl-stage > div').get(0);
+            $(target).children('div').addClass('displaying');
+          })
+          .owlCarousel({
+            margin: 10,
+            items: 5,
+            center: true,
+            nav: true,
+            dots: false,
+            navText: ['', '']
+          })
+          .on('click', '.owl-item', function() {
+            $sync1.trigger('to.owl.carousel', [$(this).index(), duration, true]);
+            $sync2.find('.owl-stage .displaying').removeClass('displaying');
+            target = $sync2.find('.owl-stage > div').get($(this).index());
+            $(target).children('div').addClass('displaying');
+          })
+          .on('changed.owl.carousel', function(e) {
+            if (!flag) {
+              flag = true;
+              $sync1.trigger('to.owl.carousel', [e.item.index, duration, true]);
+              $sync2.find('.owl-stage .displaying').removeClass('displaying');
+              target = $sync2.find('.owl-stage > div').get(e.item.index);
+              $(target).children('div').addClass('displaying');
+              flag = false;
+            }
+          });
+      });
+    });
   });
