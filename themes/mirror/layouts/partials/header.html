@@ -1,4 +1,4 @@
-{{ $baseurl := .Site.BaseURL }}s<!DOCTYPE html>
+{{ $baseurl := .Site.BaseURL }}<!DOCTYPE html>
 <html>
 <head>
 	<!-- Standard Meta -->
@@ -89,8 +89,9 @@
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	ga('create', '{{ $.Site.GoogleAnalytics }}', 'auto');
-	ga('set', 'contentGroup1', '{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ .title }}{{ end }}{{ end }}');
+	ga('set', 'contentGroup1', '{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ .title }}{{ end }}{{ else }}None{{ end }}');
 	ga('send', 'pageview');
+
 	</script>
 
 	<script id="latest-top-tempalte" type="text/x-jsrender">
