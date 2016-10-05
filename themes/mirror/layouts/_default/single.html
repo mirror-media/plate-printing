@@ -1,5 +1,4 @@
-{{ $baseurl := .Site.BaseURL }}
-{{ partial "header.html" . }}
+{{ $baseurl := .Site.BaseURL }}{{ partial "header.html" . }}
 
     {{if .Params.sections }}
       {{ range first 1 .Params.sections }}
