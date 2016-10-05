@@ -25,7 +25,7 @@
 	<meta property="og:description" content="{{if .Params.og_title }}{{ .Params.og_description }}{{ else }}{{ substr (plainify .Params.brief.html) 0 200 }}{{ end }}" />
 	<meta property="og:url" content="{{ $baseurl | safeURL }}story/{{ .Slug }}" />
 	{{if .Params.og_image }}
-	<meta property="og:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.url }}{{ end }}"/>
+	<meta property="og:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}"/>
 	{{ else }}
 	{{if .Params.heroimage.image }}
 	<meta property="og:image" content="{{ .Params.heroimage.image.url }}"/>
@@ -39,7 +39,7 @@
 	<meta name="twitter:title" content="{{if .Params.og_title }}{{ .Params.og_title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}" />
 	<meta name="twitter:description" content="{{if .Params.og_title }}{{ .Params.og_description }}{{ else }}{{ substr (plainify .Params.brief.html) 0 200 }}{{ end }}" />
 	{{if .Params.og_image }}
-	<meta name="twitter:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.url }}{{ end }}"/>
+	<meta name="twitter:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}"/>
 	{{ else }}
 	{{if .Params.heroimage.image }}
 	<meta name="twitter:image" content="{{ .Params.heroimage.image.url }}"/>
