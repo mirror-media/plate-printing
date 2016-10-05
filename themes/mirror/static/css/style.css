@@ -1034,7 +1034,7 @@ article .slideshow-box .slideshow-caption {
 }
 article .slideshow-box .slideshow-indicator {
   position: absolute;
-  z-index: 100;
+  z-index: 9;
   top: 0;
   right: 0;
   height: 40px;
