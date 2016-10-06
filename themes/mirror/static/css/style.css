@@ -1541,7 +1541,7 @@ div.colorBlock.choice {
 .tablet .logo.centered {
   /*pointer-events: none;*/
   position:fixed; 
-  top:22px; 
+  top:15px; 
   /*width:100%;*/
   left: calc(50% - 48px);
   text-align:center;
@@ -1637,9 +1637,9 @@ div.colorBlock.choice {
 .mobile .logo.centered {
   /*pointer-events: none;*/
   position:fixed; 
-  top:15px; 
+  top:9px; 
   /*width:100%; */
-  left: calc(50% - 48px);
+  left: calc(45% - 48px);
   text-align:center;
 }
 
