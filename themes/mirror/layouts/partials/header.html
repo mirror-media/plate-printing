@@ -10,13 +10,13 @@
 	<!-- Site Properties -->
 	{{ if eq .URL "/" }}
 	<title>{{ .Title }}</title>
-	<meta name="keywords" content="鏡傳媒,mirror media,新聞,人物,調查報導,娛樂,美食,旅遊,精品,動漫,網路趨勢,趨勢,國際,兩岸,政治,明星,文學,劇本,新詩,散文,小說"/>
+	<meta name="keywords" content="鏡週刊,鏡傳媒,mirror media,新聞,人物,調查報導,娛樂,美食,旅遊,精品,動漫,網路趨勢,趨勢,國際,兩岸,政治,明星,文學,劇本,新詩,散文,小說"/>
 	<meta name="description" content="鏡傳媒以台灣為基地，是一跨平台綜合媒體，包含《鏡週刊》以及下設五大分眾內容的《鏡傳媒》網站，刊載時事、財經、人物、國際、文化、娛樂、美食旅遊、精品鐘錶等深入報導及影音內容。我們以「鏡」為名，務求反映事實、時代與人性。" />
 	<meta property='og:title' content="{{ .Title }}">
 	<meta property="og:type" content="website">
 	{{ else }}
 	<title>{{ .Title }} - {{ .Site.Title }}</title>
-	<meta name="keywords" content="鏡傳媒,mirror media,新聞,人物,調查報導,娛樂,美食,旅遊,精品,動漫,網路趨勢,趨勢,國際,兩岸,政治,明星,文學,劇本,新詩,散文,小說"/>
+	<meta name="keywords" content="鏡週刊,鏡傳媒,mirror media,新聞,人物,調查報導,娛樂,美食,旅遊,精品,動漫,網路趨勢,趨勢,國際,兩岸,政治,明星,文學,劇本,新詩,散文,小說"/>
 	<meta name="description" content="鏡傳媒以台灣為基地，是一跨平台綜合媒體，包含《鏡週刊》以及下設五大分眾內容的《鏡傳媒》網站，刊載時事、財經、人物、國際、文化、娛樂、美食旅遊、精品鐘錶等深入報導及影音內容。我們以「鏡」為名，務求反映事實、時代與人性。" />
 	<meta property="og:site_name" content="鏡傳媒 Mirror Media" />
 	<meta property="og:locale" content="zh_TW" />    
@@ -320,9 +320,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
-							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" target="_blank" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" target="_blank" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
 							    <span class="social-share" data-initialized="true">
 				    				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px; margin-bottom: -4px;"/></a>
 				  				</span>
@@ -402,9 +402,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-bottom: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
-							    <a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story/{{ .Slug }}" target="_blank" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" style="width:56px!important;height:25px;"/></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}" target="_blank" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo.png" style="width:29px!important;height:25px;"/></a>
+							    <a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook.png" style="width:25px!important;height:25px;"/></a>
 							    <span class="social-share" data-initialized="true">
 				    				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px; margin-bottom: -4px;"/></a>
 				  				</span>
