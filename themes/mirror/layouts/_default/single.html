@@ -64,7 +64,7 @@
 	  		<p class="article-sharing mobile-hide tablet-hide" style="float: right; color: rgba(0,0,0,0.4);">
 	  			分享這篇文章：
 	  			<a class="item" href="http://line.me/R/msg/text/?{{ .Title }}%0D%0A{{ $baseurl | safeHTML }}story/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></a>
-	  			<a class="item" href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}story/{{ .Slug }}" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a>
+	  			<a class="item" href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}story/{{ .Slug }}" target="_blank" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></a>
 	  			<a class="item" href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></a>
 	  			<span class="social-share" data-initialized="true">
     				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a>
@@ -75,7 +75,7 @@
 	  		<div class="ui clearing divider"></div>
 	  		<div style="width: 100%; text-align:center; height:45px; line-height:45px;">
 	    		<a class="item" href="http://line.me/R/msg/text/?{{ .Title }}%0D%0A{{ $baseurl | safeHTML }}story/{{ .Slug }}" ><div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png" style="width:56px!important;height:25px;"/></div></a>
-	    		<a class="item" href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}story/{{ .Slug }}" ><div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></div></a>
+	    		<a class="item" href="http://v.t.sina.com.cn/share/share.php?title={{ .Title }}&url={{ $baseurl | safeHTML }}story/{{ .Slug }}" target="_blank" ><div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/weibo@2x.png" style="width:29px!important;height:25px;"/></div></a>
 	    		<a class="item" href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" ><div class="sharing-item" ><img src="{{ .Site.Params.imgBaseUrl }}/icon/facebook@2x.png" style="width:25px!important;height:25px;"/></div></a>
 	    		<div class="sharing-item" style="margin-right:0;"><span class="social-share" data-initialized="true">
     				<a href="#" class="icon-wechat"><img src="{{ .Site.Params.imgBaseUrl }}/icon/wechat@2x.png" style="width:29px!important;height:25px;"/></a>
