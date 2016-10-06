@@ -1,3 +1,4 @@
+{{ $baseurl := .Site.BaseURL }}
 {{ if $.Site.Data.choices }}
 {{ if gt (len $.Site.Data.choices._items) 0 }}
 
@@ -47,7 +48,7 @@
 					<!-- First 3 -->
 					{{ if lt $idx 3 }}
 						<div class="choice-block">
-							<a href="/story/{{$choice.slug}}"><div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }} ') no-repeat center center; background-size:cover;" {{ end }}></div></a>
+							<a href="/story/{{$choice.slug}}"><div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" style="background:url('{{ if $choice.og_image }}{{ $choice.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $choice.heroImage.image.resizedTargets }}{{ $choice.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;"></div></a>
 							<div class="choice-cat {{ if mod $idx 2 }}  {{ else }} right {{ end }}">
 								{{ range first 1 $choice.sections }}
 									{{ $id := ._id }}
@@ -130,7 +131,7 @@
 					{{ if ge $idx 3}}
 						<div class="column" style="padding: 0 !important;">
 							<div class="choice-block">
-								<a href="/story/{{$choice.slug}}"><div class="column-choice-img" {{ if $choice.heroImage.image.resizedTargets }} style="background:url('{{ $choice.heroImage.image.resizedTargets.mobile.url }}') no-repeat center center; background-size:cover;" {{ end }} >
+								<a href="/story/{{$choice.slug}}"><div class="column-choice-img" style="background:url('{{ if $choice.og_image }}{{ $choice.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $choice.heroImage.image.resizedTargets }}{{ $choice.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" >
 									<div class="choice-cat">
 										{{ range first 1 $choice.sections }}
 											{{ $id := ._id }}

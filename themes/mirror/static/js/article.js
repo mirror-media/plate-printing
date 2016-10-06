@@ -191,12 +191,21 @@ $(document)
         $(".sidebar.article-sidebar").append("<div class=\"latest-bottom\" style=\"width: 300px;  background-color: #ffffff; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); padding:20px; margin-bottom:2px;\"><ul class=\"latest\"></ul></div>");
       }
       
+      function isEmpty(str) {
+        return (!str || 0 === str.length);
+      }
+
       for (var i = 0; i < data._items.length; i++) {
         data._items[i].idx = i+1;
-        if (typeof data._items[i].heroImage != "undefined" )
-          data._items[i].preview = "background:url('" + data._items[i].heroImage.image.resizedTargets.mobile.url + "') no-repeat center center; background-size:cover;";
+
+        if ( !isEmpty(data._items[i].og_image) )
+          data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url
         else
-          data._items[i].preview = "";
+          if ( !isEmpty(data._items[i].heroImage) )
+            data._items[i].preview = data._items[i].heroImage.image.resizedTargets.mobile.url
+          else
+            data._items[i].preview = "/asset/review.png";
+          
         if ( i < 5) {
           var htmlOutput = latestTopTemplate.render(data._items[i]);
           $(".latest-top").append(htmlOutput)
