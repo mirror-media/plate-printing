@@ -1,4 +1,4 @@
-baseurl = "http://www.mirrormedia.mg/"
+baseurl = "https://www.mirrormedia.mg/"
 languageCode = "zh-tw"
 title = "鏡傳媒 Mirror Media"
 theme = "mirror"
