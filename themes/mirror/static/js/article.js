@@ -189,9 +189,6 @@ $(document)
     var sectionId = $('meta[name="section-id"]').attr('content')
     var categoryId = $('meta[name="category-id"]').attr('content')
 
-    console.log(sectionId)
-    console.log(categoryId)
-
     $.getJSON( "/story/json/latest-sections-"+sectionId+".json", function( data ) {
 
       if( data._items.length > 5 ){

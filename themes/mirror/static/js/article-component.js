@@ -5,7 +5,6 @@ $(document)
       $(search).wrap('<form class="search-form"></form>');
       var parent = $(search).parent();
       parent.submit(function(event) {
-        console.log("Handler for .submit() called.");
         $(location).attr("href", '/search/' + $(search).val());
         event.preventDefault();
       });
@@ -73,7 +72,6 @@ $(document)
 
     $('article div iframe').each(function(i, iframe) {
       var parent = $(iframe).parent();
-      console.log($(iframe).attr('src'));
       if ($(iframe).attr('src').indexOf('youtube') >= 0 || $(iframe).attr('src').indexOf('straas') >= 0) {
         parent.addClass('aspect-ratio');
       }
