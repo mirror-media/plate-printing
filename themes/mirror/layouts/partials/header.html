@@ -27,8 +27,8 @@
 	{{if .Params.og_image }}
 	<meta property="og:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}"/>
 	{{ else }}
-	{{if .Params.heroimage.resizedTargets.tablet.url }}
-	<meta property="og:image" content="{{ .Params.heroimage.image.url }}"/>
+	{{if .Params.heroimage.image.resizedTargets.tablet.url }}
+	<meta property="og:image" content="{{ .Params.heroimage.image.resizedTargets.tablet.url }}"/>
 	{{ else }}
 	<meta property="og:image" content="{{ $baseurl }}asset/logo.png"/>
 	{{ end }}
@@ -41,8 +41,8 @@
 	{{if .Params.og_image }}
 	<meta name="twitter:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}"/>
 	{{ else }}
-	{{if .Params.heroimage.image }}
-	<meta name="twitter:image" content="{{ .Params.heroimage.image.url }}"/>
+	{{if .Params.heroimage.image.resizedTargets.tablet.url }}
+	<meta name="twitter:image" content="{{ .Params.heroimage.image.resizedTargets.tablet.url }}"/>
 	{{ else }}
 	<meta name="twitter:image" content="{{ $baseurl }}asset/logo.png"/>
 	{{ end }}
