@@ -181,7 +181,7 @@ body.pushable .pusher {
 
 .block-header {
   width:300px;
-  height:100px; 
+  height:180px; 
   margin-bottom: 5px;
   background-color: #FFF;
   background-size: cover;
@@ -493,6 +493,7 @@ ul.latest li a {
   padding:15px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 55px;
+  overflow: hidden;
 }
 
 .choice-content.left {
@@ -1261,6 +1262,10 @@ article img {
   margin-bottom: 35px;
 }
 
+div.author {
+  clear: both;
+}
+
 div.author hr {
   max-width: 620px;
   border: 0;
@@ -2022,6 +2027,14 @@ div.colorBlock.choice {
       width: 700px;
       margin: 0 auto;
     }
+
+    article div.img.left {
+      margin-left: -80px;
+    }
+
+    article div.img.right {
+      margin-right: -80px;
+    }
 }
 
 /* Computer */
@@ -2054,5 +2067,8 @@ div.colorBlock.choice {
     }
     .ui.text.container.footer {
       max-width: 940px!important;
+    }
+    .choice .ui.grid {
+      margin: 0;
     }
 }

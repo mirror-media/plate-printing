@@ -183,9 +183,13 @@ $(document)
     /* Load Latest */
     var latestTopTemplate = $.templates("#latest-top-tempalte");
     var latestBottomTemplate = $.templates("#latest-bottom-tempalte");
+    var categoryTopTemplate = $.templates("#category-top-tempalte");
+    var categoryBottomTemplate = $.templates("#category-bottom-tempalte");
 
+    var sectionId = $('meta[name="section-id"]').attr('content')
+    var categoryId = $('meta[name="category-id"]').attr('content')
 
-    $.getJSON( "/story/json/latest-posts.json", function( data ) {
+    $.getJSON( "/story/json/latest-sections-"+sectionId+".json", function( data ) {
 
       if( data._items.length > 5 ){
         $(".sidebar.article-sidebar").append("<div class=\"latest-bottom\" style=\"width: 300px;  background-color: #ffffff; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); padding:20px; margin-bottom:2px;\"><ul class=\"latest\"></ul></div>");
@@ -212,6 +216,56 @@ $(document)
         } else {
           var htmlOutput = latestBottomTemplate.render(data._items[i]);
           $(".latest-bottom ul").append(htmlOutput)
+        }
+      }
+    });
+
+    $.getJSON( "/story/json/latest-categories-"+categoryId+".json", function( data ) {
+      
+      function isEmpty(str) {
+        return (!str || 0 === str.length);
+      }
+      function formatDate(d) {
+
+        var dd = d.getDate()
+        if ( dd < 10 ) dd = '0' + dd
+
+        var mm = d.getMonth()+1
+        if ( mm < 10 ) mm = '0' + mm
+
+        var yy = d.getFullYear()
+
+        return yy+'.'+mm+'.'+dd
+      }
+      function stripHTML(dirtyString) {
+        return $("<div/>").html(dirtyString).text(); // innerHTML will be a xss safe string
+      }
+
+      for (var i = 0; i < data._items.length; i++) {
+        data._items[i].idx = i+1;
+        data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
+
+        data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
+
+        if ( data._items[i].idx % 2 ) {
+          data._items[i].Right = "right"
+          data._items[i].Left = "left"
+        }
+
+        if ( !isEmpty(data._items[i].og_image) )
+          data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url;
+        else
+          if ( !isEmpty(data._items[i].heroImage) )
+            data._items[i].preview = data._items[i].heroImage.image.resizedTargets.mobile.url;
+          else
+            data._items[i].preview = "/asset/review.png";
+          
+        if ( i < 3) {
+          var htmlOutput = categoryTopTemplate.render(data._items[i]);
+          $(".category-top").append(htmlOutput);
+        } else {
+          var htmlOutput = categoryBottomTemplate.render(data._items[i]);
+          $(".category-bottom").append(htmlOutput);
         }
       }
     });
