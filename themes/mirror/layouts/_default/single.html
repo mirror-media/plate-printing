@@ -88,7 +88,7 @@
 		<div class="ui text container article-container">
 
 			{{if .Params.heroimage.image }}
-				<img class="heroimg" src="{{ .Params.heroimage.image.url }}"/>
+				<img class="heroimg" src="{{ .Params.heroimage.image.resizedTargets.desktop.url }}" srcset="{{ .Params.heroimage.image.resizedTargets.mobile.url }} 800w, {{ .Params.heroimage.image.resizedTargets.tablet.url }} 1200w, {{ .Params.heroimage.image.resizedTargets.desktop.url }} 2000w"/>
 				<div class="heroimg-caption"></div>
 			{{ end }}
 
