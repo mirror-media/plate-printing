@@ -1,6 +1,45 @@
-{{ $baseurl := .Site.BaseURL }}
-{{ if $.Site.Data.choices }}
-{{ if gt (len $.Site.Data.choices._items) 0 }}
+<script id="category-top-tempalte" type="text/x-jsrender">
+	<div class="choice-block">
+		<a href="/story/{^{:slug}}/"><div class="choice-img {^{:Right}}" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;"></div></a>
+		<div class="choice-cat {^{:Right}}">
+			{^{:categories[0].title}}
+		</div>
+
+		<div class="choice-content {^{:Left}}">
+			<a href="/story/{^{:slug}}/"><h2>{^{:title}}</h2></a>
+			<div class="line"></div>
+			<div class="brief">
+				{^{:brief.html}}
+			</div>
+		</div>
+
+		<div class="choice-meta {^{:Left}}">
+			<div class="date">{^{:date}}</div>
+		</div>
+	</div>
+</script>
+
+<script id="category-bottom-tempalte" type="text/x-jsrender">
+	<div class="column" style="padding: 0 !important;">
+		<div class="choice-block">
+			<a href="/story/{^{:slug}}/"><div class="column-choice-img" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;" >
+				<div class="choice-cat">
+					{^{:categories[0].title}}
+				</div>
+			</div></a>
+			<div class="column-choice-content">
+				<a href="/story/{^{:slug}}/"><h2 style="text-align:center;">{^{:title}}</h2></a>
+				<div class="line mobile-hide"></div>
+				<div class="brief mobile-hide">
+					{^{:brief.html}}
+				</div>
+			</div>
+			<div class="column-choice-meta">
+				<div class="date">{^{:date}}</div>
+			</div>
+		</div>
+	</div>
+</script>
 
 <div class="choice" style="margin: 2em auto;">
 
@@ -10,7 +49,7 @@
 	  <div class="computer only sixteen wide column">
 	  	<div class="ui text container article-container" style="margin-bottom:35px;">
 	  		<div class="article-main" style="text-align:center;">
-					<h2 class="hot-topic"><div class="colorBlock choice"></div>編輯精選<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+					<h2 class="hot-topic"><div class="colorBlock choice"></div>最新文章<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
 				</div>
 			</div>
 	  </div>
@@ -19,7 +58,7 @@
 	  <div class="tablet only sixteen wide column">
 	  	<div class="ui text container article-container" style="margin-bottom:35px; padding-left: 1em !important;">
 	  		<div class="article-main" style="text-align:center;">
-					<h2 class="hot-topic"><div class="colorBlock choice"></div>編輯精選<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+					<h2 class="hot-topic"><div class="colorBlock choice"></div>最新文章<div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
 				</div>
 			</div>	
 	  </div>
@@ -27,7 +66,7 @@
 	  <!-- Mobile -->
 	  <div class="mobile only sixteen wide column">
 	  	<div class="choiceHeader" style="margin: 16px; line-height:45px; vertical-align:middle;">
-				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>編輯精選</h2>
+				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>最新文章</h2>
 	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 		      {{if .Params.sections }}
 			      {{ range first 1 .Params.sections }}
@@ -37,181 +76,14 @@
 	      </div>
       </div>
 	  </div>
-
 	</div>
 
 	<div class="choice-main" style="margin:2em auto; position:relative;">
 
-			{{ range $.Site.Data.choices._items }}
-				{{ range $idx, $choice := .choices }}
+		<div class="category-top"></div>
 
-					<!-- First 3 -->
-					{{ if lt $idx 3 }}
-						<div class="choice-block">
-							<a href="/story/{{$choice.slug}}"><div class="choice-img {{ if mod $idx 2 }}  {{ else }} right {{ end }}" style="background:url('{{ if $choice.og_image }}{{ $choice.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $choice.heroImage.image.resizedTargets }}{{ $choice.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;"></div></a>
-							<div class="choice-cat {{ if mod $idx 2 }}  {{ else }} right {{ end }}">
-								{{ range first 1 $choice.sections }}
-									{{ $id := ._id }}
-							    {{ range $section := $.Site.Data.sections._items }}
-							    	{{ if eq $section._id $id }}
-							    		{{ $section.title }}
-							    	{{ end }}
-							    {{ end }}
-							  {{ end }}
-							</div>
-
-							<div class="choice-content {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
-								<a href="/story/{{$choice.slug}}"><h2>{{ $choice.title }}</h2></a>
-								<div class="line"></div>
-								<div class="brief">
-									{{ if $choice.brief.html }}	
-										{{ substr (plainify $choice.brief.html) 0 200 }}
-										{{ if gt ( len ( plainify $choice.brief.html ) ) 200 }}...{{ end }}
-									{{ else }}
-										{{ if $choice.content.html }}
-											{{ substr (plainify $choice.content.html) 0 200 }}
-											{{ if gt ( len ( plainify $choice.content.html ) ) 200 }}...{{ end }}
-										{{ end }}
-									{{ end }}
-								</div>
-							</div>
-
-							<div class="choice-meta {{ if mod $idx 2 }}  {{ else }} left {{ end }}">
-								<div class="author">
-							    {{if $choice.writers }}
-							    	{{ if ge (len $choice.writers) 1 }}
-								  		文｜	
-								    	{{ range $index , $writer := $choice.writers }}
-								    		{{ $writer.name }}
-								    	{{ end }}&nbsp;&nbsp;
-							    	{{ end }}
-							    {{ end }}
-							    {{if $choice.photographers }}
-							    	{{ if ge (len $choice.photographers) 1 }}
-								  		攝影｜	
-								    	{{ range $index , $photographer := $choice.photographers }}
-								    		{{ $photographer.name }}
-								    	{{ end }}&nbsp;&nbsp;
-							    	{{ end }}
-							    {{ end }}
-							    {{if $choice.designers }}
-							    	{{ if ge (len $choice.designers) 1 }}
-								  		設計｜	
-								    	{{ range $index , $designer := $choice.designers }}
-								    		{{ $designer.name }}
-								    	{{ end }}&nbsp;&nbsp;
-							    	{{ end }}
-							    {{ end }}
-							    {{if $choice.engineers }}
-							    	{{ if ge (len $choice.engineers) 1 }}
-								  		工程｜	
-								    	{{ range $index , $engineer := $choice.engineers }}
-								    		{{ $engineer.name }}
-								    	{{ end }}&nbsp;&nbsp;
-							    	{{ end }}
-							    {{ end }}
-							    {{if $choice.extend_byline }}
-							    	{{ $choice.extend_byline }}
-							    {{ end }}
-							   </div>
-								<div class="separator"></div>
-								<div class="date">{{ dateFormat "2006.01.02" $choice.publishedDate }}</div>
-							</div>
-						</div>
-					{{ end }}
-
-				{{ end }}
-			{{ end }}
-
-		<div class="ui three column stackable grid" style="margin:0 auto;">
-
-			{{ range $.Site.Data.choices._items }}
-				{{ range $idx, $choice := .choices }}
-
-					{{ if ge $idx 3}}
-						<div class="column" style="padding: 0 !important;">
-							<div class="choice-block">
-								<a href="/story/{{$choice.slug}}"><div class="column-choice-img" style="background:url('{{ if $choice.og_image }}{{ $choice.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $choice.heroImage.image.resizedTargets }}{{ $choice.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" >
-									<div class="choice-cat">
-										{{ range first 1 $choice.sections }}
-											{{ $id := ._id }}
-									    {{ range $section := $.Site.Data.sections._items }}
-									    	{{ if eq $section._id $id }}
-									    		{{ $section.title }}
-									    	{{ end }}
-									    {{ end }}
-									  {{ end }}
-									</div>
-								</div></a>
-								<div class="column-choice-content">
-									<a href="/story/{{$choice.slug}}"><h2 style="text-align:center;">{{ $choice.title }}</h2></a>
-									<div class="line mobile-hide"></div>
-									<div class="brief mobile-hide">
-										{{ if $choice.brief.html }}	
-											{{ substr (plainify $choice.brief.html) 0 70 }}
-											{{ if gt ( len ( plainify $choice.brief.html ) ) 70 }}...{{ end }}
-										{{ else }}
-											{{ if $choice.content.html }}
-												{{ substr (plainify $choice.content.html) 0 70 }}
-												{{ if gt ( len ( plainify $choice.content.html ) ) 70 }}...{{ end }}
-											{{ end }}
-										{{ end }}
-									</div>
-								</div>
-								<div class="column-choice-meta">
-									<div class="author">
-										{{if $choice.writers }}
-								    	{{ if ge (len $choice.writers) 1 }}
-									  		文｜	
-								    	{{ end }}
-								    	{{ range $index , $writer := $choice.writers }}
-								    		{{ $writer.name }}
-								    	{{ end }}
-								    {{ end }}
-									</div>
-									<div class="separator"></div>
-									<div class="date">{{ dateFormat "2006.01.02" $choice.publishedDate }}</div>
-								</div>
-							</div>
-						</div>
-					{{ end }}
-					
-				{{ end }}
-			{{ end }}
+		<div class="ui three column stackable grid category-bottom" style="margin:0 auto;">
 		</div>
 
 	</div>
 </div>
-{{ end }}
-{{ end }}
-
-	<div class="ui grid categories">
-	  <div class="sixteen wide column">
-	  	<div class="ui divider" style="max-width:940px; margin:0 auto;"></div>
-	  	<div class="ui text container">
-	  		<div style="margin-top:35px;margin-bottom:20px; line-height:45px; vertical-align:middle; text-align:left;">
-				<h2 class="colorTitle"><div class="colorBlock"></div>文章分類</h2>
-	      	</div>
-	      	<div class="ui four column doubling grid">
-
-		      {{if .Params.sections }}
-			      {{ range $section := first 1 .Params.sections }}
-
-					    {{ range $.Site.Data.sections._items }}
-					    	{{ if eq $section._id ._id }}
-					    		{{ range $categories := .categories }}
-					    			<div class="column">
-					      			<a href="/category/{{.name | urlize}}" class="category-button">{{ .title }}</a>
-					      		</div>
-					    		{{ end }}
-					    	{{ end }}
-					    {{ end }}
-
-			      {{ end }}
-		      {{ end }}
-
-	      	</div>
-		</div>
-	  </div>
-	</div>
-

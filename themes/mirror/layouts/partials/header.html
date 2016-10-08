@@ -34,6 +34,8 @@
 	{{ end }}
 	{{ end }}
 	
+	<meta name="section-id" content="{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ ._id }}{{ end }}{{ end }}"/>
+	<meta name="category-id" content="{{ if .Params.categories }}{{ range first 1 .Params.categories }}{{ ._id }}{{ end }}{{ end }}"/>
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="{{if .Params.og_title }}{{ .Params.og_title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}" />
