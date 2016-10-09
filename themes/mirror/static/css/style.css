@@ -707,7 +707,7 @@ article code {
 }
 
 article div.img {
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 article div.img.left {
   width: 300px;
@@ -738,11 +738,13 @@ article blockquote.quote {
   color: rgba(0, 0, 0, 0.6);
   padding-left: 20px;
   border-left: solid 5px #004ea2;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
+  clear: both;
 }
 
 article blockquote.blockquote {
-  margin-bottom: 45px;
+  margin-bottom: 35px;
+  clear: both;
 }
 
 article blockquote .quote-body {
@@ -774,6 +776,7 @@ article .info-box-container {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   padding: 25px 30px;
   margin-bottom: 45px;
+  clear: both;
 }
 article .info-box-container .info-box-title {
   text-align: center;
@@ -851,6 +854,7 @@ article .audio-box {
   width: 460px;
   overflow: auto;
   padding-bottom: 45px;
+  clear: both;
 }
 article .audio-container {
   float: right;
@@ -938,6 +942,7 @@ article .aspect-ratio {
   width: 100%;
   height: 0;
   padding-bottom: 56%;
+  clear: both;
 }
 article .aspect-ratio iframe {
   position: absolute;
@@ -960,6 +965,7 @@ article .slideshow-box {
   width: 100%;
   border-bottom: solid 5px #004ea2;
   margin-bottom: 45px;
+  clear: both;
 }
 article .slideshow-box .slideshow-thumbs {
   position: relative;
