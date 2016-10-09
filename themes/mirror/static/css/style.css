@@ -37,6 +37,10 @@
   width: 300px;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Semantic UI Sidebar fix */
 html.ios {
   overflow-x: hidden;
