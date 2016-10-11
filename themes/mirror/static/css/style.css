@@ -1,3 +1,4 @@
+
 .sidebar {
   float:right;
   display: block;
@@ -184,7 +185,7 @@ body.pushable .pusher {
   background-color: #004ea2;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   height: 30px;
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 30px;
@@ -269,7 +270,7 @@ ul.latest li a {
   text-indent:0;
 }
 .cat-label span {
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 1;
@@ -364,7 +365,7 @@ ul.latest li a {
   padding: 0 2px;
   padding-bottom: 15px;
   border-bottom: 3px #145CA9 solid;
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 1;
@@ -404,7 +405,7 @@ ul.latest li a {
   background-color: #004ea2;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   height: 30px;
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 15px;
   font-weight: bold;
   line-height: 30px;
@@ -613,7 +614,7 @@ div.ui.text.container.article-header {
 
 /* Brief Style */
 article .brief p{
-  font-family: 'Noto Sans TC';
+  font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
   font-size: 16px;
   line-height: 2;
   letter-spacing: 0.3px;
@@ -703,7 +704,7 @@ article div.img .caption {
 }
 
 article blockquote.quote {
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.3px;
@@ -720,7 +721,7 @@ article blockquote.blockquote {
 }
 
 article blockquote .quote-body {
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 24px;
   line-height: 1.8;
   color: rgba(0, 0, 0, 0.7);
@@ -730,7 +731,7 @@ article blockquote .quote-body {
   padding: 10px 60px;
 }
 article blockquote .quote-by {
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.3px;
@@ -1188,7 +1189,7 @@ article.small .slideshow-box .slideshow-caption {
 }
 
 .article-credit {
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 17px;
   line-height: 1.6;
   letter-spacing: 1px;
@@ -1233,7 +1234,7 @@ article img {
 }
 
 .heroimg-caption {
-  font-family: 'Noto Sans TC';
+  font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
   font-size: 15px;
   line-height: 1.7;
   letter-spacing: 0.3px;
@@ -1399,7 +1400,7 @@ div.colorBlock.choice {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   text-align: center;
   line-height: 40px;
-  font-family: 'Songti TC', serif;
+  font-family: 'Songti TC', SimSun, serif;
   font-size: 20px;
   letter-spacing: 1.3px;
   color: #004ea2;
