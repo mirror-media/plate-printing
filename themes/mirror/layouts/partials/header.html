@@ -122,10 +122,10 @@
 	    {{ range $section := .Site.Data.sections._items }}
 	      <div class="column">
 	        <div class="ui list">
-	        	<a href="/section/{{ $section.name }}" class="item section" style="color:#FFF;font-size:1.2em; font-family: 'Noto Sans TC', sans-serif; font-weight: bold !important;">{{ $section.title }}</a>
+	        	<a href="/section/{{ $section.name }}" class="item section" style="color:#FFF;font-size:1.2em; font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif; font-weight: bold !important;">{{ $section.title }}</a>
 
 	        	{{ range $category := $section.categories }}
-	        		<a href="/category/{{ $category.name }}"  class="item" style="color:#FFF; font-family: 'Noto Sans TC', sans-serif; font-weight: 400 !important;" >{{ $category.title }}</a>
+	        		<a href="/category/{{ $category.name }}"  class="item" style="color:#FFF; font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif; font-weight: 400 !important;" >{{ $category.title }}</a>
 	        	{{ end }}
 	        </div>
 	      </div>
@@ -176,7 +176,7 @@
     {{ end }}
   	</div>
   	<div class="" style="margin-left:40px;margin-top:90px;">
-  		<div style="font-family: 'Noto Sans TC';font-size: 17px;letter-spacing: 1.1px;color: rgba(0, 0, 0, 0.5);">訂閱鏡週刊</div>
+  		<div style="font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif; font-size: 17px;letter-spacing: 1.1px;color: rgba(0, 0, 0, 0.5);">訂閱鏡週刊</div>
   		<div style="width: 195px;height: 2px;border: solid 1px rgba(0, 0, 0, 0.5); margin: 10px 0;"></div>
  			<div class="ui" style="line-height:40px;">
  			 	<a href="{{ .Site.Social.line }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/line.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/line@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/line@3x.png 3x" style="width:56px;height:25px;"/></a>
@@ -232,7 +232,7 @@
 						    {{ range $.Site.Data.sections._items }}
 						    	{{ if eq $section._id ._id }}
 						    		{{ range $categories := .categories }}
-						    			<a href="/category/{{.name}}" class="item" style="color:#fff; font-family: 'Noto Sans TC', sans-serif;">{{ .title }}</a>
+						    			<a href="/category/{{.name}}" class="item" style="color:#fff; font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;">{{ .title }}</a>
 						    		{{ end }}
 						    	{{ end }}
 						    {{ end }}
@@ -247,11 +247,11 @@
 
 		    <div class="ui borderless main menu sticky-menu first-menu" style="max-width: 100% !important;display:block !important; ">
 			    <div class="ui text container" style="max-width: 100%!important; height:60px; width:100%;">
-			      <div class="header item openSidebar" data-direction="top" style="width:114px; font-family: 'Noto Sans TC', sans-serif; font-weight: 400 !important; text-align:center; padding-left:22px !important; padding-right:5px !important; font-size: 17px; letter-spacing: 1.6px; color: rgba(0, 0, 0, 0.3);">
+			      <div class="header item openSidebar" data-direction="top" style="width:114px; font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif; font-weight: 400 !important; text-align:center; padding-left:22px !important; padding-right:5px !important; font-size: 17px; letter-spacing: 1.6px; color: rgba(0, 0, 0, 0.3);">
 			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/hamburger@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/hamburger@3x.png 3x" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>
 			      <div class="item" style="padding-left:0px !important;">
-			      	<div class="gradient" style="float: right; font-family: 'Noto Sans TC', sans-serif; font-weight: bold !important; color: rgba(0,0,0,0.4); width:160px; height:60px; line-height:60px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
+			      	<div class="gradient" style="float: right; font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif; font-weight: bold !important; color: rgba(0,0,0,0.4); width:160px; height:60px; line-height:60px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 				      {{if .Params.sections }}
 					      {{ range first 1 .Params.sections }}
 						      {{ .title }}
