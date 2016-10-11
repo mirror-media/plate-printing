@@ -245,8 +245,11 @@ $(document)
         data._items[i].idx = i+1;
         data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
 
-        data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
-
+        if(data._items[i].brief)
+          data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
+        else
+          data._items[i].brief = { html: "" };
+        
         if ( data._items[i].idx % 2 ) {
           data._items[i].Right = "right"
           data._items[i].Left = "left"
