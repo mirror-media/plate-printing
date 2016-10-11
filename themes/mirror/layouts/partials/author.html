@@ -25,9 +25,9 @@
 				    {{ if $.Scratch.Get "flag" }}
 				    <div class="centered author" style="max-width:620px;margin:20px auto;">
 				    	<hr/>
-				    	<h2 class="author-name">{{ $photographer.name }}<p class="author-mail">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p></h2>
-
+				    	<h2 class="author-name">{{ $photographer.name }}<p class="author-mail mobile-hide">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p></h2>
 				    	<div class="author-bio">{{if $photographer.bio }}{{ $photographer.bio.html | safeHTML }}{{ end }}</div>
+				    	<p class="author-mail tablet-hide computer-hide">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p>
 				    	<hr/>
 				    </div>
 				    {{ end }}
@@ -57,9 +57,9 @@
 				    {{ if $.Scratch.Get "flag" }}
 					    <div class="centered author" style="max-width:620px;margin:20px auto;">
 					    	<hr/>
-					    	<h2 class="author-name">{{ $designer.name }}<p class="author-mail">{{if $designer.email }}{{ $designer.email }}{{ end }}</p></h2>
-
+					    	<h2 class="author-name">{{ $designer.name }}<p class="author-mail mobile-hide">{{if $designer.email }}{{ $designer.email }}{{ end }}</p></h2>
 					    	<div class="author-bio">{{if $designer.bio }}{{ $designer.bio.html | safeHTML }}{{ end }}</div>
+					    	<p class="author-mail tablet-hide computer-hide">{{if $designer.email }}{{ $designer.email }}{{ end }}</p>
 					    	<hr/>
 					    </div>
 				    {{ end }}
@@ -97,9 +97,9 @@
 				    {{ if $.Scratch.Get "flag" }}
 					    <div class="centered author" style="max-width:620px;margin:20px auto;">
 					    	<hr/>
-					    	<h2 class="author-name">{{ $engineer.name }}<p class="author-mail">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p></h2>
-
+					    	<h2 class="author-name">{{ $engineer.name }}<p class="author-mail mobile-hide">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p></h2>
 					    	<div class="author-bio">{{if $engineer.bio }}{{ $engineer.bio.html | safeHTML }}{{ end }}</div>
+					    	<p class="author-mail tablet-hide computer-hide">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p>
 					    	<hr/>
 					    </div>
 			    	{{ end }}
