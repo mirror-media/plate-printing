@@ -947,6 +947,8 @@ article .aspect-ratio {
   width: 100%;
   height: 0;
   padding-bottom: 56%;
+  margin-top:20px;
+  margin-bottom: 20px;
   clear: both;
 }
 article .aspect-ratio iframe {
