@@ -592,6 +592,7 @@ ul.latest li a {
   letter-spacing: 1px;
   color: rgba(0, 0, 0, 0.5);
   margin-top: 50px;
+  clear: both;
 }
 
 .tags a {
