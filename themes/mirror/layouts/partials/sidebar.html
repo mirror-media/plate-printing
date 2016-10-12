@@ -1,16 +1,16 @@
 <script id="latest-top-tempalte" type="text/x-jsrender">
 	<div class="block">
-		<a href="/story/{^{:slug}}"><div class="block-header" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;">
+		<a href="/story/{^{:slug}}" onClick="ga('send', 'event', 'article', 'click', 'section-latest');"><div class="block-header" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;">
 			<div class="block-cat right">{^{:categories[0].title}}</div>
 		</div></a>
 		<div class="block-body" style="">
-			<a href="/story/{^{:slug}}"><p>{^{:title}}</p></a>
+			<a href="/story/{^{:slug}}" onClick="ga('send', 'event', 'article', 'click', 'section-latest');"><p>{^{:title}}</p></a>
 		</div>
 	</div>
 </script>
 
 <script id="latest-bottom-tempalte" type="text/x-jsrender">
-	<li><a href="/story/{^{:slug}}">{^{:title}}</a><div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
+	<li><a href="/story/{^{:slug}}" onClick="ga('send', 'event', 'article', 'click', 'section-latest');">{^{:title}}</a><div class="cat-label"><div class="separator"></div><span >{^{:categories[0].title}}</span></div></li>
 </script>
 
 <div class="sidebar article-sidebar tablet-hide mobile-hide">

@@ -1,12 +1,12 @@
 <script id="category-top-tempalte" type="text/x-jsrender">
 	<div class="choice-block">
-		<a href="/story/{^{:slug}}/"><div class="choice-img {^{:Right}}" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;"></div></a>
+		<a href="/story/{^{:slug}}/" onClick="ga('send', 'event', 'article', 'click', 'category-latest');"><div class="choice-img {^{:Right}}" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;"></div></a>
 		<div class="choice-cat {^{:Right}}">
 			{^{:categories[0].title}}
 		</div>
 
 		<div class="choice-content {^{:Left}}">
-			<a href="/story/{^{:slug}}/"><h2>{^{:title}}</h2></a>
+			<a href="/story/{^{:slug}}/" onClick="ga('send', 'event', 'article', 'click', 'category-latest');"><h2>{^{:title}}</h2></a>
 			<div class="line"></div>
 			<div class="brief">
 				{^{:brief.html}}
@@ -22,13 +22,13 @@
 <script id="category-bottom-tempalte" type="text/x-jsrender">
 	<div class="column" style="padding: 0 !important;">
 		<div class="choice-block">
-			<a href="/story/{^{:slug}}/"><div class="column-choice-img" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;" >
+			<a href="/story/{^{:slug}}/" onClick="ga('send', 'event', 'article', 'click', 'category-latest');"><div class="column-choice-img" style="background:url('{^{:preview}}') no-repeat center center; background-size:cover;" >
 				<div class="choice-cat">
 					{^{:categories[0].title}}
 				</div>
 			</div></a>
 			<div class="column-choice-content">
-				<a href="/story/{^{:slug}}/"><h2 style="text-align:center;">{^{:title}}</h2></a>
+				<a href="/story/{^{:slug}}/" onClick="ga('send', 'event', 'article', 'click', 'category-latest');"><h2 style="text-align:center;">{^{:title}}</h2></a>
 				<div class="line mobile-hide"></div>
 				<div class="brief mobile-hide">
 					{^{:brief.html}}
