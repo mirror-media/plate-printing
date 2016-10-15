@@ -1,6 +1,6 @@
 baseurl = "https://www.mirrormedia.mg/"
 languageCode = "zh-tw"
-title = "鏡傳媒"
+title = "鏡傳媒 Mirror Media"
 theme = "mirror"
 googleAnalytics = "UA-83609754-1"
 
