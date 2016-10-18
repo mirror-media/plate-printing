@@ -1661,6 +1661,9 @@ div.colorBlock.choice {
   margin-right: 55px;
 }
 
+.hide {
+  display: none;
+}
 
 /* Mobile */
 
