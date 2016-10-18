@@ -59,6 +59,14 @@
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
+			    {{if .Params.camera_man }}
+			    	{{if gt (len .Params.camera_man) 0 }}
+				    影音 | 
+				      {{ range $index , $camera := .Params.camera_man }}
+				        {{ $camera.name }}
+				      {{ end }}&nbsp;&nbsp;
+				    {{ end }}
+			    {{ end }}
 			    {{if .Params.extend_byline }}{{ .Params.extend_byline }}{{ end }}
 	  		</p>
 	  		<p class="article-sharing mobile-hide tablet-hide" style="float: right; color: rgba(0,0,0,0.4);">
