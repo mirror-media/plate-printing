@@ -101,3 +101,50 @@
 			    	{{ end }}
 			    {{ end }}   
 		    {{ end }}
+
+		    {{if .Params.camera_man }}
+		    	{{ range $index , $camera := .Params.camera_man }}
+			    	{{ $.Scratch.Set "flag" true }}
+
+				    {{if $.Params.writers }}
+				    	{{ range $index , $writer := $.Params.writers }}
+				    		{{ if eq $camera.name $writer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{if $.Params.photographers }}
+				    	{{ range $index , $photographer := $.Params.photographers }}
+				    		{{ if eq $camera.name $photographer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{if $.Params.designers }}
+				    	{{ range $index , $designer := $.Params.designers }}
+				    		{{ if eq $camera.name $designer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{if $.Params.engineers }}
+				    	{{ range $index , $engineer := $.Params.engineers }}
+				    		{{ if eq $camera.name $engineer.name }}
+				    			{{ $.Scratch.Set "flag" false }}
+				    		{{ end }}
+				    	{{ end }}
+				    {{ end }}
+
+				    {{ if $.Scratch.Get "flag" }}
+					    <div class="centered author" style="max-width:620px;margin:20px auto;">
+					    	<hr/>
+					    	<h2 class="author-name">{{ $camera.name }}<p class="author-mail mobile-hide">{{if $camera.email }}{{ $camera.email }}{{ end }}</p></h2>
+					    	<p class="author-mail tablet-hide computer-hide">{{if $camera.email }}{{ $camera.email }}{{ end }}</p>
+					    	<hr/>
+					    </div>
+			    	{{ end }}
+			    {{ end }}   
+		    {{ end }}
