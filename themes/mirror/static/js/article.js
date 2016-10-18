@@ -219,7 +219,14 @@ $(document)
             $(".latest-bottom ul").append(htmlOutput)
           }
         }
-      });
+
+        if (data._items.length == 0) {
+          $('.article-sidebar .latest-top').hide();
+        }
+
+      }).fail(function() {
+        $('.article-sidebar .latest-top').hide();
+      })
     }
 
     if ( categoryId ) {
@@ -253,9 +260,13 @@ $(document)
           else
             data._items[i].brief = { html: "" };
           
+          if(data._items[i].brief.length == 0) {
+            data._items[i].emptyBrief = "hide";
+          }
+
           if ( data._items[i].idx % 2 ) {
-            data._items[i].Right = "right"
-            data._items[i].Left = "left"
+            data._items[i].Right = "right";
+            data._items[i].Left = "left";
           }
 
           if ( !isEmpty(data._items[i].og_image) )
@@ -274,7 +285,14 @@ $(document)
             $(".category-bottom").append(htmlOutput);
           }
         }
-      });
+
+        if (data._items.length == 0) {
+          $('.choice').hide();
+        }
+
+      }).fail(function() {
+        $('.choice').hide();
+      })
     } else {
       $('.choice').hide();
     }

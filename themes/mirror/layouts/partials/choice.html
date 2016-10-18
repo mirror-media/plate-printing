@@ -29,8 +29,8 @@
 			</div></a>
 			<div class="column-choice-content">
 				<a href="/story/{^{:slug}}/" onClick="ga('send', 'event', 'article', 'click', 'category-latest');"><h2 style="text-align:center;">{^{:title}}</h2></a>
-				<div class="line mobile-hide"></div>
-				<div class="brief mobile-hide">
+				<div class="line mobile-hide {^{:emptyBrief}}"></div>
+				<div class="brief mobile-hide {^{:emptyBrief}}">
 					{^{:brief.html}}
 				</div>
 			</div>
