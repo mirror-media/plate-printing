@@ -18,6 +18,7 @@ googleAnalytics = "UA-83609754-1"
 	instagram	= "https://www.instagram.com/mirror_media/"
 	feed		= "/story/index.xml"
 	mail		= "mailto:mirror885@mirrormedia.mg"
+	book		= "https://goo.gl/forms/g2ny8HzAXTAfwH6I2"
 
 [taxonomies]
 	tag = "HugoTags"
