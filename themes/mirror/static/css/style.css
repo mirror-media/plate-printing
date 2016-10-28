@@ -1217,6 +1217,7 @@ article img {
 }
 
 .ui.menu .item{
+  font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -1661,6 +1662,9 @@ div.colorBlock.choice {
   margin-right: 55px;
 }
 
+.hide {
+  display: none;
+}
 
 /* Mobile */
 

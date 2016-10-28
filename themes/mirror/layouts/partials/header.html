@@ -34,6 +34,8 @@
 	{{ end }}
 	{{ end }}
 	
+	<meta property="fb:pages" content="1855418728011324" />
+
 	<meta name="section-id" content="{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ ._id }}{{ end }}{{ end }}"/>
 	<meta name="category-id" content="{{ if .Params.categories }}{{ range first 1 .Params.categories }}{{ ._id }}{{ end }}{{ end }}"/>
 
@@ -68,6 +70,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ .Site.Params.cssBaseUrl }}/style.css">
 	<link rel="stylesheet" href="{{ .Site.Params.cssBaseUrl }}/owl.carousel.css">
 	<link rel="stylesheet" href="{{ .Site.Params.cssBaseUrl }}/share.css">
+	<link rel="stylesheet" href="{{ .Site.Params.cssBaseUrl }}/simplePagination.css">
 
 	<link rel="apple-touch-icon" sizes="72x72" href="{{ .Site.Params.imgBaseUrl }}/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="{{ .Site.Params.imgBaseUrl }}/favicon-32x32.png" sizes="32x32">
@@ -148,6 +151,7 @@
 					<a class="item" href="{{ .Site.Social.instagram }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/instagram@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/instagram@3x.png 3x" style="width: 25px!important; height: 25px;"/></a>
 					<a class="item" href="{{ .Site.Social.feed }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/feed@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/feed@3x.png 3x" style="width: 25px!important; height: 25px;"/></a>
 					<a class="item" href="{{ .Site.Social.mail }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/mail@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/mail@3x.png 3x" style="width: 26px!important; height: 25px;"/></a>
+					<a class="item" href="{{ .Site.Social.book }}"><img src="{{ .Site.Params.imgBaseUrl }}/icon/book.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/book@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/book@3x.png 3x" style="width: 17px!important; height: 23px;"/></a>
 	 			</div>
 			</div>
 		</div>
@@ -187,7 +191,7 @@
 		    <a href="{{ .Site.Social.instagram }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/instagram.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/instagram@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/instagram@3x.png 3x" style="width:25px;height:25px;"/></a>
 		    <a href="{{ .Site.Social.feed }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/feed.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/feed@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/feed@3x.png 3x" style="width:25px;height:25px;"/></a>
 		    <a href="{{ .Site.Social.mail }}" class="item" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/mail.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/mail@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/mail@3x.png 3x" style="width:26px;height:25px;"/></a>
-
+		    <a class="item" href="{{ .Site.Social.book }}" style="color:rgba(0, 0, 0, 0.5); font-size:1.5em; margin-right:25px;"><img src="{{ .Site.Params.imgBaseUrl }}/icon/book.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/book@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/book@3x.png 3x" style="width: 17px!important; height: 23px;"/></a>
  			</div>
   	</div>
   </div>
@@ -326,7 +330,7 @@
 			<!-- Tablet -->
 		  <div class="tablet only sixteen wide column" >
 		    <div class="ui borderless main menu first-menu" style="box-shadow:none;">
-			    <div class="ui text container" style="max-width: 1024px!important; height:70px; margin-left:0px !important; margin-right:0px !important; width:100%;">
+			    <div class="ui text container" style="max-width: 1024px!important; font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif; height:70px; margin-left:0px !important; margin-right:0px !important; width:100%;">
 			      <div class="header item openSidebar" data-direction="left" style="width:114px; text-align:center; padding-left:22px !important; padding-right:5px !important;">
 			        <img src="{{ .Site.Params.imgBaseUrl }}/icon/hamburger.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/hamburger@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/hamburger@3x.png 3x" style=" width:24px; height:24px; vertical-align: bottom; margin-right:10px;">頻道
 			      </div>

@@ -1,29 +1,27 @@
-<div class="ui grid categories">
-  <div class="sixteen wide column">
-  	<div class="ui divider" style="max-width:940px; margin:0 auto;"></div>
-  	<div class="ui text container">
-  		<div style="margin-top:35px;margin-bottom:20px; line-height:45px; vertical-align:middle; text-align:left;">
-			<h2 class="colorTitle"><div class="colorBlock"></div>文章分類</h2>
-      	</div>
-      	<div class="ui four column doubling grid">
+{{if .Params.sections }}
+  {{ range $section := first 1 .Params.sections }}
 
-	      {{if .Params.sections }}
-		      {{ range $section := first 1 .Params.sections }}
-
-				    {{ range $.Site.Data.sections._items }}
-				    	{{ if eq $section._id ._id }}
+	    {{ range $.Site.Data.sections._items }}
+	    	{{ if eq $section._id ._id }}
+				<div class="ui grid categories">
+				  <div class="sixteen wide column">
+				  	<div class="ui divider" style="max-width:940px; margin:0 auto;"></div>
+				  	<div class="ui text container">
+				  		<div style="margin-top:35px;margin-bottom:20px; line-height:45px; vertical-align:middle; text-align:left;">
+							<h2 class="colorTitle"><div class="colorBlock"></div>文章分類</h2>
+				      	</div>
+				      	<div class="ui four column doubling grid">
 				    		{{ range $categories := .categories }}
 				    			<div class="column">
 				      			<a href="/category/{{.name | urlize}}" class="category-button">{{ .title }}</a>
 				      		</div>
 				    		{{ end }}
-				    	{{ end }}
-				    {{ end }}
+				      	</div>
+					</div>
+				  </div>
+				</div>
+	    	{{ end }}
+	    {{ end }}
 
-		      {{ end }}
-	      {{ end }}
-
-      	</div>
-	</div>
-  </div>
-</div>
+  {{ end }}
+{{ end }}

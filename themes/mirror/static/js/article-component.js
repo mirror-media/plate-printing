@@ -33,6 +33,25 @@ $(document)
       $(this).addClass('active');
     });
 
+    /* Pagination */
+    if( $('article div.page').length > 0 ) {
+      $('article div.page').css('display', 'none');
+      $('article div.page').eq(0).css('display', 'initial');
+      $('.paginator').pagination({
+        items: $('article div.page').length,
+        itemsOnPage: 1,
+        hrefTextPrefix: '#',
+        prevText: '上一頁',
+        nextText: '下一頁',
+        cssStyle: 'light-theme',
+        onPageClick: function(p, e){
+          $("html, body").scrollTop(0);
+          $('article div.page').css('display', 'none');
+          $('article div.page').eq(p-1).css('display', 'initial');
+        }
+      });
+    }
+
     /* Components */
     $('article div > img').each(function(i, img) {
       var alt = img.alt;
