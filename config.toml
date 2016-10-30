@@ -18,7 +18,7 @@ disableRSS = "true"
 	facebook	= "https://www.facebook.com/mirrormediamg/"
 	wechat		= "#wechat"
 	instagram	= "https://www.instagram.com/mirror_media/"
-	feed		= "/story/index.xml"
+	feed		= "/story/rss.xml"
 	mail		= "mailto:mirror885@mirrormedia.mg"
 	book		= "https://goo.gl/forms/g2ny8HzAXTAfwH6I2"
 
