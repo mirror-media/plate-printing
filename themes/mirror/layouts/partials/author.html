@@ -3,6 +3,7 @@
 			    <div class="centered author" style="max-width:620px;margin:20px auto;">
 			    	<hr/>
 			    	<h2 class="author-name">{{ $writer.name }}<p class="author-mail mobile-hide">{{if $writer.email }}{{ $writer.email }}{{ end }}</p></h2>
+			    	<div class="author-bio">{{if $writer.bio }}{{ $writer.bio.html | safeHTML }}{{ end }}</div>
 			    	<p class="author-mail tablet-hide computer-hide">{{if $writer.email }}{{ $writer.email }}{{ end }}</p>
 			    	<hr/>
 			    </div>
@@ -25,6 +26,7 @@
 				    <div class="centered author" style="max-width:620px;margin:20px auto;">
 				    	<hr/>
 				    	<h2 class="author-name">{{ $photographer.name }}<p class="author-mail mobile-hide">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p></h2>
+				    	<div class="author-bio">{{if $photographer.bio }}{{ $photographer.bio.html | safeHTML }}{{ end }}</div>
 				    	<p class="author-mail tablet-hide computer-hide">{{if $photographer.email }}{{ $photographer.email }}{{ end }}</p>
 				    	<hr/>
 				    </div>
@@ -56,6 +58,7 @@
 					    <div class="centered author" style="max-width:620px;margin:20px auto;">
 					    	<hr/>
 					    	<h2 class="author-name">{{ $designer.name }}<p class="author-mail mobile-hide">{{if $designer.email }}{{ $designer.email }}{{ end }}</p></h2>
+					    	<div class="author-bio">{{if $designer.bio }}{{ $designer.bio.html | safeHTML }}{{ end }}</div>
 					    	<p class="author-mail tablet-hide computer-hide">{{if $designer.email }}{{ $designer.email }}{{ end }}</p>
 					    	<hr/>
 					    </div>
@@ -95,6 +98,7 @@
 					    <div class="centered author" style="max-width:620px;margin:20px auto;">
 					    	<hr/>
 					    	<h2 class="author-name">{{ $engineer.name }}<p class="author-mail mobile-hide">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p></h2>
+					    	<div class="author-bio">{{if $engineer.bio }}{{ $engineer.bio.html | safeHTML }}{{ end }}</div>
 					    	<p class="author-mail tablet-hide computer-hide">{{if $engineer.email }}{{ $engineer.email }}{{ end }}</p>
 					    	<hr/>
 					    </div>
@@ -142,6 +146,7 @@
 					    <div class="centered author" style="max-width:620px;margin:20px auto;">
 					    	<hr/>
 					    	<h2 class="author-name">{{ $camera.name }}<p class="author-mail mobile-hide">{{if $camera.email }}{{ $camera.email }}{{ end }}</p></h2>
+					    	<div class="author-bio">{{if $camera.bio }}{{ $camera.bio.html | safeHTML }}{{ end }}</div>
 					    	<p class="author-mail tablet-hide computer-hide">{{if $camera.email }}{{ $camera.email }}{{ end }}</p>
 					    	<hr/>
 					    </div>
