@@ -149,8 +149,9 @@
 
 	    </div> <!-- article-main -->
 
-	    {{ partial "sidebar.html" . }}
-
+	    {{ if eq .Params.style "article" }}
+	    	{{ partial "sidebar.html" . }}
+	    {{ end }}
 
   	</div>
 	  
