@@ -1,10 +1,11 @@
 {{ $baseurl := .Site.BaseURL }}
+
 {{ if gt (len .Params.relateds) 0 }}
   <div class="related">
 	<h2 class="colorTitle"><div class="colorBlock"></div>相關文章</h2>
 		{{ range $related := .Params.relateds }}
 	<div class="related-block" style="">
-		<a href="/story/{{$related.slug}}" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if $related.og_image }}{{ $related.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $related.heroImage.image.resizedTargets }}{{ $related.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
+		<a href="/story/{{$related.slug}}" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if $related.og_image }}{{ $related.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $related.heroimage.image.resizedTargets }}{{ $related.heroimage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
 		<div class="related-date">{{ dateFormat "2006.01.02" $related.publishedDate }}</div>
 		<div class="related-content">
 			<a href="/story/{{$related.slug}}" onClick="ga('send', 'event', 'article', 'click', 'related');"><h2>{{ $related.title }}</h2></a>
