@@ -109,9 +109,9 @@
 			{{ end }}
 		{{ end }}
 
-			<div class="article-main">
+			<div class="article-main" {{ if not (eq .Params.style "article") }} style="width:100%;" {{ end }}>
 				
-				<article>
+				<article {{ if not (eq .Params.style "article") }} style="max-width:100%;" {{ end }}>
 					<!-- Brief -->
 					{{if .Params.brief }}
 						<div class="brief">
