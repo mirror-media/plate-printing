@@ -202,6 +202,7 @@ $(document)
 
         for (var i = 0; i < data._items.length; i++) {
           data._items[i].idx = i+1;
+          data._items[i].catName = (data._items[i].categories.length > 0) ? data._items[i].categories[0].title : "";
 
           if ( !isEmpty(data._items[i].og_image) )
             data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url
