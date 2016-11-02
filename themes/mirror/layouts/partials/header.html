@@ -177,8 +177,11 @@
 				      	</a>
 			      	{{ end }}
 			      {{ end }}
+			    {{ else }}
+	      		<a href="/section/{{ $section.name }}" class="item" style="color:#FFF;margin-bottom:30px; font-weight:normal !important;">
+		      		{{ $section.title }}
+		      	</a>
 			    {{ end }}
-	    	</a>
     {{ end }}
   	</div>
   	<div class="" style="margin-left:40px;margin-top:90px;">

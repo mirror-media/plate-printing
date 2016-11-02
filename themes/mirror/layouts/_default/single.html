@@ -13,13 +13,13 @@
 	  <!-- Article (Single) -->
 	  <div class="ui text container article-header">
 	  	<div class="article-meta">
+	  		{{ if .Params.categories }}
 	  		<h2 class="article-category" >
-			    {{ if .Params.categories }}
 			    	{{ range first 1 .Params.categories }} 
 			        <a href="/category/{{ .name }}">{{ .title }}</a>
 		        {{ end }}
-			    {{ end }}
 	  		</h2>
+	  		{{ end }}
 	  		<p class="article-date">{{if .Date }}{{ .Date.Format "2006.01.02" }}{{ end }}</p>
 	  	</div>
 		  <div class="ui clearing divider"></div>
