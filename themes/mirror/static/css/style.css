@@ -862,20 +862,20 @@ article .audio-container .audio-desc p {
 article .audio-box .audio-cover {
   position: relative;
   float: left;
-  width: 140px;
-  height: 140px;
+  width: 80px;
+  height: 80px;
   margin: 10px;
   background-color: #004ea2;
   background-image: url('/story/img/icon/audio@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100px 50px;
+  background-size: 80px 40px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 article .audio-box .audio-cover .audio-btn {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   cursor: pointer; cursor: hand;
   top:0; bottom:0; left:0; right:0; margin:auto;
 }
