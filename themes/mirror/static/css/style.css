@@ -1214,6 +1214,7 @@ article img {
   vertical-align: middle;
   background-color: transparent;
   max-width: 100% !important;
+  width: 100%;
 }
 
 .ui.menu .item{
