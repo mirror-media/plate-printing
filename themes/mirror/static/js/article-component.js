@@ -109,7 +109,7 @@ $(document)
       var audioObj = $(audiobox).children('audio')[0];
 
       parent.addClass('audio-box');
-      parent.prepend('<div class=\'audio-cover\'><div class=\'audio-btn pause\'></div></div>')
+      $(audiobox).prepend('<div class=\'audio-cover\'><div class=\'audio-btn pause\'></div></div>');
 
       var audioBtn = parent.find('.audio-btn')[0];
 
@@ -121,7 +121,7 @@ $(document)
         $(audioBtn).addClass('pause');
       });
 
-      parent.find('.audio-cover').click(function() {
+      $(audiobox).find('.audio-cover').click(function() {
         if (audioObj.paused) {
           audioObj.play();
         } else {
