@@ -825,14 +825,14 @@ article .annotation-box {
 
 article .audio-box {
   margin: 0 auto;
-  width: 460px;
+  width: 100%;
   overflow: auto;
-  padding-bottom: 45px;
+  padding-bottom: 15px;
   clear: both;
 }
 article .audio-container {
   float: right;
-  width: 300px;
+  width: 100%;
   background-color: #ffffff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   padding: auto 10px 10px 10px;
@@ -848,7 +848,7 @@ article .audio-container .audio-title {
   margin: 10px;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
+  /*border-bottom: solid 1px rgba(0, 0, 0, 0.15);*/
 }
 article .audio-container .audio-desc p {
   font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
@@ -862,19 +862,20 @@ article .audio-container .audio-desc p {
 article .audio-box .audio-cover {
   position: relative;
   float: left;
-  width: 140px;
-  height: 140px;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
   background-color: #004ea2;
   background-image: url('/story/img/icon/audio@2x.png');
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: 100px 50px;
+  background-size: 80px 40px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 article .audio-box .audio-cover .audio-btn {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   cursor: pointer; cursor: hand;
   top:0; bottom:0; left:0; right:0; margin:auto;
 }
@@ -1850,10 +1851,13 @@ div.colorBlock.choice {
     article .audio-container {
       width: 100%;
     }
-    article .audio-box .audio-cover {
+    article .audio-desc {
+      display: none;
+    }
+    /*article .audio-box .audio-cover {
       width: 100%;
       margin-bottom: 5px;
-    }
+    }*/
 
     article .slideshow-thumbs {
       display: none !important;
