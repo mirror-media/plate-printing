@@ -89,6 +89,13 @@ $(document)
       $(abbr).after('<div class=\'annotation-btn\'></div>')
     });
 
+    $('article .embedded').each(function(i, embedded) {
+      var title = embedded.title;
+      var parent = $(embedded).parent();
+      if(title)
+        $(embedded).after('<div class=\'embedded-title\'>' + title + '</div>');
+    });
+
     $('article div iframe').each(function(i, iframe) {
       var parent = $(iframe).parent();
       if ($(iframe).attr('src').indexOf('youtube') >= 0 || $(iframe).attr('src').indexOf('straas') >= 0) {
