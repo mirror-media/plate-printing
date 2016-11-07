@@ -1218,7 +1218,16 @@ article img {
   width: 100%;
 }
 
-.embedded img {
+article .embedded-title {
+  font-family: 'Noto Sans TC','Apple LiGothic Medium',STHeiti,'微軟正黑體','Microsoft JhengHei',sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: .3px;
+  color: rgba(0,0,0,0.5);
+  margin-bottom: 30px;
+}
+
+article .embedded img {
 	width: auto;
 }
 
