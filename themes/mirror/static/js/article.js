@@ -203,7 +203,8 @@ $(document)
         for (var i = 0; i < data._items.length; i++) {
           data._items[i].idx = i+1;
           data._items[i].catName = (data._items[i].categories.length > 0) ? data._items[i].categories[0].title : "";
-
+          data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
+          
           if ( !isEmpty(data._items[i].og_image) )
             data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url
           else
@@ -255,6 +256,7 @@ $(document)
         for (var i = 0; i < data._items.length; i++) {
           data._items[i].idx = i+1;
           data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
+          data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
 
           if(data._items[i].brief)
             data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
