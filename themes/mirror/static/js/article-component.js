@@ -100,6 +100,7 @@ $(document)
       var parent = $(iframe).parent();
       if ($(iframe).attr('src').indexOf('youtube') >= 0 || $(iframe).attr('src').indexOf('straas') >= 0) {
         parent.addClass('aspect-ratio');
+        $(parent).after('<div class=\'embedded-title\'>' + $(iframe).attr('alt') + '</div>');
       }
     });
 
