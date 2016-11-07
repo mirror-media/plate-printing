@@ -11,7 +11,8 @@ disableRSS = "true"
 	imgBaseUrl = "/story/img"
 	cssBaseUrl = "/story/css"
 	jsBaseUrl = "/story/js"
-
+	version = "201611071237"
+	
 [social]
 	line		= "https://line.me/R/ti/p/%40cuk1273e"
 	weibo		= "http://www.weibo.com/u/6030041924?is_all=1"
@@ -25,3 +26,4 @@ disableRSS = "true"
 [taxonomies]
 	tag = "HugoTags"
 	category = "HugoCategories"
+
