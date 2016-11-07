@@ -1225,6 +1225,8 @@ article .embedded-title {
   letter-spacing: .3px;
   color: rgba(0,0,0,0.5);
   margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: solid 2px #004ea2;
 }
 
 article .embedded img {
