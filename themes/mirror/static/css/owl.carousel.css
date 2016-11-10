@@ -214,3 +214,9 @@
   position: relative;
   z-index: 1;
 }
+
+.slideshow-container img {
+    max-height: 450px;
+    width: auto !important;
+    margin: 0 auto;
+}
