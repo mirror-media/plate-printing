@@ -186,7 +186,7 @@ $(document)
             margin: 10,
             nav: false,
             dots: true,
-            autoHeight: true
+            autoHeight: false
           })
           .on('changed.owl.carousel', function(e) {
             if (!flag) {
