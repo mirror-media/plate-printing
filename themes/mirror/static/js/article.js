@@ -136,7 +136,7 @@ $(document)
       current = [$('.second-menu .fontsize'), $('.openFontsize-mobile'), $('.closeFontsize-mobile')];
       $('.openFontsize-mobile').css('display','none');
       $('.closeFontsize-mobile').css('display','flex');
-      
+
     });
     $('.closeFontsize-mobile').click(function() {
       $('.second-menu').css('display','none');
@@ -170,7 +170,7 @@ $(document)
       current = [$('.second-menu .sharing'), $('.openSharing-mobile'), $('.closeSharing-mobile')];
       $('.openSharing-mobile').css('display','none');
       $('.closeSharing-mobile').css('display','flex');
-      
+
     });
     $('.closeSharing-mobile').click(function() {
       $('.second-menu').css('display','none');
@@ -193,9 +193,11 @@ $(document)
       $.getJSON( "/story/json/latest-sections-"+sectionId+".json", function( data ) {
 
         if( data._items.length > 5 ){
-          $(".sidebar.article-sidebar").append("<div class=\"latest-bottom\" style=\"width: 300px;  background-color: #ffffff; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); padding:20px; margin-bottom:2px;\"><ul class=\"latest\"></ul></div>");
+          // $(".sidebar.article-sidebar").append("<div class=\"latest-bottom\" style=\"width: 300px;  background-color: #ffffff; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); padding:20px; margin-bottom:2px;\"><ul class=\"latest\"></ul></div>");
+          $("<div class=\"latest-bottom\" style=\"width: 300px;  background-color: #ffffff; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1); padding:20px; margin-bottom:2px;\"><ul class=\"latest\"></ul></div>")
+            .insertAfter('div[class="latest-top"]');
         }
-        
+
         function isEmpty(str) {
           return (!str || 0 === str.length);
         }
@@ -204,7 +206,7 @@ $(document)
           data._items[i].idx = i+1;
           data._items[i].catName = (data._items[i].categories.length > 0) ? data._items[i].categories[0].title : "";
           data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
-          
+
           if ( !isEmpty(data._items[i].og_image) )
             data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url
           else
@@ -212,7 +214,7 @@ $(document)
               data._items[i].preview = data._items[i].heroImage.image.resizedTargets.mobile.url
             else
               data._items[i].preview = "/asset/review.png";
-            
+
           if ( i < 5) {
             var htmlOutput = latestTopTemplate.render(data._items[i]);
             $(".latest-top").append(htmlOutput)
@@ -233,7 +235,7 @@ $(document)
 
     if ( categoryId ) {
       $.getJSON( "/story/json/latest-categories-"+categoryId+".json", function( data ) {
-        
+
         function isEmpty(str) {
           return (!str || 0 === str.length);
         }
@@ -262,7 +264,7 @@ $(document)
             data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
           else
             data._items[i].brief = { html: "" };
-          
+
           if(data._items[i].brief.length == 0) {
             data._items[i].emptyBrief = "hide";
           }
@@ -279,7 +281,7 @@ $(document)
               data._items[i].preview = data._items[i].heroImage.image.resizedTargets.mobile.url;
             else
               data._items[i].preview = "/asset/review.png";
-            
+
           if ( i < 3) {
             var htmlOutput = categoryTopTemplate.render(data._items[i]);
             $(".category-top").append(htmlOutput);
@@ -298,6 +300,21 @@ $(document)
       })
     } else {
       $('.choice').hide();
+    }
+
+    /* initialize the DFP AD divisions */
+    if ( sectionId ) {
+      if( !ADUNITS['exception-categ'][categoryId] ){
+        for(var pos in ADUNITS[sectionId]){
+          $('div[pos="' + pos + '"]').attr('data-adunit', ADUNITS[sectionId][pos]['aduid']);
+          $('div[pos="' + pos + '"]').attr('data-dimensions', ADUNITS[sectionId][pos]['dimensions']);
+        }
+      }else if(ADUNITS['exception-categ'][categoryId] ){
+        for(var pos in ADUNITS['exception-categ'][categoryId]){
+          $('div[pos="' + pos + '"]').attr('data-adunit', ADUNITS['exception-categ'][categoryId][pos]['aduid']);
+          $('div[pos="' + pos + '"]').attr('data-dimensions', ADUNITS['exception-categ'][categoryId][pos]['dimensions']);
+        }
+      }
     }
 
     /* silent debug messages */
