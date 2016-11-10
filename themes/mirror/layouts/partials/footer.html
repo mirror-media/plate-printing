@@ -19,6 +19,7 @@
     {{ "<!--" | safeHTML }}{{ .Now }}{{ "-->" | safeHTML }}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/semantic.min.js?{{ .Site.Params.version }}"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/adunits.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/article.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/article-component.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jquery-scrollLock.min.js?{{ .Site.Params.version }}"></script>
@@ -26,6 +27,25 @@
 	<script src="{{ .Site.Params.jsBaseUrl }}/jsrender.min.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/owl.carousel.min.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/share.min.js?{{ .Site.Params.version }}"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/jquery.dfp.min.js"></script>
+	<script>
+    $.dfp({
+        'dfpID': '40175602',
+				'enableSingleRequest': true,
+				'collapseEmptyDivs': true,
+				'setCentering': true,
+				'sizeMapping': {
+					'default': [
+						{ browser: [    0,   0 ], ad_sizes: [] },
+						{ browser: [  970, 200 ], ad_sizes: [ [ 970, 90 ], [ 970, 250 ], [ 300, 250 ], [ 300, 600 ] ] }
+					],
+					'mobile-only': [
+						{ browser: [    1,   1 ], ad_sizes: [ [ 320, 100 ], [ 300, 250 ] ] },
+						{ browser: [  970, 200 ], ad_sizes: [] }
+					]
+				}
+    });
+  </script>
 </body>
 
 </html>
