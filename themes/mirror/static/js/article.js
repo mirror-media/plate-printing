@@ -188,6 +188,7 @@ $(document)
 
     var sectionId = $('meta[name="section-id"]').attr('content')
     var categoryId = $('meta[name="category-id"]').attr('content')
+    var topicId = $('meta[name="topic-id"]').attr('content')
 
     if ( sectionId ) {
       $.getJSON( "/story/json/latest-sections-"+sectionId+".json", function( data ) {
@@ -230,10 +231,16 @@ $(document)
         $('.article-sidebar .latest-top').hide();
       })
     }
-
-    if ( categoryId ) {
-      $.getJSON( "/story/json/latest-categories-"+categoryId+".json", function( data ) {
+    if ( topicId ) {
+      // /api/posts?where={\"topics\":\""+topicId+"\"}
+      $.getJSON( "/story/json/topic.json", function( data ) {
         
+        if ( data._items.length > 0 ) {
+          $('.choice .article-main h2.hot-topic span').each(function(){ 
+            $(this).html(data._items[0].topics.name);
+          });
+        }
+
         function isEmpty(str) {
           return (!str || 0 === str.length);
         }
@@ -256,6 +263,7 @@ $(document)
         for (var i = 0; i < data._items.length; i++) {
           data._items[i].idx = i+1;
           data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
+          data._items[i].catName = (data._items[i].categories.length > 0) ? data._items[i].categories[0].title : "";
           data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
 
           if(data._items[i].brief)
@@ -297,7 +305,72 @@ $(document)
         $('.choice').hide();
       })
     } else {
-      $('.choice').hide();
+      if ( categoryId ) {
+        $.getJSON( "/story/json/latest-categories-"+categoryId+".json", function( data ) {
+          
+          function isEmpty(str) {
+            return (!str || 0 === str.length);
+          }
+          function formatDate(d) {
+
+            var dd = d.getDate()
+            if ( dd < 10 ) dd = '0' + dd
+
+            var mm = d.getMonth()+1
+            if ( mm < 10 ) mm = '0' + mm
+
+            var yy = d.getFullYear()
+
+            return yy+'.'+mm+'.'+dd
+          }
+          function stripHTML(dirtyString) {
+            return $("<div/>").html(dirtyString).text(); // innerHTML will be a xss safe string
+          }
+
+          for (var i = 0; i < data._items.length; i++) {
+            data._items[i].idx = i+1;
+            data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
+            data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
+
+            if(data._items[i].brief)
+              data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
+            else
+              data._items[i].brief = { html: "" };
+            
+            if(data._items[i].brief.length == 0) {
+              data._items[i].emptyBrief = "hide";
+            }
+
+            if ( data._items[i].idx % 2 ) {
+              data._items[i].Right = "right";
+              data._items[i].Left = "left";
+            }
+
+            if ( !isEmpty(data._items[i].og_image) )
+              data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url;
+            else
+              if ( !isEmpty(data._items[i].heroImage) )
+                data._items[i].preview = data._items[i].heroImage.image.resizedTargets.mobile.url;
+              else
+                data._items[i].preview = "/asset/review.png";
+              
+            if ( i < 3) {
+              var htmlOutput = categoryTopTemplate.render(data._items[i]);
+              $(".category-top").append(htmlOutput);
+            } else {
+              var htmlOutput = categoryBottomTemplate.render(data._items[i]);
+              $(".category-bottom").append(htmlOutput);
+            }
+          }
+
+          if (data._items.length == 0) {
+            $('.choice').hide();
+          }
+
+        }).fail(function() {
+          $('.choice').hide();
+        })
+      }
     }
 
     /* silent debug messages */
