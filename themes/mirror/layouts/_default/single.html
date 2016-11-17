@@ -140,7 +140,7 @@
 	        	<img src="{{ .Site.Params.imgBaseUrl }}/icon/tag.png" style="width:30px; height:30px; vertical-align:middle;"/>
 			    	{{ $len := len .Params.tags }}
 			    	{{ $len := sub $len 1 }}
-			      {{ range $index , $tag := .Params.tags }}<a href="{{ $baseurl }}tag/{{ $tag._id }}" onClick="ga('send', 'event', 'article', 'click', 'tag');">{{ $tag.name }}</a>{{ if not (eq $index $len) }}、{{ end }}{{ end }}
+			      {{ range $index , $tag := .Params.tags }}{{ if $tag._id }}<a href="{{ $baseurl }}tag/{{ $tag._id }}" onClick="ga('send', 'event', 'article', 'click', 'tag');">{{ $tag.name }}</a>{{ if not (eq $index $len) }}、{{ end }}{{ end }}{{ end }}
 			    {{ end }}
 			  </div>
 
