@@ -1693,7 +1693,7 @@ div.colorBlock.choice {
   margin-bottom: 2em;
 }
 .ad-container.margin-top{
-  margin-top: 2em;
+  margin-top: 2em !important;
 }
 
 /* Mobile */
@@ -1950,7 +1950,51 @@ div.colorBlock.choice {
       margin-right: -1em;
       margin-left: -1em;
     }
+    .mb-ad-cover .mb-ad-modal{
+      background-color: grey;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      z-index: 998;
+      opacity: 0.9;
+    }
+    .mb-ad-cover .ad-container{
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+      top: 50vh;
+      margin-top: -240px;
+    }
+    .mb-ad-cover .ad-container .ad-close{
+      position: absolute;
+      top: -15px;
+      width: 100%;
+      z-index: 999;
+      height: 45px;
+    }
+    .mb-ad-cover .ad-container .ad-close .ad-close-btn{
+      width: 320px;
+      margin: 0 auto;
+      text-align: right;
+      line-height: 1.5em;
+      height: 100%;
+    }
+    .mb-ad-cover .ad-container .ad-close .ad-close-btn .close-btn{
+      /*background-color: black;
+      color: #ffffff;*/
+      /*padding: 5px;*/
+      font-size: 1.5em;
+      float: right;
+      display: block;
+      height: 100%;
+      padding: 0;
 
+      padding: 0;
+      width: 45px;
+      height: 45px;
+
+    }
 }
 
 /* Tablet */
@@ -2066,6 +2110,50 @@ div.colorBlock.choice {
       margin: 0 auto;
       max-width: 320px;
     }
+    .tb-ad-cover .tb-ad-modal{
+      background-color: grey;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      z-index: 998;
+      opacity: 0.9;
+    }
+    .tb-ad-cover .ad-container{
+      position: fixed;
+      z-index: 999;
+      width: 100%;
+      top: 50vh;
+      margin-top: -240px;
+    }
+    .tb-ad-cover .ad-container .ad-close{
+      position: absolute;
+      top: -15px;
+      width: 100%;
+      z-index: 999;
+      height: 45px;
+    }
+    .tb-ad-cover .ad-container .ad-close .ad-close-btn{
+      width: 320px;
+      margin: 0 auto;
+      text-align: right;
+      line-height: 1.5em;
+      height: 100%;
+    }
+    .tb-ad-cover .ad-container .ad-close .ad-close-btn .close-btn{
+      /*background-color: black;*/
+      /*color: #ffffff;*/
+      padding: 5px;
+      font-size: 1.5em;
+      float: right;
+      display: block;
+      height: 100%;
+
+      padding: 0;
+      width: 45px;
+      height: 45px;
+    }
+
 }
 
 /* Computer */
