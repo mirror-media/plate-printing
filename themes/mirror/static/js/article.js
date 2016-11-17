@@ -232,8 +232,7 @@ $(document)
       })
     }
     if ( topicId ) {
-      // /api/posts?where={\"topics\":\""+topicId+"\"}
-      $.getJSON( "/story/json/topic.json", function( data ) {
+      $.getJSON( "/api/posts?where={\"topics\":\""+topicId+"\"}", function( data ) {
         
         if ( data._items.length > 0 ) {
           $('.choice .article-main h2.hot-topic span').each(function(){ 
@@ -331,7 +330,8 @@ $(document)
             data._items[i].idx = i+1;
             data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
             data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
-
+            data._items[i].catName = (data._items[i].categories.length > 0) ? data._items[i].categories[0].title : "";
+            
             if(data._items[i].brief)
               data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
             else
