@@ -11,6 +11,7 @@ var ADUNITS = {
     "MBAR2": { "aduid":"mm_mobile_np_ap_300x250_AT2", "dimensions" : "300x250"},
     "MBE1": { "aduid":"mm_mobile_np_ap_300x250_E1", "dimensions" : "300x250"},
     "MBFT": { "aduid":"mm_mobile_np_ap_320x100_FT", "dimensions" : "320x100"},
+    "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480"},
   },
   "57e1e11cee85930e00cad4ea":{
     "PCHD": { "aduid":"mm_pc_ent_ap_970x250_HD", "dimensions" : "970x250,970x90"},
@@ -24,6 +25,7 @@ var ADUNITS = {
     "MBAR2": { "aduid":"mm_mobile_ent_ap_300x250_AT2", "dimensions" : "300x250"},
     "MBE1": { "aduid":"mm_mobile_ent_ap_300x250_E1", "dimensions" : "300x250"},
     "MBFT": { "aduid":"mm_mobile_ent_ap_320x100_FT", "dimensions" : "320x100"},
+    "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480"},
   },
   "57dfe399ee85930e00cad4d6":{
     "PCHD": { "aduid":"mm_pc_fnt_ap_970x250_HD", "dimensions" : "970x250,970x90"},
@@ -37,6 +39,7 @@ var ADUNITS = {
     "MBAR2": { "aduid":"mm_mobile_fnt_ap_300x250_AT2", "dimensions" : "300x250"},
     "MBE1": { "aduid":"mm_mobile_fnt_ap_300x250_E1", "dimensions" : "300x250"},
     "MBFT": { "aduid":"mm_mobile_fnt_ap_320x100_FT", "dimensions" : "320x100"},
+    "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480"},
   },
   "57dfe3cfee85930e00cad4d8":{
     "PCHD": { "aduid":"mm_pc_hv_ap_970x250_HD", "dimensions" : "970x250,970x90"},
@@ -50,6 +53,7 @@ var ADUNITS = {
     "MBAR2": { "aduid":"mm_mobile_hv_ap_300x250_AT2", "dimensions" : "300x250"},
     "MBE1": { "aduid":"mm_mobile_hv_ap_300x250_E1", "dimensions" : "300x250"},
     "MBFT": { "aduid":"mm_mobile_hv_ap_320x100_FT", "dimensions" : "320x100"},
+    "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480"},
   },
   "57dfe3b0ee85930e00cad4d7":{
     "PCHD": { "aduid":"mm_pc_wat_ap_970x250_HD", "dimensions" : "970x250,970x90"},
@@ -63,6 +67,7 @@ var ADUNITS = {
     "MBAR2": { "aduid":"mm_mobile_wat_ap_300x250_AT2", "dimensions" : "300x250"},
     "MBE1": { "aduid":"mm_mobile_wat_ap_300x250_E1", "dimensions" : "300x250"},
     "MBFT": { "aduid":"mm_mobile_wat_ap_320x100_FT", "dimensions" : "320x100"},
+    "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480"},
   },
   "exception-categ": {
     "57fca2f5c9b7a70e004e6df9": {
@@ -77,6 +82,7 @@ var ADUNITS = {
       "MBAR2": { "aduid":"mm_mobile_all_mkt_ap_300x250_AT2", "dimensions" : "300x250"},
       "MBE1": { "aduid":"mm_mobile_all_mkt_ap_300x250_E1", "dimensions" : "300x250"},
       "MBFT": { "aduid":"mm_mobile_all_mkt_ap_320x100_FT", "dimensions" : "320x100"},
+      "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480"},
     }
   }
 };

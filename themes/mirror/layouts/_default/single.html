@@ -1,6 +1,14 @@
 {{ $baseurl := .Site.BaseURL }}{{ partial "header.html" . }}
-    <div class="ui text container article-container ad-container margin-top">
-      <div class="adunit" pos="PCHD" data-adunit="" data-dimensions="970x250" data-size-mapping="default" style=""></div>
+    <div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;">
+      <div class="mb-ad-modal tb-ad-modal"></div>
+      <div class="ad-container ">
+        <div class="adunit" pos="MBCVR" id="" data-dimensions="320x480" data-size-mapping="mobile-only" style=""></div>
+        <div class="ad-close"><div class="ad-close-btn"><span class="close-btn"><canvas>關閉</canvas></span></div></div>
+      </div>
+    </div>
+
+    <div class="ui text container article-container ad-container margin-top tablet-hide mobile-hide">
+      <div class="adunit" pos="PCHD" id="" data-dimensions="970x250" data-size-mapping="default" style=""></div>
     </div>
 
     {{if .Params.sections }}
@@ -83,8 +91,8 @@
 	  		</p>
 	  	</div>
 
-      <div class="ad-container mb-margin-fit tb-margin-fit margin-top">
-        <div class="adunit" pos="MBHD" data-adunit="" data-dimensions="300x250,320x100" data-size-mapping="mobile-only" style=""></div>
+      <div class="ad-container mb-margin-fit tb-margin-fit margin-top computer-hide">
+        <div class="adunit" pos="MBHD" id="" data-dimensions="300x250,320x100" data-size-mapping="mobile-only" style=""></div>
       </div>
 
 	  	<div class="article-sharing computer-hide">
@@ -111,9 +119,11 @@
 				<div class="heroimg-caption"></div>
 			{{ end }}
 		{{ else }}
-			{{ if .Params.heroimage.image }}
-				<img class="heroimg" src="{{ .Params.heroimage.image.resizedTargets.desktop.url }}" srcset="{{ .Params.heroimage.image.resizedTargets.mobile.url }} 800w, {{ .Params.heroimage.image.resizedTargets.tablet.url }} 1200w, {{ .Params.heroimage.image.resizedTargets.desktop.url }} 2000w"/>
-				<div class="heroimg-caption"></div>
+			{{ if .Params.heroimage }}
+				{{ if .Params.heroimage.image }}
+					<img class="heroimg" src="{{ .Params.heroimage.image.resizedTargets.desktop.url }}" srcset="{{ .Params.heroimage.image.resizedTargets.mobile.url }} 800w, {{ .Params.heroimage.image.resizedTargets.tablet.url }} 1200w, {{ .Params.heroimage.image.resizedTargets.desktop.url }} 2000w"/>
+					<div class="heroimg-caption"></div>
+				{{ end }}
 			{{ end }}
 		{{ end }}
 
@@ -153,16 +163,23 @@
 		    <div style="width:10px;height:10px;"></div>
 
 		    {{ partial "author.html" . }}
-        <div class="ad-container mb-margin-fit">
-          <div class="adunit" pos="MBE1" data-adunit="" data-dimensions="300x250" data-size-mapping="mobile-only" style=""></div>
+        <div class="ad-container mb-margin-fit computer-hide">
+          <div class="adunit" pos="MBE1" id="" data-dimensions="300x250" data-size-mapping="mobile-only" style=""></div>
         </div>
-        <div class="ad-container inline-block">
-          <div class="adunit block" pos="PCE1" data-adunit="" data-dimensions="300x250" data-size-mapping="default" ></div>
+        <div class="ad-container inline-block tablet-hide mobile-hide">
+          <div class="adunit block" pos="PCE1" id="" data-dimensions="300x250" data-size-mapping="default" ></div>
         </div>
-        <div class="ad-container inline-block">
-          <div class="adunit block" pos="PCE2" data-adunit="" data-dimensions="300x250" data-size-mapping="default" ></div>
+        <div class="ad-container inline-block tablet-hide mobile-hide">
+          <div class="adunit block" pos="PCE2" id="" data-dimensions="300x250" data-size-mapping="default" ></div>
         </div>
-
+        <div id="_popIn_recommend"></div>
+        <script type="text/javascript">
+          (function() {
+              var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.charset = "utf-8"; pa.async = true;
+              pa.src = window.location.protocol + "//api.popin.cc/searchbox/mirrormedia.js";
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+          })();
+        </script>
 		    {{ partial "related.html" . }}
 
 	    </div> <!-- article-main -->
@@ -174,11 +191,11 @@
   	</div>
 
 {{ partial "choice.html" . }}
-<div class="ui text container article-container ad-container margin-bottom">
-  <div class="adunit" pos="PCFT" data-adunit="" data-dimensions="970x90" data-size-mapping="default" style=""></div>
+<div class="ui text container article-container ad-container margin-bottom tablet-hide mobile-hide">
+  <div class="adunit" pos="PCFT" id="" data-dimensions="970x90" data-size-mapping="default" style=""></div>
 </div>
-<div class="ad-container margin-bottom">
-  <div class="adunit" pos="MBFT" data-adunit="" data-dimensions="320x100" data-size-mapping="mobile-only" style=""></div>
+<div class="ad-container margin-bottom computer-hide">
+  <div class="adunit" pos="MBFT" id="" data-dimensions="320x100" data-size-mapping="mobile-only" style=""></div>
 </div>
 {{ partial "categoriesNav.html" . }}
 {{ partial "footer.html" . }}
