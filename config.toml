@@ -12,7 +12,8 @@ disableRSS = "true"
 	cssBaseUrl = "/story/css"
 	jsBaseUrl = "/story/js"
 	version = "201611071638"
-	
+	DFPID = "40175602"
+
 [social]
 	line		= "https://line.me/R/ti/p/%40cuk1273e"
 	weibo		= "http://www.weibo.com/u/6030041924?is_all=1"
@@ -26,4 +27,3 @@ disableRSS = "true"
 [taxonomies]
 	tag = "HugoTags"
 	category = "HugoCategories"
-

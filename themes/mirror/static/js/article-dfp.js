@@ -36,21 +36,13 @@ $(function(){
       });
     }
 
+    var DFPId = $('meta[name="DFPIP"]').attr('content');
     $.dfp({
-        'dfpID': '40175602',
+        'dfpID': DFPId,
         'enableSingleRequest': true,
         'collapseEmptyDivs': true,
         'setCentering': true,
-        'sizeMapping': {
-          'default': [
-            { browser: [    0,   0 ], ad_sizes: [] },
-            { browser: [  970, 200 ], ad_sizes: [ [ 970, 90 ], [ 970, 250 ], [ 300, 250 ], [ 300, 600 ] ] }
-          ],
-          'mobile-only': [
-            { browser: [    1,   1 ], ad_sizes: [ [ 320, 100 ], [ 300, 250 ], [320, 480] ] },
-            { browser: [  970, 200 ], ad_sizes: [] }
-          ]
-        },
+        'sizeMapping': SIZE_MAPPING,
         'afterEachAdLoaded': function(adunit){
           if( $(adunit['selector']).attr('pos') === 'MBCVR' ){
             console.log('MBCVR height', $(adunit['selector']).find('div:nth(0)').find('iframe:nth(0)').height());

@@ -1950,6 +1950,9 @@ div.colorBlock.choice {
       margin-right: -1em;
       margin-left: -1em;
     }
+    .ad-container.margin-top-fit{
+      margin-top: -2em;
+    }
     .mb-ad-cover .mb-ad-modal{
       background-color: grey;
       width: 100vw;

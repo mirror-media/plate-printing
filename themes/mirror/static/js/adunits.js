@@ -10,7 +10,7 @@ var ADUNITS = {
     "MBAR1": { "aduid":"mm_mobile_np_ap_300x250_AT1", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBAR2": { "aduid":"mm_mobile_np_ap_300x250_AT2", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBE1": { "aduid":"mm_mobile_np_ap_300x250_E1", "dimensions" : "300x250", "cont-class" : ["ad-container", "mb-margin-fit", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
-    "MBFT": { "aduid":"mm_mobile_np_ap_320x100_FT", "dimensions" : "320x100", "cont-class" : ["ad-container", "margin-bottom", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
+    "MBFT": { "aduid":"mm_mobile_np_ap_320x100_FT", "dimensions" : "320x100,300x250", "cont-class" : ["ad-container", "margin-bottom", "computer-hide", "margin-top-fit"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
     "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480", "cont-class" : ["ad-container"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
   },
   "57e1e11cee85930e00cad4ea":{
@@ -24,7 +24,7 @@ var ADUNITS = {
     "MBAR1": { "aduid":"mm_mobile_ent_ap_300x250_AT1", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBAR2": { "aduid":"mm_mobile_ent_ap_300x250_AT2", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBE1": { "aduid":"mm_mobile_ent_ap_300x250_E1", "dimensions" : "300x250", "cont-class" : ["ad-container", "mb-margin-fit", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
-    "MBFT": { "aduid":"mm_mobile_ent_ap_320x100_FT", "dimensions" : "320x100", "cont-class" : ["ad-container", "margin-bottom", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
+    "MBFT": { "aduid":"mm_mobile_ent_ap_320x100_FT", "dimensions" : "320x100,300x250", "cont-class" : ["ad-container", "margin-bottom", "computer-hide", "margin-top-fit"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
     "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480", "cont-class" : ["ad-container"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
   },
   "57dfe399ee85930e00cad4d6":{
@@ -38,7 +38,7 @@ var ADUNITS = {
     "MBAR1": { "aduid":"mm_mobile_fnt_ap_300x250_AT1", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBAR2": { "aduid":"mm_mobile_fnt_ap_300x250_AT2", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBE1": { "aduid":"mm_mobile_fnt_ap_300x250_E1", "dimensions" : "300x250", "cont-class" : ["ad-container", "mb-margin-fit", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
-    "MBFT": { "aduid":"mm_mobile_fnt_ap_320x100_FT", "dimensions" : "320x100", "cont-class" : ["ad-container", "margin-bottom", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
+    "MBFT": { "aduid":"mm_mobile_fnt_ap_320x100_FT", "dimensions" : "320x100,300x250", "cont-class" : ["ad-container", "margin-bottom", "computer-hide", "margin-top-fit"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
     "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480", "cont-class" : ["ad-container"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
   },
   "57dfe3cfee85930e00cad4d8":{
@@ -52,7 +52,7 @@ var ADUNITS = {
     "MBAR1": { "aduid":"mm_mobile_hv_ap_300x250_AT1", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBAR2": { "aduid":"mm_mobile_hv_ap_300x250_AT2", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBE1": { "aduid":"mm_mobile_hv_ap_300x250_E1", "dimensions" : "300x250", "cont-class" : ["ad-container", "mb-margin-fit", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
-    "MBFT": { "aduid":"mm_mobile_hv_ap_320x100_FT", "dimensions" : "320x100", "cont-class" : ["ad-container", "margin-bottom", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
+    "MBFT": { "aduid":"mm_mobile_hv_ap_320x100_FT", "dimensions" : "320x100,300x250", "cont-class" : ["ad-container", "margin-bottom", "computer-hide", "margin-top-fit"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
     "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480", "cont-class" : ["ad-container"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
   },
   "57dfe3b0ee85930e00cad4d7":{
@@ -66,7 +66,7 @@ var ADUNITS = {
     "MBAR1": { "aduid":"mm_mobile_wat_ap_300x250_AT1", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBAR2": { "aduid":"mm_mobile_wat_ap_300x250_AT2", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
     "MBE1": { "aduid":"mm_mobile_wat_ap_300x250_E1", "dimensions" : "300x250", "cont-class" : ["ad-container", "mb-margin-fit", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
-    "MBFT": { "aduid":"mm_mobile_wat_ap_320x100_FT", "dimensions" : "320x100", "cont-class" : ["ad-container", "margin-bottom", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
+    "MBFT": { "aduid":"mm_mobile_wat_ap_320x100_FT", "dimensions" : "320x100,300x250", "cont-class" : ["ad-container", "margin-bottom", "computer-hide", "margin-top-fit"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
     "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480", "cont-class" : ["ad-container"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
   },
   "exception-categ": {
@@ -81,8 +81,18 @@ var ADUNITS = {
       "MBAR1": { "aduid":"mm_mobile_all_mkt_ap_300x250_AT1", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
       "MBAR2": { "aduid":"mm_mobile_all_mkt_ap_300x250_AT2", "dimensions" : "300x250", "cont-class" : [""], "cont-style" : [], "class" : [""], "sitemapping" : "", "style" : []},
       "MBE1": { "aduid":"mm_mobile_all_mkt_ap_300x250_E1", "dimensions" : "300x250", "cont-class" : ["ad-container", "mb-margin-fit", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
-      "MBFT": { "aduid":"mm_mobile_all_mkt_ap_320x100_FT", "dimensions" : "320x100", "cont-class" : ["ad-container", "margin-bottom", "computer-hide"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
+      "MBFT": { "aduid":"mm_mobile_all_mkt_ap_320x100_FT", "dimensions" : "320x100,300x250", "cont-class" : ["ad-container", "margin-bottom", "computer-hide", "margin-top-fit"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
       "MBCVR": { "aduid" : "mm_mobile_hp_320x480_FS", "dimensions" : "320x480", "cont-class" : ["ad-container"], "cont-style" : [], "class" : ["adunit"], "sitemapping" : "mobile-only", "style" : []},
     }
   }
+};
+var SIZE_MAPPING = {
+  'default': [
+    { browser: [    0,   0 ], ad_sizes: [] },
+    { browser: [  970, 200 ], ad_sizes: [ [ 970, 90 ], [ 970, 250 ], [ 300, 250 ], [ 300, 600 ] ] }
+  ],
+  'mobile-only': [
+    { browser: [    1,   1 ], ad_sizes: [ [ 320, 100 ], [ 300, 250 ], [320, 480] ] },
+    { browser: [  970, 200 ], ad_sizes: [] }
+  ]
 };
