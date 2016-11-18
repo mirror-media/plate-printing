@@ -11,7 +11,7 @@ disableRSS = "true"
 	imgBaseUrl = "/story/img"
 	cssBaseUrl = "/story/css"
 	jsBaseUrl = "/story/js"
-	version = "201611161744"
+	version = "201611181051"
 	
 [social]
 	line		= "https://line.me/R/ti/p/%40cuk1273e"
