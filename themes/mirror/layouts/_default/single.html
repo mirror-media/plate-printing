@@ -15,7 +15,7 @@
 	  	<div class="article-meta">
 	  		{{ if .Params.categories }}
 	  		<h2 class="article-category" >
-			    	{{ range first 1 .Params.categories }} 
+			    	{{ range first 1 .Params.categories }}
 			        <a href="/category/{{ .name }}">{{ .title }}</a>
 		        {{ end }}
 	  		</h2>
@@ -29,7 +29,7 @@
 	  		<p class="article-author article-credit">
 			    {{if .Params.writers }}
 			    	{{if gt (len .Params.writers) 0 }}
-				    文 | 
+				    文 |
 				      {{ range $index , $writer := .Params.writers }}
 				        {{ $writer.name }}
 				      {{ end }}&nbsp;&nbsp;
@@ -37,7 +37,7 @@
 			    {{ end }}
 			    {{if .Params.photographers }}
 			    	{{if gt (len .Params.photographers) 0 }}
-				    攝影 | 
+				    攝影 |
 				      {{ range $index , $photographer := .Params.photographers }}
 				        {{ $photographer.name }}
 				      {{ end }}&nbsp;&nbsp;
@@ -45,7 +45,7 @@
 			    {{ end }}
 			    {{if .Params.designers }}
 			    	{{if gt (len .Params.designers) 0 }}
-				    設計 | 
+				    設計 |
 				      {{ range $index , $designer := .Params.designers }}
 				        {{ $designer.name }}
 				      {{ end }}&nbsp;&nbsp;
@@ -53,7 +53,7 @@
 			    {{ end }}
 			    {{if .Params.engineers }}
 			    	{{if gt (len .Params.engineers) 0 }}
-				    工程 | 
+				    工程 |
 				      {{ range $index , $engineer := .Params.engineers }}
 				        {{ $engineer.name }}
 				      {{ end }}&nbsp;&nbsp;
@@ -61,7 +61,7 @@
 			    {{ end }}
 			    {{if .Params.camera_man }}
 			    	{{if gt (len .Params.camera_man) 0 }}
-				    影音 | 
+				    影音 |
 				      {{ range $index , $camera := .Params.camera_man }}
 				        {{ $camera.name }}
 				      {{ end }}&nbsp;&nbsp;
@@ -112,7 +112,7 @@
 		{{ end }}
 
 			<div class="article-main" {{ if not (eq .Params.style "article") }} style="width:100%;" {{ end }}>
-				
+
 				<article {{ if not (eq .Params.style "article") }} style="max-width:100%;" {{ end }}>
 					<!-- Brief -->
 					{{if .Params.brief }}
@@ -123,7 +123,7 @@
 			    	</div>
 			    	<hr/>
 	        {{ end }}
-					
+
 					<!-- Content -->
 					{{if .Params.content }}
 						{{if .Params.content.html }}
@@ -149,6 +149,10 @@
 		    {{ partial "author.html" . }}
 		    {{ partial "related.html" . }}
 
+        <div style="margin: 1.5em 0;">
+          <div class="fb-comments" data-href="https://www.mirrormedia.mg/story/{{ .Slug }}" data-numposts="5" data-width="100%"></div>
+        </div>
+
 	    </div> <!-- article-main -->
 
 	    {{ if eq .Params.style "article" }}
@@ -156,7 +160,7 @@
 	    {{ end }}
 
   	</div>
-	  
+
 {{ partial "choice.html" . }}
 {{ partial "categoriesNav.html" . }}
 {{ partial "footer.html" . }}
