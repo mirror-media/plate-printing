@@ -1,15 +1,6 @@
 {{ $baseurl := .Site.BaseURL }}{{ partial "header.html" . }}
-    <div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;">
-      <div class="mb-ad-modal tb-ad-modal"></div>
-      <div class="ad-container ">
-        <div class="adunit" pos="MBCVR" id="" data-dimensions="320x480" data-size-mapping="mobile-only" style=""></div>
-        <div class="ad-close"><div class="ad-close-btn"><span class="close-btn"><canvas>關閉</canvas></span></div></div>
-      </div>
-    </div>
-
-    <div class="ui text container article-container ad-container margin-top tablet-hide mobile-hide">
-      <div class="adunit" pos="PCHD" id="" data-dimensions="970x250" data-size-mapping="default" style=""></div>
-    </div>
+    <div ad-pos="MBCVR"></div>
+    <div ad-pos="PCHD"></div>
 
     {{if .Params.sections }}
       {{ range first 1 .Params.sections }}
@@ -91,9 +82,7 @@
 	  		</p>
 	  	</div>
 
-      <div class="ad-container mb-margin-fit tb-margin-fit margin-top computer-hide">
-        <div class="adunit" pos="MBHD" id="" data-dimensions="300x250,320x100" data-size-mapping="mobile-only" style=""></div>
-      </div>
+      <div ad-pos="MBHD"></div>
 
 	  	<div class="article-sharing computer-hide">
 	  		<div class="ui clearing divider"></div>
@@ -163,15 +152,9 @@
 		    <div style="width:10px;height:10px;"></div>
 
 		    {{ partial "author.html" . }}
-        <div class="ad-container mb-margin-fit computer-hide">
-          <div class="adunit" pos="MBE1" id="" data-dimensions="300x250" data-size-mapping="mobile-only" style=""></div>
-        </div>
-        <div class="ad-container inline-block tablet-hide mobile-hide">
-          <div class="adunit block" pos="PCE1" id="" data-dimensions="300x250" data-size-mapping="default" ></div>
-        </div>
-        <div class="ad-container inline-block tablet-hide mobile-hide">
-          <div class="adunit block" pos="PCE2" id="" data-dimensions="300x250" data-size-mapping="default" ></div>
-        </div>
+        <div ad-pos="MBE1"></div>
+        <div ad-pos="PCE1"></div>
+        <div ad-pos="PCE2"></div>
         <div id="_popIn_recommend"></div>
         <script type="text/javascript">
           (function() {
@@ -191,11 +174,7 @@
   	</div>
 
 {{ partial "choice.html" . }}
-<div class="ui text container article-container ad-container margin-bottom tablet-hide mobile-hide">
-  <div class="adunit" pos="PCFT" id="" data-dimensions="970x90" data-size-mapping="default" style=""></div>
-</div>
-<div class="ad-container margin-bottom computer-hide">
-  <div class="adunit" pos="MBFT" id="" data-dimensions="320x100" data-size-mapping="mobile-only" style=""></div>
-</div>
+<div ad-pos="PCFT"></div>
+<div ad-pos="MBFT"></div>
 {{ partial "categoriesNav.html" . }}
 {{ partial "footer.html" . }}
