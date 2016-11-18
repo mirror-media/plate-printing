@@ -639,6 +639,7 @@ article ul {
   color: rgba(0, 0, 0, 0.7);
   padding-left: 26px;
   text-indent: -26px;
+  margin-left: 16px;
 }
 article ul li:before {
   content: "• ";
