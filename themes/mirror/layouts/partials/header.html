@@ -19,7 +19,7 @@
 	<meta name="keywords" content="鏡週刊,鏡傳媒,mirror media,新聞,人物,調查報導,娛樂,美食,旅遊,精品,動漫,網路趨勢,趨勢,國際,兩岸,政治,明星,文學,劇本,新詩,散文,小說"/>
 	<meta name="description" content="鏡傳媒以台灣為基地，是一跨平台綜合媒體，包含《鏡週刊》以及下設五大分眾內容的《鏡傳媒》網站，刊載時事、財經、人物、國際、文化、娛樂、美食旅遊、精品鐘錶等深入報導及影音內容。我們以「鏡」為名，務求反映事實、時代與人性。" />
 	<meta property="og:site_name" content="鏡傳媒 Mirror Media" />
-	<meta property="og:locale" content="zh_TW" />    
+	<meta property="og:locale" content="zh_TW" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{{if .Params.og_title }}{{ .Params.og_title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}" />
 	<meta property="og:description" content="{{if .Params.og_title }}{{ .Params.og_description }}{{ else }}{{ substr (plainify .Params.brief.html) 0 200 }}{{ end }}" />
@@ -33,7 +33,7 @@
 	<meta property="og:image" content="{{ $baseurl }}asset/logo.png"/>
 	{{ end }}
 	{{ end }}
-	
+
 	<meta property="fb:pages" content="1855418728011324" />
 
 	<meta name="section-id" content="{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ ._id }}{{ end }}{{ end }}"/>
@@ -64,7 +64,7 @@
 		  "creator": "",
 		  "keywords": [""]
 		}
-	</script>   
+	</script>
 	{{ end }}
 
 	<link rel="stylesheet" type="text/css" href="{{ .Site.Params.cssBaseUrl }}/semantic.min.css">
@@ -93,7 +93,7 @@
 
 	{{ $.Scratch.Set "lock" false }}
     {{ if .Params.categories }}
-    	{{ range $index , $cat := .Params.categories }} 
+    	{{ range $index , $cat := .Params.categories }}
     		{{ if eq $cat.name "culture" }}
     			{{ $.Scratch.Set "lock" true }}
     		{{ end }}
@@ -115,6 +115,7 @@
 	{{ end }}
 </head>
 <body>
+	<div id="fb-root"></div> <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId={{ .Site.Params.appId }}"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- Top Sidebar Menu -->
 	<div class="ui top sidebar gradient-transparent backdrop">
@@ -231,7 +232,7 @@
 				<div class="ui gradient borderless menu normal-menu" style="margin:0px;">
 					<!-- Normal Menu  -->
 			    <div class="ui text container " style="max-width: 1024px!important;height:40px;">
-			    	
+
 			      {{if .Params.sections }}
 				      {{ range $section := first 1 .Params.sections }}
 					      <a href="/section/{{$section.name}}" class="header item" style="color:#fff;" data-direction="top">
@@ -250,7 +251,7 @@
 				      {{ end }}
 			      {{ end }}
 
-			      
+
 
 			    </div>
 			  </div>
