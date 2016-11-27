@@ -19,13 +19,17 @@
     {{ "<!--" | safeHTML }}{{ .Now }}{{ "-->" | safeHTML }}
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/semantic.min.js?{{ .Site.Params.version }}"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/adunits.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/article.js?{{ .Site.Params.version }}"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/article-dfp.js"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/article-component.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jquery-scrollLock.min.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jquery.simplePagination.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/jsrender.min.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/owl.carousel.min.js?{{ .Site.Params.version }}"></script>
 	<script src="{{ .Site.Params.jsBaseUrl }}/share.min.js?{{ .Site.Params.version }}"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/jquery.dfp.min.js"></script>
+	<script src="{{ .Site.Params.jsBaseUrl }}/cookies.js"></script>
 </body>
 
 </html>

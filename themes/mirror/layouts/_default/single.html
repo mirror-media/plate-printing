@@ -1,4 +1,6 @@
 {{ $baseurl := .Site.BaseURL }}{{ partial "header.html" . }}
+    <div ad-pos="MBCVR"></div>
+    <div ad-pos="PCHD"></div>
 
     {{if .Params.sections }}
       {{ range first 1 .Params.sections }}
@@ -79,6 +81,9 @@
   				</span>
 	  		</p>
 	  	</div>
+
+      <div ad-pos="MBHD"></div>
+
 	  	<div class="article-sharing computer-hide">
 	  		<div class="ui clearing divider"></div>
 	  		<div style="width: 100%; text-align:center; height:45px; line-height:45px;">
@@ -147,6 +152,17 @@
 		    <div style="width:10px;height:10px;"></div>
 
 		    {{ partial "author.html" . }}
+        <div ad-pos="MBE1"></div>
+        <div ad-pos="PCE1"></div>
+        <div ad-pos="PCE2"></div>
+        <div id="_popIn_recommend"></div>
+        <script type="text/javascript">
+          (function() {
+              var pa = document.createElement('script'); pa.type = 'text/javascript'; pa.charset = "utf-8"; pa.async = true;
+              pa.src = window.location.protocol + "//api.popin.cc/searchbox/mirrormedia.js";
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pa, s);
+          })();
+        </script>
 		    {{ partial "related.html" . }}
 
         <div style="margin: 1.5em 0;">
@@ -162,5 +178,7 @@
   	</div>
 
 {{ partial "choice.html" . }}
+<div ad-pos="PCFT"></div>
+<div ad-pos="MBFT"></div>
 {{ partial "categoriesNav.html" . }}
 {{ partial "footer.html" . }}
