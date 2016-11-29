@@ -30,7 +30,7 @@
 	{{if .Params.heroimage.image.resizedTargets.mobile.url }}
 	<meta property="og:image" content="{{ .Params.heroimage.image.resizedTargets.mobile.url }}"/>
 	{{ else }}
-	<meta property="og:image" content="{{ $baseurl }}asset/logo.png"/>
+	<meta property="og:image" content="{{ $baseurl }}asset/logo_new.png"/>
 	{{ end }}
 	{{ end }}
 
@@ -51,7 +51,7 @@
 	{{if .Params.heroimage.image.resizedTargets.mobile.url }}
 	<meta name="twitter:image" content="{{ .Params.heroimage.image.resizedTargets.mobile.url }}"/>
 	{{ else }}
-	<meta name="twitter:image" content="{{ $baseurl }}asset/logo.png"/>
+	<meta name="twitter:image" content="{{ $baseurl }}asset/logo_new.png"/>
 	{{ end }}
 	{{ end }}
 	<script type="application/ld+json">
@@ -60,7 +60,7 @@
 		  "@type": "NewsArticle",
 		  "headline": "{{ .Title }}",
 		  "url": "http://www.mirrormedia.mg/story/{{ .Slug }}",
-		  "thumbnailUrl": "{{if .Params.og_image }}{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{if .Params.heroimage.image.resizedTargets.mobile.url }}{{ .Params.heroimage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/logo.png{{ end }}{{ end }}",
+		  "thumbnailUrl": "{{if .Params.og_image }}{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{if .Params.heroimage.image.resizedTargets.mobile.url }}{{ .Params.heroimage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/logo_new.png{{ end }}{{ end }}",
 		  "dateCreated": "{{ dateFormat "2006-01-02T15:04:05" .Params.publisheddate }}+08:00",
 		  "articleSection": "{{if .Params.sections }}{{ range $section := first 1 .Params.sections }}{{ $section.title }}{{ end }}{{ end }}",
 		  "creator": "",
@@ -75,10 +75,10 @@
 	<link rel="stylesheet" href="{{ .Site.Params.cssBaseUrl }}/share.css">
 	<link rel="stylesheet" href="{{ .Site.Params.cssBaseUrl }}/simplePagination.css">
 
-	<link rel="apple-touch-icon" sizes="72x72" href="{{ .Site.Params.imgBaseUrl }}/apple-touch-icon.png">
-	<link rel="icon" type="image/png" href="{{ .Site.Params.imgBaseUrl }}/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="{{ .Site.Params.imgBaseUrl }}/favicon-16x16.png" sizes="16x16">
-	<link rel="shortcut icon" href="{{ .Site.Params.imgBaseUrl }}/favicon.ico">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ .Site.Params.imgBaseUrl }}/apple-touch-icon_new.png">
+	<link rel="icon" type="image/png" href="{{ .Site.Params.imgBaseUrl }}/favicon_new-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="{{ .Site.Params.imgBaseUrl }}/favicon_new-16x16.png" sizes="16x16">
+	<link rel="shortcut icon" href="{{ .Site.Params.imgBaseUrl }}/favicon_new.ico">
 
 	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -215,7 +215,7 @@
 				<div class="ui borderless menu" style="border: none; box-shadow: none; margin:0;">
 			    <div class="ui text container" style="max-width: 1024px!important;">
 			      <a href="/" class="header item">
-			        <img class="logo small" src="{{ .Site.Params.imgBaseUrl }}/logo.png" style=" width:117px; ">
+			        <img class="logo small" src="{{ .Site.Params.imgBaseUrl }}/logo_new.png" style=" width:100px; ">
 			      </a>
 			    {{ range $section := $.Site.Data.sections._items }}
 	        	<a href="/section/{{ $section.name }}" class="item" style="font-size: 17px; letter-spacing: 1.7px; color: rgba(0, 0, 0, 0.5);">{{ $section.title }}</a>
@@ -274,7 +274,7 @@
 			      </div>
 			      <div class="right menu nav">
 					    <div class="item logo" style="display:none;">
-					      <a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/logo.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/logo@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/logo@3x.png 3x"/></a>
+					      <a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/logo_new.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/logo@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/logo@3x.png 3x"/></a>
 					    </div>
 					    <div class="item openSearchbar">
 					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/search.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/search@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/search@3x.png 3x"/>
@@ -430,7 +430,7 @@
 			      </div>
 			      <div class="right menu nav">
 					    <div class="item logo" style="display:none;">
-					      <a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/logo.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/logo@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/logo@3x.png 3x"/></a>
+					      <a href="/"><img src="{{ .Site.Params.imgBaseUrl }}/icon/logo_new.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/logo@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/logo@3x.png 3x"/></a>
 					    </div>
 					    <div class="item openSearchbar">
 					      <img src="{{ .Site.Params.imgBaseUrl }}/icon/search.png" srcset="{{ .Site.Params.imgBaseUrl }}/icon/search@2x.png 2x, {{ .Site.Params.imgBaseUrl }}/icon/search@3x.png 3x"/>
