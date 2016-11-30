@@ -103,7 +103,7 @@
 		{{ if .Params.herovideo }}
 			{{ if .Params.herovideo.video }}
 				<div class="video-wrapper">
-					<video class="heroimg video" width="100%" height="100%" src="{{ .Params.herovideo.video.url }}" type="video/mp4" controls poster="/asset/review.png">
+					<video class="heroimg video" width="100%" height="100%" src="{{ .Params.herovideo.video.url }}" type="video/mp4" controls poster="{{if .Params.og_image }}{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{if .Params.heroimage.image.resizedTargets.mobile.url }}{{ .Params.heroimage.image.resizedTargets.mobile.url }}{{ else }}/asset/review.png{{ end }}{{ end }}">
 						Your browser does not support the video tag.
 					</video>
 					<div class="playpause"></div>
