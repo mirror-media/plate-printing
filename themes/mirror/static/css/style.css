@@ -1254,6 +1254,28 @@ article .embedded img {
   margin:0;
 }
 
+.video-wrapper {
+    display:table;
+    width:auto;
+    position:relative;
+    width:100%;
+}
+
+.playpause {
+    background-image:url(http://png-4.findicons.com/files/icons/2315/default_icon/256/media_play_pause_resume.png);
+    background-repeat:no-repeat;
+    width:50%;
+    height:50%;
+    position:absolute;
+    left:0%;
+    right:0%;
+    top:0%;
+    bottom:0%;
+    margin:auto;
+    background-size:contain;
+    background-position: center;
+}
+
 .heroimg-caption {
   font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
   font-size: 15px;
