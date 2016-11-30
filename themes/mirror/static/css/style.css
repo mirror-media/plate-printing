@@ -1254,6 +1254,32 @@ article .embedded img {
   margin:0;
 }
 
+.video-wrapper {
+    display:table;
+    width:auto;
+    position:relative;
+    width:100%;
+}
+
+.video-wrapper video {
+  object-fit: cover;
+}
+
+.playpause {
+    background-image:url('/story/img/icon/play-btn@3x.png');
+    background-repeat:no-repeat;
+    width:30%;
+    height:30%;
+    position:absolute;
+    left:0%;
+    right:0%;
+    top:0%;
+    bottom:0%;
+    margin:auto;
+    background-size:contain;
+    background-position: center;
+}
+
 .heroimg-caption {
   font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
   font-size: 15px;
