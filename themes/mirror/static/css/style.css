@@ -114,7 +114,7 @@ body.pushable .pusher {
 
 /* Sidebar Backdrop */
 .backdrop {
-  -webkit-backdrop-filter: blur(8px);
+  /*-webkit-backdrop-filter: blur(8px);*/
 }
 
 /* Gradient Background */
@@ -1473,8 +1473,8 @@ div.colorBlock.choice {
   margin:0;
   display:block !important;
   height:60px;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  /*-webkit-backdrop-filter: blur(8px);*/
+  /*backdrop-filter: blur(8px);*/
   background-color: rgba(255, 255, 255, 0.9) !important;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff !important;
 }
@@ -1485,8 +1485,8 @@ div.colorBlock.choice {
 }
 
 .computer .first-menu .second-menu {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  /*-webkit-backdrop-filter: blur(8px);*/
+  /*backdrop-filter: blur(8px);*/
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff;
 }
@@ -1531,8 +1531,8 @@ div.colorBlock.choice {
   margin:0;
   display:block !important;
   height:70px;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  /*-webkit-backdrop-filter: blur(8px);*/
+  /*backdrop-filter: blur(8px);*/
   background-color: rgba(255, 255, 255, 0.9) !important;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff !important;
 }
@@ -1550,8 +1550,8 @@ div.colorBlock.choice {
 }
 
 .tablet .first-menu .second-menu {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  /*-webkit-backdrop-filter: blur(8px);*/
+  /*backdrop-filter: blur(8px);*/
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff;
 }
@@ -1613,8 +1613,8 @@ div.colorBlock.choice {
   margin:0;
   display:block !important;
   height:60px;
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  /*-webkit-backdrop-filter: blur(8px);*/
+  /*backdrop-filter: blur(8px);*/
   background-color: rgba(255, 255, 255, 0.9) !important;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff !important;
 
@@ -1632,8 +1632,8 @@ div.colorBlock.choice {
 }
 
 .mobile .first-menu .second-menu {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  /*-webkit-backdrop-filter: blur(8px);*/
+  /*backdrop-filter: blur(8px);*/
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1), 0 2px 0 0 #ffffff;
 }
