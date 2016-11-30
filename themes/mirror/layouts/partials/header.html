@@ -3,8 +3,8 @@
 <head>
 	<!-- Standard Meta -->
 	<meta charset="utf-8" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta http-equiv="content-language" content="zh-tw">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="content-language" content="zh-tw">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- Site Properties -->
@@ -34,6 +34,7 @@
 	{{ end }}
 	{{ end }}
 
+	<meta property="fb:app_id" content="{{ .Site.Params.appID }}" />
 	<meta property="fb:pages" content="1855418728011324" />
 
 	<meta name="section-id" content="{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ ._id }}{{ end }}{{ end }}"/>
@@ -88,32 +89,32 @@
 
 	ga('create', '{{ $.Site.GoogleAnalytics }}', 'mirrormedia.mg');
 	ga('create', '{{ $.Site.GoogleAnalytics }}', 'auto');
-    ga('require', 'linkid', 'linkid.js');
+	ga('require', 'linkid', 'linkid.js');
 	ga('set', 'contentGroup1', '{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ .title }}{{ end }}{{ else }}None{{ end }}');
 	ga('send', 'pageview');
 	</script>
 
 	{{ $.Scratch.Set "lock" false }}
-    {{ if .Params.categories }}
-    	{{ range $index , $cat := .Params.categories }}
-    		{{ if eq $cat.name "culture" }}
-    			{{ $.Scratch.Set "lock" true }}
-    		{{ end }}
-    		{{ if eq $cat.name "serialnovel" }}
-    			{{ $.Scratch.Set "lock" true }}
-    		{{ end }}
-    		{{ if eq $cat.name "screenplay" }}
-    			{{ $.Scratch.Set "lock" true }}
-    		{{ end }}
-    	{{ end }}
-    {{ end }}
-    {{ if $.Scratch.Get "lock" }}
-	<script>
-		document.oncontextmenu=function(){ return false; }
-		document.onkeydown=function(event){ if(event.keyCode==67){ console.log('false'); return false; } }
-		document.ondragstart=function(){ return false; }
-		document.onselectstart=function(){ return false; }
-	</script>
+	{{ if .Params.categories }}
+		{{ range $index , $cat := .Params.categories }}
+			{{ if eq $cat.name "culture" }}
+				{{ $.Scratch.Set "lock" true }}
+			{{ end }}
+			{{ if eq $cat.name "serialnovel" }}
+				{{ $.Scratch.Set "lock" true }}
+			{{ end }}
+			{{ if eq $cat.name "screenplay" }}
+				{{ $.Scratch.Set "lock" true }}
+			{{ end }}
+		{{ end }}
+	{{ end }}
+	{{ if $.Scratch.Get "lock" }}
+		<script>
+			document.oncontextmenu=function(){ return false; }
+			document.onkeydown=function(event){ if(event.keyCode==67){ console.log('false'); return false; } }
+			document.ondragstart=function(){ return false; }
+			document.onselectstart=function(){ return false; }
+		</script>
 	{{ end }}
 </head>
 <body>
