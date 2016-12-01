@@ -16,11 +16,13 @@
 	  <div class="ui text container article-header">
 	  	<div class="article-meta">
 	  		{{ if .Params.categories }}
-	  		<h2 class="article-category" >
-			    	{{ range first 1 .Params.categories }}
-			        <a href="/category/{{ .name }}">{{ .title }}</a>
-		        {{ end }}
-	  		</h2>
+		    	{{ range first 1 .Params.categories }}
+		    		{{ if isset . "name" }}
+		    		<h2 class="article-category" >
+		        	<a href="/category/{{ .name }}">{{ .title }}</a>
+		        </h2>
+		    		{{ end }}
+	        {{ end }}
 	  		{{ end }}
 	  		<p class="article-date">{{if .Date }}{{ .Date.Format "2006.01.02" }}{{ end }}</p>
 	  	</div>

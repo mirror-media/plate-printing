@@ -27,8 +27,10 @@
 	{{if .Params.og_image }}
 	<meta property="og:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}"/>
 	{{ else }}
-	{{if .Params.heroimage.image.resizedTargets.mobile.url }}
-	<meta property="og:image" content="{{ .Params.heroimage.image.resizedTargets.mobile.url }}"/>
+	{{ if isset .Params "heroimage" }}
+		{{ if isset .Params.heroimage "image" }}
+		<meta property="og:image" content="{{ .Params.heroimage.image.resizedTargets.mobile.url }}"/>
+		{{ end }}
 	{{ else }}
 	<meta property="og:image" content="{{ $baseurl }}asset/logo.png"/>
 	{{ end }}
@@ -38,7 +40,7 @@
 	<meta property="fb:pages" content="1855418728011324" />
 
 	<meta name="section-id" content="{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ ._id }}{{ end }}{{ end }}"/>
-	<meta name="category-id" content="{{ if .Params.categories }}{{ range first 1 .Params.categories }}{{ ._id }}{{ end }}{{ end }}"/>
+	<meta name="category-id" content="{{ if .Params.categories }}{{ range first 1 .Params.categories }}{{ if isset . "_id" }}{{ ._id }}{{ end }}{{ end }}{{ end }}"/>
 	<meta name="topic-id" content="{{ if .Params.topics }}{{ .Params.topics._id }}{{ end }}"/>
 
 	<meta name="DFPIP" content="{{ .Site.Params.DFPID }}"/>
@@ -49,8 +51,10 @@
 	{{if .Params.og_image }}
 	<meta name="twitter:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}"/>
 	{{ else }}
-	{{if .Params.heroimage.image.resizedTargets.mobile.url }}
-	<meta name="twitter:image" content="{{ .Params.heroimage.image.resizedTargets.mobile.url }}"/>
+	{{ if isset .Params "heroimage" }}
+		{{ if isset .Params.heroimage "image" }}
+			<meta name="twitter:image" content="{{ .Params.heroimage.image.resizedTargets.mobile.url }}"/>
+		{{ end }}
 	{{ else }}
 	<meta name="twitter:image" content="{{ $baseurl }}asset/logo.png"/>
 	{{ end }}
@@ -61,7 +65,7 @@
 		  "@type": "NewsArticle",
 		  "headline": "{{ .Title }}",
 		  "url": "http://www.mirrormedia.mg/story/{{ .Slug }}",
-		  "thumbnailUrl": "{{if .Params.og_image }}{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{if .Params.heroimage.image.resizedTargets.mobile.url }}{{ .Params.heroimage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/logo.png{{ end }}{{ end }}",
+		  "thumbnailUrl": "{{if .Params.og_image }}{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{ if isset .Params "heroimage" }}{{ if isset .Params.heroimage "image" }}{{ .Params.heroimage.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{ $baseurl }}asset/logo.png{{ end }}{{ end }}",
 		  "dateCreated": "{{ dateFormat "2006-01-02T15:04:05" .Params.publisheddate }}+08:00",
 		  "articleSection": "{{if .Params.sections }}{{ range $section := first 1 .Params.sections }}{{ $section.title }}{{ end }}{{ end }}",
 		  "creator": "",
@@ -97,14 +101,16 @@
 	{{ $.Scratch.Set "lock" false }}
 	{{ if .Params.categories }}
 		{{ range $index , $cat := .Params.categories }}
-			{{ if eq $cat.name "culture" }}
-				{{ $.Scratch.Set "lock" true }}
-			{{ end }}
-			{{ if eq $cat.name "serialnovel" }}
-				{{ $.Scratch.Set "lock" true }}
-			{{ end }}
-			{{ if eq $cat.name "screenplay" }}
-				{{ $.Scratch.Set "lock" true }}
+			{{ if isset $cat "name" }}
+				{{ if eq $cat.name "culture" }}
+					{{ $.Scratch.Set "lock" true }}
+				{{ end }}
+				{{ if eq $cat.name "serialnovel" }}
+					{{ $.Scratch.Set "lock" true }}
+				{{ end }}
+				{{ if eq $cat.name "screenplay" }}
+					{{ $.Scratch.Set "lock" true }}
+				{{ end }}
 			{{ end }}
 		{{ end }}
 	{{ end }}
