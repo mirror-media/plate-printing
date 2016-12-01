@@ -62,11 +62,19 @@ $(document)
       }
     });
 
+    lightbox.option({
+      'albumLabel': "圖片 %1 之 %2",
+      'imageFadeDuration': 200
+    });
+
     /* Components */
-    $('article div > img').each(function(i, img) {
+    $('article > div > img').each(function(i, img) {
       var alt = img.alt;
+      var src = img.src;
       var classes = $(img).attr('class');
       var parent = $(img).parent();
+
+      $(img).wrap('<a href="' + src + '" data-lightbox="article-img" data-title="' + alt + '"></a>');
 
       parent.addClass('img ' + classes);
       parent.append('<div class=\'caption\'>' + alt + '</div>')
