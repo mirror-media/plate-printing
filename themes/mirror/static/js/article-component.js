@@ -62,11 +62,6 @@ $(document)
       }
     });
 
-    lightbox.option({
-      'albumLabel': "圖片 %1 之 %2",
-      'imageFadeDuration': 200
-    });
-
     /* Components */
     $('article > div > img').each(function(i, img) {
       var alt = img.alt;
