@@ -150,19 +150,29 @@ $(document)
         }
       });
 
-      $(audioObj).bind("loadeddata", function() {
-        $(audiobox).prepend('<div class=\'audio-progress\'><div class=\'bar\'></div></div>')
+      $(audioObj).bind("loadedmetadata", function() {
+        $(audiobox).prepend('<div class=\'audio-progress\'><input type=\"range\" step=\"0.1\" min=\"0\" max=\"' + audioObj.duration + '\" value=\"0\" style=\"width:100%;\"><div class=\'bar\'></div></div>')
         $(audiobox).prepend('<div class=\'audio-time\'><span class=\'left\'>00:00</span> / ' + toMMSS(audioObj.duration) + '</div>');
+        var progressBar = $(audiobox).find('.audio-progress .bar')[0];
+        var progressInput = $(audiobox).find('.audio-progress input')[0];
+        $(progressInput).change( function(e) {
+          audioObj.currentTime = e.target.value;
+          var pos = (audioObj.currentTime / audioObj.duration) * 100;
+          $(progressBar).width(pos + '%');
+        });
       });
       $(audioObj).bind("timeupdate", function() {
         var left = $(audiobox).find('.left')[0];
         var progressBar = $(audiobox).find('.audio-progress .bar')[0];
+        var progressInput = $(audiobox).find('.audio-progress input')[0];
+        console.log(progressInput);
         if (left) {
           var rem = parseInt(audioObj.duration - audioObj.currentTime, 10),
             pos = (audioObj.currentTime / audioObj.duration) * 100;
 
           $(left).html(toMMSS(audioObj.currentTime));
           $(progressBar).width(pos + '%');
+          $(progressInput).val(audioObj.currentTime);
         }
       });
     });
