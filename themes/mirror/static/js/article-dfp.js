@@ -22,14 +22,23 @@ $(function(){
         var _div = ( pos !== 'MBCVR' )? '' : '<div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;"><div class="mb-ad-modal tb-ad-modal"></div>';
         _div += constructAdDiv(ADUNITS[sectionId][pos], pos);
         _div += ( pos !== 'MBCVR' )? '' : '</div>';
-        $( 'div[ad-pos="' + pos + '"]').replaceWith(_div);
+
+        if( pos.indexOf( 'MBAR' ) === -1 ) {
+          $( 'div[ad-pos="' + pos + '"]').replaceWith(_div);
+        } else {
+          $( 'div[ad-pos="MBAR"]:first').replaceWith(_div);
+        }
       }
     }else if(ADUNITS['exception-categ'][categoryId] ){
       for(var pos in ADUNITS['exception-categ'][categoryId]){
         var _div = ( pos !== 'MBCVR' )? '' : '<div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;"><div class="mb-ad-modal tb-ad-modal"></div>';
         _div += constructAdDiv(ADUNITS['exception-categ'][categoryId][pos], pos);
         _div += ( pos !== 'MBCVR' )? '' : '</div>';
-        $( 'div[ad-pos="' + pos + '"]').replaceWith(_div);
+        if( pos.indexOf( 'MBAR' ) === -1 ) {
+          $( 'div[ad-pos="' + pos + '"]').replaceWith(_div);
+        } else {
+          $( 'div[ad-pos="MBAR"]:first').replaceWith(_div);
+        }
       }
       $('.close-btn').click(function(){
         $('.mb-ad-cover').hide();
