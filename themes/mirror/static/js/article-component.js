@@ -195,7 +195,7 @@ $(document)
         flag = false,
         duration = 300;
 
-      $(window).load(function(){
+      $(window).on('load', function(){
         $sync1
           .on('initialized.owl.carousel', function() {
             total = $sync1.find('.owl-stage > div');
