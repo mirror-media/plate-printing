@@ -180,7 +180,7 @@ $(document)
     $('article .slideshow-container').each(function(i, slideshow) {
       var parent = $(slideshow).parent();
       parent.addClass('slideshow-box');
-
+      parent.css('visibility', 'hidden');
       parent.prepend('<div class=\'slideshow-indicator\'><span class=\'cur\'></span>/<span class=\'total\'></span></div>')
       $(slideshow).find('li').each(function(i, li) {
         $(li).replaceWith("<div class='slideshow-slide'>" + $(this).html() + "</div>");
@@ -195,12 +195,13 @@ $(document)
         flag = false,
         duration = 300;
 
-      $(window).on('load', function(){
+      // $(window).on('load', function(){
         $sync1
           .on('initialized.owl.carousel', function() {
             total = $sync1.find('.owl-stage > div');
             parent.find('.slideshow-indicator span.total').html(total.length);
             parent.find('.slideshow-indicator span.cur').html('1');
+            parent.css('visibility', 'visible');
             target = $sync1.find('.owl-item img').get(0);
             parent.find('.slideshow-caption').html($(target).attr('alt'));
           })
@@ -256,6 +257,6 @@ $(document)
               flag = false;
             }
           });
-      });
+      // });
     });
   });
