@@ -3,61 +3,61 @@
 {{ if gt (len .Params.relateds) 0 }}
   <div class="related">
 	<h2 class="colorTitle"><div class="colorBlock"></div>相關文章</h2>
-		{{ range $related := .Params.relateds }}
-			{{ if isset $related "slug" }}
+		{{ range $relateds := .Params.relateds }}
+			{{ if isset $relateds "slug" }}
 				<div class="related-block" style="">
-					<a href="{{ if isset $related "style" }}{{ if eq $related.style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{$related.slug}}" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if $related.og_image }}{{ $related.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $related.heroImage }}{{ $related.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
-					<div class="related-date">{{ dateFormat "2006.01.02" $related.publishedDate }}</div>
+					<a href="{{ if isset $relateds "style" }}{{ if eq $relateds.style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{$relateds.slug}}" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if $relateds.og_image }}{{ $relateds.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $relateds.heroImage }}{{ $relateds.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
+					<div class="related-date">{{ dateFormat "2006.01.02" $relateds.publishedDate }}</div>
 					<div class="related-content">
-						<a href="{{ if isset $related "style" }}{{ if eq $related.style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{$related.slug}}" onClick="ga('send', 'event', 'article', 'click', 'related');"><h2>{{ $related.title }}</h2></a>
+						<a href="{{ if isset $relateds "style" }}{{ if eq $relateds.style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{$relateds.slug}}" onClick="ga('send', 'event', 'article', 'click', 'related');"><h2>{{ $relateds.title }}</h2></a>
 						<div class="line"></div>
 						<div class="brief">
-							{{ if $related.brief }}
-								{{ substr ( plainify $related.brief.html ) 0 50 }}
+							{{ if $relateds.brief }}
+								{{ substr ( plainify $relateds.brief.html ) 0 50 }}
 							{{else}}
-								{{ if $related.content.html }}
-									{{ substr ( plainify $related.content.html ) 0 50 }}
-									{{ if gt ( len ( plainify $related.content.html ) ) 50 }}...{{ end }}
+								{{ if $relateds.content.html }}
+									{{ substr ( plainify $relateds.content.html ) 0 50 }}
+									{{ if gt ( len ( plainify $relateds.content.html ) ) 50 }}...{{ end }}
 								{{ end }}
 							{{ end }}
 						</div>
 						<div class="author">
-						    {{if $related.writers }}
-						    	{{ if ge (len $related.writers) 1 }}
+						    {{if $relateds.writers }}
+						    	{{ if ge (len $relateds.writers) 1 }}
 							  		文｜	
 						    	{{ end }}
-						    	{{ range $index , $writer := $related.writers }}
+						    	{{ range $index , $writer := $relateds.writers }}
 						    		{{ $writer.name }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
-						    {{if $related.photographers }}
-						    	{{ if ge (len $related.photographers) 1 }}
+						    {{if $relateds.photographers }}
+						    	{{ if ge (len $relateds.photographers) 1 }}
 							  		攝影｜	
 						    	{{ end }}
-						    	{{ range $index , $photographer := $related.photographers }}
+						    	{{ range $index , $photographer := $relateds.photographers }}
 						    		{{ $photographer.name }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
-						    {{if $related.designers }}
-						    	{{ if ge (len $related.designers) 1 }}
+						    {{if $relateds.designers }}
+						    	{{ if ge (len $relateds.designers) 1 }}
 							  		設計｜	
 						    	{{ end }}
-						    	{{ range $index , $designer := $related.designers }}
+						    	{{ range $index , $designer := $relateds.designers }}
 						    		{{ $designer.name }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
-						    {{if $related.engineers }}
-						    	{{ if ge (len $related.engineers) 1 }}
+						    {{if $relateds.engineers }}
+						    	{{ if ge (len $relateds.engineers) 1 }}
 							  		工程｜	
 						    	{{ end }}
-						    	{{ range $index , $engineer := $related.engineers }}
+						    	{{ range $index , $engineer := $relateds.engineers }}
 						    		{{ $engineer.name }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
 						    {{if .Params.extend_byline }}{{ .Params.extend_byline }}{{ end }}
 						</div>
 						<div class="related-cat">
-							{{ range first 1 $related.sections }}
+							{{ range first 1 $relateds.sections }}
 								{{ .title }}
 						  {{ end }}
 						</div>
