@@ -138,7 +138,7 @@ html.ios body {
 /* Style */
 body {
     background-color: #F5F5F5;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Light', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
 }
 body.pushable {
     background-color: #F5F5F5 !important;
@@ -277,7 +277,7 @@ body.pushable .pusher {
     padding: 10px;
 }
 .block-body p {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 20px;
     font-weight: bold;
     line-height: 1.5;
@@ -315,7 +315,7 @@ body.pushable .pusher {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
     width: 45px;
     height: 45px;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 20px;
     font-weight: bold;
     line-height: 45px;
@@ -333,7 +333,7 @@ ul.latest li {
     text-indent: 0;
     padding-left: 16px;
     text-indent: -30px;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 17px;
     font-weight: 500;
     line-height: 1.4;
@@ -414,7 +414,7 @@ ul.latest li a {
 }
 .related-content h2 {
     margin-bottom: 0;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
@@ -425,21 +425,21 @@ ul.latest li a {
     width: 420px;
 }
 .related-content p {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.4;
     letter-spacing: 0.9px;
     color: rgba(0, 0, 0, 0.7);
 }
 .related-content .brief {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.4;
     letter-spacing: 0.9px;
     color: rgba(0, 0, 0, 0.7);
 }
 .related-content div.author {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.3;
     letter-spacing: 1px;
@@ -552,7 +552,7 @@ ul.latest li a {
 }
 .choice-content h2 {
     margin-bottom: 0;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
@@ -568,7 +568,7 @@ ul.latest li a {
     border: none;
 }
 .choice-content .brief {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Light', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.4;
     letter-spacing: 0.9px;
@@ -595,7 +595,7 @@ ul.latest li a {
 .column-choice-content h2 {
     padding: 10px 10px 2px 10px;
     margin-bottom: 0;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 24px;
     font-weight: bold;
     line-height: 1.5;
@@ -611,7 +611,7 @@ ul.latest li a {
     margin-bottom: 0px;
 }
 .column-choice-content .brief {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Light', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.4;
     letter-spacing: 0.9px;
@@ -652,7 +652,7 @@ ul.latest li a {
 /* Tags Style */
 
 .tags {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 17px;
     line-height: 2.1;
     letter-spacing: 1px;
@@ -661,7 +661,7 @@ ul.latest li a {
     clear: both;
 }
 .tags a {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 17px;
     line-height: 2.1;
     letter-spacing: 1px;
@@ -677,7 +677,7 @@ div.ui.text.container.article-header {
 /* Brief Style */
 
 article .brief p {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Light', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 16px;
     line-height: 2;
     letter-spacing: 0.3px;
@@ -686,7 +686,7 @@ article .brief p {
 /* Paragrah Style */
 
 article p {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Light', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.3px;
@@ -696,7 +696,7 @@ article p {
 
 article ul {
     list-style: none;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 16px;
     line-height: 2.2;
     letter-spacing: 0.3px;
@@ -715,7 +715,7 @@ article ul li:before {
 }
 article h1,
 h2 {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 30px;
     font-weight: bold;
     letter-spacing: 0.8px;
@@ -724,7 +724,7 @@ h2 {
 /* Ordered List Style */
 
 article ol {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 16px;
     line-height: 2.2;
     letter-spacing: 0.3px;
@@ -760,7 +760,7 @@ article div.img.right {
     margin-left: 20px;
 }
 article div.img .caption {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     letter-spacing: 0.3px;
@@ -816,7 +816,7 @@ article .info-box-container {
 }
 article .info-box-container .info-box-title {
     text-align: center;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 1.6;
@@ -894,7 +894,7 @@ article .audio-container {
     padding: auto 10px 10px 10px;
 }
 article .audio-container .audio-title {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 22px;
     font-weight: 500;
     line-height: 1.6;
@@ -907,7 +907,7 @@ article .audio-container .audio-title {
     /*border-bottom: solid 1px rgba(0, 0, 0, 0.15);*/
 }
 article .audio-container .audio-desc p {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     word-break: break-all;
     font-size: 15px;
     line-height: 1.7;
@@ -974,7 +974,7 @@ article .audio-container .audio-progress .bar {
     background-color: #004ea2;
 }
 article .audio-container .audio-time {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     text-align: right;
     font-size: 15px;
     line-height: 1.7;
@@ -1082,7 +1082,7 @@ article .slideshow-box .owl-dots {
 }
 article .slideshow-box .slideshow-caption {
     margin: 10px 0;
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     letter-spacing: 0.3px;
@@ -1096,7 +1096,7 @@ article .slideshow-box .slideshow-indicator {
     height: 40px;
     background-color: #004ea2;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 1.7px;
@@ -1225,7 +1225,7 @@ article.small .slideshow-box .slideshow-caption {
     margin-bottom: 10px;
 }
 .article-subtitle {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 30px;
     font-weight: 300;
     line-height: 1.5;
@@ -1286,7 +1286,7 @@ article img {
     width: 100%;
 }
 article .embedded-title {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     letter-spacing: .3px;
@@ -1299,7 +1299,7 @@ article .embedded img {
     width: auto;
 }
 .ui.menu .item {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -1338,7 +1338,7 @@ article .embedded img {
     background-position: center;
 }
 .heroimg-caption {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     letter-spacing: 0.3px;
@@ -1435,14 +1435,14 @@ div.colorBlock.choice {
     background-color: #004ea2;
 }
 .hot-topic {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 32px;
     font-weight: 500;
     letter-spacing: 4px;
     color: rgba(0, 0, 0, 0.7);
 }
 .choice-topic {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 32px;
     font-weight: 500;
     letter-spacing: 4px;
@@ -1538,7 +1538,7 @@ div.colorBlock.choice {
     background: rgba(34, 36, 38, .15);
 }
 .computer .searchbar {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 75px;
     font-weight: 500;
     letter-spacing: 11.2px;
@@ -1546,7 +1546,7 @@ div.colorBlock.choice {
     color: rgba(0, 0, 0, 0.1);
 }
 .openSidebar {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1.9px;
@@ -1605,7 +1605,7 @@ div.colorBlock.choice {
     text-align: center;
 }
 .tablet .header.item {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 17px;
     letter-spacing: 1.6px;
     text-align: center;
@@ -1620,7 +1620,7 @@ div.colorBlock.choice {
     padding: 0 15px 0 15px !important;
 }
 .tablet .searchbar {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 75px;
     font-weight: 500;
     letter-spacing: 11.2px;
@@ -1676,7 +1676,7 @@ div.colorBlock.choice {
     padding: 0 10px 0 10px !important;
 }
 .mobile .header.item {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 17px;
     letter-spacing: 1.6px;
     text-align: center;
@@ -1691,7 +1691,7 @@ div.colorBlock.choice {
     text-align: center;
 }
 .mobile .searchbar {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 50px;
     font-weight: 500;
     letter-spacing: 5px;
@@ -1699,7 +1699,7 @@ div.colorBlock.choice {
     color: rgba(0, 0, 0, 0.1);
 }
 .mobile .fontsize {
-    font-family: 'Noto Sans TC', 'Apple LiGothic Medium', STHeiti, '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 50px;
     font-weight: 500;
     letter-spacing: 5px;
