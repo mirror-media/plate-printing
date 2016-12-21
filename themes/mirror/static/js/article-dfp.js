@@ -3,6 +3,7 @@
  * gotta load adunits.js in advance for reference
  */
 $(function(){
+  var adunits = ADUNITS;
   var sectionId = $('meta[name="section-id"]').attr('content');
   var categoryId = $('meta[name="category-id"]').attr('content');
   var constructAdDiv = function(posObj, pos){
@@ -17,10 +18,10 @@ $(function(){
           + '</div>';
   };
   if ( sectionId ) {
-    if( !ADUNITS['exception-categ'][categoryId] ){
-      for( var pos in ADUNITS[sectionId] ){
+    if( !adunits['exception-categ'][categoryId] ){
+      for( var pos in adunits[sectionId] ){
         var _div = ( pos !== 'MBCVR' )? '' : '<div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;"><div class="mb-ad-modal tb-ad-modal"></div>';
-        _div += constructAdDiv(ADUNITS[sectionId][pos], pos);
+        _div += constructAdDiv(adunits[sectionId][pos], pos);
         _div += ( pos !== 'MBCVR' )? '' : '</div>';
 
         if( pos.indexOf( 'MBAR' ) === -1 ) {
@@ -29,10 +30,10 @@ $(function(){
           $( 'div[ad-pos="MBAR"]:first').replaceWith(_div);
         }
       }
-    }else if(ADUNITS['exception-categ'][categoryId] ){
-      for(var pos in ADUNITS['exception-categ'][categoryId]){
+    }else if(adunits['exception-categ'][categoryId] ){
+      for(var pos in adunits['exception-categ'][categoryId]){
         var _div = ( pos !== 'MBCVR' )? '' : '<div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;"><div class="mb-ad-modal tb-ad-modal"></div>';
-        _div += constructAdDiv(ADUNITS['exception-categ'][categoryId][pos], pos);
+        _div += constructAdDiv(adunits['exception-categ'][categoryId][pos], pos);
         _div += ( pos !== 'MBCVR' )? '' : '</div>';
         if( pos.indexOf( 'MBAR' ) === -1 ) {
           $( 'div[ad-pos="' + pos + '"]').replaceWith(_div);
