@@ -57,9 +57,7 @@ $(function(){
         'setCentering': true,
         'sizeMapping': SIZE_MAPPING,
         'afterEachAdLoaded': function(adunit){
-          console.log('thisway', adunit);
           if( $(adunit).attr('pos') === 'MBCVR' ){
-            console.log('MBCVR height', $(adunit).find('div:nth(0)').find('iframe:nth(0)').height());
             if( $(adunit).find('div:nth(0)').find('iframe:nth(0)').height() > 100 ){
               if(!Cookies.get('visited')){
                 $('.mb-ad-cover').show();
