@@ -30,6 +30,9 @@ $(function(){
           $( 'div[ad-pos="MBAR"]:first').replaceWith(_div);
         }
       }
+      $('.close-btn').click(function(){
+        $('.mb-ad-cover').hide();
+      });
     }else if(adunits['exception-categ'][categoryId] ){
       for(var pos in adunits['exception-categ'][categoryId]){
         var _div = ( pos !== 'MBCVR' )? '' : '<div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;"><div class="mb-ad-modal tb-ad-modal"></div>';
