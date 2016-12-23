@@ -30,6 +30,9 @@ $(function(){
           $( 'div[ad-pos="MBAR"]:first').replaceWith(_div);
         }
       }
+      $('.close-btn').click(function(){
+        $('.mb-ad-cover').hide();
+      });
     }else if(adunits['exception-categ'][categoryId] ){
       for(var pos in adunits['exception-categ'][categoryId]){
         var _div = ( pos !== 'MBCVR' )? '' : '<div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;"><div class="mb-ad-modal tb-ad-modal"></div>';
@@ -54,9 +57,8 @@ $(function(){
         'setCentering': true,
         'sizeMapping': SIZE_MAPPING,
         'afterEachAdLoaded': function(adunit){
-          if( $(adunit['selector']).attr('pos') === 'MBCVR' ){
-            console.log('MBCVR height', $(adunit['selector']).find('div:nth(0)').find('iframe:nth(0)').height());
-            if( $(adunit['selector']).find('div:nth(0)').find('iframe:nth(0)').height() > 100 ){
+          if( $(adunit).attr('pos') === 'MBCVR' ){
+            if( $(adunit).find('div:nth(0)').find('iframe:nth(0)').height() > 100 ){
               if(!Cookies.get('visited')){
                 $('.mb-ad-cover').show();
                 DrawCloseBtn.getCloseBtn('.close-btn canvas');
