@@ -54,9 +54,10 @@ $(function(){
         'setCentering': true,
         'sizeMapping': SIZE_MAPPING,
         'afterEachAdLoaded': function(adunit){
-          if( $(adunit['selector']).attr('pos') === 'MBCVR' ){
-            console.log('MBCVR height', $(adunit['selector']).find('div:nth(0)').find('iframe:nth(0)').height());
-            if( $(adunit['selector']).find('div:nth(0)').find('iframe:nth(0)').height() > 100 ){
+          console.log('thisway', adunit);
+          if( $(adunit).attr('pos') === 'MBCVR' ){
+            console.log('MBCVR height', $(adunit).find('div:nth(0)').find('iframe:nth(0)').height());
+            if( $(adunit).find('div:nth(0)').find('iframe:nth(0)').height() > 100 ){
               if(!Cookies.get('visited')){
                 $('.mb-ad-cover').show();
                 DrawCloseBtn.getCloseBtn('.close-btn canvas');
