@@ -98,6 +98,7 @@
 	ga('create', '{{ $.Site.GoogleAnalytics }}', 'auto');
 	ga('require', 'linkid', 'linkid.js');
 	ga('set', 'contentGroup1', '{{if .Params.sections }}{{ range first 1 .Params.sections }}{{ .title }}{{ end }}{{ else }}None{{ end }}');
+	ga('set', 'contentGroup2', '{{ if .Params.categories }}{{ range first 1 .Params.categories }}{{ if isset . "title" }}{{ .title }}{{ end }}{{ end }}{{ end }}');
 	ga('send', 'pageview');
 	</script>
 
