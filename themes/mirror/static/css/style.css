@@ -769,6 +769,12 @@ article div.img .caption {
     padding-bottom: 10px;
     border-bottom: solid 2px #004ea2;
 }
+article video {
+    display: block;
+    margin: 20px auto;
+    max-width: 620px;
+    width: 100%;
+}
 article blockquote.quote {
     font-family: 'Songti TC', SimSun, serif;
     font-size: 18px;
