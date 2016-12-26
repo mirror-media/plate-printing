@@ -59,10 +59,13 @@ $(function(){
         'afterEachAdLoaded': function(adunit){
           if( $(adunit).attr('pos') === 'MBCVR' ){
             if( $(adunit).find('div:nth(0)').find('iframe:nth(0)').height() > 100 ){
+              console.log('MBCVR > 100')
               if(!Cookies.get('visited')){
+                console.log('MBCVR cookie not visited')
                 $('.mb-ad-cover').show();
                 DrawCloseBtn.getCloseBtn('.close-btn canvas');
                 Cookies.set('visited', 'true', { expires: 600 });
+                console.log('MBCVR cookie set visited')
               }
             }
           }
