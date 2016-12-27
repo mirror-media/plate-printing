@@ -3,13 +3,13 @@
 {{ if gt (len .Params.relateds) 0 }}
   <div class="related">
 	<h2 class="colorTitle"><div class="colorBlock"></div>相關文章</h2>
-		{{ range $relateds := .Params.relateds }}
-			{{ if isset . "slug" }}
+		{{ range $related := .Params.relateds }}
+			{{ if isset $related "slug" }}
 				<div class="related-block" style="">
-					<a href="{{ if isset . "style" }}{{ if eq .style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{.slug}}/" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if .og_image }}{{ .og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if isset . "heroImage" }}{{ if isset .heroImage "image" }}{{ .heroImage.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
+					<a href="{{ if .style }}{{ if eq .style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{.slug}}/" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if .og_image }}{{ .og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if .heroImage }}{{ if isset .heroImage "image" }}{{ .heroImage.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
 					<div class="related-date">{{ dateFormat "2006.01.02" .publishedDate }}</div>
                     <div class="related-content">
-                        <a href="{{ if isset . "style" }}{{ if eq .style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{.slug}}/" onClick="ga('send', 'event', 'article', 'click', 'related');"><h2>{{ $relateds.title }}</h2></a>
+                        <a href="{{ if isset . "style" }}{{ if eq .style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{.slug}}/" onClick="ga('send', 'event', 'article', 'click', 'related');"><h2>{{ $related.title }}</h2></a>
                         <div class="line"></div>
                         <div class="brief">
                             {{ if .brief }}
@@ -57,9 +57,13 @@
                             {{if isset .Params "extend_byline" }}{{ .Params.extend_byline }}{{ end }}
                         </div>
                         <div class="related-cat">
-                            {{ if $relateds.sections }}
-                            	{{ range first 1 $relateds.sections }}
-                            		{{ .title }}
+                            {{ if isset $related "sections" }}
+                            	{{ if ge (len $related.sections) 1 }}
+	                            	{{ range first 1 $related.sections }}
+	                            		{{ if isset . "title"}}
+	                            			{{ plainify .title }}
+	                            		{{ end }}
+	                            	{{ end }}
                             	{{ end }}
                             {{ end }}
                         </div>
