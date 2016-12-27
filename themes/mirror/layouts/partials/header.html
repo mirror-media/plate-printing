@@ -128,6 +128,18 @@
 	{{ end }}
 </head>
 <body>
+	<!-- DoubleClick Tracking Code -->
+
+	<script type="text/javascript">
+	var axel = Math.random() + "";
+	var a = axel * 10000000000000;
+	document.write('<iframe src="https://6310549.fls.doubleclick.net/activityi;src=6310549;type=invmedia;cat=zjo1yc01;u1={{ if .Params.sections }}{{ range first 1 .Params.sections }}{{ if isset . "name" }}{{ .name }}{{ end }}{{ end }}{{ end }};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+	</script>
+	<noscript>
+	<iframe src="https://6310549.fls.doubleclick.net/activityi;src=6310549;type=invmedia;cat=zjo1yc01;u1={{ if .Params.sections }}{{ range first 1 .Params.sections }}{{ if isset . "name" }}{{ .name }}{{ end }}{{ end }}{{ end }};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+	</noscript>
+
+	<!-- FB SDk-->
 	<div id="fb-root"></div> <script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.8&appId={{ .Site.Params.appId }}"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- Top Sidebar Menu -->
