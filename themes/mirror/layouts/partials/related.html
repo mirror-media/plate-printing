@@ -6,7 +6,7 @@
 		{{ range $relateds := .Params.relateds }}
 			{{ if isset $relateds "slug" }}
 				<div class="related-block" style="">
-					<a href="{{ if isset $relateds "style" }}{{ if eq $relateds.style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{$relateds.slug}}/" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if $relateds.og_image }}{{ $relateds.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if $relateds.heroImage }}{{ $relateds.heroImage.image.resizedTargets.mobile.url }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
+					<a href="{{ if isset $relateds "style" }}{{ if eq $relateds.style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{$relateds.slug}}/" onClick="ga('send', 'event', 'article', 'click', 'related');"><div class="related-img" style="background:url('{{ if $relateds.og_image }}{{ $relateds.og_image.image.resizedTargets.mobile.url }}{{ else }}{{ if isset $relateds "heroImage" }}{{ if isset $relateds.heroImage "image" }}{{ $relateds.heroImage.image.resizedTargets.mobile.url }}{{ end }}{{ else }}{{ $baseurl }}asset/review.png{{ end }}{{ end }}') no-repeat center center; background-size:cover;" ></div></a>
 					<div class="related-date">{{ dateFormat "2006.01.02" $relateds.publishedDate }}</div>
 					<div class="related-content">
 						<a href="{{ if isset $relateds "style" }}{{ if eq $relateds.style "projects" }}/projects/{{else}}/story/{{end}}{{ else }}/story/{{ end }}{{$relateds.slug}}/" onClick="ga('send', 'event', 'article', 'click', 'related');"><h2>{{ $relateds.title }}</h2></a>
@@ -27,7 +27,7 @@
 							  		文｜
 						    	{{ end }}
 						    	{{ range $index , $writer := $relateds.writers }}
-						    		{{ $writer.name }}
+						    		{{ if isset $writer "name" }}{{ $writer.name }}{{ end }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
 						    {{if $relateds.photographers }}
@@ -35,7 +35,7 @@
 							  		攝影｜
 						    	{{ end }}
 						    	{{ range $index , $photographer := $relateds.photographers }}
-						    		{{ $photographer.name }}
+						    		{{ if isset $photographer "name" }}{{ $photographer.name }}{{ end }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
 						    {{if $relateds.designers }}
@@ -43,7 +43,7 @@
 							  		設計｜
 						    	{{ end }}
 						    	{{ range $index , $designer := $relateds.designers }}
-						    		{{ $designer.name }}
+						    		{{ if isset $designer "name" }}{{ $designer.name }}{{ end }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
 						    {{if $relateds.engineers }}
@@ -51,10 +51,10 @@
 							  		工程｜
 						    	{{ end }}
 						    	{{ range $index , $engineer := $relateds.engineers }}
-						    		{{ $engineer.name }}
+						    		{{ if isset $engineer "name" }}{{ $engineer.name }}{{ end }}
 						    	{{ end }}&nbsp;&nbsp;
 						    {{ end }}
-						    {{if .Params.extend_byline }}{{ .Params.extend_byline }}{{ end }}
+						    {{if isset .Params "extend_byline" }}{{ .Params.extend_byline }}{{ end }}
 						</div>
 						<div class="related-cat">
 							{{ range first 1 $relateds.sections }}
