@@ -57,9 +57,11 @@
 						    {{if isset .Params "extend_byline" }}{{ .Params.extend_byline }}{{ end }}
 						</div>
 						<div class="related-cat">
-							{{ range first 1 $relateds.sections }}
-								{{ .title }}
-						  {{ end }}
+							{{ if isset $relateds "sections" }}
+								{{ range first 1 $relateds.sections }}
+									{{ if isset $relateds.sections "title" }}{{ .title }}{{ end }}
+							  {{ end }}
+							{{ end }}
 						</div>
 					</div>
 				</div>
