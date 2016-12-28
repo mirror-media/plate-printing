@@ -1750,9 +1750,10 @@ div.colorBlock.choice {
     margin-left: 10px;
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 23px;
     letter-spacing: .3px;
     text-align: center;
+    vertical-align: top;
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -1762,6 +1763,12 @@ div.colorBlock.choice {
 
 .line-addFriends {
     margin: 10px 0;
+    line-height: 46px;
+    height: 46px;
+}
+
+.line-addFriends > a {
+    padding: 2px 0;
 }
 
 .app-download {
@@ -1771,13 +1778,12 @@ div.colorBlock.choice {
 
 .app-download a {
     display: inline-block;
-    height: 128px;
+    height: 114px;
     margin: 10px 0;
 }
 
 .app-download img {
-    width: 287px;
-    height: 128px;
+    width: 255px;
 }
 
 /* Mobile */
