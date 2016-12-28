@@ -35,7 +35,7 @@
 			    	{{if gt (len .Params.writers) 0 }}
 				    文 |
 				      {{ range $index , $writer := .Params.writers }}
-				        {{ $writer.name }}
+				        <a href="/author/{{ $writer._id }}">{{ $writer.name }}</a>
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -156,7 +156,6 @@
 
 		    <div style="width:10px;height:10px;"></div>
 
-		    {{ partial "author.html" . }}
         <div ad-pos="MBE1"></div>
         <div ad-pos="PCE1"></div>
         <div ad-pos="PCE2"></div>
