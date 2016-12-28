@@ -1740,6 +1740,46 @@ div.colorBlock.choice {
     margin-top: 2em !important;
 }
 
+/* style for Social Media, APP Download Link Block */
+.socialMedia-block {
+    text-align: center;
+}
+
+.socialMedia-intro {
+    display: inline-block;
+    margin-left: 10px;
+    font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: .3px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.socialMedia-block.mobile {
+    display: none;
+}
+
+.line-addFriends {
+    margin: 10px 0;
+}
+
+.app-download {
+    width:300px;
+    max-width: 300px;
+}
+
+.app-download a {
+    display: inline-block;
+    height: 128px;
+    margin: 10px 0;
+}
+
+.app-download img {
+    width: 287px;
+    height: 128px;
+}
+
 /* Mobile */
 @media only screen and (max-width: 767px) {
     .mobile-hide {
@@ -2027,7 +2067,13 @@ div.colorBlock.choice {
         padding: 0;
         padding: 0;
         width: 45px;
-        height: 45px;
+        height: 45px;s
+    }
+
+    /* style for Social Media, APP Download Link Block */
+
+    .socialMedia-block.mobile {
+        display: block;
     }
 }
 
@@ -2185,6 +2231,12 @@ div.colorBlock.choice {
         padding: 0;
         width: 45px;
         height: 45px;
+    }
+
+    /* style for Social Media, APP Download Link Block */
+
+    .socialMedia-block.mobile {
+        display: block;
     }
 }
 
