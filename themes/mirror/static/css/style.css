@@ -1543,6 +1543,12 @@ div.colorBlock.choice {
     height: 1px;
     background: rgba(34, 36, 38, .15);
 }
+.computer .logo.small {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
 .computer .searchbar {
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 75px;
@@ -1609,6 +1615,12 @@ div.colorBlock.choice {
     /*width:100%;*/
     left: calc(50% - 48px);
     text-align: center;
+}
+.tablet .logo.centered img {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 .tablet .header.item {
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
@@ -1695,6 +1707,12 @@ div.colorBlock.choice {
     /*width:100%; */
     left: calc(45% - 48px);
     text-align: center;
+}
+.mobile .logo.centered img {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 .mobile .searchbar {
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
