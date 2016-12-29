@@ -328,7 +328,7 @@ $(document)
             return $("<div/>").html(dirtyString).text(); // innerHTML will be a xss safe string
           }
 
-          for (var i = 0; i < data._items.length; i++) {
+          for (var i = 0; i < data._items.length && i < 9; i++) {
             data._items[i].idx = i+1;
             data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
             data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
@@ -356,13 +356,13 @@ $(document)
               else
                 data._items[i].preview = "/asset/review.png";
 
-            if ( i < 3) {
-              var htmlOutput = categoryTopTemplate.render(data._items[i]);
-              $(".category-top").append(htmlOutput);
-            } else {
+            // if ( i < 3) {
+            //   var htmlOutput = categoryTopTemplate.render(data._items[i]);
+            //   $(".category-top").append(htmlOutput);
+            // } else {
               var htmlOutput = categoryBottomTemplate.render(data._items[i]);
               $(".category-bottom").append(htmlOutput);
-            }
+            // }
           }
 
           if (data._items.length == 0) {

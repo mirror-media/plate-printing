@@ -11,7 +11,7 @@ disableRSS = "true"
 	imgBaseUrl = "/story/img"
 	cssBaseUrl = "/story/css"
 	jsBaseUrl = "/story/js"
-	version = "201612261843"
+	version = "201612291613"
 	DFPID = "40175602"
 	appID = "175313259598308"
 
