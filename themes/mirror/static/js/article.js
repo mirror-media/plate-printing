@@ -268,7 +268,7 @@ $(document)
         data.report[i].idx = i+1;
         data.report[i].date = formatDate(new Date(data.report[i].publishedDate));
         data.report[i].url = data.report[i].slug
-        data.report[i].catName = "";
+        data.report[i].catName = "Top "+ data.report[i].idx;
 
         if ( !isEmpty(data.report[i].og_image) )
           data.report[i].preview = data.report[i].og_image.image.resizedTargets.mobile.url;
