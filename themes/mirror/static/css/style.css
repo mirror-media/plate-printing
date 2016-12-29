@@ -23,6 +23,7 @@ html.ios body {
     background-repeat: no-repeat;
     display: inline-block;
     zoom: 0.65;
+    -moz-transform: scale(0.65);
 }
 @media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
     .sprite {
@@ -470,7 +471,7 @@ ul.latest li a {
     display: block;
     overflow: hidden;
     position: relative;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 .choice-img {
     position: absolute;
@@ -580,7 +581,7 @@ ul.latest li a {
 .column-choice-img {
     width: 300px;
     height: 180px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     background-color: #FFF;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
@@ -593,10 +594,10 @@ ul.latest li a {
     text-overflow: ellipsis;
 }
 .column-choice-content h2 {
-    padding: 10px 10px 2px 10px;
+    padding: 10px;
     margin-bottom: 0;
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     line-height: 1.5;
     letter-spacing: 0.5px;
@@ -1543,6 +1544,12 @@ div.colorBlock.choice {
     height: 1px;
     background: rgba(34, 36, 38, .15);
 }
+.computer .logo.small {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
 .computer .searchbar {
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 75px;
@@ -1609,6 +1616,12 @@ div.colorBlock.choice {
     /*width:100%;*/
     left: calc(50% - 48px);
     text-align: center;
+}
+.tablet .logo.centered img {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 .tablet .header.item {
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
@@ -1696,6 +1709,12 @@ div.colorBlock.choice {
     left: calc(45% - 48px);
     text-align: center;
 }
+.mobile .logo.centered img {
+    -webkit-backface-visibility: hidden; 
+    -ms-transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
 .mobile .searchbar {
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 50px;
@@ -1750,9 +1769,10 @@ div.colorBlock.choice {
     margin-left: 10px;
     font-family: 'Noto Sans TC', 'STHeitiTC-Medium', '微軟正黑體', 'Microsoft JhengHei', sans-serif;
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 23px;
     letter-spacing: .3px;
     text-align: center;
+    vertical-align: top;
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -1762,6 +1782,12 @@ div.colorBlock.choice {
 
 .line-addFriends {
     margin: 10px 0;
+    line-height: 46px;
+    height: 46px;
+}
+
+.line-addFriends > a {
+    padding: 2px 0;
 }
 
 .app-download {
@@ -1771,13 +1797,12 @@ div.colorBlock.choice {
 
 .app-download a {
     display: inline-block;
-    height: 128px;
+    height: 114px;
     margin: 10px 0;
 }
 
 .app-download img {
-    width: 287px;
-    height: 128px;
+    width: 255px;
 }
 
 /* Mobile */
@@ -1851,7 +1876,7 @@ div.colorBlock.choice {
         margin: 0 auto;
         width: 300px;
         position: relative;
-        margin-bottom: 35px;
+        margin-bottom: 25px;
     }
     .choice-img {
         width: 300px;

@@ -233,147 +233,62 @@ $(document)
       })
     }
 
-    if ( topicId ) {
-      $.getJSON( "/api/posts?where={\"topics\":\""+topicId+"\"}", function( data ) {
+    $.getJSON( "/story/json/popularlist.json", function( data ) {
 
-        if ( data._items.length > 0 ) {
-          $('.choice .article-main h2.hot-topic span').each(function(){
-            $(this).html(data._items[0].topics.name);
-          });
-        }
+	  function isEmpty(obj) {
 
-        function isEmpty(str) {
-          return (!str || 0 === str.length);
-        }
-        function formatDate(d) {
+	      if (obj == null) return true;
+	      if (obj.length > 0)    return false;
+	      if (obj.length === 0)  return true;
 
-          var dd = d.getDate()
-          if ( dd < 10 ) dd = '0' + dd
+	      if (typeof obj !== "object") return true;
+	      for (var key in obj) {
+	          if (hasOwnProperty.call(obj, key)) return false;
+	      }
 
-          var mm = d.getMonth()+1
-          if ( mm < 10 ) mm = '0' + mm
+	      return true;
+	  }
+      function formatDate(d) {
 
-          var yy = d.getFullYear()
+        var dd = d.getDate()
+        if ( dd < 10 ) dd = '0' + dd
 
-          return yy+'.'+mm+'.'+dd
-        }
-        function stripHTML(dirtyString) {
-          return $("<div/>").html(dirtyString).text(); // innerHTML will be a xss safe string
-        }
+        var mm = d.getMonth()+1
+        if ( mm < 10 ) mm = '0' + mm
 
-        for (var i = 0; i < data._items.length; i++) {
-          data._items[i].idx = i+1;
-          data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
-          data._items[i].catName = (data._items[i].categories.length > 0) ? data._items[i].categories[0].title : "";
-          data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
+        var yy = d.getFullYear()
 
-          if(data._items[i].brief)
-            data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
-          else
-            data._items[i].brief = { html: "" };
-
-          if(data._items[i].brief.length == 0) {
-            data._items[i].emptyBrief = "hide";
-          }
-
-          if ( data._items[i].idx % 2 ) {
-            data._items[i].Right = "right";
-            data._items[i].Left = "left";
-          }
-
-          if ( !isEmpty(data._items[i].og_image) )
-            data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url;
-          else
-            if ( !isEmpty(data._items[i].heroImage) )
-              data._items[i].preview = data._items[i].heroImage.image.resizedTargets.mobile.url;
-            else
-              data._items[i].preview = "/asset/review.png";
-
-          if ( i < 3) {
-            var htmlOutput = categoryTopTemplate.render(data._items[i]);
-            $(".category-top").append(htmlOutput);
-          } else {
-            var htmlOutput = categoryBottomTemplate.render(data._items[i]);
-            $(".category-bottom").append(htmlOutput);
-          }
-        }
-
-        if (data._items.length == 0) {
-          $('.choice').hide();
-        }
-
-      }).fail(function() {
-        $('.choice').hide();
-      })
-    } else {
-      if ( categoryId ) {
-        $.getJSON( "/story/json/latest-categories-"+categoryId+".json", function( data ) {
-
-          function isEmpty(str) {
-            return (!str || 0 === str.length);
-          }
-          function formatDate(d) {
-
-            var dd = d.getDate()
-            if ( dd < 10 ) dd = '0' + dd
-
-            var mm = d.getMonth()+1
-            if ( mm < 10 ) mm = '0' + mm
-
-            var yy = d.getFullYear()
-
-            return yy+'.'+mm+'.'+dd
-          }
-          function stripHTML(dirtyString) {
-            return $("<div/>").html(dirtyString).text(); // innerHTML will be a xss safe string
-          }
-
-          for (var i = 0; i < data._items.length; i++) {
-            data._items[i].idx = i+1;
-            data._items[i].date = formatDate(new Date(data._items[i].publishedDate));
-            data._items[i].url = (data._items[i].style=='projects') ? '/projects/'+data._items[i].slug+'/' : '/story/'+data._items[i].slug+'/'
-            data._items[i].catName = (data._items[i].categories.length > 0) ? data._items[i].categories[0].title : "";
-
-            if(data._items[i].brief)
-              data._items[i].brief.html = stripHTML(data._items[i].brief.html).substring(0, (i<3)? 200 : 70)+"...";
-            else
-              data._items[i].brief = { html: "" };
-
-            if(data._items[i].brief.length == 0) {
-              data._items[i].emptyBrief = "hide";
-            }
-
-            if ( data._items[i].idx % 2 ) {
-              data._items[i].Right = "right";
-              data._items[i].Left = "left";
-            }
-
-            if ( !isEmpty(data._items[i].og_image) )
-              data._items[i].preview = data._items[i].og_image.image.resizedTargets.mobile.url;
-            else
-              if ( !isEmpty(data._items[i].heroImage) )
-                data._items[i].preview = data._items[i].heroImage.image.resizedTargets.mobile.url;
-              else
-                data._items[i].preview = "/asset/review.png";
-
-            if ( i < 3) {
-              var htmlOutput = categoryTopTemplate.render(data._items[i]);
-              $(".category-top").append(htmlOutput);
-            } else {
-              var htmlOutput = categoryBottomTemplate.render(data._items[i]);
-              $(".category-bottom").append(htmlOutput);
-            }
-          }
-
-          if (data._items.length == 0) {
-            $('.choice').hide();
-          }
-
-        }).fail(function() {
-          $('.choice').hide();
-        })
+        return yy+'.'+mm+'.'+dd
       }
-    }
+      function stripHTML(dirtyString) {
+        return $("<div/>").html(dirtyString).text(); // innerHTML will be a xss safe string
+      }
+
+      for (var i = 0; i < data.report.length && i < 9; i++) {
+        data.report[i].idx = i+1;
+        data.report[i].date = formatDate(new Date(data.report[i].publishedDate));
+        data.report[i].url = data.report[i].slug
+        data.report[i].catName = "Top "+ data.report[i].idx;
+
+        if ( !isEmpty(data.report[i].og_image) )
+          data.report[i].preview = data.report[i].og_image.image.resizedTargets.mobile.url;
+        else
+          if ( !isEmpty(data.report[i].heroImage) )
+            data.report[i].preview = data.report[i].heroImage.image.resizedTargets.mobile.url;
+          else
+            data.report[i].preview = "/asset/review.png";
+
+          var htmlOutput = categoryBottomTemplate.render(data.report[i]);
+          $(".category-bottom").append(htmlOutput);
+      }
+
+      if (data.report.length == 0) {
+        $('.choice').hide();
+      }
+
+    }).fail(function() {
+      $('.choice').hide();
+    })
 
     /* send GA event when category-latest is visible. */
     $('.pusher > div.choice').visibility({

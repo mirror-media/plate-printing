@@ -28,14 +28,9 @@
 				</div>
 			</div></a>
 			<div class="column-choice-content">
-				<a href="{^{:url}}" onClick="ga('send', 'event', 'article', 'click', 'category-latest');"><h2 style="text-align:center;">{^{:title}}</h2></a>
-				<div class="line mobile-hide {^{:emptyBrief}}"></div>
-				<div class="brief mobile-hide {^{:emptyBrief}}">
-					{^{:brief.html}}
-				</div>
+				<a href="{^{:url}}" onClick="ga('send', 'event', 'article', 'click', 'category-latest');"><h2>{^{:title}}</h2></a>
 			</div>
 			<div class="column-choice-meta">
-				<div class="date">{^{:date}}</div>
 			</div>
 		</div>
 	</div>
@@ -47,9 +42,9 @@
 
 		<!-- Computer -->
 	  <div class="computer only sixteen wide column">
-	  	<div class="ui text container article-container" style="margin-bottom:35px;">
+	  	<div class="ui text container article-container" style="margin-bottom:15px;">
 	  		<div class="article-main" style="text-align:center;">
-					<h2 class="hot-topic"><div class="colorBlock choice"></div><span>最新文章</span><div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+					<h2 class="hot-topic"><div class="colorBlock choice"></div><span>熱門文章</span><div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
 				</div>
 			</div>
 	  </div>
@@ -58,7 +53,7 @@
 	  <div class="tablet only sixteen wide column">
 	  	<div class="ui text container article-container" style="margin-bottom:35px; padding-left: 1em !important;">
 	  		<div class="article-main" style="text-align:center;">
-					<h2 class="hot-topic"><div class="colorBlock choice"></div><span>最新文章</span><div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
+					<h2 class="hot-topic"><div class="colorBlock choice"></div><span>熱門文章</span><div class="blue-line" style="margin-left:16px;display:inline-block;"></div></h2>
 				</div>
 			</div>	
 	  </div>
@@ -66,7 +61,7 @@
 	  <!-- Mobile -->
 	  <div class="mobile only sixteen wide column">
 	  	<div class="choiceHeader" style="margin: 16px; line-height:45px; vertical-align:middle;">
-				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>最新文章</h2>
+				<h2 class="hot-topic" style="display:inline;"><div class="colorBlock choice"></div>熱門文章</h2>
 	      <div class="gradient" style="float: right; color: rgba(0,0,0,0.4); padding:0 25px;height:45px; line-height:45px; font-size:20px; vertical-align:middle; color:#FFF; text-align:center;">
 		      {{if .Params.sections }}
 			      {{ range first 1 .Params.sections }}
@@ -78,9 +73,9 @@
 	  </div>
 	</div>
 
-	<div class="choice-main" style="margin:2em auto; position:relative;">
+	<div class="choice-main" style="margin:5px auto; position:relative;">
 
-		<div class="category-top"></div>
+		<div class="category-top" style="display: none;"></div>
 
 		<div class="ui three column stackable grid category-bottom" style="margin:0 auto;">
 		</div>
