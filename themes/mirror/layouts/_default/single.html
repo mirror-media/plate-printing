@@ -43,7 +43,7 @@
 			    	{{if gt (len .Params.photographers) 0 }}
 				    攝影 |
 				      {{ range $index , $photographer := .Params.photographers }}
-				        {{ if isset $photographer "name" }}{{ $photographer.name }}{{ end }}
+				        {{ if isset $photographer "name" }}<a href="/author/{{ $photographer._id }}">{{ $photographer.name }}</a>{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -51,7 +51,7 @@
 			    	{{if gt (len .Params.designers) 0 }}
 				    設計 |
 				      {{ range $index , $designer := .Params.designers }}
-				        {{ if isset $designer "name" }}{{ $designer.name }}{{ end }}
+				        {{ if isset $designer "name" }}<a href="/author/{{ $designer._id }}">{{ $designer.name }}</a>{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -59,7 +59,7 @@
 			    	{{if gt (len .Params.engineers) 0 }}
 				    工程 |
 				      {{ range $index , $engineer := .Params.engineers }}
-				        {{ if isset $engineer "name" }}{{ $engineer.name }}{{ end }}
+				        {{ if isset $engineer "name" }}<a href="/author/{{ $engineer._id }}">{{ $engineer.name }}</a>{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -67,7 +67,7 @@
 			    	{{if gt (len .Params.camera_man) 0 }}
 				    影音 |
 				      {{ range $index , $camera := .Params.camera_man }}
-				        {{ if isset $camera "name" }}{{ $camera.name }}{{ end }}
+				        {{ if isset $camera "name" }}<a href="/author/{{ $camera._id }}">{{ $camera.name }}</a>{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
