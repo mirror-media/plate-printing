@@ -35,7 +35,7 @@
 			    	{{if gt (len .Params.writers) 0 }}
 				    文 |
 				      {{ range $index , $writer := .Params.writers }}
-				        {{ $writer.name }}
+				        {{ if isset $writer "name" }}{{ $writer.name }}{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -43,7 +43,7 @@
 			    	{{if gt (len .Params.photographers) 0 }}
 				    攝影 |
 				      {{ range $index , $photographer := .Params.photographers }}
-				        {{ $photographer.name }}
+				        {{ if isset $photographer "name" }}{{ $photographer.name }}{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -51,7 +51,7 @@
 			    	{{if gt (len .Params.designers) 0 }}
 				    設計 |
 				      {{ range $index , $designer := .Params.designers }}
-				        {{ $designer.name }}
+				        {{ if isset $designer "name" }}{{ $designer.name }}{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -59,7 +59,7 @@
 			    	{{if gt (len .Params.engineers) 0 }}
 				    工程 |
 				      {{ range $index , $engineer := .Params.engineers }}
-				        {{ $engineer.name }}
+				        {{ if isset $engineer "name" }}{{ $engineer.name }}{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
@@ -67,11 +67,11 @@
 			    	{{if gt (len .Params.camera_man) 0 }}
 				    影音 |
 				      {{ range $index , $camera := .Params.camera_man }}
-				        {{ $camera.name }}
+				        {{ if isset $camera "name" }}{{ $camera.name }}{{ end }}
 				      {{ end }}&nbsp;&nbsp;
 				    {{ end }}
 			    {{ end }}
-			    {{if .Params.extend_byline }}{{ .Params.extend_byline }}{{ end }}
+			    {{if isset .Params "extend_byline" }}{{ .Params.extend_byline }}{{ end }}
 	  		</p>
 	  		<p class="article-sharing mobile-hide tablet-hide" style="float: right; color: rgba(0,0,0,0.4);">
 	  			分享這篇文章：
