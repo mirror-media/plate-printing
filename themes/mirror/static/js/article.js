@@ -233,62 +233,62 @@ $(document)
       })
     }
 
-    $.getJSON( "/story/json/popularlist.json", function( data ) {
+    if ( sectionId == "57dfe3b0ee85930e00cad4d7") {
+    	/* hide choice block when the section is "watch". */
+    	$('.choice').hide();
+    }else{
+	    $.getJSON( "/story/json/popularlist.json", function( data ) {
 
-	  function isEmpty(obj) {
+		  function isEmpty(obj) {
 
-	      if (obj == null) return true;
-	      if (obj.length > 0)    return false;
-	      if (obj.length === 0)  return true;
+		      if (obj == null) return true;
+		      if (obj.length > 0)    return false;
+		      if (obj.length === 0)  return true;
 
-	      if (typeof obj !== "object") return true;
-	      for (var key in obj) {
-	          if (hasOwnProperty.call(obj, key)) return false;
+		      if (typeof obj !== "object") return true;
+		      for (var key in obj) {
+		          if (hasOwnProperty.call(obj, key)) return false;
+		      }
+
+		      return true;
+		  }
+
+	      function formatDate(d) {
+	        var dd = d.getDate();
+	        if ( dd < 10 ) dd = '0' + dd;
+	        var mm = d.getMonth()+1;
+	        if ( mm < 10 ) mm = '0' + mm;
+	        var yy = d.getFullYear();
+	        return yy+'.'+mm+'.'+dd;
 	      }
 
-	      return true;
-	  }
-      function formatDate(d) {
+	      for (var i = 0; i < data.report.length && i < 9; i++) {
+	        data.report[i].idx = i+1;
+	        data.report[i].date = formatDate(new Date(data.report[i].publishedDate));
+	        data.report[i].url = data.report[i].slug
+	        data.report[i].catName = "Top "+ data.report[i].idx;
 
-        var dd = d.getDate()
-        if ( dd < 10 ) dd = '0' + dd
+	        if ( !isEmpty(data.report[i].og_image) )
+	          data.report[i].preview = data.report[i].og_image.image.resizedTargets.mobile.url;
+	        else
+	          if ( !isEmpty(data.report[i].heroImage) )
+	            data.report[i].preview = data.report[i].heroImage.image.resizedTargets.mobile.url;
+	          else
+	            data.report[i].preview = "/asset/review.png";
 
-        var mm = d.getMonth()+1
-        if ( mm < 10 ) mm = '0' + mm
+	          var htmlOutput = categoryBottomTemplate.render(data.report[i]);
+	          $(".category-bottom").append(htmlOutput);
+	      }
 
-        var yy = d.getFullYear()
+	      if (data.report.length == 0) {
+	        $('.choice').hide();
+	      }
 
-        return yy+'.'+mm+'.'+dd
-      }
-      function stripHTML(dirtyString) {
-        return $("<div/>").html(dirtyString).text(); // innerHTML will be a xss safe string
-      }
+	    }).fail(function() {
+	      $('.choice').hide();
+	    });
+    }
 
-      for (var i = 0; i < data.report.length && i < 9; i++) {
-        data.report[i].idx = i+1;
-        data.report[i].date = formatDate(new Date(data.report[i].publishedDate));
-        data.report[i].url = data.report[i].slug
-        data.report[i].catName = "Top "+ data.report[i].idx;
-
-        if ( !isEmpty(data.report[i].og_image) )
-          data.report[i].preview = data.report[i].og_image.image.resizedTargets.mobile.url;
-        else
-          if ( !isEmpty(data.report[i].heroImage) )
-            data.report[i].preview = data.report[i].heroImage.image.resizedTargets.mobile.url;
-          else
-            data.report[i].preview = "/asset/review.png";
-
-          var htmlOutput = categoryBottomTemplate.render(data.report[i]);
-          $(".category-bottom").append(htmlOutput);
-      }
-
-      if (data.report.length == 0) {
-        $('.choice').hide();
-      }
-
-    }).fail(function() {
-      $('.choice').hide();
-    })
 
     /* send GA event when category-latest is visible. */
     $('.pusher > div.choice').visibility({
