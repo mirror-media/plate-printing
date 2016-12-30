@@ -293,7 +293,7 @@ $(document)
     /* send GA event when category-latest is visible. */
     $('.pusher > div.choice').visibility({
       onTopVisible: function(calculations) {
-        ga('send', 'event', 'article', 'visible', 'category-latest');
+        ga('send', 'event', 'article', 'visible', 'popular');
       }
     });
 
