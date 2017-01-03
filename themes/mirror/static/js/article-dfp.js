@@ -24,10 +24,10 @@ $(function(){
         _div += constructAdDiv(adunits[sectionId][pos], pos);
         _div += ( pos !== 'MBCVR' )? '' : '</div>';
 
-        if( pos.indexOf( 'MBAR' ) === -1 ) {
+        if( pos.indexOf( 'MBAR' ) === -1 && pos.indexOf( 'PCAR' ) === -1) {
           $( 'div[ad-pos="' + pos + '"]').replaceWith(_div);
         } else {
-          $( 'div[ad-pos="MBAR"]:first').replaceWith(_div);
+          $( 'div[ad-pos="' + pos.substr(0, 4) + '"]:first').replaceWith(_div);
         }
       }
       $('.close-btn').click(function(){
@@ -38,10 +38,10 @@ $(function(){
         var _div = ( pos !== 'MBCVR' )? '' : '<div class="mb-ad-cover tb-ad-cover computer-hide" style="display: none;"><div class="mb-ad-modal tb-ad-modal"></div>';
         _div += constructAdDiv(adunits['exception-categ'][categoryId][pos], pos);
         _div += ( pos !== 'MBCVR' )? '' : '</div>';
-        if( pos.indexOf( 'MBAR' ) === -1 ) {
+        if( pos.indexOf( 'MBAR' ) === -1 && pos.indexOf( 'PCAR' ) === -1) {
           $( 'div[ad-pos="' + pos + '"]').replaceWith(_div);
         } else {
-          $( 'div[ad-pos="MBAR"]:first').replaceWith(_div);
+          $( 'div[ad-pos="' + pos.substr(0, 4) + '"]:first').replaceWith(_div);
         }
       }
       $('.close-btn').click(function(){
@@ -59,13 +59,10 @@ $(function(){
         'afterEachAdLoaded': function(adunit){
           if( $(adunit).attr('pos') === 'MBCVR' ){
             if( $(adunit).find('div:nth(0)').find('iframe:nth(0)').height() > 100 ){
-              console.log('MBCVR > 100')
               if(!Cookies.get('visited')){
-                console.log('MBCVR cookie not visited')
                 $('.mb-ad-cover').show();
                 DrawCloseBtn.getCloseBtn('.close-btn canvas');
                 Cookies.set('visited', 'true', { expires: 600 });
-                console.log('MBCVR cookie set visited')
               }
             }
           }
