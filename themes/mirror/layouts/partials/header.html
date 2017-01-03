@@ -332,9 +332,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-top: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story%2F{{ .Slug }}%2Findex.html%3Futm_source%3Dline_share%26utm_medium%3Dshare" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share line');" style="margin-right:25px;"><i class="sprite sprite-line"></i></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}/index.html" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share sina');" style="margin-right:25px;"><i class="sprite sprite-weibo"></i></a>
-							    <a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" onClick="ga('send', 'event', 'article', 'click', 'social-share facebook');" style="margin-right:25px;"><i class="sprite sprite-facebook"></i></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story%2F{{ .Slug }}%2Findex.html%3Futm_source%3Dline_share%26utm_medium%3Dshare" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share line');ga('send', 'event', 'article', 'click', 'share-button menubar');" style="margin-right:25px;"><i class="sprite sprite-line"></i></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}/index.html" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share sina');ga('send', 'event', 'article', 'click', 'share-button menubar');" style="margin-right:25px;"><i class="sprite sprite-weibo"></i></a>
+							    <a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" onClick="ga('send', 'event', 'article', 'click', 'social-share facebook');ga('send', 'event', 'article', 'click', 'share-button menubar');" style="margin-right:25px;"><i class="sprite sprite-facebook"></i></a>
 							    <span class="social-share" data-initialized="true">
 				    				<a href="#" class="icon-wechat"><i class="sprite sprite-wechat"></i></a>
 				  				</span>
@@ -414,9 +414,9 @@
 					    </div>
 					    <div class="item chooseSharing" style="display:none;">
 					    	<div class="ui" style="width: 100%; margin: 0 auto; text-align: center; line-height:35px; margin-top: 12px;">
-					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story%2F{{ .Slug }}%2Findex.html%3Futm_source%3Dline_share%26utm_medium%3Dshare" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share line');" style="margin-right:25px;"><i class="sprite sprite-line"></i></a>
-							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}/index.html" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share sina');" style="margin-right:25px;"><i class="sprite sprite-weibo"></i></a>
-							    <a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" onClick="ga('send', 'event', 'article', 'click', 'social-share facebook');" style="margin-right:25px;"><i class="sprite sprite-facebook"></i></a>
+					    		<a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story%2F{{ .Slug }}%2Findex.html%3Futm_source%3Dline_share%26utm_medium%3Dshare" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share line');ga('send', 'event', 'article', 'click', 'share-button menubar');" style="margin-right:25px;"><i class="sprite sprite-line"></i></a>
+							    <a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}/index.html" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share sina');ga('send', 'event', 'article', 'click', 'share-button menubar');" style="margin-right:25px;"><i class="sprite sprite-weibo"></i></a>
+							    <a href="javascript: void(window.open('http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href)) ));" onClick="ga('send', 'event', 'article', 'click', 'social-share facebook');ga('send', 'event', 'article', 'click', 'share-button menubar');" style="margin-right:25px;"><i class="sprite sprite-facebook"></i></a>
 							    <span class="social-share" data-initialized="true">
 				    				<a href="#" class="icon-wechat"><i class="sprite sprite-wechat"></i></a>
 				  				</span>
@@ -505,9 +505,9 @@
 
 			      <div class="ui transparent input sharing" style="max-width:100%;padding:60px;display:none;">
 					  	<div class="ui four column grid" style="width: 100%;margin: 0 auto; text-align: center; line-height:60px; text-align:center;">
-				    		<div class="column"><a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story%2F{{ .Slug }}%2Findex.html%3Futm_source%3Dline_share%26utm_medium%3Dshare" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share line');"><i class="sprite sprite-line"></i></a></div>
-				    		<div class="column"><a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}/index.html" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share sina');"><i class="sprite sprite-weibo"></i></a></div>
-				    		<div class="column"><a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share facebook');"><i class="sprite sprite-facebook"></i></a></div>
+				    		<div class="column"><a href="http://line.me/R/msg/text/?{{ .Title | safeURL }}%0D%0A{{ $baseurl | safeURL }}story%2F{{ .Slug }}%2Findex.html%3Futm_source%3Dline_share%26utm_medium%3Dshare" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share line');ga('send', 'event', 'article', 'click', 'share-button menubar');"><i class="sprite sprite-line"></i></a></div>
+				    		<div class="column"><a href="http://v.t.sina.com.cn/share/share.php?title={{ .Title | safeURL }}&url={{ $baseurl | safeURL }}story/{{ .Slug }}/index.html" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share sina');ga('send', 'event', 'article', 'click', 'share-button menubar');"><i class="sprite sprite-weibo"></i></a></div>
+				    		<div class="column"><a href="http://www.facebook.com/share.php?u={{ $baseurl | safeURL }}story/{{ .Slug }}" target="_blank" onClick="ga('send', 'event', 'article', 'click', 'social-share facebook');ga('send', 'event', 'article', 'click', 'share-button menubar');"><i class="sprite sprite-facebook"></i></a></div>
 				    		<div class="column"><span class="social-share" data-initialized="true">
 			    				<a href="#" class="icon-wechat"><i class="sprite sprite-wechat"></i></a>
 			  				</span></div>
