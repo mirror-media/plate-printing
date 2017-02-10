@@ -110,13 +110,13 @@
 					</video>
 					<div class="playpause"></div>
 				</div>
-				<div class="heroimg-caption"></div>
+				<div class="heroimg-caption">{{ if .Params.herocaption }}{{ .Params.herocaption }}{{ end }}</div>
 			{{ end }}
 		{{ else }}
 			{{ if .Params.heroimage }}
 				{{ if .Params.heroimage.image }}
 					<img class="heroimg" src="{{ .Params.heroimage.image.resizedTargets.desktop.url }}" srcset="{{ .Params.heroimage.image.resizedTargets.mobile.url }} 800w, {{ .Params.heroimage.image.resizedTargets.tablet.url }} 1200w, {{ .Params.heroimage.image.resizedTargets.desktop.url }} 2000w"/>
-					<div class="heroimg-caption"></div>
+					<div class="heroimg-caption">{{ if .Params.herocaption }}{{ .Params.herocaption }}{{ end }}</div>
 				{{ end }}
 			{{ end }}
 		{{ end }}
