@@ -25,7 +25,7 @@
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{{if .Params.og_title }}{{ .Params.og_title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}" />
 	<meta property="og:description" content="{{if .Params.og_title }}{{ .Params.og_description }}{{ else }}{{ substr (plainify .Params.brief.html) 0 200 }}{{ end }}" />
-	<meta property="og:url" content="{{ $baseurl | safeURL }}story/{{ .Slug }}" />
+	<meta property="og:url" content="{{ $baseurl | safeURL }}story/{{ .Slug }}/" />
 	{{if .Params.og_image }}
 	<meta property="og:image" content="{{if isset .Params.og_image "image" }}{{ .Params.og_image.image.resizedTargets.mobile.url }}{{ end }}"/>
 	{{ else }}
