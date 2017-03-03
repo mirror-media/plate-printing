@@ -104,7 +104,7 @@
 	ga('send', 'pageview');
 	</script>
 
-	{{ $.Scratch.Set "lock" false }}
+	<!--{{ $.Scratch.Set "lock" false }}
 	{{ if .Params.categories }}
 		{{ range $index , $cat := .Params.categories }}
 			{{ if isset $cat "name" }}
@@ -127,7 +127,7 @@
 			document.ondragstart=function(){ return false; }
 			document.onselectstart=function(){ return false; }
 		</script>
-	{{ end }}
+	{{ end }}-->
 	<!-- Facebook Pixel Code -->
 	<script>
 		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
